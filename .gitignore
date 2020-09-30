@@ -21,8 +21,9 @@ target
 build
 
 *.idea
+.idea**
+.gradle*
 *.iml
 *.log
 .DS_Store
-
 
