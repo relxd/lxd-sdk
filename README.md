@@ -1,4 +1,4 @@
-# openapi-java-client
+# Relxd - LXD OpenApi Java Client
 
 LXD
 - API version: 1.0.0
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.openapitools</groupId>
+  <groupId>org.relxd</groupId>
   <artifactId>openapi-java-client</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:openapi-java-client:1.0.0"
+compile "org.relxd:openapi-java-client:1.0.0"
 ```
 
 ### Others
