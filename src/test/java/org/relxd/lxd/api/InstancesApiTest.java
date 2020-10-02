@@ -13,6 +13,9 @@
 
 package org.relxd.lxd.api;
 
+import org.apache.log4j.Logger;
+import org.junit.Before;
+import org.mockito.Mockito;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
 import org.relxd.lxd.model.BasicStandardReturnValueResponse;
@@ -34,23 +37,42 @@ import org.relxd.lxd.model.GetInstancesByNameStateResponse;
 import org.relxd.lxd.model.GetSnapshotInformationResponse;
 import org.relxd.lxd.model.PatchInstancesByNameRequest;
 import org.relxd.lxd.model.RawFile;
+
+import java.io.IOException;
 import java.util.UUID;
 import org.relxd.lxd.model.UpdateInstancesByNameRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameSnapshotsInformationRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameStateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.spy;
+
 /**
  * API tests for InstancesApi
  */
-@Ignore
+
 public class InstancesApiTest {
+
+    public static final Logger LOG = Logger.getLogger(LxdApiTest.class);
+
+    private InstancesApi instancesApi;
+    private LinuxCmdService linuxCmdService;
+
+    @Before
+    public void setup() {
+        instancesApi = new InstancesApi();
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+    }
+
 
     private final InstancesApi api = new InstancesApi();
 
@@ -181,12 +203,15 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getInstancesTest() throws ApiException {
-        Integer recursion = null;
+    public void getInstancesTest() throws ApiException, IOException, InterruptedException {
+        Integer recursion = 0;
         String filter = null;
-        List<String> response = api.getInstances(recursion, filter);
 
-        // TODO: test validations
+        BasicStandardReturnValueResponse standardResponse = new BasicStandardReturnValueResponse();
+        standardResponse.setStatusCode(200);
+        Mockito.doReturn(standardResponse).when(linuxCmdService).executeLinuxCmdWithResultJsonObject("curl -s --unix-socket /var/lib/lxd/unix.socket a/1.0/instances", BasicStandardReturnValueResponse.class);
+        final List<String> instances = instancesApi.getInstances(recursion, filter);
+        assertEquals(0, instances.size());
     }
     
     /**
@@ -198,13 +223,17 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getInstancesByNameTest() throws ApiException {
-        String name = null;
-        Integer recursion = null;
-        String filter = null;
-        GetInstancesByNameResponse response = api.getInstancesByName(name, recursion, filter);
+    public void getInstancesByNameTest() throws ApiException, IOException, InterruptedException {
 
-        // TODO: test validations
+        String name = "test1";
+        Integer recursion = 0;
+        String filter = null;
+
+        GetInstancesByNameResponse expectedResponse = new GetInstancesByNameResponse();
+        expectedResponse.setStatusCode(200);
+        Mockito.doReturn(expectedResponse).when(linuxCmdService).executeLinuxCmdWithResultJsonObject("curl -s --unix-socket /var/lib/lxd/unix.socket a/1.0/instances/test1", BasicStandardReturnValueResponse.class);
+        GetInstancesByNameResponse response = api.getInstancesByName(name, recursion, filter);
+        assertEquals(expectedResponse, response);
     }
     
     /**

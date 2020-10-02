@@ -13,27 +13,48 @@
 
 package org.relxd.lxd.api;
 
+
+import com.google.gson.Gson;
+import io.swagger.annotations.ApiResponse;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.junit.Before;
+import org.mockito.Mockito;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
-import org.relxd.lxd.model.Config1;
-import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetServerStateResponse;
+import org.relxd.lxd.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * API tests for LxdApi
  */
-@Ignore
 public class LxdApiTest {
 
     private final LxdApi api = new LxdApi();
+    public static final Logger LOG = Logger.getLogger(LxdApiTest.class);
 
+    private LxdApi lxdApi;
+    private LinuxCmdService linuxCmdService;
+
+    @Before
+    public void setup() {
+        lxdApi = new LxdApi();
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+    }
     
     /**
      * 
@@ -61,12 +82,30 @@ public class LxdApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getServerStateTest() throws ApiException {
-        Integer recursion = null;
-        String filter = null;
-        GetServerStateResponse response = api.getServerState(recursion, filter);
+    public void getServerStateTest() throws ApiException,IOException, InterruptedException {
+        BasicConfigurator.configure();
 
-        // TODO: test validations
+        Integer recursion = 0;
+        String filter = null;
+        GetServerStateResponse serverStateResponse = new GetServerStateResponse();
+        GetServerStateResponseMetadata metadata = new GetServerStateResponseMetadata();
+        metadata.setApiStatus("SUCCESS");
+        serverStateResponse.setMetadata(metadata);
+        InputStream is = getClass().getResourceAsStream("/serverinfo.json");
+        Gson gson = new Gson();
+        GetServerStateResponseMetadata expectedServerInfo = gson.fromJson(new InputStreamReader(is), GetServerStateResponseMetadata.class);
+        serverStateResponse.setMetadata(expectedServerInfo);
+        Mockito.doReturn(serverStateResponse).when(linuxCmdService).executeLinuxCmdWithResultJsonObject("curl -s --unix-socket /var/lib/lxd/unix.socket a/1.0", GetServerStateResponse.class);
+        GetServerStateResponse serverInfo = lxdApi.getServerState(recursion,filter);
+        assertEquals(expectedServerInfo, serverInfo);
+        final GetServerStateResponseMetadata serverInfoMetadata = serverInfo.getMetadata();
+
+        if (serverInfoMetadata != null) {
+            assertEquals("1.0", serverInfoMetadata.getApiVersion());
+            assertEquals(true, serverInfoMetadata.getConfig().getCoreTrustPassword());
+            assertEquals("2.0.0", serverInfoMetadata.getEnvironment().getServerVersion());
+            assertEquals(Integer.valueOf(26227), serverInfoMetadata.getEnvironment().getServerPid());
+        }
     }
     
     /**
