@@ -23,17 +23,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config6;
-import org.relxd.lxd.model.Devices1;
+import org.relxd.lxd.model.DevicesKvm;
+import org.relxd.lxd.model.MemoryLimitsConfig;
 
 /**
  * UpdateProfilesByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class UpdateProfilesByNameRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config6 config;
+  private MemoryLimitsConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -41,10 +41,10 @@ public class UpdateProfilesByNameRequest {
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices1 devices;
+  private DevicesKvm devices;
 
 
-  public UpdateProfilesByNameRequest config(Config6 config) {
+  public UpdateProfilesByNameRequest config(MemoryLimitsConfig config) {
     
     this.config = config;
     return this;
@@ -57,12 +57,12 @@ public class UpdateProfilesByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config6 getConfig() {
+  public MemoryLimitsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config6 config) {
+  public void setConfig(MemoryLimitsConfig config) {
     this.config = config;
   }
 
@@ -90,7 +90,7 @@ public class UpdateProfilesByNameRequest {
   }
 
 
-  public UpdateProfilesByNameRequest devices(Devices1 devices) {
+  public UpdateProfilesByNameRequest devices(DevicesKvm devices) {
     
     this.devices = devices;
     return this;
@@ -103,12 +103,12 @@ public class UpdateProfilesByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices1 getDevices() {
+  public DevicesKvm getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices1 devices) {
+  public void setDevices(DevicesKvm devices) {
     this.devices = devices;
   }
 

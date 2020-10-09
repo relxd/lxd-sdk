@@ -1,6 +1,6 @@
 # ProfilesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProfilesByName"></a>
 # **deleteProfilesByName**
-> BasicStandardReturnValueResponse deleteProfilesByName(name)
+> StandardServerResponse deleteProfilesByName(name)
 
 
 
@@ -34,7 +34,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -43,7 +43,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     String name = "name_example"; // String | Profiles name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteProfilesByName(name);
+      StandardServerResponse result = apiInstance.deleteProfilesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#deleteProfilesByName");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -174,7 +174,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProfilesByName"></a>
 # **patchProfilesByName**
-> BasicStandardReturnValueResponse patchProfilesByName(name, body)
+> StandardServerResponse patchProfilesByName(name, body)
 
 
 
@@ -247,7 +247,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -257,7 +257,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Update the profile information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchProfilesByName(name, body);
+      StandardServerResponse result = apiInstance.patchProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#patchProfilesByName");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="postProfiles"></a>
 # **postProfiles**
-> BasicStandardReturnValueResponse postProfiles(body)
+> StandardServerResponse postProfiles(body)
 
 
 
@@ -318,7 +318,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -327,7 +327,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     CreateProfilesRequest body = new CreateProfilesRequest(); // CreateProfilesRequest | Define a new profile
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postProfiles(body);
+      StandardServerResponse result = apiInstance.postProfiles(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#postProfiles");
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 <a name="putProfilesByName"></a>
 # **putProfilesByName**
-> BasicStandardReturnValueResponse putProfilesByName(name, body)
+> StandardServerResponse putProfilesByName(name, body)
 
 
 
@@ -459,7 +459,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -469,7 +469,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Replace the profile information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putProfilesByName(name, body);
+      StandardServerResponse result = apiInstance.putProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#putProfilesByName");
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 

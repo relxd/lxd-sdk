@@ -28,11 +28,11 @@ import java.io.IOException;
 
 
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetClusterMembersByNameResponse;
 import org.relxd.lxd.model.GetClusterResponse;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
 
@@ -637,7 +637,7 @@ public class ClusterApi {
      * Rename a cluster member
      * @param name Members name (required)
      * @param body Rename a cluster member (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,8 +647,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postClusterMembersByName(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postClusterMembersByNameWithHttpInfo(name, body);
+    public StandardServerResponse postClusterMembersByName(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postClusterMembersByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -657,7 +657,7 @@ public class ClusterApi {
      * Rename a cluster member
      * @param name Members name (required)
      * @param body Rename a cluster member (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -667,9 +667,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postClusterMembersByNameWithHttpInfo(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postClusterMembersByNameWithHttpInfo(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postClusterMembersByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -689,10 +689,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postClusterMembersByNameAsync(String name, UpdateClusterMembersByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postClusterMembersByNameAsync(String name, UpdateClusterMembersByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postClusterMembersByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -23,19 +23,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config11;
+import org.relxd.lxd.model.VolumeBlockFileSystemConfig;
 
 /**
  * PatchStoragePoolsByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class PatchStoragePoolsByNameRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config11 config;
+  private VolumeBlockFileSystemConfig config;
 
 
-  public PatchStoragePoolsByNameRequest config(Config11 config) {
+  public PatchStoragePoolsByNameRequest config(VolumeBlockFileSystemConfig config) {
     
     this.config = config;
     return this;
@@ -48,12 +48,12 @@ public class PatchStoragePoolsByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config11 getConfig() {
+  public VolumeBlockFileSystemConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config11 config) {
+  public void setConfig(VolumeBlockFileSystemConfig config) {
     this.config = config;
   }
 

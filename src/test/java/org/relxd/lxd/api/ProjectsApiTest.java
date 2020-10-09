@@ -14,11 +14,11 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateProjectsByNameRequest;
 import org.relxd.lxd.model.CreateProjectsRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetProjectsByNameResponse;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateProjectsByNameRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,7 +48,7 @@ public class ProjectsApiTest {
     @Test
     public void deleteProjectsByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteProjectsByName(name);
+        StandardServerResponse response = api.deleteProjectsByName(name);
 
         // TODO: test validations
     }
@@ -100,7 +100,7 @@ public class ProjectsApiTest {
     public void patchProjectsByNameTest() throws ApiException {
         String name = null;
         UpdateProjectsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchProjectsByName(name, body);
+        StandardServerResponse response = api.patchProjectsByName(name, body);
 
         // TODO: test validations
     }
@@ -116,7 +116,7 @@ public class ProjectsApiTest {
     @Test
     public void postProjectsTest() throws ApiException {
         CreateProjectsRequest body = null;
-        BasicStandardReturnValueResponse response = api.postProjects(body);
+        StandardServerResponse response = api.postProjects(body);
 
         // TODO: test validations
     }
@@ -150,7 +150,7 @@ public class ProjectsApiTest {
     public void putProjectsByNameTest() throws ApiException {
         String name = null;
         UpdateProjectsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putProjectsByName(name, body);
+        StandardServerResponse response = api.putProjectsByName(name, body);
 
         // TODO: test validations
     }

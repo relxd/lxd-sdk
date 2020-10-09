@@ -23,12 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config7;
+import org.relxd.lxd.model.FeaturesConfig;
 
 /**
  * CreateProjectsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class CreateProjectsRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -36,7 +36,7 @@ public class CreateProjectsRequest {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config7 config;
+  private FeaturesConfig config;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -66,7 +66,7 @@ public class CreateProjectsRequest {
   }
 
 
-  public CreateProjectsRequest config(Config7 config) {
+  public CreateProjectsRequest config(FeaturesConfig config) {
     
     this.config = config;
     return this;
@@ -79,12 +79,12 @@ public class CreateProjectsRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config7 getConfig() {
+  public FeaturesConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config7 config) {
+  public void setConfig(FeaturesConfig config) {
     this.config = config;
   }
 

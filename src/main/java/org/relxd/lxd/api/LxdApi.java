@@ -27,10 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
-import org.relxd.lxd.model.Config1;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetServerStateResponse;
+import org.relxd.lxd.model.ServerConfig;
+import org.relxd.lxd.model.StandardServerResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -123,7 +122,7 @@ public class LxdApi {
      * List of supported APIs
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -133,8 +132,8 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getApiList(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getApiListWithHttpInfo(recursion, filter);
+    public StandardServerResponse getApiList(Integer recursion, String filter) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = getApiListWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -143,7 +142,7 @@ public class LxdApi {
      * List of supported APIs
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -153,9 +152,9 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getApiListWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<StandardServerResponse> getApiListWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getApiListValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -175,10 +174,10 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiListAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getApiListAsync(Integer recursion, String filter, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApiListValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -201,7 +200,7 @@ public class LxdApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/1.0/";
+        String localVarPath = "/1.0";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -248,7 +247,7 @@ public class LxdApi {
      * Server configuration and environment information
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetServerStateResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -258,8 +257,8 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetServerStateResponse getServerState(Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetServerStateResponse> localVarResp = getServerStateWithHttpInfo(recursion, filter);
+    public StandardServerResponse getServerState(Integer recursion, String filter) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = getServerStateWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -268,7 +267,7 @@ public class LxdApi {
      * Server configuration and environment information
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetServerStateResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -278,9 +277,9 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetServerStateResponse> getServerStateWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<StandardServerResponse> getServerStateWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getServerStateValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetServerStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -300,10 +299,10 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServerStateAsync(Integer recursion, String filter, final ApiCallback<GetServerStateResponse> _callback) throws ApiException {
+    public okhttp3.Call getServerStateAsync(Integer recursion, String filter, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServerStateValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetServerStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -321,11 +320,11 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchServerStateCall(Config1 body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call patchServerStateCall(ServerConfig body, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/1.0/";
+        String localVarPath = "/1.0";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -351,7 +350,7 @@ public class LxdApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call patchServerStateValidateBeforeCall(Config1 body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call patchServerStateValidateBeforeCall(ServerConfig body, final ApiCallback _callback) throws ApiException {
         
 
         okhttp3.Call localVarCall = patchServerStateCall(body, _callback);
@@ -363,7 +362,7 @@ public class LxdApi {
      * 
      * Updates the server configuration or other properties
      * @param body Updates only the listed keys, rest remains intact (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -373,8 +372,8 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchServerState(Config1 body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchServerStateWithHttpInfo(body);
+    public StandardServerResponse patchServerState(ServerConfig body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchServerStateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -382,7 +381,7 @@ public class LxdApi {
      * 
      * Updates the server configuration or other properties
      * @param body Updates only the listed keys, rest remains intact (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -392,9 +391,9 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchServerStateWithHttpInfo(Config1 body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchServerStateWithHttpInfo(ServerConfig body) throws ApiException {
         okhttp3.Call localVarCall = patchServerStateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -413,10 +412,10 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchServerStateAsync(Config1 body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchServerStateAsync(ServerConfig body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchServerStateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -434,11 +433,11 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putServerStateCall(Config1 body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putServerStateCall(ServerConfig body, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/1.0/";
+        String localVarPath = "/1.0";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -464,7 +463,7 @@ public class LxdApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putServerStateValidateBeforeCall(Config1 body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putServerStateValidateBeforeCall(ServerConfig body, final ApiCallback _callback) throws ApiException {
         
 
         okhttp3.Call localVarCall = putServerStateCall(body, _callback);
@@ -476,7 +475,7 @@ public class LxdApi {
      * 
      * Replaces the server configuration or other properties
      * @param body Replaces any existing config with the provided one (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -486,8 +485,8 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putServerState(Config1 body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putServerStateWithHttpInfo(body);
+    public StandardServerResponse putServerState(ServerConfig body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putServerStateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -495,7 +494,7 @@ public class LxdApi {
      * 
      * Replaces the server configuration or other properties
      * @param body Replaces any existing config with the provided one (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -505,9 +504,9 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putServerStateWithHttpInfo(Config1 body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putServerStateWithHttpInfo(ServerConfig body) throws ApiException {
         okhttp3.Call localVarCall = putServerStateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -526,10 +525,10 @@ public class LxdApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putServerStateAsync(Config1 body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putServerStateAsync(ServerConfig body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putServerStateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

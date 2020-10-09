@@ -25,13 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config1;
 import org.relxd.lxd.model.Environment;
+import org.relxd.lxd.model.ServerConfig;
 
 /**
  * GetServerStateResponseMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class GetServerStateResponseMetadata {
   public static final String SERIALIZED_NAME_API_EXTENSIONS = "api_extensions";
   @SerializedName(SERIALIZED_NAME_API_EXTENSIONS)
@@ -51,7 +51,7 @@ public class GetServerStateResponseMetadata {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config1 config;
+  private ServerConfig config;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
@@ -162,7 +162,7 @@ public class GetServerStateResponseMetadata {
   }
 
 
-  public GetServerStateResponseMetadata config(Config1 config) {
+  public GetServerStateResponseMetadata config(ServerConfig config) {
     
     this.config = config;
     return this;
@@ -175,12 +175,12 @@ public class GetServerStateResponseMetadata {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config1 getConfig() {
+  public ServerConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config1 config) {
+  public void setConfig(ServerConfig config) {
     this.config = config;
   }
 

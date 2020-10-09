@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.CreateNetworksByNameRequest;
 import org.relxd.lxd.model.CreateNetworksRequest;
@@ -36,6 +35,7 @@ import org.relxd.lxd.model.GetNetworksByNameResponse;
 import org.relxd.lxd.model.GetNetworksByNameStateResponse;
 import org.relxd.lxd.model.GetNetworksUUIDResponse;
 import org.relxd.lxd.model.PatchNetworksByNameRequest;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateNetworksByNameRequest;
 
 import java.lang.reflect.Type;
@@ -125,7 +125,7 @@ public class NetworksApi {
      * 
      * Remove a network
      * @param name Name of the network (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -135,8 +135,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteNetworksByName(String name) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteNetworksByNameWithHttpInfo(name);
+    public StandardServerResponse deleteNetworksByName(String name) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteNetworksByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -144,7 +144,7 @@ public class NetworksApi {
      * 
      * Remove a network
      * @param name Name of the network (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -154,9 +154,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteNetworksByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteNetworksByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteNetworksByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -175,10 +175,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworksByNameAsync(String name, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteNetworksByNameAsync(String name, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNetworksByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -244,7 +244,7 @@ public class NetworksApi {
      * 
      * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
      * @param uuid UUID (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -254,8 +254,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteNetworksUUID(String uuid) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteNetworksUUIDWithHttpInfo(uuid);
+    public StandardServerResponse deleteNetworksUUID(String uuid) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteNetworksUUIDWithHttpInfo(uuid);
         return localVarResp.getData();
     }
 
@@ -263,7 +263,7 @@ public class NetworksApi {
      * 
      * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
      * @param uuid UUID (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -273,9 +273,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteNetworksUUIDWithHttpInfo(String uuid) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteNetworksUUIDWithHttpInfo(String uuid) throws ApiException {
         okhttp3.Call localVarCall = deleteNetworksUUIDValidateBeforeCall(uuid, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -294,10 +294,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworksUUIDAsync(String uuid, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteNetworksUUIDAsync(String uuid, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNetworksUUIDValidateBeforeCall(uuid, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1186,7 +1186,7 @@ public class NetworksApi {
      * Update the network information
      * @param name Name of the network (required)
      * @param body Update the network information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1196,8 +1196,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchNetworksByName(String name, PatchNetworksByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchNetworksByNameWithHttpInfo(name, body);
+    public StandardServerResponse patchNetworksByName(String name, PatchNetworksByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchNetworksByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1206,7 +1206,7 @@ public class NetworksApi {
      * Update the network information
      * @param name Name of the network (required)
      * @param body Update the network information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1216,9 +1216,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchNetworksByNameWithHttpInfo(String name, PatchNetworksByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchNetworksByNameWithHttpInfo(String name, PatchNetworksByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchNetworksByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1238,10 +1238,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchNetworksByNameAsync(String name, PatchNetworksByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchNetworksByNameAsync(String name, PatchNetworksByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchNetworksByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1301,7 +1301,7 @@ public class NetworksApi {
      * 
      * Define a new network
      * @param body Define a new network (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1311,8 +1311,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postNetworks(CreateNetworksRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postNetworksWithHttpInfo(body);
+    public StandardServerResponse postNetworks(CreateNetworksRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postNetworksWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1320,7 +1320,7 @@ public class NetworksApi {
      * 
      * Define a new network
      * @param body Define a new network (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1330,9 +1330,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postNetworksWithHttpInfo(CreateNetworksRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postNetworksWithHttpInfo(CreateNetworksRequest body) throws ApiException {
         okhttp3.Call localVarCall = postNetworksValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1351,10 +1351,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postNetworksAsync(CreateNetworksRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postNetworksAsync(CreateNetworksRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postNetworksValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1549,7 +1549,7 @@ public class NetworksApi {
      * Replace the network information
      * @param name Name of the network (required)
      * @param body Replace the network information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1559,8 +1559,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putNetworksByName(String name, UpdateNetworksByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putNetworksByNameWithHttpInfo(name, body);
+    public StandardServerResponse putNetworksByName(String name, UpdateNetworksByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putNetworksByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1569,7 +1569,7 @@ public class NetworksApi {
      * Replace the network information
      * @param name Name of the network (required)
      * @param body Replace the network information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1579,9 +1579,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putNetworksByNameWithHttpInfo(String name, UpdateNetworksByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putNetworksByNameWithHttpInfo(String name, UpdateNetworksByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putNetworksByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1601,10 +1601,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putNetworksByNameAsync(String name, UpdateNetworksByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putNetworksByNameAsync(String name, UpdateNetworksByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putNetworksByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

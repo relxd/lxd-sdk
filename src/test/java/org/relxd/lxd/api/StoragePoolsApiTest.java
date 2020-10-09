@@ -15,7 +15,6 @@ package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest;
@@ -28,6 +27,7 @@ import org.relxd.lxd.model.GetStoragePoolsByNameResponse;
 import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameResponse;
 import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse;
 import org.relxd.lxd.model.PatchStoragePoolsByNameRequest;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest2;
@@ -60,7 +60,7 @@ public class StoragePoolsApiTest {
     @Test
     public void deleteStoragePoolsByNameTest() throws ApiException {
         String pool = null;
-        BasicStandardReturnValueResponse response = api.deleteStoragePoolsByName(pool);
+        StandardServerResponse response = api.deleteStoragePoolsByName(pool);
 
         // TODO: test validations
     }
@@ -78,7 +78,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         String type = null;
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
+        StandardServerResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
 
         // TODO: test validations
     }
@@ -244,7 +244,7 @@ public class StoragePoolsApiTest {
     public void patchStoragePoolsByNameTest() throws ApiException {
         String pool = null;
         PatchStoragePoolsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchStoragePoolsByName(pool, body);
+        StandardServerResponse response = api.patchStoragePoolsByName(pool, body);
 
         // TODO: test validations
     }
@@ -263,7 +263,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body = null;
-        BasicStandardReturnValueResponse response = api.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+        StandardServerResponse response = api.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -279,7 +279,7 @@ public class StoragePoolsApiTest {
     @Test
     public void postStoragePoolsTest() throws ApiException {
         CreateStoragePoolsRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePools(body);
+        StandardServerResponse response = api.postStoragePools(body);
 
         // TODO: test validations
     }
@@ -296,7 +296,7 @@ public class StoragePoolsApiTest {
     public void postStoragePoolsByNameVolumesTest() throws ApiException {
         String pool = null;
         CreateStoragePoolsByNameVolumesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePoolsByNameVolumes(pool, body);
+        StandardServerResponse response = api.postStoragePoolsByNameVolumes(pool, body);
 
         // TODO: test validations
     }
@@ -314,7 +314,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         String type = null;
         CreateStoragePoolsByNameVolumesByTypeRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePoolsByNameVolumesByType(pool, type, body);
+        StandardServerResponse response = api.postStoragePoolsByNameVolumesByType(pool, type, body);
 
         // TODO: test validations
     }
@@ -388,7 +388,7 @@ public class StoragePoolsApiTest {
     public void putStoragePoolsByNameTest() throws ApiException {
         String pool = null;
         UpdateStoragePoolsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putStoragePoolsByName(pool, body);
+        StandardServerResponse response = api.putStoragePoolsByName(pool, body);
 
         // TODO: test validations
     }
@@ -407,7 +407,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         UpdateStoragePoolsByNameVolumesByTypeNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+        StandardServerResponse response = api.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
 
         // TODO: test validations
     }

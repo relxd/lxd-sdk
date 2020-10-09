@@ -15,7 +15,6 @@ package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.CreateImagesAliasesRequest;
 import org.relxd.lxd.model.CreateImagesFingerprintExportRequest;
@@ -25,6 +24,7 @@ import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetImagesAliasesByNameResponse;
 import org.relxd.lxd.model.GetImagesFingerprintResponse;
 import org.relxd.lxd.model.PatchImagesFingerprintRequest;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.UpdateImagesFingerprintRequest;
 import org.junit.Test;
@@ -38,7 +38,7 @@ import java.util.Map;
 /**
  * API tests for ImagesApi
  */
-@Ignore
+
 public class ImagesApiTest {
 
     private final ImagesApi api = new ImagesApi();
@@ -55,7 +55,7 @@ public class ImagesApiTest {
     @Test
     public void deleteImagesAliasesByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteImagesAliasesByName(name);
+        StandardServerResponse response = api.deleteImagesAliasesByName(name);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class ImagesApiTest {
     public void getImagesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getImages(recursion, filter);
+        StandardServerResponse response = api.getImages(recursion, filter);
 
         // TODO: test validations
     }
@@ -105,7 +105,7 @@ public class ImagesApiTest {
     public void getImagesAliasesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getImagesAliases(recursion, filter);
+        StandardServerResponse response = api.getImagesAliases(recursion, filter);
 
         // TODO: test validations
     }
@@ -131,6 +131,25 @@ public class ImagesApiTest {
     /**
      * 
      *
+     * Download the image tarball
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getImagesByFingerprintExportTest() throws ApiException {
+        String fingerprint = null;
+        Integer recursion = null;
+        String filter = null;
+        String secret = null;
+        GetImagesFingerprintResponse response = api.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
      * Image description and metadata
      *
      * @throws ApiException
@@ -142,26 +161,7 @@ public class ImagesApiTest {
         Integer recursion = null;
         String filter = null;
         String secret = null;
-        GetImagesFingerprintResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Download the image tarball
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getImagesFingerprintExportTest() throws ApiException {
-        String fingerprint = null;
-        Integer recursion = null;
-        String filter = null;
-        String secret = null;
-        GetImagesFingerprintResponse response = api.getImagesFingerprintExport(fingerprint, recursion, filter, secret);
+        StandardServerResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
 
         // TODO: test validations
     }
@@ -196,7 +196,7 @@ public class ImagesApiTest {
     public void patchImagesAliasesByNameTest() throws ApiException {
         String name = null;
         UpdateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchImagesAliasesByName(name, body);
+        StandardServerResponse response = api.patchImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -213,7 +213,7 @@ public class ImagesApiTest {
     public void patchImagesFingerprintTest() throws ApiException {
         String fingerprint = null;
         PatchImagesFingerprintRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchImagesFingerprint(fingerprint, body);
+        StandardServerResponse response = api.patchImagesFingerprint(fingerprint, body);
 
         // TODO: test validations
     }
@@ -249,7 +249,7 @@ public class ImagesApiTest {
     @Test
     public void postImagesAliasesTest() throws ApiException {
         CreateImagesAliasesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postImagesAliases(body);
+        StandardServerResponse response = api.postImagesAliases(body);
 
         // TODO: test validations
     }
@@ -266,7 +266,7 @@ public class ImagesApiTest {
     public void postImagesAliasesByNameTest() throws ApiException {
         String name = null;
         CreateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.postImagesAliasesByName(name, body);
+        StandardServerResponse response = api.postImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -317,7 +317,7 @@ public class ImagesApiTest {
     public void putImagesAliasesByNameTest() throws ApiException {
         String name = null;
         UpdateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putImagesAliasesByName(name, body);
+        StandardServerResponse response = api.putImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -334,7 +334,7 @@ public class ImagesApiTest {
     public void putImagesFingerprintTest() throws ApiException {
         String fingerprint = null;
         UpdateImagesFingerprintRequest body = null;
-        BasicStandardReturnValueResponse response = api.putImagesFingerprint(fingerprint, body);
+        StandardServerResponse response = api.putImagesFingerprint(fingerprint, body);
 
         // TODO: test validations
     }

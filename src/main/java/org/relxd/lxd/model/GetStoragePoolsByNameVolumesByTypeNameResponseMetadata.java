@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config12;
+import org.relxd.lxd.model.BlockFileSystemAndMountOptionsConfig;
 
 /**
  * GetStoragePoolsByNameVolumesByTypeNameResponseMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class GetStoragePoolsByNameVolumesByTypeNameResponseMetadata {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -46,7 +46,7 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseMetadata {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config12 config;
+  private BlockFileSystemAndMountOptionsConfig config;
 
 
   public GetStoragePoolsByNameVolumesByTypeNameResponseMetadata type(String type) {
@@ -126,7 +126,7 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseMetadata {
   }
 
 
-  public GetStoragePoolsByNameVolumesByTypeNameResponseMetadata config(Config12 config) {
+  public GetStoragePoolsByNameVolumesByTypeNameResponseMetadata config(BlockFileSystemAndMountOptionsConfig config) {
     
     this.config = config;
     return this;
@@ -139,12 +139,12 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseMetadata {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config12 getConfig() {
+  public BlockFileSystemAndMountOptionsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config12 config) {
+  public void setConfig(BlockFileSystemAndMountOptionsConfig config) {
     this.config = config;
   }
 

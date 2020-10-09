@@ -14,11 +14,11 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateProfilesByNameRequest;
 import org.relxd.lxd.model.CreateProfilesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetProfilesByNameResponse;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateProfilesByNameRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,7 +48,7 @@ public class ProfilesApiTest {
     @Test
     public void deleteProfilesByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteProfilesByName(name);
+        StandardServerResponse response = api.deleteProfilesByName(name);
 
         // TODO: test validations
     }
@@ -100,7 +100,7 @@ public class ProfilesApiTest {
     public void patchProfilesByNameTest() throws ApiException {
         String name = null;
         UpdateProfilesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchProfilesByName(name, body);
+        StandardServerResponse response = api.patchProfilesByName(name, body);
 
         // TODO: test validations
     }
@@ -116,7 +116,7 @@ public class ProfilesApiTest {
     @Test
     public void postProfilesTest() throws ApiException {
         CreateProfilesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postProfiles(body);
+        StandardServerResponse response = api.postProfiles(body);
 
         // TODO: test validations
     }
@@ -150,7 +150,7 @@ public class ProfilesApiTest {
     public void putProfilesByNameTest() throws ApiException {
         String name = null;
         UpdateProfilesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putProfilesByName(name, body);
+        StandardServerResponse response = api.putProfilesByName(name, body);
 
         // TODO: test validations
     }

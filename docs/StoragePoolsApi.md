@@ -1,6 +1,6 @@
 # StoragePoolsApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 <a name="deleteStoragePoolsByName"></a>
 # **deleteStoragePoolsByName**
-> BasicStandardReturnValueResponse deleteStoragePoolsByName(pool)
+> StandardServerResponse deleteStoragePoolsByName(pool)
 
 
 
@@ -48,7 +48,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -57,7 +57,7 @@ public class Example {
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteStoragePoolsByName(pool);
+      StandardServerResponse result = apiInstance.deleteStoragePoolsByName(pool);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#deleteStoragePoolsByName");
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteStoragePoolsByNameVolumesByTypeName"></a>
 # **deleteStoragePoolsByNameVolumesByTypeName**
-> BasicStandardReturnValueResponse deleteStoragePoolsByNameVolumesByTypeName(pool, type, name)
+> StandardServerResponse deleteStoragePoolsByNameVolumesByTypeName(pool, type, name)
 
 
 
@@ -118,7 +118,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -129,7 +129,7 @@ public class Example {
     String type = "type_example"; // String | Type of the volume
     String name = "name_example"; // String | name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
+      StandardServerResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#deleteStoragePoolsByNameVolumesByTypeName");
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -264,7 +264,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -335,7 +335,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -408,7 +408,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -481,7 +481,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -554,7 +554,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -631,7 +631,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -708,7 +708,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStoragePoolsByName"></a>
 # **patchStoragePoolsByName**
-> BasicStandardReturnValueResponse patchStoragePoolsByName(pool, body)
+> StandardServerResponse patchStoragePoolsByName(pool, body)
 
 
 
@@ -785,7 +785,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -795,7 +795,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     PatchStoragePoolsByNameRequest body = new PatchStoragePoolsByNameRequest(); // PatchStoragePoolsByNameRequest | Update the storage pool information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchStoragePoolsByName(pool, body);
+      StandardServerResponse result = apiInstance.patchStoragePoolsByName(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#patchStoragePoolsByName");
@@ -817,7 +817,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStoragePoolsByNameVolumesByTypeName"></a>
 # **patchStoragePoolsByNameVolumesByTypeName**
-> BasicStandardReturnValueResponse patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
+> StandardServerResponse patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
 
 
 
@@ -856,7 +856,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -868,7 +868,7 @@ public class Example {
     String name = "name_example"; // String | name
     UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body = new UpdateStoragePoolsByNameVolumesByTypeNameRequest2(); // UpdateStoragePoolsByNameVolumesByTypeNameRequest2 | Update the storage volume information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+      StandardServerResponse result = apiInstance.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#patchStoragePoolsByNameVolumesByTypeName");
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -912,7 +912,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePools"></a>
 # **postStoragePools**
-> BasicStandardReturnValueResponse postStoragePools(body)
+> StandardServerResponse postStoragePools(body)
 
 
 
@@ -931,7 +931,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -940,7 +940,7 @@ public class Example {
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     CreateStoragePoolsRequest body = new CreateStoragePoolsRequest(); // CreateStoragePoolsRequest | Define a new storage pool
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postStoragePools(body);
+      StandardServerResponse result = apiInstance.postStoragePools(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePools");
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumes"></a>
 # **postStoragePoolsByNameVolumes**
-> BasicStandardReturnValueResponse postStoragePoolsByNameVolumes(pool, body)
+> StandardServerResponse postStoragePoolsByNameVolumes(pool, body)
 
 
 
@@ -1000,7 +1000,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1010,7 +1010,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     CreateStoragePoolsByNameVolumesRequest body = new CreateStoragePoolsByNameVolumesRequest(); // CreateStoragePoolsByNameVolumesRequest | Create a new storage volume on a given storage pool
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postStoragePoolsByNameVolumes(pool, body);
+      StandardServerResponse result = apiInstance.postStoragePoolsByNameVolumes(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumes");
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumesByType"></a>
 # **postStoragePoolsByNameVolumesByType**
-> BasicStandardReturnValueResponse postStoragePoolsByNameVolumesByType(pool, type, body)
+> StandardServerResponse postStoragePoolsByNameVolumesByType(pool, type, body)
 
 
 
@@ -1071,7 +1071,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1082,7 +1082,7 @@ public class Example {
     String type = "type_example"; // String | Type of the volume
     CreateStoragePoolsByNameVolumesByTypeRequest body = new CreateStoragePoolsByNameVolumesByTypeRequest(); // CreateStoragePoolsByNameVolumesByTypeRequest | Create a new storage volume of a particular type on a given storage pool
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postStoragePoolsByNameVolumesByType(pool, type, body);
+      StandardServerResponse result = apiInstance.postStoragePoolsByNameVolumesByType(pool, type, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumesByType");
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1144,7 +1144,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1219,7 +1219,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1294,7 +1294,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1350,7 +1350,7 @@ Name | Type | Description  | Notes
 
 <a name="putStoragePoolsByName"></a>
 # **putStoragePoolsByName**
-> BasicStandardReturnValueResponse putStoragePoolsByName(pool, body)
+> StandardServerResponse putStoragePoolsByName(pool, body)
 
 
 
@@ -1369,7 +1369,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1379,7 +1379,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     UpdateStoragePoolsByNameRequest body = new UpdateStoragePoolsByNameRequest(); // UpdateStoragePoolsByNameRequest | Replace the storage pool information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putStoragePoolsByName(pool, body);
+      StandardServerResponse result = apiInstance.putStoragePoolsByName(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#putStoragePoolsByName");
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1421,7 +1421,7 @@ Name | Type | Description  | Notes
 
 <a name="putStoragePoolsByNameVolumesByTypeName"></a>
 # **putStoragePoolsByNameVolumesByTypeName**
-> BasicStandardReturnValueResponse putStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
+> StandardServerResponse putStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
 
 
 
@@ -1440,7 +1440,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1452,7 +1452,7 @@ public class Example {
     String name = "name_example"; // String | name
     UpdateStoragePoolsByNameVolumesByTypeNameRequest body = new UpdateStoragePoolsByNameVolumesByTypeNameRequest(); // UpdateStoragePoolsByNameVolumesByTypeNameRequest | Replace the storage volume information or restore from snapshot
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+      StandardServerResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#putStoragePoolsByNameVolumesByTypeName");
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1515,7 +1515,7 @@ import org.relxd.lxd.api.StoragePoolsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");

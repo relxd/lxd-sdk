@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsByNameRequest;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsRequest;
 import org.relxd.lxd.model.CreateInstancesByNameConsoleRequest;
@@ -47,6 +46,7 @@ import org.relxd.lxd.model.GetInstancesByNameStateResponse;
 import org.relxd.lxd.model.GetSnapshotInformationResponse;
 import org.relxd.lxd.model.PatchInstancesByNameRequest;
 import org.relxd.lxd.model.RawFile;
+import org.relxd.lxd.model.StandardServerResponse;
 import java.util.UUID;
 import org.relxd.lxd.model.UpdateInstancesByNameRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameSnapshotsInformationRequest;
@@ -508,7 +508,7 @@ public class InstancesApi {
      * Delete a file in the instance
      * @param name Instance name (required)
      * @param path directory listing from the instance (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -518,8 +518,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteInstancesByNameFiles(String name, String path) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteInstancesByNameFilesWithHttpInfo(name, path);
+    public StandardServerResponse deleteInstancesByNameFiles(String name, String path) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameFilesWithHttpInfo(name, path);
         return localVarResp.getData();
     }
 
@@ -528,7 +528,7 @@ public class InstancesApi {
      * Delete a file in the instance
      * @param name Instance name (required)
      * @param path directory listing from the instance (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -538,9 +538,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteInstancesByNameFilesWithHttpInfo(String name, String path) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteInstancesByNameFilesWithHttpInfo(String name, String path) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameFilesValidateBeforeCall(name, path, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -560,10 +560,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameFilesAsync(String name, String path, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameFilesAsync(String name, String path, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameFilesValidateBeforeCall(name, path, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -637,7 +637,7 @@ public class InstancesApi {
      * Delete a particular log file.
      * @param name Instance name (required)
      * @param logFile Instance log file (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,8 +647,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteInstancesByNameLogsFile(String name, String logFile) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteInstancesByNameLogsFileWithHttpInfo(name, logFile);
+    public StandardServerResponse deleteInstancesByNameLogsFile(String name, String logFile) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameLogsFileWithHttpInfo(name, logFile);
         return localVarResp.getData();
     }
 
@@ -657,7 +657,7 @@ public class InstancesApi {
      * Delete a particular log file.
      * @param name Instance name (required)
      * @param logFile Instance log file (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -667,9 +667,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteInstancesByNameLogsFileWithHttpInfo(String name, String logFile) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteInstancesByNameLogsFileWithHttpInfo(String name, String logFile) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameLogsFileValidateBeforeCall(name, logFile, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -689,10 +689,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameLogsFileAsync(String name, String logFile, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameLogsFileAsync(String name, String logFile, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameLogsFileValidateBeforeCall(name, logFile, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -769,7 +769,7 @@ public class InstancesApi {
      * Delete an instance template
      * @param name Instance name (required)
      * @param path Template (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -779,8 +779,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteInstancesByNameMetadataTemplates(String name, String path) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteInstancesByNameMetadataTemplatesWithHttpInfo(name, path);
+    public StandardServerResponse deleteInstancesByNameMetadataTemplates(String name, String path) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameMetadataTemplatesWithHttpInfo(name, path);
         return localVarResp.getData();
     }
 
@@ -789,7 +789,7 @@ public class InstancesApi {
      * Delete an instance template
      * @param name Instance name (required)
      * @param path Template (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -799,9 +799,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -821,10 +821,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameMetadataTemplatesAsync(String name, String path, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameMetadataTemplatesAsync(String name, String path, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2989,7 +2989,7 @@ public class InstancesApi {
      * Update instance configuration
      * @param name Instance name (required)
      * @param body Update instance configuration (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2999,8 +2999,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchInstancesByName(String name, PatchInstancesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchInstancesByNameWithHttpInfo(name, body);
+    public StandardServerResponse patchInstancesByName(String name, PatchInstancesByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchInstancesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -3009,7 +3009,7 @@ public class InstancesApi {
      * Update instance configuration
      * @param name Instance name (required)
      * @param body Update instance configuration (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3019,9 +3019,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchInstancesByNameWithHttpInfo(String name, PatchInstancesByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchInstancesByNameWithHttpInfo(String name, PatchInstancesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchInstancesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3041,10 +3041,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchInstancesByNameAsync(String name, PatchInstancesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchInstancesByNameAsync(String name, PatchInstancesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchInstancesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3906,7 +3906,7 @@ public class InstancesApi {
      * @param xLXDWrite overwrite (or append) (optional)
      * @param xLXDType one of directory or file or symlink (optional)
      * @param body Upload a file to the instance (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3916,8 +3916,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postInstancesByNameFiles(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postInstancesByNameFilesWithHttpInfo(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+    public StandardServerResponse postInstancesByNameFiles(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postInstancesByNameFilesWithHttpInfo(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
         return localVarResp.getData();
     }
 
@@ -3932,7 +3932,7 @@ public class InstancesApi {
      * @param xLXDWrite overwrite (or append) (optional)
      * @param xLXDType one of directory or file or symlink (optional)
      * @param body Upload a file to the instance (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3942,9 +3942,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postInstancesByNameFilesWithHttpInfo(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postInstancesByNameFilesWithHttpInfo(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameFilesValidateBeforeCall(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3970,10 +3970,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameFilesAsync(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameFilesAsync(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameFilesValidateBeforeCall(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4052,7 +4052,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Add a container template (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4062,8 +4062,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
+    public StandardServerResponse postInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
         return localVarResp.getData();
     }
 
@@ -4073,7 +4073,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Add a container template (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4083,9 +4083,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4106,10 +4106,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4560,7 +4560,7 @@ public class InstancesApi {
      * Replaces instance metadata
      * @param name Instance name (required)
      * @param body Replaces instance metadata (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4570,8 +4570,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putInstancesByNameMetadata(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putInstancesByNameMetadataWithHttpInfo(name, body);
+    public StandardServerResponse putInstancesByNameMetadata(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putInstancesByNameMetadataWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -4580,7 +4580,7 @@ public class InstancesApi {
      * Replaces instance metadata
      * @param name Instance name (required)
      * @param body Replaces instance metadata (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4590,9 +4590,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putInstancesByNameMetadataWithHttpInfo(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putInstancesByNameMetadataWithHttpInfo(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameMetadataValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4612,10 +4612,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameMetadataAsync(String name, GetInstancesByNameMetadataResponse body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameMetadataAsync(String name, GetInstancesByNameMetadataResponse body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameMetadataValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4694,7 +4694,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Replace content of a template (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4704,8 +4704,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
+    public StandardServerResponse putInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
         return localVarResp.getData();
     }
 
@@ -4715,7 +4715,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Replace content of a template (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4725,9 +4725,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4748,10 +4748,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

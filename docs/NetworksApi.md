@@ -1,6 +1,6 @@
 # NetworksApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="deleteNetworksByName"></a>
 # **deleteNetworksByName**
-> BasicStandardReturnValueResponse deleteNetworksByName(name)
+> StandardServerResponse deleteNetworksByName(name)
 
 
 
@@ -39,7 +39,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -48,7 +48,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteNetworksByName(name);
+      StandardServerResponse result = apiInstance.deleteNetworksByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#deleteNetworksByName");
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteNetworksUUID"></a>
 # **deleteNetworksUUID**
-> BasicStandardReturnValueResponse deleteNetworksUUID(uuid)
+> StandardServerResponse deleteNetworksUUID(uuid)
 
 
 
@@ -108,7 +108,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -117,7 +117,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String uuid = "uuid_example"; // String | UUID
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteNetworksUUID(uuid);
+      StandardServerResponse result = apiInstance.deleteNetworksUUID(uuid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#deleteNetworksUUID");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -248,7 +248,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -321,7 +321,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -394,7 +394,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -467,7 +467,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -542,7 +542,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 <a name="patchNetworksByName"></a>
 # **patchNetworksByName**
-> BasicStandardReturnValueResponse patchNetworksByName(name, body)
+> StandardServerResponse patchNetworksByName(name, body)
 
 
 
@@ -617,7 +617,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -627,7 +627,7 @@ public class Example {
     String name = "name_example"; // String | Name of the network
     PatchNetworksByNameRequest body = new PatchNetworksByNameRequest(); // PatchNetworksByNameRequest | Update the network information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchNetworksByName(name, body);
+      StandardServerResponse result = apiInstance.patchNetworksByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#patchNetworksByName");
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 <a name="postNetworks"></a>
 # **postNetworks**
-> BasicStandardReturnValueResponse postNetworks(body)
+> StandardServerResponse postNetworks(body)
 
 
 
@@ -688,7 +688,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -697,7 +697,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     CreateNetworksRequest body = new CreateNetworksRequest(); // CreateNetworksRequest | Define a new network
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postNetworks(body);
+      StandardServerResponse result = apiInstance.postNetworks(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#postNetworks");
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -757,7 +757,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 
 <a name="putNetworksByName"></a>
 # **putNetworksByName**
-> BasicStandardReturnValueResponse putNetworksByName(name, body)
+> StandardServerResponse putNetworksByName(name, body)
 
 
 
@@ -829,7 +829,7 @@ import org.relxd.lxd.api.NetworksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -839,7 +839,7 @@ public class Example {
     String name = "name_example"; // String | Name of the network
     UpdateNetworksByNameRequest body = new UpdateNetworksByNameRequest(); // UpdateNetworksByNameRequest | Replace the network information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putNetworksByName(name, body);
+      StandardServerResponse result = apiInstance.putNetworksByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#putNetworksByName");
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 

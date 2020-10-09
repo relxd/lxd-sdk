@@ -1,6 +1,6 @@
 # ClusterApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -104,7 +104,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -175,7 +175,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -246,7 +246,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 <a name="postClusterMembersByName"></a>
 # **postClusterMembersByName**
-> BasicStandardReturnValueResponse postClusterMembersByName(name, body)
+> StandardServerResponse postClusterMembersByName(name, body)
 
 
 
@@ -319,7 +319,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -329,7 +329,7 @@ public class Example {
     String name = "name_example"; // String | Members name
     UpdateClusterMembersByNameRequest body = new UpdateClusterMembersByNameRequest(); // UpdateClusterMembersByNameRequest | Rename a cluster member
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postClusterMembersByName(name, body);
+      StandardServerResponse result = apiInstance.postClusterMembersByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#postClusterMembersByName");
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ import org.relxd.lxd.api.ClusterApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");

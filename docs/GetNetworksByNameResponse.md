@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**Config**](Config.md) |  |  [optional]
+**config** | [**NetworkIPConfig**](NetworkIPConfig.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **managed** | **Boolean** |  |  [optional]
 **type** | **String** |  |  [optional]

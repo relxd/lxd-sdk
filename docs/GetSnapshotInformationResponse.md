@@ -7,11 +7,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **architecture** | **String** |  |  [optional]
-**config** | [**Config4**](Config4.md) |  |  [optional]
+**config** | [**SecurityNestingConfig**](SecurityNestingConfig.md) |  |  [optional]
 **createdAt** | **String** |  |  [optional]
 **devices** | [**ExpandedDevices**](ExpandedDevices.md) |  |  [optional]
 **ephemeral** | **Boolean** |  |  [optional]
-**expandedConfig** | [**Config4**](Config4.md) |  |  [optional]
+**expandedConfig** | [**SecurityNestingConfig**](SecurityNestingConfig.md) |  |  [optional]
 **expandedDevices** | [**ExpandedDevices**](ExpandedDevices.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **profiles** | **List&lt;String&gt;** |  |  [optional]

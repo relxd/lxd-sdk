@@ -25,15 +25,15 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config2;
-import org.relxd.lxd.model.Devices2;
+import org.relxd.lxd.model.DevicesRoot;
+import org.relxd.lxd.model.HardwareSpecsConfig;
 import org.relxd.lxd.model.UpdateInstancesByNameRequest2;
 import org.relxd.lxd.model.UpdateInstancesByNameRequestOneOf;
 
 /**
  * UpdateInstancesByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class UpdateInstancesByNameRequest {
   public static final String SERIALIZED_NAME_RESTORE = "restore";
   @SerializedName(SERIALIZED_NAME_RESTORE)
@@ -45,11 +45,11 @@ public class UpdateInstancesByNameRequest {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config2 config;
+  private HardwareSpecsConfig config;
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices2 devices;
+  private DevicesRoot devices;
 
   public static final String SERIALIZED_NAME_EPHEMERAL = "ephemeral";
   @SerializedName(SERIALIZED_NAME_EPHEMERAL)
@@ -106,7 +106,7 @@ public class UpdateInstancesByNameRequest {
   }
 
 
-  public UpdateInstancesByNameRequest config(Config2 config) {
+  public UpdateInstancesByNameRequest config(HardwareSpecsConfig config) {
     
     this.config = config;
     return this;
@@ -119,17 +119,17 @@ public class UpdateInstancesByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config2 getConfig() {
+  public HardwareSpecsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config2 config) {
+  public void setConfig(HardwareSpecsConfig config) {
     this.config = config;
   }
 
 
-  public UpdateInstancesByNameRequest devices(Devices2 devices) {
+  public UpdateInstancesByNameRequest devices(DevicesRoot devices) {
     
     this.devices = devices;
     return this;
@@ -142,12 +142,12 @@ public class UpdateInstancesByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices2 getDevices() {
+  public DevicesRoot getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices2 devices) {
+  public void setDevices(DevicesRoot devices) {
     this.devices = devices;
   }
 

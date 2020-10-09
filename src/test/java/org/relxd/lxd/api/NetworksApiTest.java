@@ -14,7 +14,6 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.CreateNetworksByNameRequest;
 import org.relxd.lxd.model.CreateNetworksRequest;
@@ -23,6 +22,7 @@ import org.relxd.lxd.model.GetNetworksByNameResponse;
 import org.relxd.lxd.model.GetNetworksByNameStateResponse;
 import org.relxd.lxd.model.GetNetworksUUIDResponse;
 import org.relxd.lxd.model.PatchNetworksByNameRequest;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateNetworksByNameRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -52,7 +52,7 @@ public class NetworksApiTest {
     @Test
     public void deleteNetworksByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksByName(name);
+        StandardServerResponse response = api.deleteNetworksByName(name);
 
         // TODO: test validations
     }
@@ -68,7 +68,7 @@ public class NetworksApiTest {
     @Test
     public void deleteNetworksUUIDTest() throws ApiException {
         String uuid = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksUUID(uuid);
+        StandardServerResponse response = api.deleteNetworksUUID(uuid);
 
         // TODO: test validations
     }
@@ -194,7 +194,7 @@ public class NetworksApiTest {
     public void patchNetworksByNameTest() throws ApiException {
         String name = null;
         PatchNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchNetworksByName(name, body);
+        StandardServerResponse response = api.patchNetworksByName(name, body);
 
         // TODO: test validations
     }
@@ -210,7 +210,7 @@ public class NetworksApiTest {
     @Test
     public void postNetworksTest() throws ApiException {
         CreateNetworksRequest body = null;
-        BasicStandardReturnValueResponse response = api.postNetworks(body);
+        StandardServerResponse response = api.postNetworks(body);
 
         // TODO: test validations
     }
@@ -244,7 +244,7 @@ public class NetworksApiTest {
     public void putNetworksByNameTest() throws ApiException {
         String name = null;
         UpdateNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putNetworksByName(name, body);
+        StandardServerResponse response = api.putNetworksByName(name, body);
 
         // TODO: test validations
     }

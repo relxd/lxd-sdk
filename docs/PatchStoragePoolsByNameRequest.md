@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**Config11**](Config11.md) |  |  [optional]
+**config** | [**VolumeBlockFileSystemConfig**](VolumeBlockFileSystemConfig.md) |  |  [optional]
 
 
 

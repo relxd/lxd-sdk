@@ -30,90 +30,11 @@ import org.relxd.lxd.model.StandardReturnValueResponse;
 /**
  * GetInstancesByNameStateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
-public class GetInstancesByNameStateResponse {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
-
-  public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
-  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
-  private Integer statusCode;
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
+public class GetInstancesByNameStateResponse extends StandardReturnValueResponse {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private GetInstancesByNameStateMetadataResponse metadata;
-
-
-  public GetInstancesByNameStateResponse type(String type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(example = "sync", required = true, value = "")
-
-  public String getType() {
-    return type;
-  }
-
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
-  public GetInstancesByNameStateResponse status(String status) {
-    
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * String version of the operation&#39;s status
-   * @return status
-  **/
-  @ApiModelProperty(example = "Success", required = true, value = "String version of the operation's status")
-
-  public String getStatus() {
-    return status;
-  }
-
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-
-  public GetInstancesByNameStateResponse statusCode(Integer statusCode) {
-    
-    this.statusCode = statusCode;
-    return this;
-  }
-
-   /**
-   * Integer version of the operation&#39;s status (use this rather than status)
-   * @return statusCode
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "200", value = "Integer version of the operation's status (use this rather than status)")
-
-  public Integer getStatusCode() {
-    return statusCode;
-  }
-
-
-  public void setStatusCode(Integer statusCode) {
-    this.statusCode = statusCode;
-  }
 
 
   public GetInstancesByNameStateResponse metadata(GetInstancesByNameStateMetadataResponse metadata) {
@@ -148,15 +69,13 @@ public class GetInstancesByNameStateResponse {
       return false;
     }
     GetInstancesByNameStateResponse getInstancesByNameStateResponse = (GetInstancesByNameStateResponse) o;
-    return Objects.equals(this.type, getInstancesByNameStateResponse.type) &&
-        Objects.equals(this.status, getInstancesByNameStateResponse.status) &&
-        Objects.equals(this.statusCode, getInstancesByNameStateResponse.statusCode) &&
-        Objects.equals(this.metadata, getInstancesByNameStateResponse.metadata);
+    return Objects.equals(this.metadata, getInstancesByNameStateResponse.metadata) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, statusCode, metadata);
+    return Objects.hash(metadata, super.hashCode());
   }
 
 
@@ -164,9 +83,7 @@ public class GetInstancesByNameStateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetInstancesByNameStateResponse {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

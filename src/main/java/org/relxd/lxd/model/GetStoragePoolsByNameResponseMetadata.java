@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config9;
+import org.relxd.lxd.model.DiskConfig;
 
 /**
  * GetStoragePoolsByNameResponseMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class GetStoragePoolsByNameResponseMetadata {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -46,7 +46,7 @@ public class GetStoragePoolsByNameResponseMetadata {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config9 config;
+  private DiskConfig config;
 
 
   public GetStoragePoolsByNameResponseMetadata name(String name) {
@@ -126,7 +126,7 @@ public class GetStoragePoolsByNameResponseMetadata {
   }
 
 
-  public GetStoragePoolsByNameResponseMetadata config(Config9 config) {
+  public GetStoragePoolsByNameResponseMetadata config(DiskConfig config) {
     
     this.config = config;
     return this;
@@ -139,12 +139,12 @@ public class GetStoragePoolsByNameResponseMetadata {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config9 getConfig() {
+  public DiskConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config9 config) {
+  public void setConfig(DiskConfig config) {
     this.config = config;
   }
 

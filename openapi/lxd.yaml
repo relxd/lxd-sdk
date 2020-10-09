@@ -12,7 +12,7 @@ info:
   version: 1.0.0
 servers:
   - description: LXD
-    url: https://lxd.com
+    url: http://localhost:2375/
 tags:
   - description: Perform REST operations on Lxd
     name: lxd
@@ -74,11 +74,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetApiListResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/StandardServerResponse'
           description: List of supported APIs
         "400":
           content:
@@ -105,7 +103,7 @@ paths:
         - lxd
       x-codegen-request-body-name: body
       x-accepts: application/json
-  /1.0/:
+  /1.0:
     get:
       description: Server configuration and environment information
       operationId: getServerState
@@ -140,11 +138,11 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/GetServerStateResponse1'
+                  $ref: '#/components/examples/StandardServerResponse'
                 Example_2:
                   $ref: '#/components/examples/GetServerStateResponse2'
               schema:
-                $ref: '#/components/schemas/GetServerStateResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: Server configuration and environment information
         "400":
           content:
@@ -188,9 +186,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -233,9 +231,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -298,11 +296,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetCertificatesResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/StandardServerResponse'
           description: List of trusted certificates
         "400":
           content:
@@ -344,9 +340,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -394,9 +390,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -425,7 +421,7 @@ paths:
       x-accepts: application/json
     get:
       description: Return a trusted certificate information
-      operationId: getFingerprint
+      operationId: getCertificatesByFingerPrint
       parameters:
         - description: Unique fingerprint
           explode: false
@@ -440,7 +436,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetFingerprintResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: Trusted certificate information
         "400":
           content:
@@ -491,9 +487,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -545,9 +541,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -831,9 +827,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -1227,9 +1223,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -1447,9 +1443,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -1765,7 +1761,7 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
                 Example_2:
                   $ref: '#/components/examples/CreateInstancesByNameSnapshotsInformationResponse'
               schema:
@@ -2094,9 +2090,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -2297,9 +2293,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -2354,9 +2350,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -2497,9 +2493,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -2560,9 +2556,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -3097,11 +3093,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetImagesResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/StandardServerResponse'
           description: List of images (public or private)
         "400":
           content:
@@ -3304,7 +3298,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetImagesFingerprintResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: Download the image tarball
         "400":
           content:
@@ -3356,9 +3350,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -3410,9 +3404,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -3443,7 +3437,7 @@ paths:
   /1.0/images/{fingerprint}/export:
     get:
       description: Download the image tarball
-      operationId: getImagesFingerprintExport
+      operationId: getImagesByFingerprintExport
       parameters:
         - description: Unique fingerprint
           explode: false
@@ -3738,11 +3732,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetImagesAliasesResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/StandardServerResponse'
           description: List of aliases (public or private based on image visibility)
         "400":
           content:
@@ -3785,9 +3777,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -3834,9 +3826,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -3956,9 +3948,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4010,9 +4002,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4073,9 +4065,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4184,9 +4176,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4233,9 +4225,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4354,9 +4346,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4471,9 +4463,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4651,9 +4643,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -4992,9 +4984,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5041,9 +5033,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5162,9 +5154,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5279,9 +5271,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5390,9 +5382,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5439,9 +5431,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5569,9 +5561,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5695,9 +5687,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5806,9 +5798,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5855,9 +5847,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -5985,9 +5977,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6039,9 +6031,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6232,9 +6224,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6292,9 +6284,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6357,9 +6349,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6512,9 +6504,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -6578,7 +6570,7 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
                 Example_2:
                   $ref: '#/components/examples/CreateStoragePoolsByNameVolumesByTypeNameResponse'
               schema:
@@ -6646,9 +6638,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -7498,9 +7490,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicStandardReturnValueResponse'
+                  $ref: '#/components/examples/StandardServerResponse'
               schema:
-                $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+                $ref: '#/components/schemas/StandardServerResponse'
           description: A standard return value response
         "400":
           content:
@@ -8088,7 +8080,7 @@ components:
         status_code: 100
         operation: /1.0/instances/<id>
         metadata: {}
-    BasicStandardReturnValueResponse:
+    StandardServerResponse:
       description: Example Value
       value:
         type: sync
@@ -8281,9 +8273,9 @@ components:
         application/json:
           examples:
             Example:
-              $ref: '#/components/examples/BasicStandardReturnValueResponse'
+              $ref: '#/components/examples/StandardServerResponse'
           schema:
-            $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+            $ref: '#/components/schemas/StandardServerResponse'
       description: A standard return value response
     BasicBackgroundOperationResponse:
       content:
@@ -8413,7 +8405,7 @@ components:
         application/json:
           examples:
             Example_1:
-              $ref: '#/components/examples/BasicStandardReturnValueResponse'
+              $ref: '#/components/examples/StandardServerResponse'
             Example_2:
               $ref: '#/components/examples/CreateInstancesByNameSnapshotsInformationResponse'
           schema:
@@ -8649,7 +8641,7 @@ components:
         application/json:
           examples:
             Example_1:
-              $ref: '#/components/examples/BasicStandardReturnValueResponse'
+              $ref: '#/components/examples/StandardServerResponse'
             Example_2:
               $ref: '#/components/examples/CreateStoragePoolsByNameVolumesByTypeNameResponse'
           schema:
@@ -8745,7 +8737,7 @@ components:
         - statusCode
         - type
       type: object
-    BasicStandardReturnValueResponse:
+    StandardServerResponse:
       example:
         metadata: '{}'
         status_code: 200
@@ -9524,7 +9516,7 @@ components:
       type: object
     RawFile:
       oneOf:
-        - $ref: '#/components/schemas/BasicStandardReturnValueResponse'
+        - $ref: '#/components/schemas/StandardServerResponse'
         - type: object
     CreateInstancesByNameSnapshotRequest:
       example:

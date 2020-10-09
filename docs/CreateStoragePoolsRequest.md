@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**Config8**](Config8.md) |  |  [optional]
+**config** | [**SizeConfig**](SizeConfig.md) |  |  [optional]
 **driver** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 

@@ -1,6 +1,6 @@
 # ProjectsApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProjectsByName"></a>
 # **deleteProjectsByName**
-> BasicStandardReturnValueResponse deleteProjectsByName(name)
+> StandardServerResponse deleteProjectsByName(name)
 
 
 
@@ -34,7 +34,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -43,7 +43,7 @@ public class Example {
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteProjectsByName(name);
+      StandardServerResponse result = apiInstance.deleteProjectsByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#deleteProjectsByName");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -175,7 +175,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProjectsByName"></a>
 # **patchProjectsByName**
-> BasicStandardReturnValueResponse patchProjectsByName(name, body)
+> StandardServerResponse patchProjectsByName(name, body)
 
 
 
@@ -248,7 +248,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -258,7 +258,7 @@ public class Example {
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Update the project information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchProjectsByName(name, body);
+      StandardServerResponse result = apiInstance.patchProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#patchProjectsByName");
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 <a name="postProjects"></a>
 # **postProjects**
-> BasicStandardReturnValueResponse postProjects(body)
+> StandardServerResponse postProjects(body)
 
 
 
@@ -319,7 +319,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -328,7 +328,7 @@ public class Example {
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     CreateProjectsRequest body = new CreateProjectsRequest(); // CreateProjectsRequest | Define a new project
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postProjects(body);
+      StandardServerResponse result = apiInstance.postProjects(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#postProjects");
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -388,7 +388,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 <a name="putProjectsByName"></a>
 # **putProjectsByName**
-> BasicStandardReturnValueResponse putProjectsByName(name, body)
+> StandardServerResponse putProjectsByName(name, body)
 
 
 
@@ -461,7 +461,7 @@ import org.relxd.lxd.api.ProjectsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -471,7 +471,7 @@ public class Example {
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Replace the project information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putProjectsByName(name, body);
+      StandardServerResponse result = apiInstance.putProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#putProjectsByName");
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 

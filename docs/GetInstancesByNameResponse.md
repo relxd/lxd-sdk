@@ -7,9 +7,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **architecture** | **String** |  |  [optional]
-**config** | [**Config2**](Config2.md) |  |  [optional]
+**config** | [**HardwareSpecsConfig**](HardwareSpecsConfig.md) |  |  [optional]
 **createdAt** | **String** |  |  [optional]
-**devices** | [**Devices2**](Devices2.md) |  |  [optional]
+**devices** | [**DevicesRoot**](DevicesRoot.md) |  |  [optional]
 **ephemeral** | **Boolean** |  |  [optional]
 **expandedConfig** | [**ExpandedConfig**](ExpandedConfig.md) |  |  [optional]
 **expandedDevices** | [**ExpandedDevices**](ExpandedDevices.md) |  |  [optional]

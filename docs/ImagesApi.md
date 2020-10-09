@@ -1,6 +1,6 @@
 # ImagesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**getImages**](ImagesApi.md#getImages) | **GET** /1.0/images | 
 [**getImagesAliases**](ImagesApi.md#getImagesAliases) | **GET** /1.0/images/aliases | 
 [**getImagesAliasesByName**](ImagesApi.md#getImagesAliasesByName) | **GET** /1.0/images/aliases/{name} | 
+[**getImagesByFingerprintExport**](ImagesApi.md#getImagesByFingerprintExport) | **GET** /1.0/images/{fingerprint}/export | 
 [**getImagesFingerprint**](ImagesApi.md#getImagesFingerprint) | **GET** /1.0/images/{fingerprint} | 
-[**getImagesFingerprintExport**](ImagesApi.md#getImagesFingerprintExport) | **GET** /1.0/images/{fingerprint}/export | 
 [**getImagesFingerprintRefresh**](ImagesApi.md#getImagesFingerprintRefresh) | **GET** /1.0/images/{fingerprint}/refresh | 
 [**patchImagesAliasesByName**](ImagesApi.md#patchImagesAliasesByName) | **PATCH** /1.0/images/aliases/{name} | 
 [**patchImagesFingerprint**](ImagesApi.md#patchImagesFingerprint) | **PATCH** /1.0/images/{fingerprint} | 
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="deleteImagesAliasesByName"></a>
 # **deleteImagesAliasesByName**
-> BasicStandardReturnValueResponse deleteImagesAliasesByName(name)
+> StandardServerResponse deleteImagesAliasesByName(name)
 
 
 
@@ -44,7 +44,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -53,7 +53,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     String name = "name_example"; // String | Name of the alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteImagesAliasesByName(name);
+      StandardServerResponse result = apiInstance.deleteImagesAliasesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#deleteImagesAliasesByName");
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="getImages"></a>
 # **getImages**
-> List&lt;String&gt; getImages(recursion, filter)
+> StandardServerResponse getImages(recursion, filter)
 
 
 
@@ -182,7 +182,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -192,7 +192,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getImages(recursion, filter);
+      StandardServerResponse result = apiInstance.getImages(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImages");
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesAliases"></a>
 # **getImagesAliases**
-> List&lt;String&gt; getImagesAliases(recursion, filter)
+> StandardServerResponse getImagesAliases(recursion, filter)
 
 
 
@@ -253,7 +253,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -263,7 +263,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getImagesAliases(recursion, filter);
+      StandardServerResponse result = apiInstance.getImagesAliases(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesAliases");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -376,13 +376,13 @@ Name | Type | Description  | Notes
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 
-<a name="getImagesFingerprint"></a>
-# **getImagesFingerprint**
-> GetImagesFingerprintResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
+<a name="getImagesByFingerprintExport"></a>
+# **getImagesByFingerprintExport**
+> GetImagesFingerprintResponse getImagesByFingerprintExport(fingerprint, recursion, filter, secret)
 
 
 
-Image description and metadata
+Download the image tarball
 
 ### Example
 ```java
@@ -397,7 +397,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -409,10 +409,10 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String secret = SECRET; // String | secret
     try {
-      GetImagesFingerprintResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
+      GetImagesFingerprintResponse result = apiInstance.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ImagesApi#getImagesFingerprint");
+      System.err.println("Exception when calling ImagesApi#getImagesByFingerprintExport");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -451,13 +451,13 @@ Name | Type | Description  | Notes
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 
-<a name="getImagesFingerprintExport"></a>
-# **getImagesFingerprintExport**
-> GetImagesFingerprintResponse getImagesFingerprintExport(fingerprint, recursion, filter, secret)
+<a name="getImagesFingerprint"></a>
+# **getImagesFingerprint**
+> StandardServerResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
 
 
 
-Download the image tarball
+Image description and metadata
 
 ### Example
 ```java
@@ -472,7 +472,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -484,10 +484,10 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String secret = SECRET; // String | secret
     try {
-      GetImagesFingerprintResponse result = apiInstance.getImagesFingerprintExport(fingerprint, recursion, filter, secret);
+      StandardServerResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ImagesApi#getImagesFingerprintExport");
+      System.err.println("Exception when calling ImagesApi#getImagesFingerprint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetImagesFingerprintResponse**](GetImagesFingerprintResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -547,7 +547,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesAliasesByName"></a>
 # **patchImagesAliasesByName**
-> BasicStandardReturnValueResponse patchImagesAliasesByName(name, body)
+> StandardServerResponse patchImagesAliasesByName(name, body)
 
 
 
@@ -620,7 +620,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -630,7 +630,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Updates the alias target or description
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchImagesAliasesByName(name, body);
+      StandardServerResponse result = apiInstance.patchImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesAliasesByName");
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesFingerprint"></a>
 # **patchImagesFingerprint**
-> BasicStandardReturnValueResponse patchImagesFingerprint(fingerprint, body)
+> StandardServerResponse patchImagesFingerprint(fingerprint, body)
 
 
 
@@ -691,7 +691,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -701,7 +701,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     PatchImagesFingerprintRequest body = new PatchImagesFingerprintRequest(); // PatchImagesFingerprintRequest | Updates the image properties, update information and visibility
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
+      StandardServerResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesFingerprint");
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -762,7 +762,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliases"></a>
 # **postImagesAliases**
-> BasicStandardReturnValueResponse postImagesAliases(body)
+> StandardServerResponse postImagesAliases(body)
 
 
 
@@ -839,7 +839,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -848,7 +848,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     CreateImagesAliasesRequest body = new CreateImagesAliasesRequest(); // CreateImagesAliasesRequest | Create a new alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postImagesAliases(body);
+      StandardServerResponse result = apiInstance.postImagesAliases(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliases");
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliasesByName"></a>
 # **postImagesAliasesByName**
-> BasicStandardReturnValueResponse postImagesAliasesByName(name, body)
+> StandardServerResponse postImagesAliasesByName(name, body)
 
 
 
@@ -908,7 +908,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -918,7 +918,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     CreateImagesAliasesByNameRequest body = new CreateImagesAliasesByNameRequest(); // CreateImagesAliasesByNameRequest | Rename an alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postImagesAliasesByName(name, body);
+      StandardServerResponse result = apiInstance.postImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliasesByName");
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -980,7 +980,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1051,7 +1051,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1103,7 +1103,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesAliasesByName"></a>
 # **putImagesAliasesByName**
-> BasicStandardReturnValueResponse putImagesAliasesByName(name, body)
+> StandardServerResponse putImagesAliasesByName(name, body)
 
 
 
@@ -1122,7 +1122,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1132,7 +1132,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Replaces the alias target or description
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putImagesAliasesByName(name, body);
+      StandardServerResponse result = apiInstance.putImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesAliasesByName");
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesFingerprint"></a>
 # **putImagesFingerprint**
-> BasicStandardReturnValueResponse putImagesFingerprint(fingerprint, body)
+> StandardServerResponse putImagesFingerprint(fingerprint, body)
 
 
 
@@ -1193,7 +1193,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1203,7 +1203,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateImagesFingerprintRequest body = new UpdateImagesFingerprintRequest(); // UpdateImagesFingerprintRequest | Replaces the image properties, update information and visibility
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
+      StandardServerResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesFingerprint");
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 

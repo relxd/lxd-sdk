@@ -23,16 +23,16 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config8;
+import org.relxd.lxd.model.SizeConfig;
 
 /**
  * CreateStoragePoolsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
 public class CreateStoragePoolsRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config8 config;
+  private SizeConfig config;
 
   public static final String SERIALIZED_NAME_DRIVER = "driver";
   @SerializedName(SERIALIZED_NAME_DRIVER)
@@ -43,7 +43,7 @@ public class CreateStoragePoolsRequest {
   private String name;
 
 
-  public CreateStoragePoolsRequest config(Config8 config) {
+  public CreateStoragePoolsRequest config(SizeConfig config) {
     
     this.config = config;
     return this;
@@ -56,12 +56,12 @@ public class CreateStoragePoolsRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config8 getConfig() {
+  public SizeConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config8 config) {
+  public void setConfig(SizeConfig config) {
     this.config = config;
   }
 

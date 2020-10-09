@@ -15,11 +15,11 @@ package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetClusterMembersByNameResponse;
 import org.relxd.lxd.model.GetClusterResponse;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
 import org.junit.Test;
@@ -120,7 +120,7 @@ public class ClusterApiTest {
     public void postClusterMembersByNameTest() throws ApiException {
         String name = null;
         UpdateClusterMembersByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.postClusterMembersByName(name, body);
+        StandardServerResponse response = api.postClusterMembersByName(name, body);
 
         // TODO: test validations
     }

@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest;
@@ -41,6 +40,7 @@ import org.relxd.lxd.model.GetStoragePoolsByNameResponse;
 import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameResponse;
 import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse;
 import org.relxd.lxd.model.PatchStoragePoolsByNameRequest;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest2;
@@ -134,7 +134,7 @@ public class StoragePoolsApi {
      * 
      * Remove a storage pool
      * @param pool Storage pool name (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -145,8 +145,8 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteStoragePoolsByName(String pool) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteStoragePoolsByNameWithHttpInfo(pool);
+    public StandardServerResponse deleteStoragePoolsByName(String pool) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteStoragePoolsByNameWithHttpInfo(pool);
         return localVarResp.getData();
     }
 
@@ -154,7 +154,7 @@ public class StoragePoolsApi {
      * 
      * Remove a storage pool
      * @param pool Storage pool name (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -165,9 +165,9 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteStoragePoolsByNameWithHttpInfo(String pool) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteStoragePoolsByNameWithHttpInfo(String pool) throws ApiException {
         okhttp3.Call localVarCall = deleteStoragePoolsByNameValidateBeforeCall(pool, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -187,10 +187,10 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStoragePoolsByNameAsync(String pool, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStoragePoolsByNameAsync(String pool, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStoragePoolsByNameValidateBeforeCall(pool, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -272,7 +272,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -282,8 +282,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteStoragePoolsByNameVolumesByTypeName(String pool, String type, String name) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name);
+    public StandardServerResponse deleteStoragePoolsByNameVolumesByTypeName(String pool, String type, String name) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name);
         return localVarResp.getData();
     }
 
@@ -293,7 +293,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -303,9 +303,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name) throws ApiException {
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -326,10 +326,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1531,7 +1531,7 @@ public class StoragePoolsApi {
      * Update the storage pool information
      * @param pool Storage pool name (required)
      * @param body Update the storage pool information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1541,8 +1541,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchStoragePoolsByName(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchStoragePoolsByNameWithHttpInfo(pool, body);
+    public StandardServerResponse patchStoragePoolsByName(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchStoragePoolsByNameWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -1551,7 +1551,7 @@ public class StoragePoolsApi {
      * Update the storage pool information
      * @param pool Storage pool name (required)
      * @param body Update the storage pool information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1561,9 +1561,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchStoragePoolsByNameWithHttpInfo(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchStoragePoolsByNameWithHttpInfo(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchStoragePoolsByNameValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1583,10 +1583,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchStoragePoolsByNameAsync(String pool, PatchStoragePoolsByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchStoragePoolsByNameAsync(String pool, PatchStoragePoolsByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchStoragePoolsByNameValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1670,7 +1670,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Update the storage volume information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1680,8 +1680,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
+    public StandardServerResponse patchStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -1692,7 +1692,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Update the storage volume information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1702,9 +1702,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
         okhttp3.Call localVarCall = patchStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1726,10 +1726,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1789,7 +1789,7 @@ public class StoragePoolsApi {
      * 
      * Define a new storage pool
      * @param body Define a new storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1799,8 +1799,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePools(CreateStoragePoolsRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsWithHttpInfo(body);
+    public StandardServerResponse postStoragePools(CreateStoragePoolsRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postStoragePoolsWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1808,7 +1808,7 @@ public class StoragePoolsApi {
      * 
      * Define a new storage pool
      * @param body Define a new storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1818,9 +1818,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsWithHttpInfo(CreateStoragePoolsRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postStoragePoolsWithHttpInfo(CreateStoragePoolsRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1839,10 +1839,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsAsync(CreateStoragePoolsRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsAsync(CreateStoragePoolsRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1910,7 +1910,7 @@ public class StoragePoolsApi {
      * Create a new storage volume on a given storage pool
      * @param pool Storage pool name (required)
      * @param body Create a new storage volume on a given storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1920,8 +1920,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePoolsByNameVolumes(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsByNameVolumesWithHttpInfo(pool, body);
+    public StandardServerResponse postStoragePoolsByNameVolumes(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postStoragePoolsByNameVolumesWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -1930,7 +1930,7 @@ public class StoragePoolsApi {
      * Create a new storage volume on a given storage pool
      * @param pool Storage pool name (required)
      * @param body Create a new storage volume on a given storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1940,9 +1940,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsByNameVolumesWithHttpInfo(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postStoragePoolsByNameVolumesWithHttpInfo(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1962,10 +1962,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesAsync(String pool, CreateStoragePoolsByNameVolumesRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesAsync(String pool, CreateStoragePoolsByNameVolumesRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2041,7 +2041,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param body Create a new storage volume of a particular type on a given storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2051,8 +2051,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePoolsByNameVolumesByType(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsByNameVolumesByTypeWithHttpInfo(pool, type, body);
+    public StandardServerResponse postStoragePoolsByNameVolumesByType(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postStoragePoolsByNameVolumesByTypeWithHttpInfo(pool, type, body);
         return localVarResp.getData();
     }
 
@@ -2062,7 +2062,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param body Create a new storage volume of a particular type on a given storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2072,9 +2072,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsByNameVolumesByTypeWithHttpInfo(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postStoragePoolsByNameVolumesByTypeWithHttpInfo(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeValidateBeforeCall(pool, type, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2095,10 +2095,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesByTypeAsync(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesByTypeAsync(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeValidateBeforeCall(pool, type, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2595,7 +2595,7 @@ public class StoragePoolsApi {
      * Replace the storage pool information
      * @param pool Storage pool name (required)
      * @param body Replace the storage pool information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2605,8 +2605,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putStoragePoolsByName(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putStoragePoolsByNameWithHttpInfo(pool, body);
+    public StandardServerResponse putStoragePoolsByName(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putStoragePoolsByNameWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -2615,7 +2615,7 @@ public class StoragePoolsApi {
      * Replace the storage pool information
      * @param pool Storage pool name (required)
      * @param body Replace the storage pool information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2625,9 +2625,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putStoragePoolsByNameWithHttpInfo(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putStoragePoolsByNameWithHttpInfo(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putStoragePoolsByNameValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2647,10 +2647,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putStoragePoolsByNameAsync(String pool, UpdateStoragePoolsByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putStoragePoolsByNameAsync(String pool, UpdateStoragePoolsByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putStoragePoolsByNameValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2734,7 +2734,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Replace the storage volume information or restore from snapshot (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2744,8 +2744,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
+    public StandardServerResponse putStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2756,7 +2756,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Replace the storage volume information or restore from snapshot (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2766,9 +2766,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2790,10 +2790,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

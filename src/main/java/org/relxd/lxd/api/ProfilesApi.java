@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
 import org.relxd.lxd.model.CreateProfilesByNameRequest;
 import org.relxd.lxd.model.CreateProfilesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.GetProfilesByNameResponse;
+import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateProfilesByNameRequest;
 
 import java.lang.reflect.Type;
@@ -121,7 +121,7 @@ public class ProfilesApi {
      * 
      * Remove a profile
      * @param name Profiles name (required)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -131,8 +131,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteProfilesByName(String name) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteProfilesByNameWithHttpInfo(name);
+    public StandardServerResponse deleteProfilesByName(String name) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = deleteProfilesByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -140,7 +140,7 @@ public class ProfilesApi {
      * 
      * Remove a profile
      * @param name Profiles name (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -150,9 +150,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteProfilesByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<StandardServerResponse> deleteProfilesByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteProfilesByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -171,10 +171,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProfilesByNameAsync(String name, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteProfilesByNameAsync(String name, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProfilesByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -502,7 +502,7 @@ public class ProfilesApi {
      * Update the profile information
      * @param name Profiles name (required)
      * @param body Update the profile information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -512,8 +512,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchProfilesByNameWithHttpInfo(name, body);
+    public StandardServerResponse patchProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = patchProfilesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -522,7 +522,7 @@ public class ProfilesApi {
      * Update the profile information
      * @param name Profiles name (required)
      * @param body Update the profile information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -532,9 +532,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> patchProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchProfilesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -554,10 +554,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchProfilesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -617,7 +617,7 @@ public class ProfilesApi {
      * 
      * Define a new profile
      * @param body Define a new profile (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -627,8 +627,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postProfiles(CreateProfilesRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postProfilesWithHttpInfo(body);
+    public StandardServerResponse postProfiles(CreateProfilesRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = postProfilesWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -636,7 +636,7 @@ public class ProfilesApi {
      * 
      * Define a new profile
      * @param body Define a new profile (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -646,9 +646,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postProfilesWithHttpInfo(CreateProfilesRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> postProfilesWithHttpInfo(CreateProfilesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postProfilesValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -667,10 +667,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProfilesAsync(CreateProfilesRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postProfilesAsync(CreateProfilesRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postProfilesValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -865,7 +865,7 @@ public class ProfilesApi {
      * Replace the profile information
      * @param name Profiles name (required)
      * @param body Replace the profile information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return StandardServerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -875,8 +875,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putProfilesByNameWithHttpInfo(name, body);
+    public StandardServerResponse putProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
+        ApiResponse<StandardServerResponse> localVarResp = putProfilesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -885,7 +885,7 @@ public class ProfilesApi {
      * Replace the profile information
      * @param name Profiles name (required)
      * @param body Replace the profile information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;StandardServerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -895,9 +895,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
+    public ApiResponse<StandardServerResponse> putProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putProfilesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -917,10 +917,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putProfilesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

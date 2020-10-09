@@ -1,6 +1,6 @@
 # InstancesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -64,7 +64,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -133,7 +133,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -204,7 +204,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -253,7 +253,7 @@ null (empty response body)
 
 <a name="deleteInstancesByNameFiles"></a>
 # **deleteInstancesByNameFiles**
-> BasicStandardReturnValueResponse deleteInstancesByNameFiles(name, path)
+> StandardServerResponse deleteInstancesByNameFiles(name, path)
 
 
 
@@ -272,7 +272,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -282,7 +282,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String path = /path/inside/the/instance; // String | directory listing from the instance
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
+      StandardServerResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameFiles");
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameLogsFile"></a>
 # **deleteInstancesByNameLogsFile**
-> BasicStandardReturnValueResponse deleteInstancesByNameLogsFile(name, logFile)
+> StandardServerResponse deleteInstancesByNameLogsFile(name, logFile)
 
 
 
@@ -343,7 +343,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -353,7 +353,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String logFile = "logFile_example"; // String | Instance log file
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
+      StandardServerResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameLogsFile");
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameMetadataTemplates"></a>
 # **deleteInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse deleteInstancesByNameMetadataTemplates(name, path)
+> StandardServerResponse deleteInstancesByNameMetadataTemplates(name, path)
 
 
 
@@ -414,7 +414,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -424,7 +424,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String path = "path_example"; // String | Template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
+      StandardServerResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameMetadataTemplates");
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -556,7 +556,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -627,7 +627,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -700,7 +700,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -773,7 +773,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -848,7 +848,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -923,7 +923,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -996,7 +996,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1079,7 +1079,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1152,7 +1152,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1227,7 +1227,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1300,7 +1300,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1375,7 +1375,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1448,7 +1448,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1523,7 +1523,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1577,7 +1577,7 @@ Name | Type | Description  | Notes
 
 <a name="patchInstancesByName"></a>
 # **patchInstancesByName**
-> BasicStandardReturnValueResponse patchInstancesByName(name, body)
+> StandardServerResponse patchInstancesByName(name, body)
 
 
 
@@ -1596,7 +1596,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1606,7 +1606,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     PatchInstancesByNameRequest body = new PatchInstancesByNameRequest(); // PatchInstancesByNameRequest | Update instance configuration
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchInstancesByName(name, body);
+      StandardServerResponse result = apiInstance.patchInstancesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#patchInstancesByName");
@@ -1628,7 +1628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -1667,7 +1667,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1738,7 +1738,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1812,7 +1812,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1883,7 +1883,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1956,7 +1956,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2027,7 +2027,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2079,7 +2079,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameFiles"></a>
 # **postInstancesByNameFiles**
-> BasicStandardReturnValueResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
+> StandardServerResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
 
 
 
@@ -2098,7 +2098,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2114,7 +2114,7 @@ public class Example {
     String xLXDType = "xLXDType_example"; // String | one of directory or file or symlink
     File body = new File("/path/to/file"); // File | Upload a file to the instance
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+      StandardServerResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameFiles");
@@ -2142,7 +2142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -2162,7 +2162,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameMetadataTemplates"></a>
 # **postInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse postInstancesByNameMetadataTemplates(name, path, body)
+> StandardServerResponse postInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2181,7 +2181,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2192,7 +2192,7 @@ public class Example {
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Add a container template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
+      StandardServerResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameMetadataTemplates");
@@ -2215,7 +2215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -2254,7 +2254,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2325,7 +2325,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2399,7 +2399,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2451,7 +2451,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadata"></a>
 # **putInstancesByNameMetadata**
-> BasicStandardReturnValueResponse putInstancesByNameMetadata(name, body)
+> StandardServerResponse putInstancesByNameMetadata(name, body)
 
 
 
@@ -2470,7 +2470,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2480,7 +2480,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     GetInstancesByNameMetadataResponse body = new GetInstancesByNameMetadataResponse(); // GetInstancesByNameMetadataResponse | Replaces instance metadata
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putInstancesByNameMetadata(name, body);
+      StandardServerResponse result = apiInstance.putInstancesByNameMetadata(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadata");
@@ -2502,7 +2502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -2522,7 +2522,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadataTemplates"></a>
 # **putInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse putInstancesByNameMetadataTemplates(name, path, body)
+> StandardServerResponse putInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2541,7 +2541,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2552,7 +2552,7 @@ public class Example {
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Replace content of a template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
+      StandardServerResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadataTemplates");
@@ -2575,7 +2575,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -2614,7 +2614,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -2687,7 +2687,7 @@ import org.relxd.lxd.api.InstancesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
