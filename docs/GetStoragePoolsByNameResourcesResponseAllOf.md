@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metadata** | [**GetStoragePoolsByNameResourcesResponseMetadata**](GetStoragePoolsByNameResourcesResponseMetadata.md) |  |  [optional]
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**errorCode** | **Integer** |  |  [optional]
 **error** | **String** |  |  [optional]
 
 

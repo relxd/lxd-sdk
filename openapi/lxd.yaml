@@ -11592,7 +11592,7 @@ components:
           $ref: '#/components/schemas/GetStoragePoolsByNameResponseMetadata'
         error_code:
           example: 0
-          type: number
+          type: integer
         error:
           type: string
     GetStoragePoolsByNameResourcesResponse_allOf:
@@ -11601,7 +11601,7 @@ components:
           $ref: '#/components/schemas/GetStoragePoolsByNameResourcesResponseMetadata'
         error_code:
           example: 0
-          type: number
+          type: integer
         error:
           type: string
     GetStoragePoolsByNameVolumesByTypeNameResponse_allOf:
@@ -11610,7 +11610,7 @@ components:
           $ref: '#/components/schemas/GetStoragePoolsByNameVolumesByTypeNameResponseMetadata'
         error_code:
           example: 0
-          type: number
+          type: integer
         error:
           type: string
     UpdateStoragePoolsByNameVolumesByTypeNameRequest_oneOf:
@@ -11625,7 +11625,7 @@ components:
           $ref: '#/components/schemas/GetResourcesResponseMetadata'
         error_code:
           example: 0
-          type: number
+          type: integer
         error:
           type: string
   securitySchemes:

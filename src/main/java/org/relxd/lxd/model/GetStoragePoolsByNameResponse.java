@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.GetStoragePoolsByNameResponseAllOf;
 import org.relxd.lxd.model.GetStoragePoolsByNameResponseMetadata;
@@ -31,7 +30,7 @@ import org.relxd.lxd.model.GetStoragePoolsByNameResponseMetadata;
 /**
  * GetStoragePoolsByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:02:37.524657+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:33:23.019065+02:00[Africa/Harare]")
 public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
@@ -39,7 +38,7 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "error_code";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  private BigDecimal errorCode;
+  private Integer errorCode;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
@@ -69,7 +68,7 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
   }
 
 
-  public GetStoragePoolsByNameResponse errorCode(BigDecimal errorCode) {
+  public GetStoragePoolsByNameResponse errorCode(Integer errorCode) {
     
     this.errorCode = errorCode;
     return this;
@@ -82,12 +81,12 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 
