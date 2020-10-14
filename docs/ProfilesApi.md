@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProfilesByName"></a>
 # **deleteProfilesByName**
-> StandardServerResponse deleteProfilesByName(name)
+> BackgroundOperationResponse deleteProfilesByName(name)
 
 
 
@@ -43,7 +43,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     String name = "name_example"; // String | Profiles name
     try {
-      StandardServerResponse result = apiInstance.deleteProfilesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteProfilesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#deleteProfilesByName");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="getProfiles"></a>
 # **getProfiles**
-> List&lt;String&gt; getProfiles(recursion, filter)
+> BackgroundOperationResponse getProfiles(recursion, filter)
 
 
 
@@ -113,7 +113,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getProfiles(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProfiles(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#getProfiles");
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 <a name="getProfilesByName"></a>
 # **getProfilesByName**
-> GetProfilesByNameResponse getProfilesByName(name, recursion, filter)
+> BackgroundOperationResponse getProfilesByName(name, recursion, filter)
 
 
 
@@ -185,7 +185,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetProfilesByNameResponse result = apiInstance.getProfilesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProfilesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#getProfilesByName");
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetProfilesByNameResponse**](GetProfilesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProfilesByName"></a>
 # **patchProfilesByName**
-> StandardServerResponse patchProfilesByName(name, body)
+> BackgroundOperationResponse patchProfilesByName(name, body)
 
 
 
@@ -257,7 +257,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Update the profile information
     try {
-      StandardServerResponse result = apiInstance.patchProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#patchProfilesByName");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="postProfiles"></a>
 # **postProfiles**
-> StandardServerResponse postProfiles(body)
+> BackgroundOperationResponse postProfiles(body)
 
 
 
@@ -327,7 +327,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     CreateProfilesRequest body = new CreateProfilesRequest(); // CreateProfilesRequest | Define a new profile
     try {
-      StandardServerResponse result = apiInstance.postProfiles(body);
+      BackgroundOperationResponse result = apiInstance.postProfiles(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#postProfiles");
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 <a name="putProfilesByName"></a>
 # **putProfilesByName**
-> StandardServerResponse putProfilesByName(name, body)
+> BackgroundOperationResponse putProfilesByName(name, body)
 
 
 
@@ -469,7 +469,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Replace the profile information
     try {
-      StandardServerResponse result = apiInstance.putProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#putProfilesByName");
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

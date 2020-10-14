@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsByNameRequest;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsRequest;
 import org.relxd.lxd.model.CreateInstancesByNameConsoleRequest;
@@ -38,15 +38,9 @@ import org.relxd.lxd.model.CreateInstancesByNameSnapshotsInformationRequest;
 import org.relxd.lxd.model.CreateInstancesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import java.io.File;
-import org.relxd.lxd.model.GetInstancesByNameBackupsByNameExportResponse;
-import org.relxd.lxd.model.GetInstancesByNameBackupsByNameResponse;
 import org.relxd.lxd.model.GetInstancesByNameMetadataResponse;
-import org.relxd.lxd.model.GetInstancesByNameResponse;
-import org.relxd.lxd.model.GetInstancesByNameStateResponse;
-import org.relxd.lxd.model.GetSnapshotInformationResponse;
 import org.relxd.lxd.model.PatchInstancesByNameRequest;
 import org.relxd.lxd.model.RawFile;
-import org.relxd.lxd.model.StandardServerResponse;
 import java.util.UUID;
 import org.relxd.lxd.model.UpdateInstancesByNameRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameSnapshotsInformationRequest;
@@ -139,7 +133,7 @@ public class InstancesApi {
      * 
      * Remove the instance
      * @param name Instance name (required)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -149,8 +143,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteInstancesByName(String name) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteInstancesByNameWithHttpInfo(name);
+    public BackgroundOperationResponse deleteInstancesByName(String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -158,7 +152,7 @@ public class InstancesApi {
      * 
      * Remove the instance
      * @param name Instance name (required)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -168,9 +162,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteInstancesByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -189,10 +183,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameAsync(String name, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameAsync(String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -266,7 +260,7 @@ public class InstancesApi {
      * Remove the backup
      * @param name Instance name (required)
      * @param backupsName Backups name (required)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -276,8 +270,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteInstancesByNameBackupsByName(String name, String backupsName) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteInstancesByNameBackupsByNameWithHttpInfo(name, backupsName);
+    public BackgroundOperationResponse deleteInstancesByNameBackupsByName(String name, String backupsName) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameBackupsByNameWithHttpInfo(name, backupsName);
         return localVarResp.getData();
     }
 
@@ -286,7 +280,7 @@ public class InstancesApi {
      * Remove the backup
      * @param name Instance name (required)
      * @param backupsName Backups name (required)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -296,9 +290,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -318,10 +312,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameBackupsByNameAsync(String name, String backupsName, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameBackupsByNameAsync(String name, String backupsName, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -508,7 +502,7 @@ public class InstancesApi {
      * Delete a file in the instance
      * @param name Instance name (required)
      * @param path directory listing from the instance (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -518,8 +512,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteInstancesByNameFiles(String name, String path) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameFilesWithHttpInfo(name, path);
+    public BackgroundOperationResponse deleteInstancesByNameFiles(String name, String path) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameFilesWithHttpInfo(name, path);
         return localVarResp.getData();
     }
 
@@ -528,7 +522,7 @@ public class InstancesApi {
      * Delete a file in the instance
      * @param name Instance name (required)
      * @param path directory listing from the instance (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -538,9 +532,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteInstancesByNameFilesWithHttpInfo(String name, String path) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameFilesWithHttpInfo(String name, String path) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameFilesValidateBeforeCall(name, path, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -560,10 +554,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameFilesAsync(String name, String path, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameFilesAsync(String name, String path, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameFilesValidateBeforeCall(name, path, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -637,7 +631,7 @@ public class InstancesApi {
      * Delete a particular log file.
      * @param name Instance name (required)
      * @param logFile Instance log file (required)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,8 +641,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteInstancesByNameLogsFile(String name, String logFile) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameLogsFileWithHttpInfo(name, logFile);
+    public BackgroundOperationResponse deleteInstancesByNameLogsFile(String name, String logFile) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameLogsFileWithHttpInfo(name, logFile);
         return localVarResp.getData();
     }
 
@@ -657,7 +651,7 @@ public class InstancesApi {
      * Delete a particular log file.
      * @param name Instance name (required)
      * @param logFile Instance log file (required)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -667,9 +661,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteInstancesByNameLogsFileWithHttpInfo(String name, String logFile) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameLogsFileWithHttpInfo(String name, String logFile) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameLogsFileValidateBeforeCall(name, logFile, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -689,10 +683,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameLogsFileAsync(String name, String logFile, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameLogsFileAsync(String name, String logFile, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameLogsFileValidateBeforeCall(name, logFile, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -769,7 +763,7 @@ public class InstancesApi {
      * Delete an instance template
      * @param name Instance name (required)
      * @param path Template (required)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -779,8 +773,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteInstancesByNameMetadataTemplates(String name, String path) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteInstancesByNameMetadataTemplatesWithHttpInfo(name, path);
+    public BackgroundOperationResponse deleteInstancesByNameMetadataTemplates(String name, String path) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameMetadataTemplatesWithHttpInfo(name, path);
         return localVarResp.getData();
     }
 
@@ -789,7 +783,7 @@ public class InstancesApi {
      * Delete an instance template
      * @param name Instance name (required)
      * @param path Template (required)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -799,9 +793,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -821,10 +815,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameMetadataTemplatesAsync(String name, String path, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameMetadataTemplatesAsync(String name, String path, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -898,7 +892,7 @@ public class InstancesApi {
      * Remove the snapshot
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -908,8 +902,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(String name, String snapshotName) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName);
+    public BackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(String name, String snapshotName) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName);
         return localVarResp.getData();
     }
 
@@ -918,7 +912,7 @@ public class InstancesApi {
      * Remove the snapshot
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -928,9 +922,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName) throws ApiException {
         okhttp3.Call localVarCall = deleteInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -950,10 +944,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1023,7 +1017,7 @@ public class InstancesApi {
      * Return a list of URLs for instances this server hosts
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1033,8 +1027,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstances(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getInstances(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1043,7 +1037,7 @@ public class InstancesApi {
      * Return a list of URLs for instances this server hosts
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1053,9 +1047,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1075,10 +1069,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1156,7 +1150,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1166,8 +1160,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameResponse getInstancesByName(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameResponse> localVarResp = getInstancesByNameWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByName(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1177,7 +1171,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1187,9 +1181,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameResponse> getInstancesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1210,10 +1204,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<GetInstancesByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1434,7 +1428,7 @@ public class InstancesApi {
      * @param backupsName Backups name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameBackupsByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1444,8 +1438,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameBackupsByNameResponse getInstancesByNameBackupsByName(String name, String backupsName, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameBackupsByNameResponse> localVarResp = getInstancesByNameBackupsByNameWithHttpInfo(name, backupsName, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameBackupsByName(String name, String backupsName, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameBackupsByNameWithHttpInfo(name, backupsName, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1456,7 +1450,7 @@ public class InstancesApi {
      * @param backupsName Backups name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameBackupsByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1466,9 +1460,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameBackupsByNameResponse> getInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameBackupsByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1490,10 +1484,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameBackupsByNameAsync(String name, String backupsName, Integer recursion, String filter, final ApiCallback<GetInstancesByNameBackupsByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameBackupsByNameAsync(String name, String backupsName, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameBackupsByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1579,7 +1573,7 @@ public class InstancesApi {
      * @param backupsName Backups name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameBackupsByNameExportResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1589,8 +1583,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameBackupsByNameExportResponse getInstancesByNameBackupsByNameExport(String name, String backupsName, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameBackupsByNameExportResponse> localVarResp = getInstancesByNameBackupsByNameExportWithHttpInfo(name, backupsName, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameBackupsByNameExport(String name, String backupsName, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameBackupsByNameExportWithHttpInfo(name, backupsName, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1601,7 +1595,7 @@ public class InstancesApi {
      * @param backupsName Backups name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameBackupsByNameExportResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1611,9 +1605,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameBackupsByNameExportResponse> getInstancesByNameBackupsByNameExportWithHttpInfo(String name, String backupsName, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameBackupsByNameExportWithHttpInfo(String name, String backupsName, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameBackupsByNameExportValidateBeforeCall(name, backupsName, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameBackupsByNameExportResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1635,10 +1629,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameBackupsByNameExportAsync(String name, String backupsName, Integer recursion, String filter, final ApiCallback<GetInstancesByNameBackupsByNameExportResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameBackupsByNameExportAsync(String name, String backupsName, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameBackupsByNameExportValidateBeforeCall(name, backupsName, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameBackupsByNameExportResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1716,7 +1710,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1726,8 +1720,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameResponse getInstancesByNameConsole(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameResponse> localVarResp = getInstancesByNameConsoleWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameConsole(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameConsoleWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1737,7 +1731,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1747,9 +1741,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameResponse> getInstancesByNameConsoleWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameConsoleWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameConsoleValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1770,10 +1764,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameConsoleAsync(String name, Integer recursion, String filter, final ApiCallback<GetInstancesByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameConsoleAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameConsoleValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2306,7 +2300,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameMetadataResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2316,8 +2310,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameMetadataResponse getInstancesByNameMetadata(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameMetadataResponse> localVarResp = getInstancesByNameMetadataWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameMetadata(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameMetadataWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2327,7 +2321,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameMetadataResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2337,9 +2331,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameMetadataResponse> getInstancesByNameMetadataWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameMetadataWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameMetadataValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameMetadataResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2360,10 +2354,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameMetadataAsync(String name, Integer recursion, String filter, final ApiCallback<GetInstancesByNameMetadataResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameMetadataAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameMetadataValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameMetadataResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2727,7 +2721,7 @@ public class InstancesApi {
      * @param snapshotName Snapshot name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetSnapshotInformationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2737,8 +2731,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetSnapshotInformationResponse getInstancesByNameSnapshotsInformation(String name, String snapshotName, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetSnapshotInformationResponse> localVarResp = getInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameSnapshotsInformation(String name, String snapshotName, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2749,7 +2743,7 @@ public class InstancesApi {
      * @param snapshotName Snapshot name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetSnapshotInformationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2759,9 +2753,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetSnapshotInformationResponse> getInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetSnapshotInformationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2783,10 +2777,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, Integer recursion, String filter, final ApiCallback<GetSnapshotInformationResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetSnapshotInformationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2864,7 +2858,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetInstancesByNameStateResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2874,8 +2868,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetInstancesByNameStateResponse getInstancesByNameState(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetInstancesByNameStateResponse> localVarResp = getInstancesByNameStateWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameState(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameStateWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2885,7 +2879,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetInstancesByNameStateResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2895,9 +2889,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetInstancesByNameStateResponse> getInstancesByNameStateWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameStateWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameStateValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2918,10 +2912,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameStateAsync(String name, Integer recursion, String filter, final ApiCallback<GetInstancesByNameStateResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameStateAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameStateValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetInstancesByNameStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2989,7 +2983,7 @@ public class InstancesApi {
      * Update instance configuration
      * @param name Instance name (required)
      * @param body Update instance configuration (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2999,8 +2993,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse patchInstancesByName(String name, PatchInstancesByNameRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = patchInstancesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse patchInstancesByName(String name, PatchInstancesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchInstancesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -3009,7 +3003,7 @@ public class InstancesApi {
      * Update instance configuration
      * @param name Instance name (required)
      * @param body Update instance configuration (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3019,9 +3013,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> patchInstancesByNameWithHttpInfo(String name, PatchInstancesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchInstancesByNameWithHttpInfo(String name, PatchInstancesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchInstancesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3041,10 +3035,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchInstancesByNameAsync(String name, PatchInstancesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call patchInstancesByNameAsync(String name, PatchInstancesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchInstancesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3110,7 +3104,7 @@ public class InstancesApi {
      * Create a new instance
      * @param target ?target&#x3D;&lt;member&gt; (optional)
      * @param body Create a new instance (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3120,8 +3114,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstances(String target, CreateInstancesRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesWithHttpInfo(target, body);
+    public BackgroundOperationResponse postInstances(String target, CreateInstancesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesWithHttpInfo(target, body);
         return localVarResp.getData();
     }
 
@@ -3130,7 +3124,7 @@ public class InstancesApi {
      * Create a new instance
      * @param target ?target&#x3D;&lt;member&gt; (optional)
      * @param body Create a new instance (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3140,9 +3134,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesWithHttpInfo(String target, CreateInstancesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesWithHttpInfo(String target, CreateInstancesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesValidateBeforeCall(target, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3162,10 +3156,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesAsync(String target, CreateInstancesRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesAsync(String target, CreateInstancesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesValidateBeforeCall(target, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3240,7 +3234,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param target ?target&#x3D;&lt;member&gt; (optional)
      * @param body Used to rename/migrate the instance (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3251,8 +3245,8 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByName(String name, String target, CreateInstancesByNameRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameWithHttpInfo(name, target, body);
+    public BackgroundOperationResponse postInstancesByName(String name, String target, CreateInstancesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameWithHttpInfo(name, target, body);
         return localVarResp.getData();
     }
 
@@ -3262,7 +3256,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param target ?target&#x3D;&lt;member&gt; (optional)
      * @param body Used to rename/migrate the instance (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3273,9 +3267,9 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameWithHttpInfo(String name, String target, CreateInstancesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameWithHttpInfo(String name, String target, CreateInstancesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameValidateBeforeCall(name, target, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3297,10 +3291,10 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameAsync(String name, String target, CreateInstancesByNameRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameAsync(String name, String target, CreateInstancesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameValidateBeforeCall(name, target, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3368,7 +3362,7 @@ public class InstancesApi {
      * Create a new backup
      * @param name Instance name (required)
      * @param body Create a new backup (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3378,8 +3372,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameBackups(String name, CreateInstancesByNameBackupsRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameBackupsWithHttpInfo(name, body);
+    public BackgroundOperationResponse postInstancesByNameBackups(String name, CreateInstancesByNameBackupsRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameBackupsWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -3388,7 +3382,7 @@ public class InstancesApi {
      * Create a new backup
      * @param name Instance name (required)
      * @param body Create a new backup (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3398,9 +3392,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameBackupsWithHttpInfo(String name, CreateInstancesByNameBackupsRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameBackupsWithHttpInfo(String name, CreateInstancesByNameBackupsRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameBackupsValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3420,10 +3414,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameBackupsAsync(String name, CreateInstancesByNameBackupsRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameBackupsAsync(String name, CreateInstancesByNameBackupsRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameBackupsValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3499,7 +3493,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param backupsName Backups name (required)
      * @param body Used to rename the backup (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3509,8 +3503,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameBackupsByName(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameBackupsByNameWithHttpInfo(name, backupsName, body);
+    public BackgroundOperationResponse postInstancesByNameBackupsByName(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameBackupsByNameWithHttpInfo(name, backupsName, body);
         return localVarResp.getData();
     }
 
@@ -3520,7 +3514,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param backupsName Backups name (required)
      * @param body Used to rename the backup (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3530,9 +3524,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameBackupsByNameWithHttpInfo(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3553,10 +3547,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameBackupsByNameAsync(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameBackupsByNameAsync(String name, String backupsName, CreateInstancesByNameBackupsByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameBackupsByNameValidateBeforeCall(name, backupsName, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3624,7 +3618,7 @@ public class InstancesApi {
      * Attach to an instance&#39;s console devices
      * @param name Instance name (required)
      * @param body Attach to an instance&#39;s console devices (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3634,8 +3628,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameConsole(String name, CreateInstancesByNameConsoleRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameConsoleWithHttpInfo(name, body);
+    public BackgroundOperationResponse postInstancesByNameConsole(String name, CreateInstancesByNameConsoleRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameConsoleWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -3644,7 +3638,7 @@ public class InstancesApi {
      * Attach to an instance&#39;s console devices
      * @param name Instance name (required)
      * @param body Attach to an instance&#39;s console devices (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3654,9 +3648,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameConsoleWithHttpInfo(String name, CreateInstancesByNameConsoleRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameConsoleWithHttpInfo(String name, CreateInstancesByNameConsoleRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameConsoleValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3676,10 +3670,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameConsoleAsync(String name, CreateInstancesByNameConsoleRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameConsoleAsync(String name, CreateInstancesByNameConsoleRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameConsoleValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3747,7 +3741,7 @@ public class InstancesApi {
      * Run a remote command
      * @param name Instance name (required)
      * @param body Run a remote command (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3757,8 +3751,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameExec(String name, CreateInstancesByNameExecRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameExecWithHttpInfo(name, body);
+    public BackgroundOperationResponse postInstancesByNameExec(String name, CreateInstancesByNameExecRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameExecWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -3767,7 +3761,7 @@ public class InstancesApi {
      * Run a remote command
      * @param name Instance name (required)
      * @param body Run a remote command (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3777,9 +3771,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameExecWithHttpInfo(String name, CreateInstancesByNameExecRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameExecWithHttpInfo(String name, CreateInstancesByNameExecRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameExecValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3799,10 +3793,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameExecAsync(String name, CreateInstancesByNameExecRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameExecAsync(String name, CreateInstancesByNameExecRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameExecValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -3906,7 +3900,7 @@ public class InstancesApi {
      * @param xLXDWrite overwrite (or append) (optional)
      * @param xLXDType one of directory or file or symlink (optional)
      * @param body Upload a file to the instance (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3916,8 +3910,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse postInstancesByNameFiles(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = postInstancesByNameFilesWithHttpInfo(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+    public BackgroundOperationResponse postInstancesByNameFiles(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameFilesWithHttpInfo(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
         return localVarResp.getData();
     }
 
@@ -3932,7 +3926,7 @@ public class InstancesApi {
      * @param xLXDWrite overwrite (or append) (optional)
      * @param xLXDType one of directory or file or symlink (optional)
      * @param body Upload a file to the instance (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -3942,9 +3936,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> postInstancesByNameFilesWithHttpInfo(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameFilesWithHttpInfo(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameFilesValidateBeforeCall(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -3970,10 +3964,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameFilesAsync(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameFilesAsync(String name, String path, Integer xLXDUid, Integer xLXDGid, Integer xLXDMode, UUID xLXDWrite, String xLXDType, File body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameFilesValidateBeforeCall(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4052,7 +4046,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Add a container template (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4062,8 +4056,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse postInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = postInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
+    public BackgroundOperationResponse postInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
         return localVarResp.getData();
     }
 
@@ -4073,7 +4067,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Add a container template (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4083,9 +4077,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> postInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4106,10 +4100,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4177,7 +4171,7 @@ public class InstancesApi {
      * Create a new snapshot
      * @param name Instance name (required)
      * @param body Create a new snapshot (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4187,8 +4181,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameSnapshot(String name, CreateInstancesByNameSnapshotRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameSnapshotWithHttpInfo(name, body);
+    public BackgroundOperationResponse postInstancesByNameSnapshot(String name, CreateInstancesByNameSnapshotRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameSnapshotWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -4197,7 +4191,7 @@ public class InstancesApi {
      * Create a new snapshot
      * @param name Instance name (required)
      * @param body Create a new snapshot (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4207,9 +4201,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameSnapshotWithHttpInfo(String name, CreateInstancesByNameSnapshotRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameSnapshotWithHttpInfo(String name, CreateInstancesByNameSnapshotRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameSnapshotValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4229,10 +4223,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameSnapshotAsync(String name, CreateInstancesByNameSnapshotRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameSnapshotAsync(String name, CreateInstancesByNameSnapshotRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameSnapshotValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4309,7 +4303,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
      * @param body Used to rename/migrate the snapshot (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4320,8 +4314,8 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postInstancesByNameSnapshotsInformation(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, body);
+    public BackgroundOperationResponse postInstancesByNameSnapshotsInformation(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, body);
         return localVarResp.getData();
     }
 
@@ -4331,7 +4325,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
      * @param body Used to rename/migrate the snapshot (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4342,9 +4336,9 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
         okhttp3.Call localVarCall = postInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4366,10 +4360,10 @@ public class InstancesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, CreateInstancesByNameSnapshotsInformationRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4437,7 +4431,7 @@ public class InstancesApi {
      * Replaces instance configuration or restore snapshot
      * @param name Instance name (required)
      * @param body  (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4447,8 +4441,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse putInstancesByName(String name, UpdateInstancesByNameRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = putInstancesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse putInstancesByName(String name, UpdateInstancesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putInstancesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -4457,7 +4451,7 @@ public class InstancesApi {
      * Replaces instance configuration or restore snapshot
      * @param name Instance name (required)
      * @param body  (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4467,9 +4461,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> putInstancesByNameWithHttpInfo(String name, UpdateInstancesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putInstancesByNameWithHttpInfo(String name, UpdateInstancesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4489,10 +4483,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameAsync(String name, UpdateInstancesByNameRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameAsync(String name, UpdateInstancesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4560,7 +4554,7 @@ public class InstancesApi {
      * Replaces instance metadata
      * @param name Instance name (required)
      * @param body Replaces instance metadata (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4570,8 +4564,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse putInstancesByNameMetadata(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = putInstancesByNameMetadataWithHttpInfo(name, body);
+    public BackgroundOperationResponse putInstancesByNameMetadata(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putInstancesByNameMetadataWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -4580,7 +4574,7 @@ public class InstancesApi {
      * Replaces instance metadata
      * @param name Instance name (required)
      * @param body Replaces instance metadata (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4590,9 +4584,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> putInstancesByNameMetadataWithHttpInfo(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putInstancesByNameMetadataWithHttpInfo(String name, GetInstancesByNameMetadataResponse body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameMetadataValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4612,10 +4606,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameMetadataAsync(String name, GetInstancesByNameMetadataResponse body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameMetadataAsync(String name, GetInstancesByNameMetadataResponse body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameMetadataValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4694,7 +4688,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Replace content of a template (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4704,8 +4698,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse putInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = putInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
+    public BackgroundOperationResponse putInstancesByNameMetadataTemplates(String name, String path, File body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putInstancesByNameMetadataTemplatesWithHttpInfo(name, path, body);
         return localVarResp.getData();
     }
 
@@ -4715,7 +4709,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param path Template (required)
      * @param body Replace content of a template (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4725,9 +4719,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> putInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putInstancesByNameMetadataTemplatesWithHttpInfo(String name, String path, File body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4748,10 +4742,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameMetadataTemplatesAsync(String name, String path, File body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameMetadataTemplatesValidateBeforeCall(name, path, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4827,7 +4821,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
      * @param body Update the snapshot (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4837,8 +4831,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse putInstancesByNameSnapshotsInformation(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = putInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, body);
+    public BackgroundOperationResponse putInstancesByNameSnapshotsInformation(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putInstancesByNameSnapshotsInformationWithHttpInfo(name, snapshotName, body);
         return localVarResp.getData();
     }
 
@@ -4848,7 +4842,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param snapshotName Snapshot name (required)
      * @param body Update the snapshot (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4858,9 +4852,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> putInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putInstancesByNameSnapshotsInformationWithHttpInfo(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -4881,10 +4875,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameSnapshotsInformationAsync(String name, String snapshotName, UpdateInstancesByNameSnapshotsInformationRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameSnapshotsInformationValidateBeforeCall(name, snapshotName, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -4952,7 +4946,7 @@ public class InstancesApi {
      * Change the instance state
      * @param name Instance name (required)
      * @param body Change the instance state (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4962,8 +4956,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse putInstancesByNameState(String name, UpdateInstancesByNameStateRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = putInstancesByNameStateWithHttpInfo(name, body);
+    public BackgroundOperationResponse putInstancesByNameState(String name, UpdateInstancesByNameStateRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putInstancesByNameStateWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -4972,7 +4966,7 @@ public class InstancesApi {
      * Change the instance state
      * @param name Instance name (required)
      * @param body Change the instance state (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -4982,9 +4976,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> putInstancesByNameStateWithHttpInfo(String name, UpdateInstancesByNameStateRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putInstancesByNameStateWithHttpInfo(String name, UpdateInstancesByNameStateRequest body) throws ApiException {
         okhttp3.Call localVarCall = putInstancesByNameStateValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -5004,10 +4998,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putInstancesByNameStateAsync(String name, UpdateInstancesByNameStateRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call putInstancesByNameStateAsync(String name, UpdateInstancesByNameStateRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putInstancesByNameStateValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

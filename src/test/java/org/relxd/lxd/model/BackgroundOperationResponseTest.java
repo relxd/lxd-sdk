@@ -72,4 +72,28 @@ public class BackgroundOperationResponseTest {
         // TODO: test operation
     }
 
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
+     * Test the property 'errorCode'
+     */
+    @Test
+    public void errorCodeTest() {
+        // TODO: test errorCode
+    }
+
+    /**
+     * Test the property 'metadata'
+     */
+    @Test
+    public void metadataTest() {
+        // TODO: test metadata
+    }
+
 }

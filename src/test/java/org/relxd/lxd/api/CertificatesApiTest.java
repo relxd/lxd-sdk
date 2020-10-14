@@ -14,9 +14,9 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateCertificatesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateFingerprintRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -46,7 +46,7 @@ public class CertificatesApiTest {
     @Test
     public void deleteFingerprintTest() throws ApiException {
         String fingerprint = null;
-        StandardServerResponse response = api.deleteFingerprint(fingerprint);
+        BackgroundOperationResponse response = api.deleteFingerprint(fingerprint);
 
         // TODO: test validations
     }
@@ -63,7 +63,7 @@ public class CertificatesApiTest {
     public void getCertificatesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        StandardServerResponse response = api.getCertificates(recursion, filter);
+        BackgroundOperationResponse response = api.getCertificates(recursion, filter);
 
         // TODO: test validations
     }
@@ -79,7 +79,7 @@ public class CertificatesApiTest {
     @Test
     public void getCertificatesByFingerPrintTest() throws ApiException {
         String fingerprint = null;
-        StandardServerResponse response = api.getCertificatesByFingerPrint(fingerprint);
+        BackgroundOperationResponse response = api.getCertificatesByFingerPrint(fingerprint);
 
         // TODO: test validations
     }
@@ -96,7 +96,7 @@ public class CertificatesApiTest {
     public void patchFingerprintTest() throws ApiException {
         String fingerprint = null;
         UpdateFingerprintRequest body = null;
-        StandardServerResponse response = api.patchFingerprint(fingerprint, body);
+        BackgroundOperationResponse response = api.patchFingerprint(fingerprint, body);
 
         // TODO: test validations
     }
@@ -112,7 +112,7 @@ public class CertificatesApiTest {
     @Test
     public void postCertificatesTest() throws ApiException {
         CreateCertificatesRequest body = null;
-        StandardServerResponse response = api.postCertificates(body);
+        BackgroundOperationResponse response = api.postCertificates(body);
 
         // TODO: test validations
     }
@@ -129,7 +129,7 @@ public class CertificatesApiTest {
     public void putFingerprintTest() throws ApiException {
         String fingerprint = null;
         UpdateFingerprintRequest body = null;
-        StandardServerResponse response = api.putFingerprint(fingerprint, body);
+        BackgroundOperationResponse response = api.putFingerprint(fingerprint, body);
 
         // TODO: test validations
     }

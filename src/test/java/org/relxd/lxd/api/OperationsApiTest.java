@@ -14,8 +14,8 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetOperationsResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class OperationsApiTest {
     public void getOperationsTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        GetOperationsResponse response = api.getOperations(recursion, filter);
+        BackgroundOperationResponse response = api.getOperations(recursion, filter);
 
         // TODO: test validations
     }

@@ -31,7 +31,7 @@ import org.relxd.lxd.model.ServerConfig;
 /**
  * GetServerStateResponseMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:02:37.524657+02:00[Africa/Harare]")
 public class GetServerStateResponseMetadata {
   public static final String SERIALIZED_NAME_API_EXTENSIONS = "api_extensions";
   @SerializedName(SERIALIZED_NAME_API_EXTENSIONS)

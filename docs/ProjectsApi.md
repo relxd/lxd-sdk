@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProjectsByName"></a>
 # **deleteProjectsByName**
-> StandardServerResponse deleteProjectsByName(name)
+> BackgroundOperationResponse deleteProjectsByName(name)
 
 
 
@@ -43,7 +43,7 @@ public class Example {
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     try {
-      StandardServerResponse result = apiInstance.deleteProjectsByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteProjectsByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#deleteProjectsByName");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjects"></a>
 # **getProjects**
-> List&lt;String&gt; getProjects(recursion, filter)
+> BackgroundOperationResponse getProjects(recursion, filter)
 
 
 
@@ -114,7 +114,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getProjects(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProjects(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#getProjects");
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectsByName"></a>
 # **getProjectsByName**
-> GetProjectsByNameResponse getProjectsByName(name, recursion, filter)
+> BackgroundOperationResponse getProjectsByName(name, recursion, filter)
 
 
 
@@ -186,7 +186,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetProjectsByNameResponse result = apiInstance.getProjectsByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProjectsByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#getProjectsByName");
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetProjectsByNameResponse**](GetProjectsByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProjectsByName"></a>
 # **patchProjectsByName**
-> StandardServerResponse patchProjectsByName(name, body)
+> BackgroundOperationResponse patchProjectsByName(name, body)
 
 
 
@@ -258,7 +258,7 @@ public class Example {
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Update the project information
     try {
-      StandardServerResponse result = apiInstance.patchProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#patchProjectsByName");
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 <a name="postProjects"></a>
 # **postProjects**
-> StandardServerResponse postProjects(body)
+> BackgroundOperationResponse postProjects(body)
 
 
 
@@ -328,7 +328,7 @@ public class Example {
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     CreateProjectsRequest body = new CreateProjectsRequest(); // CreateProjectsRequest | Define a new project
     try {
-      StandardServerResponse result = apiInstance.postProjects(body);
+      BackgroundOperationResponse result = apiInstance.postProjects(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#postProjects");
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 <a name="putProjectsByName"></a>
 # **putProjectsByName**
-> StandardServerResponse putProjectsByName(name, body)
+> BackgroundOperationResponse putProjectsByName(name, body)
 
 
 
@@ -471,7 +471,7 @@ public class Example {
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Replace the project information
     try {
-      StandardServerResponse result = apiInstance.putProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#putProjectsByName");
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

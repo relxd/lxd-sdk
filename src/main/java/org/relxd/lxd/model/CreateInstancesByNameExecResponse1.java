@@ -29,7 +29,7 @@ import org.relxd.lxd.model.Fds1;
  * Return (with wait-for-websocket&#x3D;true and interactive&#x3D;false)
  */
 @ApiModel(description = "Return (with wait-for-websocket=true and interactive=false)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-09T10:04:09.006814+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:02:37.524657+02:00[Africa/Harare]")
 public class CreateInstancesByNameExecResponse1 {
   public static final String SERIALIZED_NAME_FDS = "fds";
   @SerializedName(SERIALIZED_NAME_FDS)

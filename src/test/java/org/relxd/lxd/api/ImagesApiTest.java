@@ -14,17 +14,13 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.CreateImagesAliasesRequest;
 import org.relxd.lxd.model.CreateImagesFingerprintExportRequest;
-import org.relxd.lxd.model.CreateImagesFingerprintSecretResponse;
 import org.relxd.lxd.model.CreateImagesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetImagesAliasesByNameResponse;
-import org.relxd.lxd.model.GetImagesFingerprintResponse;
 import org.relxd.lxd.model.PatchImagesFingerprintRequest;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.UpdateImagesFingerprintRequest;
 import org.junit.Test;
@@ -38,7 +34,7 @@ import java.util.Map;
 /**
  * API tests for ImagesApi
  */
-
+@Ignore
 public class ImagesApiTest {
 
     private final ImagesApi api = new ImagesApi();
@@ -55,7 +51,7 @@ public class ImagesApiTest {
     @Test
     public void deleteImagesAliasesByNameTest() throws ApiException {
         String name = null;
-        StandardServerResponse response = api.deleteImagesAliasesByName(name);
+        BackgroundOperationResponse response = api.deleteImagesAliasesByName(name);
 
         // TODO: test validations
     }
@@ -71,7 +67,7 @@ public class ImagesApiTest {
     @Test
     public void deleteImagesFingerprintTest() throws ApiException {
         String fingerprint = null;
-        BasicBackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
+        BackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
 
         // TODO: test validations
     }
@@ -88,7 +84,7 @@ public class ImagesApiTest {
     public void getImagesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        StandardServerResponse response = api.getImages(recursion, filter);
+        BackgroundOperationResponse response = api.getImages(recursion, filter);
 
         // TODO: test validations
     }
@@ -105,7 +101,7 @@ public class ImagesApiTest {
     public void getImagesAliasesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        StandardServerResponse response = api.getImagesAliases(recursion, filter);
+        BackgroundOperationResponse response = api.getImagesAliases(recursion, filter);
 
         // TODO: test validations
     }
@@ -123,7 +119,7 @@ public class ImagesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetImagesAliasesByNameResponse response = api.getImagesAliasesByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getImagesAliasesByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -142,7 +138,7 @@ public class ImagesApiTest {
         Integer recursion = null;
         String filter = null;
         String secret = null;
-        GetImagesFingerprintResponse response = api.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
+        BackgroundOperationResponse response = api.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
 
         // TODO: test validations
     }
@@ -161,7 +157,7 @@ public class ImagesApiTest {
         Integer recursion = null;
         String filter = null;
         String secret = null;
-        StandardServerResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
+        BackgroundOperationResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
 
         // TODO: test validations
     }
@@ -179,7 +175,7 @@ public class ImagesApiTest {
         String fingerprint = null;
         Integer recursion = null;
         String filter = null;
-        BasicBackgroundOperationResponse response = api.getImagesFingerprintRefresh(fingerprint, recursion, filter);
+        BackgroundOperationResponse response = api.getImagesFingerprintRefresh(fingerprint, recursion, filter);
 
         // TODO: test validations
     }
@@ -196,7 +192,7 @@ public class ImagesApiTest {
     public void patchImagesAliasesByNameTest() throws ApiException {
         String name = null;
         UpdateImagesAliasesByNameRequest body = null;
-        StandardServerResponse response = api.patchImagesAliasesByName(name, body);
+        BackgroundOperationResponse response = api.patchImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -213,7 +209,7 @@ public class ImagesApiTest {
     public void patchImagesFingerprintTest() throws ApiException {
         String fingerprint = null;
         PatchImagesFingerprintRequest body = null;
-        StandardServerResponse response = api.patchImagesFingerprint(fingerprint, body);
+        BackgroundOperationResponse response = api.patchImagesFingerprint(fingerprint, body);
 
         // TODO: test validations
     }
@@ -233,7 +229,7 @@ public class ImagesApiTest {
         Boolean xLXDPublic = null;
         String xLXDProperties = null;
         CreateImagesRequest body = null;
-        BasicBackgroundOperationResponse response = api.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
+        BackgroundOperationResponse response = api.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
 
         // TODO: test validations
     }
@@ -249,7 +245,7 @@ public class ImagesApiTest {
     @Test
     public void postImagesAliasesTest() throws ApiException {
         CreateImagesAliasesRequest body = null;
-        StandardServerResponse response = api.postImagesAliases(body);
+        BackgroundOperationResponse response = api.postImagesAliases(body);
 
         // TODO: test validations
     }
@@ -266,7 +262,7 @@ public class ImagesApiTest {
     public void postImagesAliasesByNameTest() throws ApiException {
         String name = null;
         CreateImagesAliasesByNameRequest body = null;
-        StandardServerResponse response = api.postImagesAliasesByName(name, body);
+        BackgroundOperationResponse response = api.postImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -283,7 +279,7 @@ public class ImagesApiTest {
     public void postImagesFingerprintExportTest() throws ApiException {
         String fingerprint = null;
         CreateImagesFingerprintExportRequest body = null;
-        BasicBackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, body);
+        BackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, body);
 
         // TODO: test validations
     }
@@ -300,7 +296,7 @@ public class ImagesApiTest {
     public void postImagesFingerprintSecretTest() throws ApiException {
         String fingerprint = null;
         Object body = null;
-        CreateImagesFingerprintSecretResponse response = api.postImagesFingerprintSecret(fingerprint, body);
+        BackgroundOperationResponse response = api.postImagesFingerprintSecret(fingerprint, body);
 
         // TODO: test validations
     }
@@ -317,7 +313,7 @@ public class ImagesApiTest {
     public void putImagesAliasesByNameTest() throws ApiException {
         String name = null;
         UpdateImagesAliasesByNameRequest body = null;
-        StandardServerResponse response = api.putImagesAliasesByName(name, body);
+        BackgroundOperationResponse response = api.putImagesAliasesByName(name, body);
 
         // TODO: test validations
     }
@@ -334,7 +330,7 @@ public class ImagesApiTest {
     public void putImagesFingerprintTest() throws ApiException {
         String fingerprint = null;
         UpdateImagesFingerprintRequest body = null;
-        StandardServerResponse response = api.putImagesFingerprint(fingerprint, body);
+        BackgroundOperationResponse response = api.putImagesFingerprint(fingerprint, body);
 
         // TODO: test validations
     }

@@ -77,11 +77,11 @@ public class GetStoragePoolsByNameResponseTest {
     }
 
     /**
-     * Test the property 'metadata'
+     * Test the property 'error'
      */
     @Test
-    public void metadataTest() {
-        // TODO: test metadata
+    public void errorTest() {
+        // TODO: test error
     }
 
     /**
@@ -93,11 +93,11 @@ public class GetStoragePoolsByNameResponseTest {
     }
 
     /**
-     * Test the property 'error'
+     * Test the property 'metadata'
      */
     @Test
-    public void errorTest() {
-        // TODO: test error
+    public void metadataTest() {
+        // TODO: test metadata
     }
 
 }

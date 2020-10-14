@@ -14,12 +14,9 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetClusterMembersByNameResponse;
-import org.relxd.lxd.model.GetClusterResponse;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
 import org.junit.Test;
@@ -51,7 +48,7 @@ public class ClusterApiTest {
     public void deleteClusterMembersByNameTest() throws ApiException {
         String name = null;
         BigDecimal force = null;
-        BasicBackgroundOperationResponse response = api.deleteClusterMembersByName(name, force);
+        BackgroundOperationResponse response = api.deleteClusterMembersByName(name, force);
 
         // TODO: test validations
     }
@@ -68,7 +65,7 @@ public class ClusterApiTest {
     public void getClusterTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        GetClusterResponse response = api.getCluster(recursion, filter);
+        BackgroundOperationResponse response = api.getCluster(recursion, filter);
 
         // TODO: test validations
     }
@@ -103,7 +100,7 @@ public class ClusterApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetClusterMembersByNameResponse response = api.getClusterMembersByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getClusterMembersByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -120,7 +117,7 @@ public class ClusterApiTest {
     public void postClusterMembersByNameTest() throws ApiException {
         String name = null;
         UpdateClusterMembersByNameRequest body = null;
-        StandardServerResponse response = api.postClusterMembersByName(name, body);
+        BackgroundOperationResponse response = api.postClusterMembersByName(name, body);
 
         // TODO: test validations
     }
@@ -136,7 +133,7 @@ public class ClusterApiTest {
     @Test
     public void putClusterTest() throws ApiException {
         UpdateClusterRequest body = null;
-        BasicBackgroundOperationResponse response = api.putCluster(body);
+        BackgroundOperationResponse response = api.putCluster(body);
 
         // TODO: test validations
     }

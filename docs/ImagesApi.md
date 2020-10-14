@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="deleteImagesAliasesByName"></a>
 # **deleteImagesAliasesByName**
-> StandardServerResponse deleteImagesAliasesByName(name)
+> BackgroundOperationResponse deleteImagesAliasesByName(name)
 
 
 
@@ -53,7 +53,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     String name = "name_example"; // String | Name of the alias
     try {
-      StandardServerResponse result = apiInstance.deleteImagesAliasesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteImagesAliasesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#deleteImagesAliasesByName");
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteImagesFingerprint"></a>
 # **deleteImagesFingerprint**
-> BasicBackgroundOperationResponse deleteImagesFingerprint(fingerprint)
+> BackgroundOperationResponse deleteImagesFingerprint(fingerprint)
 
 
 
@@ -122,7 +122,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteImagesFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.deleteImagesFingerprint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#deleteImagesFingerprint");
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="getImages"></a>
 # **getImages**
-> StandardServerResponse getImages(recursion, filter)
+> BackgroundOperationResponse getImages(recursion, filter)
 
 
 
@@ -192,7 +192,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      StandardServerResponse result = apiInstance.getImages(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImages(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImages");
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesAliases"></a>
 # **getImagesAliases**
-> StandardServerResponse getImagesAliases(recursion, filter)
+> BackgroundOperationResponse getImagesAliases(recursion, filter)
 
 
 
@@ -263,7 +263,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      StandardServerResponse result = apiInstance.getImagesAliases(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesAliases(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesAliases");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesAliasesByName"></a>
 # **getImagesAliasesByName**
-> GetImagesAliasesByNameResponse getImagesAliasesByName(name, recursion, filter)
+> BackgroundOperationResponse getImagesAliasesByName(name, recursion, filter)
 
 
 
@@ -335,7 +335,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetImagesAliasesByNameResponse result = apiInstance.getImagesAliasesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesAliasesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesAliasesByName");
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetImagesAliasesByNameResponse**](GetImagesAliasesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesByFingerprintExport"></a>
 # **getImagesByFingerprintExport**
-> GetImagesFingerprintResponse getImagesByFingerprintExport(fingerprint, recursion, filter, secret)
+> BackgroundOperationResponse getImagesByFingerprintExport(fingerprint, recursion, filter, secret)
 
 
 
@@ -409,7 +409,7 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String secret = SECRET; // String | secret
     try {
-      GetImagesFingerprintResponse result = apiInstance.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
+      BackgroundOperationResponse result = apiInstance.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesByFingerprintExport");
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetImagesFingerprintResponse**](GetImagesFingerprintResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesFingerprint"></a>
 # **getImagesFingerprint**
-> StandardServerResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
+> BackgroundOperationResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
 
 
 
@@ -484,7 +484,7 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String secret = SECRET; // String | secret
     try {
-      StandardServerResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
+      BackgroundOperationResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesFingerprint");
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesFingerprintRefresh"></a>
 # **getImagesFingerprintRefresh**
-> BasicBackgroundOperationResponse getImagesFingerprintRefresh(fingerprint, recursion, filter)
+> BackgroundOperationResponse getImagesFingerprintRefresh(fingerprint, recursion, filter)
 
 
 
@@ -558,7 +558,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      BasicBackgroundOperationResponse result = apiInstance.getImagesFingerprintRefresh(fingerprint, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesFingerprintRefresh(fingerprint, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesFingerprintRefresh");
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesAliasesByName"></a>
 # **patchImagesAliasesByName**
-> StandardServerResponse patchImagesAliasesByName(name, body)
+> BackgroundOperationResponse patchImagesAliasesByName(name, body)
 
 
 
@@ -630,7 +630,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Updates the alias target or description
     try {
-      StandardServerResponse result = apiInstance.patchImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesAliasesByName");
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesFingerprint"></a>
 # **patchImagesFingerprint**
-> StandardServerResponse patchImagesFingerprint(fingerprint, body)
+> BackgroundOperationResponse patchImagesFingerprint(fingerprint, body)
 
 
 
@@ -701,7 +701,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     PatchImagesFingerprintRequest body = new PatchImagesFingerprintRequest(); // PatchImagesFingerprintRequest | Updates the image properties, update information and visibility
     try {
-      StandardServerResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesFingerprint");
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 
 <a name="postImages"></a>
 # **postImages**
-> BasicBackgroundOperationResponse postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body)
+> BackgroundOperationResponse postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body)
 
 
 
@@ -775,7 +775,7 @@ public class Example {
     String xLXDProperties = URL-encoded key value pairs without duplicate keys; // String | 
     CreateImagesRequest body = new CreateImagesRequest(); // CreateImagesRequest | Create and publish a new image
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
+      BackgroundOperationResponse result = apiInstance.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImages");
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliases"></a>
 # **postImagesAliases**
-> StandardServerResponse postImagesAliases(body)
+> BackgroundOperationResponse postImagesAliases(body)
 
 
 
@@ -848,7 +848,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     CreateImagesAliasesRequest body = new CreateImagesAliasesRequest(); // CreateImagesAliasesRequest | Create a new alias
     try {
-      StandardServerResponse result = apiInstance.postImagesAliases(body);
+      BackgroundOperationResponse result = apiInstance.postImagesAliases(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliases");
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliasesByName"></a>
 # **postImagesAliasesByName**
-> StandardServerResponse postImagesAliasesByName(name, body)
+> BackgroundOperationResponse postImagesAliasesByName(name, body)
 
 
 
@@ -918,7 +918,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     CreateImagesAliasesByNameRequest body = new CreateImagesAliasesByNameRequest(); // CreateImagesAliasesByNameRequest | Rename an alias
     try {
-      StandardServerResponse result = apiInstance.postImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliasesByName");
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesFingerprintExport"></a>
 # **postImagesFingerprintExport**
-> BasicBackgroundOperationResponse postImagesFingerprintExport(fingerprint, body)
+> BackgroundOperationResponse postImagesFingerprintExport(fingerprint, body)
 
 
 
@@ -990,7 +990,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     CreateImagesFingerprintExportRequest body = new CreateImagesFingerprintExportRequest(); // CreateImagesFingerprintExportRequest | Upload the image tarball
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postImagesFingerprintExport(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.postImagesFingerprintExport(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesFingerprintExport");
@@ -1012,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesFingerprintSecret"></a>
 # **postImagesFingerprintSecret**
-> CreateImagesFingerprintSecretResponse postImagesFingerprintSecret(fingerprint, body)
+> BackgroundOperationResponse postImagesFingerprintSecret(fingerprint, body)
 
 
 
@@ -1061,7 +1061,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     Object body = null; // Object | Generate a random token and tell LXD to expect it be used by a guest
     try {
-      CreateImagesFingerprintSecretResponse result = apiInstance.postImagesFingerprintSecret(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.postImagesFingerprintSecret(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesFingerprintSecret");
@@ -1083,7 +1083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateImagesFingerprintSecretResponse**](CreateImagesFingerprintSecretResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1103,7 +1103,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesAliasesByName"></a>
 # **putImagesAliasesByName**
-> StandardServerResponse putImagesAliasesByName(name, body)
+> BackgroundOperationResponse putImagesAliasesByName(name, body)
 
 
 
@@ -1132,7 +1132,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Replaces the alias target or description
     try {
-      StandardServerResponse result = apiInstance.putImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesAliasesByName");
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesFingerprint"></a>
 # **putImagesFingerprint**
-> StandardServerResponse putImagesFingerprint(fingerprint, body)
+> BackgroundOperationResponse putImagesFingerprint(fingerprint, body)
 
 
 
@@ -1203,7 +1203,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateImagesFingerprintRequest body = new UpdateImagesFingerprintRequest(); // UpdateImagesFingerprintRequest | Replaces the image properties, update information and visibility
     try {
-      StandardServerResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesFingerprint");
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

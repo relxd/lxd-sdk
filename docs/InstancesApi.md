@@ -45,7 +45,7 @@ Method | HTTP request | Description
 
 <a name="deleteInstancesByName"></a>
 # **deleteInstancesByName**
-> BasicBackgroundOperationResponse deleteInstancesByName(name)
+> BackgroundOperationResponse deleteInstancesByName(name)
 
 
 
@@ -73,7 +73,7 @@ public class Example {
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByName");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameBackupsByName"></a>
 # **deleteInstancesByNameBackupsByName**
-> BasicBackgroundOperationResponse deleteInstancesByNameBackupsByName(name, backupsName)
+> BackgroundOperationResponse deleteInstancesByNameBackupsByName(name, backupsName)
 
 
 
@@ -143,7 +143,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String backupsName = "backupsName_example"; // String | Backups name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByNameBackupsByName(name, backupsName);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameBackupsByName(name, backupsName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameBackupsByName");
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ null (empty response body)
 
 <a name="deleteInstancesByNameFiles"></a>
 # **deleteInstancesByNameFiles**
-> StandardServerResponse deleteInstancesByNameFiles(name, path)
+> BackgroundOperationResponse deleteInstancesByNameFiles(name, path)
 
 
 
@@ -282,7 +282,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String path = /path/inside/the/instance; // String | directory listing from the instance
     try {
-      StandardServerResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameFiles");
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameLogsFile"></a>
 # **deleteInstancesByNameLogsFile**
-> StandardServerResponse deleteInstancesByNameLogsFile(name, logFile)
+> BackgroundOperationResponse deleteInstancesByNameLogsFile(name, logFile)
 
 
 
@@ -353,7 +353,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String logFile = "logFile_example"; // String | Instance log file
     try {
-      StandardServerResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameLogsFile");
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameMetadataTemplates"></a>
 # **deleteInstancesByNameMetadataTemplates**
-> StandardServerResponse deleteInstancesByNameMetadataTemplates(name, path)
+> BackgroundOperationResponse deleteInstancesByNameMetadataTemplates(name, path)
 
 
 
@@ -424,7 +424,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String path = "path_example"; // String | Template
     try {
-      StandardServerResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameMetadataTemplates");
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameSnapshotsInformation"></a>
 # **deleteInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(name, snapshotName)
+> BackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(name, snapshotName)
 
 
 
@@ -495,7 +495,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameSnapshotsInformation");
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstances"></a>
 # **getInstances**
-> List&lt;String&gt; getInstances(recursion, filter)
+> BackgroundOperationResponse getInstances(recursion, filter)
 
 
 
@@ -566,7 +566,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstances(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstances(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstances");
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByName"></a>
 # **getInstancesByName**
-> GetInstancesByNameResponse getInstancesByName(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByName(name, recursion, filter)
 
 
 
@@ -638,7 +638,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameResponse result = apiInstance.getInstancesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByName");
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameResponse**](GetInstancesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameBackupsByName"></a>
 # **getInstancesByNameBackupsByName**
-> GetInstancesByNameBackupsByNameResponse getInstancesByNameBackupsByName(name, backupsName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameBackupsByName(name, backupsName, recursion, filter)
 
 
 
@@ -785,7 +785,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameBackupsByNameResponse result = apiInstance.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameBackupsByName");
@@ -809,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameBackupsByNameResponse**](GetInstancesByNameBackupsByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameBackupsByNameExport"></a>
 # **getInstancesByNameBackupsByNameExport**
-> GetInstancesByNameBackupsByNameExportResponse getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter)
 
 
 
@@ -860,7 +860,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameBackupsByNameExportResponse result = apiInstance.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameBackupsByNameExport");
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameBackupsByNameExportResponse**](GetInstancesByNameBackupsByNameExportResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameConsole"></a>
 # **getInstancesByNameConsole**
-> GetInstancesByNameResponse getInstancesByNameConsole(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameConsole(name, recursion, filter)
 
 
 
@@ -934,7 +934,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameResponse result = apiInstance.getInstancesByNameConsole(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameConsole(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameConsole");
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameResponse**](GetInstancesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1208,7 +1208,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameMetadata"></a>
 # **getInstancesByNameMetadata**
-> GetInstancesByNameMetadataResponse getInstancesByNameMetadata(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameMetadata(name, recursion, filter)
 
 
 
@@ -1238,7 +1238,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameMetadataResponse result = apiInstance.getInstancesByNameMetadata(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameMetadata(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameMetadata");
@@ -1261,7 +1261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1429,7 +1429,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameSnapshotsInformation"></a>
 # **getInstancesByNameSnapshotsInformation**
-> GetSnapshotInformationResponse getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter)
 
 
 
@@ -1460,7 +1460,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetSnapshotInformationResponse result = apiInstance.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameSnapshotsInformation");
@@ -1484,7 +1484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSnapshotInformationResponse**](GetSnapshotInformationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1504,7 +1504,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameState"></a>
 # **getInstancesByNameState**
-> GetInstancesByNameStateResponse getInstancesByNameState(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameState(name, recursion, filter)
 
 
 
@@ -1534,7 +1534,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameStateResponse result = apiInstance.getInstancesByNameState(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameState(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameState");
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameStateResponse**](GetInstancesByNameStateResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1577,7 +1577,7 @@ Name | Type | Description  | Notes
 
 <a name="patchInstancesByName"></a>
 # **patchInstancesByName**
-> StandardServerResponse patchInstancesByName(name, body)
+> BackgroundOperationResponse patchInstancesByName(name, body)
 
 
 
@@ -1606,7 +1606,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     PatchInstancesByNameRequest body = new PatchInstancesByNameRequest(); // PatchInstancesByNameRequest | Update instance configuration
     try {
-      StandardServerResponse result = apiInstance.patchInstancesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchInstancesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#patchInstancesByName");
@@ -1628,7 +1628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1648,7 +1648,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstances"></a>
 # **postInstances**
-> BasicBackgroundOperationResponse postInstances(target, body)
+> BackgroundOperationResponse postInstances(target, body)
 
 
 
@@ -1677,7 +1677,7 @@ public class Example {
     String target = "target_example"; // String | ?target=<member>
     CreateInstancesRequest body = new CreateInstancesRequest(); // CreateInstancesRequest | Create a new instance
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstances(target, body);
+      BackgroundOperationResponse result = apiInstance.postInstances(target, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstances");
@@ -1699,7 +1699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1719,7 +1719,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByName"></a>
 # **postInstancesByName**
-> BasicBackgroundOperationResponse postInstancesByName(name, target, body)
+> BackgroundOperationResponse postInstancesByName(name, target, body)
 
 
 
@@ -1749,7 +1749,7 @@ public class Example {
     String target = "target_example"; // String | ?target=<member>
     CreateInstancesByNameRequest body = new CreateInstancesByNameRequest(); // CreateInstancesByNameRequest | Used to rename/migrate the instance
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByName(name, target, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByName(name, target, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByName");
@@ -1772,7 +1772,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1793,7 +1793,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameBackups"></a>
 # **postInstancesByNameBackups**
-> BasicBackgroundOperationResponse postInstancesByNameBackups(name, body)
+> BackgroundOperationResponse postInstancesByNameBackups(name, body)
 
 
 
@@ -1822,7 +1822,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameBackupsRequest body = new CreateInstancesByNameBackupsRequest(); // CreateInstancesByNameBackupsRequest | Create a new backup
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameBackups(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameBackups(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameBackups");
@@ -1844,7 +1844,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1864,7 +1864,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameBackupsByName"></a>
 # **postInstancesByNameBackupsByName**
-> BasicBackgroundOperationResponse postInstancesByNameBackupsByName(name, backupsName, body)
+> BackgroundOperationResponse postInstancesByNameBackupsByName(name, backupsName, body)
 
 
 
@@ -1894,7 +1894,7 @@ public class Example {
     String backupsName = "backupsName_example"; // String | Backups name
     CreateInstancesByNameBackupsByNameRequest body = new CreateInstancesByNameBackupsByNameRequest(); // CreateInstancesByNameBackupsByNameRequest | Used to rename the backup
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameBackupsByName(name, backupsName, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameBackupsByName(name, backupsName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameBackupsByName");
@@ -1917,7 +1917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1937,7 +1937,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameConsole"></a>
 # **postInstancesByNameConsole**
-> BasicBackgroundOperationResponse postInstancesByNameConsole(name, body)
+> BackgroundOperationResponse postInstancesByNameConsole(name, body)
 
 
 
@@ -1966,7 +1966,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameConsoleRequest body = new CreateInstancesByNameConsoleRequest(); // CreateInstancesByNameConsoleRequest | Attach to an instance's console devices
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameConsole(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameConsole(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameConsole");
@@ -1988,7 +1988,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2008,7 +2008,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameExec"></a>
 # **postInstancesByNameExec**
-> BasicBackgroundOperationResponse postInstancesByNameExec(name, body)
+> BackgroundOperationResponse postInstancesByNameExec(name, body)
 
 
 
@@ -2037,7 +2037,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameExecRequest body = new CreateInstancesByNameExecRequest(); // CreateInstancesByNameExecRequest | Run a remote command
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameExec(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameExec(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameExec");
@@ -2059,7 +2059,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2079,7 +2079,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameFiles"></a>
 # **postInstancesByNameFiles**
-> StandardServerResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
+> BackgroundOperationResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
 
 
 
@@ -2114,7 +2114,7 @@ public class Example {
     String xLXDType = "xLXDType_example"; // String | one of directory or file or symlink
     File body = new File("/path/to/file"); // File | Upload a file to the instance
     try {
-      StandardServerResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameFiles");
@@ -2142,7 +2142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2162,7 +2162,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameMetadataTemplates"></a>
 # **postInstancesByNameMetadataTemplates**
-> StandardServerResponse postInstancesByNameMetadataTemplates(name, path, body)
+> BackgroundOperationResponse postInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2192,7 +2192,7 @@ public class Example {
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Add a container template
     try {
-      StandardServerResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameMetadataTemplates");
@@ -2215,7 +2215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2235,7 +2235,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameSnapshot"></a>
 # **postInstancesByNameSnapshot**
-> BasicBackgroundOperationResponse postInstancesByNameSnapshot(name, body)
+> BackgroundOperationResponse postInstancesByNameSnapshot(name, body)
 
 
 
@@ -2264,7 +2264,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameSnapshotRequest body = new CreateInstancesByNameSnapshotRequest(); // CreateInstancesByNameSnapshotRequest | Create a new snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshot(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshot(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameSnapshot");
@@ -2286,7 +2286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2306,7 +2306,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameSnapshotsInformation"></a>
 # **postInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse postInstancesByNameSnapshotsInformation(name, snapshotName, body)
+> BackgroundOperationResponse postInstancesByNameSnapshotsInformation(name, snapshotName, body)
 
 
 
@@ -2336,7 +2336,7 @@ public class Example {
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     CreateInstancesByNameSnapshotsInformationRequest body = new CreateInstancesByNameSnapshotsInformationRequest(); // CreateInstancesByNameSnapshotsInformationRequest | Used to rename/migrate the snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameSnapshotsInformation");
@@ -2359,7 +2359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2380,7 +2380,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByName"></a>
 # **putInstancesByName**
-> BasicBackgroundOperationResponse putInstancesByName(name, body)
+> BackgroundOperationResponse putInstancesByName(name, body)
 
 
 
@@ -2409,7 +2409,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     UpdateInstancesByNameRequest body = new UpdateInstancesByNameRequest(); // UpdateInstancesByNameRequest | 
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByName");
@@ -2431,7 +2431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2451,7 +2451,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadata"></a>
 # **putInstancesByNameMetadata**
-> StandardServerResponse putInstancesByNameMetadata(name, body)
+> BackgroundOperationResponse putInstancesByNameMetadata(name, body)
 
 
 
@@ -2480,7 +2480,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     GetInstancesByNameMetadataResponse body = new GetInstancesByNameMetadataResponse(); // GetInstancesByNameMetadataResponse | Replaces instance metadata
     try {
-      StandardServerResponse result = apiInstance.putInstancesByNameMetadata(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameMetadata(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadata");
@@ -2502,7 +2502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2522,7 +2522,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadataTemplates"></a>
 # **putInstancesByNameMetadataTemplates**
-> StandardServerResponse putInstancesByNameMetadataTemplates(name, path, body)
+> BackgroundOperationResponse putInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2552,7 +2552,7 @@ public class Example {
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Replace content of a template
     try {
-      StandardServerResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadataTemplates");
@@ -2575,7 +2575,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2595,7 +2595,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameSnapshotsInformation"></a>
 # **putInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse putInstancesByNameSnapshotsInformation(name, snapshotName, body)
+> BackgroundOperationResponse putInstancesByNameSnapshotsInformation(name, snapshotName, body)
 
 
 
@@ -2625,7 +2625,7 @@ public class Example {
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     UpdateInstancesByNameSnapshotsInformationRequest body = new UpdateInstancesByNameSnapshotsInformationRequest(); // UpdateInstancesByNameSnapshotsInformationRequest | Update the snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameSnapshotsInformation");
@@ -2648,7 +2648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -2668,7 +2668,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameState"></a>
 # **putInstancesByNameState**
-> BasicBackgroundOperationResponse putInstancesByNameState(name, body)
+> BackgroundOperationResponse putInstancesByNameState(name, body)
 
 
 
@@ -2697,7 +2697,7 @@ public class Example {
     String name = "name_example"; // String | Instance name
     UpdateInstancesByNameStateRequest body = new UpdateInstancesByNameStateRequest(); // UpdateInstancesByNameStateRequest | Change the instance state
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByNameState(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameState(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameState");
@@ -2719,7 +2719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

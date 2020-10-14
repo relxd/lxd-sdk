@@ -16,6 +16,10 @@ servers:
 tags:
   - description: Perform REST operations on Lxd
     name: lxd
+  - description: Perform REST operations on supported lxd apis
+    name: supported-apis
+  - description: Perform REST operations on server configuration information
+    name: server-config
   - description: Perform REST operations on Certificates
     name: certificates
   - description: Perform REST operations on Instances
@@ -74,9 +78,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of supported APIs
         "400":
           content:
@@ -100,7 +104,7 @@ paths:
         - authentication:
             - guest
       tags:
-        - lxd
+        - supported-apis
       x-codegen-request-body-name: body
       x-accepts: application/json
   /1.0:
@@ -137,12 +141,10 @@ paths:
           content:
             application/json:
               examples:
-                Example_1:
-                  $ref: '#/components/examples/StandardServerResponse'
-                Example_2:
-                  $ref: '#/components/examples/GetServerStateResponse2'
+                Example:
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Server configuration and environment information
         "400":
           content:
@@ -168,7 +170,7 @@ paths:
             - untrusted
             - trusted
       tags:
-        - lxd
+        - server-config
       x-codegen-request-body-name: body
       x-accepts: application/json
     patch:
@@ -186,9 +188,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -212,7 +214,7 @@ paths:
         - authentication:
             - trusted
       tags:
-        - lxd
+        - server-config
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
@@ -231,9 +233,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -257,7 +259,7 @@ paths:
         - authentication:
             - trusted
       tags:
-        - lxd
+        - server-config
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
@@ -296,9 +298,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of trusted certificates
         "400":
           content:
@@ -340,9 +342,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -390,9 +392,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -436,7 +438,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Trusted certificate information
         "400":
           content:
@@ -487,9 +489,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -541,9 +543,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -606,11 +608,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetInstancesResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of instances
         "400":
           content:
@@ -657,9 +657,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -706,9 +706,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -776,7 +776,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instance information
         "400":
           content:
@@ -827,9 +827,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -885,11 +885,9 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
-                Example_2:
-                  $ref: '#/components/examples/CreateInstancesByNameResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Background return value responses
         "400":
           content:
@@ -949,9 +947,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -1061,7 +1059,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instance information
         "400":
           content:
@@ -1108,9 +1106,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -1158,16 +1156,10 @@ paths:
           content:
             application/json:
               examples:
-                Example_1:
-                  $ref: '#/components/examples/CreateInstancesByNameExecResponse1'
-                Example_2:
-                  $ref: '#/components/examples/CreateInstancesByNameExecResponse2'
-                Example_3:
-                  $ref: '#/components/examples/CreateInstancesByNameExecResponse3'
-                Example_4:
-                  $ref: '#/components/examples/CreateInstancesByNameExecResponse4'
+                Example:
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Background operation + optional websocket information
         "400":
           content:
@@ -1223,9 +1215,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -1443,9 +1435,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -1516,7 +1508,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetSnapshotListResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -1571,9 +1563,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -1628,9 +1620,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -1706,7 +1698,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetSnapshotInformationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Snapshot information
         "400":
           content:
@@ -1761,11 +1753,11 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
                 Example_2:
                   $ref: '#/components/examples/CreateInstancesByNameSnapshotsInformationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Create Instances By Name Snapshots Information Response
         "400":
           content:
@@ -1834,9 +1826,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -1906,7 +1898,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameStateResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Current state
         "400":
           content:
@@ -1957,9 +1949,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -2032,7 +2024,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetInstancesByNameLogsResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -2090,9 +2082,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -2169,7 +2161,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetInstancesByNameLogsResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -2242,7 +2234,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameMetadataResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instance metadata
         "400":
           content:
@@ -2293,9 +2285,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -2350,9 +2342,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -2429,7 +2421,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetInstancesByNameMetadataTemplatesResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -2493,9 +2485,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -2556,9 +2548,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -2629,7 +2621,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetInstancesByNameBackupsResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -2684,9 +2676,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -2741,9 +2733,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -2819,7 +2811,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameBackupsByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Backup information
         "400":
           content:
@@ -2878,9 +2870,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -2958,7 +2950,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInstancesByNameBackupsByNameExportResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Fetch the backup tarball
         "400":
           content:
@@ -3031,7 +3023,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetEventsResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: websocket upgrade
         "400":
           content:
@@ -3093,9 +3085,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of images (public or private)
         "400":
           content:
@@ -3170,9 +3162,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -3219,9 +3211,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -3298,7 +3290,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Download the image tarball
         "400":
           content:
@@ -3350,9 +3342,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -3404,9 +3396,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -3485,7 +3477,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetImagesFingerprintResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Download the image tarball
         "400":
           content:
@@ -3537,9 +3529,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -3610,9 +3602,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -3666,9 +3658,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/CreateImagesFingerprintSecretResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/CreateImagesFingerprintSecretResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -3732,9 +3724,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of aliases (public or private based on image visibility)
         "400":
           content:
@@ -3777,9 +3769,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -3826,9 +3818,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -3896,7 +3888,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetImagesAliasesByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Snapshot information
         "400":
           content:
@@ -3948,9 +3940,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4002,9 +3994,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4065,9 +4057,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4130,7 +4122,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetNetworksResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -4176,9 +4168,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4225,9 +4217,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4295,7 +4287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworksByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about a network
         "400":
           content:
@@ -4346,9 +4338,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4463,9 +4455,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4535,7 +4527,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworksByNameStateResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Network state
         "400":
           content:
@@ -4596,7 +4588,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetOperationsResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of operations
         "400":
           content:
@@ -4643,9 +4635,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -4713,7 +4705,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworksUUIDResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Background operation
         "400":
           content:
@@ -4791,7 +4783,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworksUUIDResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Background operation
         "400":
           content:
@@ -4875,7 +4867,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworksUUIDResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Background operation
         "400":
           content:
@@ -4938,11 +4930,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetProfilesResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of configuration profiles
         "400":
           content:
@@ -4984,9 +4974,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5033,9 +5023,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5103,7 +5093,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetProfilesByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Profile configuration
         "400":
           content:
@@ -5154,9 +5144,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5271,9 +5261,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5338,9 +5328,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/GetProjectsResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of projects
         "400":
           content:
@@ -5382,9 +5370,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5431,9 +5419,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5510,7 +5498,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetProjectsByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Project configuration
         "400":
           content:
@@ -5561,9 +5549,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5687,9 +5675,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5754,9 +5742,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/GetStoragePoolsResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of storage pools
         "400":
           content:
@@ -5798,9 +5784,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5847,9 +5833,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -5926,7 +5912,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStoragePoolsByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about a storage pool
         "400":
           content:
@@ -5977,9 +5963,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6031,9 +6017,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6103,7 +6089,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStoragePoolsByNameResourcesResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about the resources available to the storage pool
         "400":
           content:
@@ -6173,7 +6159,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetStoragePoolsByNameVolumesResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -6224,9 +6210,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6284,9 +6270,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6349,9 +6335,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6436,7 +6422,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStoragePoolsByNameVolumesByTypeNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about a storage volume of a given type on a storage
             pool
         "400":
@@ -6504,9 +6490,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6570,11 +6556,11 @@ paths:
             application/json:
               examples:
                 Example_1:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
                 Example_2:
                   $ref: '#/components/examples/CreateStoragePoolsByNameVolumesByTypeNameResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Create Instances By Name Exec Response
         "400":
           content:
@@ -6638,9 +6624,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -6727,7 +6713,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetStoragePoolsByNameVolumesByTypeNameSnapshotsResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -6798,9 +6784,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -6863,9 +6849,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -6949,7 +6935,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Snapshot information
         "400":
           content:
@@ -7016,9 +7002,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -7085,7 +7071,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Snapshot information
         "400":
           content:
@@ -7147,7 +7133,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetResourcesResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about the resources available to the LXD server
         "400":
           content:
@@ -7208,7 +7194,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetClusterResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Information about a cluster (such as networks and storage pools)
         "400":
           content:
@@ -7246,9 +7232,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -7311,7 +7297,7 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/GetClusterMembersResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
                 items:
                   type: string
@@ -7369,9 +7355,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/BasicBackgroundOperationResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/BasicBackgroundOperationResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A basic background return value response
         "400":
           content:
@@ -7439,7 +7425,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetClusterMembersByNameResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Retrieve the member's information and status
         "400":
           content:
@@ -7490,9 +7476,9 @@ paths:
             application/json:
               examples:
                 Example:
-                  $ref: '#/components/examples/StandardServerResponse'
+                  $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                $ref: '#/components/schemas/StandardServerResponse'
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: A standard return value response
         "400":
           content:
@@ -8080,12 +8066,24 @@ components:
         status_code: 100
         operation: /1.0/instances/<id>
         metadata: {}
-    StandardServerResponse:
+    StandardReturnValueResponse:
       description: Example Value
       value:
         type: sync
         status: Success
         status_code: 200
+        error:
+        error_code: 0
+        metadata: {}
+    BackgroundOperationResponse:
+      description: Example Value
+      value:
+        type: sync
+        status: Success
+        status_code: 200
+        operation:
+        error:
+        error_code: 0
         metadata: {}
     ErrorResponse:
       description: Example Value
@@ -8273,9 +8271,9 @@ components:
         application/json:
           examples:
             Example:
-              $ref: '#/components/examples/StandardServerResponse'
+              $ref: '#/components/examples/StandardReturnValueResponse'
           schema:
-            $ref: '#/components/schemas/StandardServerResponse'
+            $ref: '#/components/schemas/StandardReturnValueResponse'
       description: A standard return value response
     BasicBackgroundOperationResponse:
       content:
@@ -8405,7 +8403,7 @@ components:
         application/json:
           examples:
             Example_1:
-              $ref: '#/components/examples/StandardServerResponse'
+              $ref: '#/components/examples/StandardReturnValueResponse'
             Example_2:
               $ref: '#/components/examples/CreateInstancesByNameSnapshotsInformationResponse'
           schema:
@@ -8641,7 +8639,7 @@ components:
         application/json:
           examples:
             Example_1:
-              $ref: '#/components/examples/StandardServerResponse'
+              $ref: '#/components/examples/StandardReturnValueResponse'
             Example_2:
               $ref: '#/components/examples/CreateStoragePoolsByNameVolumesByTypeNameResponse'
           schema:
@@ -8693,8 +8691,16 @@ components:
           schema:
             $ref: '#/components/schemas/GetClusterMembersByNameResponse'
       description: Retrieve the member's information and status
+
   schemas:
     StandardReturnValueResponse:
+      example:
+        metadata: '{}'
+        status_code: 200
+        type: sync
+        status: Success
+        error: Failure
+        error_code: 400
       properties:
         type:
           example: sync
@@ -8708,12 +8714,29 @@ components:
             than status)
           example: 200
           type: integer
+        error:
+          example: Failure
+          type: string
+        error_code:
+          example: 400
+          type: integer
+        metadata:
+          type: object
       required:
         - status
         - statusCode
         - type
+        - metadata
       type: object
     BackgroundOperationResponse:
+      example:
+        metadata: '{}'
+        status_code: 100
+        type: async
+        operation: /1.0/instances/<id>
+        status: OK
+        error:
+        error_code: 0
       properties:
         type:
           example: async
@@ -8731,37 +8754,35 @@ components:
           description: URL to the background operation
           example: /1.0/instances/<id>
           type: string
+        error:
+          example: Failure
+          type: string
+        error_code:
+          example: 400
+          type: integer
+        metadata:
+          type: object
       required:
         - operation
         - status
         - statusCode
         - type
+        - metadata
       type: object
-    StandardServerResponse:
-      example:
-        metadata: '{}'
-        status_code: 200
-        type: sync
-        status: Success
+    ErrorResponse:
       properties:
         type:
-          example: sync
+          example: error
           type: string
-        status:
-          description: String version of the operation's status
-          example: Success
+        error:
+          example: Failure
           type: string
-        status_code:
-          description: Integer version of the operation's status (use this rather
-            than status)
-          example: 200
+        error_code:
+          example: 400
           type: integer
         metadata:
+          description: More details about the error
           type: object
-      required:
-        - status
-        - statusCode
-        - type
       type: object
     BasicBackgroundOperationResponse:
       example:
@@ -9516,7 +9537,7 @@ components:
       type: object
     RawFile:
       oneOf:
-        - $ref: '#/components/schemas/StandardServerResponse'
+        - $ref: '#/components/schemas/StandardReturnValueResponse'
         - type: object
     CreateInstancesByNameSnapshotRequest:
       example:
@@ -10658,21 +10679,6 @@ components:
           items:
             type: string
           type: array
-      type: object
-    ErrorResponse:
-      properties:
-        type:
-          example: error
-          type: string
-        error:
-          example: Failure
-          type: string
-        error_code:
-          example: 400
-          type: integer
-        metadata:
-          description: More details about the error
-          type: object
       type: object
     CreateProfilesRequest:
       example:

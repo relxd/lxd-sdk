@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="deleteFingerprint"></a>
 # **deleteFingerprint**
-> StandardServerResponse deleteFingerprint(fingerprint)
+> BackgroundOperationResponse deleteFingerprint(fingerprint)
 
 
 
@@ -42,7 +42,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      StandardServerResponse result = apiInstance.deleteFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.deleteFingerprint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#deleteFingerprint");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificates"></a>
 # **getCertificates**
-> StandardServerResponse getCertificates(recursion, filter)
+> BackgroundOperationResponse getCertificates(recursion, filter)
 
 
 
@@ -112,7 +112,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      StandardServerResponse result = apiInstance.getCertificates(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getCertificates(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#getCertificates");
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificatesByFingerPrint"></a>
 # **getCertificatesByFingerPrint**
-> StandardServerResponse getCertificatesByFingerPrint(fingerprint)
+> BackgroundOperationResponse getCertificatesByFingerPrint(fingerprint)
 
 
 
@@ -182,7 +182,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      StandardServerResponse result = apiInstance.getCertificatesByFingerPrint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.getCertificatesByFingerPrint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#getCertificatesByFingerPrint");
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="patchFingerprint"></a>
 # **patchFingerprint**
-> StandardServerResponse patchFingerprint(fingerprint, body)
+> BackgroundOperationResponse patchFingerprint(fingerprint, body)
 
 
 
@@ -252,7 +252,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateFingerprintRequest body = new UpdateFingerprintRequest(); // UpdateFingerprintRequest | Updates the certificate properties
     try {
-      StandardServerResponse result = apiInstance.patchFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.patchFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#patchFingerprint");
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="postCertificates"></a>
 # **postCertificates**
-> StandardServerResponse postCertificates(body)
+> BackgroundOperationResponse postCertificates(body)
 
 
 
@@ -322,7 +322,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     CreateCertificatesRequest body = new CreateCertificatesRequest(); // CreateCertificatesRequest | Add a new trusted certificate
     try {
-      StandardServerResponse result = apiInstance.postCertificates(body);
+      BackgroundOperationResponse result = apiInstance.postCertificates(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#postCertificates");
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 <a name="putFingerprint"></a>
 # **putFingerprint**
-> StandardServerResponse putFingerprint(fingerprint, body)
+> BackgroundOperationResponse putFingerprint(fingerprint, body)
 
 
 
@@ -392,7 +392,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateFingerprintRequest body = new UpdateFingerprintRequest(); // UpdateFingerprintRequest | Replaces the certificate properties
     try {
-      StandardServerResponse result = apiInstance.putFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.putFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#putFingerprint");
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

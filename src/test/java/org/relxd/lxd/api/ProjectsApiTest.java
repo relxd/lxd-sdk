@@ -14,11 +14,10 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateProjectsByNameRequest;
 import org.relxd.lxd.model.CreateProjectsRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetProjectsByNameResponse;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateProjectsByNameRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,7 +47,7 @@ public class ProjectsApiTest {
     @Test
     public void deleteProjectsByNameTest() throws ApiException {
         String name = null;
-        StandardServerResponse response = api.deleteProjectsByName(name);
+        BackgroundOperationResponse response = api.deleteProjectsByName(name);
 
         // TODO: test validations
     }
@@ -65,7 +64,7 @@ public class ProjectsApiTest {
     public void getProjectsTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getProjects(recursion, filter);
+        BackgroundOperationResponse response = api.getProjects(recursion, filter);
 
         // TODO: test validations
     }
@@ -83,7 +82,7 @@ public class ProjectsApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetProjectsByNameResponse response = api.getProjectsByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getProjectsByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -100,7 +99,7 @@ public class ProjectsApiTest {
     public void patchProjectsByNameTest() throws ApiException {
         String name = null;
         UpdateProjectsByNameRequest body = null;
-        StandardServerResponse response = api.patchProjectsByName(name, body);
+        BackgroundOperationResponse response = api.patchProjectsByName(name, body);
 
         // TODO: test validations
     }
@@ -116,7 +115,7 @@ public class ProjectsApiTest {
     @Test
     public void postProjectsTest() throws ApiException {
         CreateProjectsRequest body = null;
-        StandardServerResponse response = api.postProjects(body);
+        BackgroundOperationResponse response = api.postProjects(body);
 
         // TODO: test validations
     }
@@ -150,7 +149,7 @@ public class ProjectsApiTest {
     public void putProjectsByNameTest() throws ApiException {
         String name = null;
         UpdateProjectsByNameRequest body = null;
-        StandardServerResponse response = api.putProjectsByName(name, body);
+        BackgroundOperationResponse response = api.putProjectsByName(name, body);
 
         // TODO: test validations
     }

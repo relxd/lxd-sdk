@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="deleteNetworksByName"></a>
 # **deleteNetworksByName**
-> StandardServerResponse deleteNetworksByName(name)
+> BackgroundOperationResponse deleteNetworksByName(name)
 
 
 
@@ -48,7 +48,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
     try {
-      StandardServerResponse result = apiInstance.deleteNetworksByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteNetworksByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#deleteNetworksByName");
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteNetworksUUID"></a>
 # **deleteNetworksUUID**
-> StandardServerResponse deleteNetworksUUID(uuid)
+> BackgroundOperationResponse deleteNetworksUUID(uuid)
 
 
 
@@ -117,7 +117,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String uuid = "uuid_example"; // String | UUID
     try {
-      StandardServerResponse result = apiInstance.deleteNetworksUUID(uuid);
+      BackgroundOperationResponse result = apiInstance.deleteNetworksUUID(uuid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#deleteNetworksUUID");
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworksByName"></a>
 # **getNetworksByName**
-> GetNetworksByNameResponse getNetworksByName(name, recursion, filter)
+> BackgroundOperationResponse getNetworksByName(name, recursion, filter)
 
 
 
@@ -259,7 +259,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetNetworksByNameResponse result = apiInstance.getNetworksByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getNetworksByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworksByName");
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworksByNameResponse**](GetNetworksByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworksByNameState"></a>
 # **getNetworksByNameState**
-> GetNetworksByNameStateResponse getNetworksByNameState(name, recursion, filter)
+> BackgroundOperationResponse getNetworksByNameState(name, recursion, filter)
 
 
 
@@ -332,7 +332,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetNetworksByNameStateResponse result = apiInstance.getNetworksByNameState(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getNetworksByNameState(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworksByNameState");
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworksByNameStateResponse**](GetNetworksByNameStateResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworksUUID"></a>
 # **getNetworksUUID**
-> GetNetworksUUIDResponse getNetworksUUID(uuid, recursion, filter)
+> BackgroundOperationResponse getNetworksUUID(uuid, recursion, filter)
 
 
 
@@ -405,7 +405,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetNetworksUUIDResponse result = apiInstance.getNetworksUUID(uuid, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getNetworksUUID(uuid, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworksUUID");
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworksUUIDResponse**](GetNetworksUUIDResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworksUUIDWait"></a>
 # **getNetworksUUIDWait**
-> GetNetworksUUIDResponse getNetworksUUIDWait(uuid, recursion, filter, timeout)
+> BackgroundOperationResponse getNetworksUUIDWait(uuid, recursion, filter, timeout)
 
 
 
@@ -479,7 +479,7 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     BigDecimal timeout = 30; // BigDecimal | timeout
     try {
-      GetNetworksUUIDResponse result = apiInstance.getNetworksUUIDWait(uuid, recursion, filter, timeout);
+      BackgroundOperationResponse result = apiInstance.getNetworksUUIDWait(uuid, recursion, filter, timeout);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworksUUIDWait");
@@ -503,7 +503,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworksUUIDResponse**](GetNetworksUUIDResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworksUUIDWebsocket"></a>
 # **getNetworksUUIDWebsocket**
-> GetNetworksUUIDResponse getNetworksUUIDWebsocket(uuid, secret, recursion, filter)
+> BackgroundOperationResponse getNetworksUUIDWebsocket(uuid, secret, recursion, filter)
 
 
 
@@ -554,7 +554,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetNetworksUUIDResponse result = apiInstance.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworksUUIDWebsocket");
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworksUUIDResponse**](GetNetworksUUIDResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 <a name="patchNetworksByName"></a>
 # **patchNetworksByName**
-> StandardServerResponse patchNetworksByName(name, body)
+> BackgroundOperationResponse patchNetworksByName(name, body)
 
 
 
@@ -627,7 +627,7 @@ public class Example {
     String name = "name_example"; // String | Name of the network
     PatchNetworksByNameRequest body = new PatchNetworksByNameRequest(); // PatchNetworksByNameRequest | Update the network information
     try {
-      StandardServerResponse result = apiInstance.patchNetworksByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchNetworksByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#patchNetworksByName");
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 <a name="postNetworks"></a>
 # **postNetworks**
-> StandardServerResponse postNetworks(body)
+> BackgroundOperationResponse postNetworks(body)
 
 
 
@@ -697,7 +697,7 @@ public class Example {
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     CreateNetworksRequest body = new CreateNetworksRequest(); // CreateNetworksRequest | Define a new network
     try {
-      StandardServerResponse result = apiInstance.postNetworks(body);
+      BackgroundOperationResponse result = apiInstance.postNetworks(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#postNetworks");
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 
 <a name="putNetworksByName"></a>
 # **putNetworksByName**
-> StandardServerResponse putNetworksByName(name, body)
+> BackgroundOperationResponse putNetworksByName(name, body)
 
 
 
@@ -839,7 +839,7 @@ public class Example {
     String name = "name_example"; // String | Name of the network
     UpdateNetworksByNameRequest body = new UpdateNetworksByNameRequest(); // UpdateNetworksByNameRequest | Replace the network information
     try {
-      StandardServerResponse result = apiInstance.putNetworksByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putNetworksByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#putNetworksByName");
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

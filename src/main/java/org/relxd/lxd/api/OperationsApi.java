@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetOperationsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -121,7 +121,7 @@ public class OperationsApi {
      * List of operations
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetOperationsResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -131,8 +131,8 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetOperationsResponse getOperations(Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetOperationsResponse> localVarResp = getOperationsWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getOperations(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getOperationsWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -141,7 +141,7 @@ public class OperationsApi {
      * List of operations
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetOperationsResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -151,9 +151,9 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetOperationsResponse> getOperationsWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getOperationsWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getOperationsValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetOperationsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -173,10 +173,10 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOperationsAsync(Integer recursion, String filter, final ApiCallback<GetOperationsResponse> _callback) throws ApiException {
+    public okhttp3.Call getOperationsAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOperationsValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetOperationsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

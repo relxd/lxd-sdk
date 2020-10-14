@@ -27,11 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateProfilesByNameRequest;
 import org.relxd.lxd.model.CreateProfilesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetProfilesByNameResponse;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateProfilesByNameRequest;
 
 import java.lang.reflect.Type;
@@ -121,7 +120,7 @@ public class ProfilesApi {
      * 
      * Remove a profile
      * @param name Profiles name (required)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -131,8 +130,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteProfilesByName(String name) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteProfilesByNameWithHttpInfo(name);
+    public BackgroundOperationResponse deleteProfilesByName(String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteProfilesByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -140,7 +139,7 @@ public class ProfilesApi {
      * 
      * Remove a profile
      * @param name Profiles name (required)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -150,9 +149,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteProfilesByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteProfilesByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteProfilesByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -171,10 +170,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProfilesByNameAsync(String name, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteProfilesByNameAsync(String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProfilesByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -244,7 +243,7 @@ public class ProfilesApi {
      * List of configuration profiles
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -254,8 +253,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getProfiles(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getProfilesWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getProfiles(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getProfilesWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -264,7 +263,7 @@ public class ProfilesApi {
      * List of configuration profiles
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -274,9 +273,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getProfilesWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getProfilesWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getProfilesValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -296,10 +295,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfilesAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getProfilesAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProfilesValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -377,7 +376,7 @@ public class ProfilesApi {
      * @param name Profiles name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetProfilesByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -387,8 +386,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetProfilesByNameResponse getProfilesByName(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetProfilesByNameResponse> localVarResp = getProfilesByNameWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getProfilesByName(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getProfilesByNameWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -398,7 +397,7 @@ public class ProfilesApi {
      * @param name Profiles name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetProfilesByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -408,9 +407,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetProfilesByNameResponse> getProfilesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getProfilesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getProfilesByNameValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetProfilesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -431,10 +430,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProfilesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<GetProfilesByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getProfilesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProfilesByNameValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetProfilesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -502,7 +501,7 @@ public class ProfilesApi {
      * Update the profile information
      * @param name Profiles name (required)
      * @param body Update the profile information (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -512,8 +511,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse patchProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = patchProfilesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse patchProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchProfilesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -522,7 +521,7 @@ public class ProfilesApi {
      * Update the profile information
      * @param name Profiles name (required)
      * @param body Update the profile information (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -532,9 +531,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> patchProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchProfilesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -554,10 +553,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call patchProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchProfilesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -617,7 +616,7 @@ public class ProfilesApi {
      * 
      * Define a new profile
      * @param body Define a new profile (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -627,8 +626,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse postProfiles(CreateProfilesRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = postProfilesWithHttpInfo(body);
+    public BackgroundOperationResponse postProfiles(CreateProfilesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postProfilesWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -636,7 +635,7 @@ public class ProfilesApi {
      * 
      * Define a new profile
      * @param body Define a new profile (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -646,9 +645,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> postProfilesWithHttpInfo(CreateProfilesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postProfilesWithHttpInfo(CreateProfilesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postProfilesValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -667,10 +666,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProfilesAsync(CreateProfilesRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call postProfilesAsync(CreateProfilesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postProfilesValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -865,7 +864,7 @@ public class ProfilesApi {
      * Replace the profile information
      * @param name Profiles name (required)
      * @param body Replace the profile information (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -875,8 +874,8 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse putProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = putProfilesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse putProfilesByName(String name, UpdateProfilesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putProfilesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -885,7 +884,7 @@ public class ProfilesApi {
      * Replace the profile information
      * @param name Profiles name (required)
      * @param body Replace the profile information (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -895,9 +894,9 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> putProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putProfilesByNameWithHttpInfo(String name, UpdateProfilesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putProfilesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -917,10 +916,10 @@ public class ProfilesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call putProfilesByNameAsync(String name, UpdateProfilesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putProfilesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

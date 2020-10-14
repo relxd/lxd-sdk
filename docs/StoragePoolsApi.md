@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 <a name="deleteStoragePoolsByName"></a>
 # **deleteStoragePoolsByName**
-> StandardServerResponse deleteStoragePoolsByName(pool)
+> BackgroundOperationResponse deleteStoragePoolsByName(pool)
 
 
 
@@ -57,7 +57,7 @@ public class Example {
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
     try {
-      StandardServerResponse result = apiInstance.deleteStoragePoolsByName(pool);
+      BackgroundOperationResponse result = apiInstance.deleteStoragePoolsByName(pool);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#deleteStoragePoolsByName");
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteStoragePoolsByNameVolumesByTypeName"></a>
 # **deleteStoragePoolsByNameVolumesByTypeName**
-> StandardServerResponse deleteStoragePoolsByNameVolumesByTypeName(pool, type, name)
+> BackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeName(pool, type, name)
 
 
 
@@ -129,7 +129,7 @@ public class Example {
     String type = "type_example"; // String | Type of the volume
     String name = "name_example"; // String | name
     try {
-      StandardServerResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
+      BackgroundOperationResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#deleteStoragePoolsByNameVolumesByTypeName");
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName"></a>
 # **deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName**
-> BasicBackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name)
+> BackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name)
 
 
 
@@ -202,7 +202,7 @@ public class Example {
     String type = "type_example"; // String | Type of the volume
     String name = "name_example"; // String | name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
+      BackgroundOperationResponse result = apiInstance.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName");
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePools"></a>
 # **getStoragePools**
-> List&lt;String&gt; getStoragePools(recursion, filter)
+> BackgroundOperationResponse getStoragePools(recursion, filter)
 
 
 
@@ -274,7 +274,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getStoragePools(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePools(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePools");
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByName"></a>
 # **getStoragePoolsByName**
-> GetStoragePoolsByNameResponse getStoragePoolsByName(pool, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByName(pool, recursion, filter)
 
 
 
@@ -346,7 +346,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetStoragePoolsByNameResponse result = apiInstance.getStoragePoolsByName(pool, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByName(pool, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByName");
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetStoragePoolsByNameResponse**](GetStoragePoolsByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByNameResources"></a>
 # **getStoragePoolsByNameResources**
-> GetStoragePoolsByNameResourcesResponse getStoragePoolsByNameResources(pool, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByNameResources(pool, recursion, filter)
 
 
 
@@ -419,7 +419,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetStoragePoolsByNameResourcesResponse result = apiInstance.getStoragePoolsByNameResources(pool, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByNameResources(pool, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByNameResources");
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetStoragePoolsByNameResourcesResponse**](GetStoragePoolsByNameResourcesResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByNameVolumesByTypeName"></a>
 # **getStoragePoolsByNameVolumesByTypeName**
-> GetStoragePoolsByNameVolumesByTypeNameResponse getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter)
 
 
 
@@ -567,7 +567,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetStoragePoolsByNameVolumesByTypeNameResponse result = apiInstance.getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByNameVolumesByTypeName");
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetStoragePoolsByNameVolumesByTypeNameResponse**](GetStoragePoolsByNameVolumesByTypeNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -689,7 +689,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByNameVolumesByTypeNameSnapshotsName"></a>
 # **getStoragePoolsByNameVolumesByTypeNameSnapshotsName**
-> GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter)
 
 
 
@@ -721,7 +721,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse result = apiInstance.getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByNameVolumesByTypeNameSnapshotsName");
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse**](GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStoragePoolsByName"></a>
 # **patchStoragePoolsByName**
-> StandardServerResponse patchStoragePoolsByName(pool, body)
+> BackgroundOperationResponse patchStoragePoolsByName(pool, body)
 
 
 
@@ -795,7 +795,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     PatchStoragePoolsByNameRequest body = new PatchStoragePoolsByNameRequest(); // PatchStoragePoolsByNameRequest | Update the storage pool information
     try {
-      StandardServerResponse result = apiInstance.patchStoragePoolsByName(pool, body);
+      BackgroundOperationResponse result = apiInstance.patchStoragePoolsByName(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#patchStoragePoolsByName");
@@ -817,7 +817,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 <a name="patchStoragePoolsByNameVolumesByTypeName"></a>
 # **patchStoragePoolsByNameVolumesByTypeName**
-> StandardServerResponse patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
+> BackgroundOperationResponse patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
 
 
 
@@ -868,7 +868,7 @@ public class Example {
     String name = "name_example"; // String | name
     UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body = new UpdateStoragePoolsByNameVolumesByTypeNameRequest2(); // UpdateStoragePoolsByNameVolumesByTypeNameRequest2 | Update the storage volume information
     try {
-      StandardServerResponse result = apiInstance.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#patchStoragePoolsByNameVolumesByTypeName");
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -912,7 +912,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePools"></a>
 # **postStoragePools**
-> StandardServerResponse postStoragePools(body)
+> BackgroundOperationResponse postStoragePools(body)
 
 
 
@@ -940,7 +940,7 @@ public class Example {
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     CreateStoragePoolsRequest body = new CreateStoragePoolsRequest(); // CreateStoragePoolsRequest | Define a new storage pool
     try {
-      StandardServerResponse result = apiInstance.postStoragePools(body);
+      BackgroundOperationResponse result = apiInstance.postStoragePools(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePools");
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -981,7 +981,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumes"></a>
 # **postStoragePoolsByNameVolumes**
-> StandardServerResponse postStoragePoolsByNameVolumes(pool, body)
+> BackgroundOperationResponse postStoragePoolsByNameVolumes(pool, body)
 
 
 
@@ -1010,7 +1010,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     CreateStoragePoolsByNameVolumesRequest body = new CreateStoragePoolsByNameVolumesRequest(); // CreateStoragePoolsByNameVolumesRequest | Create a new storage volume on a given storage pool
     try {
-      StandardServerResponse result = apiInstance.postStoragePoolsByNameVolumes(pool, body);
+      BackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumes(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumes");
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumesByType"></a>
 # **postStoragePoolsByNameVolumesByType**
-> StandardServerResponse postStoragePoolsByNameVolumesByType(pool, type, body)
+> BackgroundOperationResponse postStoragePoolsByNameVolumesByType(pool, type, body)
 
 
 
@@ -1082,7 +1082,7 @@ public class Example {
     String type = "type_example"; // String | Type of the volume
     CreateStoragePoolsByNameVolumesByTypeRequest body = new CreateStoragePoolsByNameVolumesByTypeRequest(); // CreateStoragePoolsByNameVolumesByTypeRequest | Create a new storage volume of a particular type on a given storage pool
     try {
-      StandardServerResponse result = apiInstance.postStoragePoolsByNameVolumesByType(pool, type, body);
+      BackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByType(pool, type, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumesByType");
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumesByTypeName"></a>
 # **postStoragePoolsByNameVolumesByTypeName**
-> BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
+> BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
 
 
 
@@ -1156,7 +1156,7 @@ public class Example {
     String name = "name_example"; // String | name
     CreateStoragePoolsByNameVolumesByTypeNameRequest body = new CreateStoragePoolsByNameVolumesByTypeNameRequest(); // CreateStoragePoolsByNameVolumesByTypeNameRequest | Rename a storage volume on a given storage pool
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumesByTypeName");
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1200,7 +1200,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumesByTypeNameSnapshots"></a>
 # **postStoragePoolsByNameVolumesByTypeNameSnapshots**
-> BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body)
+> BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body)
 
 
 
@@ -1231,7 +1231,7 @@ public class Example {
     String name = "name_example"; // String | name
     CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body = new CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest(); // CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest | Create a new volume snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumesByTypeNameSnapshots");
@@ -1255,7 +1255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1275,7 +1275,7 @@ Name | Type | Description  | Notes
 
 <a name="postStoragePoolsByNameVolumesByTypeNameSnapshotsName"></a>
 # **postStoragePoolsByNameVolumesByTypeNameSnapshotsName**
-> BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body)
+> BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body)
 
 
 
@@ -1306,7 +1306,7 @@ public class Example {
     String name = "name_example"; // String | name
     CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body = new CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest(); // CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest | Used to rename the volume snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#postStoragePoolsByNameVolumesByTypeNameSnapshotsName");
@@ -1330,7 +1330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1350,7 +1350,7 @@ Name | Type | Description  | Notes
 
 <a name="putStoragePoolsByName"></a>
 # **putStoragePoolsByName**
-> StandardServerResponse putStoragePoolsByName(pool, body)
+> BackgroundOperationResponse putStoragePoolsByName(pool, body)
 
 
 
@@ -1379,7 +1379,7 @@ public class Example {
     String pool = "pool_example"; // String | Storage pool name
     UpdateStoragePoolsByNameRequest body = new UpdateStoragePoolsByNameRequest(); // UpdateStoragePoolsByNameRequest | Replace the storage pool information
     try {
-      StandardServerResponse result = apiInstance.putStoragePoolsByName(pool, body);
+      BackgroundOperationResponse result = apiInstance.putStoragePoolsByName(pool, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#putStoragePoolsByName");
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1421,7 +1421,7 @@ Name | Type | Description  | Notes
 
 <a name="putStoragePoolsByNameVolumesByTypeName"></a>
 # **putStoragePoolsByNameVolumesByTypeName**
-> StandardServerResponse putStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
+> BackgroundOperationResponse putStoragePoolsByNameVolumesByTypeName(pool, type, name, body)
 
 
 
@@ -1452,7 +1452,7 @@ public class Example {
     String name = "name_example"; // String | name
     UpdateStoragePoolsByNameVolumesByTypeNameRequest body = new UpdateStoragePoolsByNameVolumesByTypeNameRequest(); // UpdateStoragePoolsByNameVolumesByTypeNameRequest | Replace the storage volume information or restore from snapshot
     try {
-      StandardServerResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#putStoragePoolsByNameVolumesByTypeName");
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StandardServerResponse**](StandardServerResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1496,7 +1496,7 @@ Name | Type | Description  | Notes
 
 <a name="putStoragePoolsByNameVolumesByTypeNameSnapshotsName"></a>
 # **putStoragePoolsByNameVolumesByTypeNameSnapshotsName**
-> GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body)
+> BackgroundOperationResponse putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body)
 
 
 
@@ -1527,7 +1527,7 @@ public class Example {
     String name = "name_example"; // String | name
     UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body = new UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest(); // UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest | Volume snapshot information
     try {
-      GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
+      BackgroundOperationResponse result = apiInstance.putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#putStoragePoolsByNameVolumesByTypeNameSnapshotsName");
@@ -1551,7 +1551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse**](GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

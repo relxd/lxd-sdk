@@ -27,15 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.CreateNetworksByNameRequest;
 import org.relxd.lxd.model.CreateNetworksRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetNetworksByNameResponse;
-import org.relxd.lxd.model.GetNetworksByNameStateResponse;
-import org.relxd.lxd.model.GetNetworksUUIDResponse;
 import org.relxd.lxd.model.PatchNetworksByNameRequest;
-import org.relxd.lxd.model.StandardServerResponse;
 import org.relxd.lxd.model.UpdateNetworksByNameRequest;
 
 import java.lang.reflect.Type;
@@ -125,7 +122,7 @@ public class NetworksApi {
      * 
      * Remove a network
      * @param name Name of the network (required)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -135,8 +132,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteNetworksByName(String name) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteNetworksByNameWithHttpInfo(name);
+    public BackgroundOperationResponse deleteNetworksByName(String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteNetworksByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -144,7 +141,7 @@ public class NetworksApi {
      * 
      * Remove a network
      * @param name Name of the network (required)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -154,9 +151,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteNetworksByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteNetworksByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteNetworksByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -175,10 +172,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworksByNameAsync(String name, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteNetworksByNameAsync(String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNetworksByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -244,7 +241,7 @@ public class NetworksApi {
      * 
      * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
      * @param uuid UUID (required)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -254,8 +251,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse deleteNetworksUUID(String uuid) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = deleteNetworksUUIDWithHttpInfo(uuid);
+    public BackgroundOperationResponse deleteNetworksUUID(String uuid) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteNetworksUUIDWithHttpInfo(uuid);
         return localVarResp.getData();
     }
 
@@ -263,7 +260,7 @@ public class NetworksApi {
      * 
      * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
      * @param uuid UUID (required)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -273,9 +270,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> deleteNetworksUUIDWithHttpInfo(String uuid) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteNetworksUUIDWithHttpInfo(String uuid) throws ApiException {
         okhttp3.Call localVarCall = deleteNetworksUUIDValidateBeforeCall(uuid, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -294,10 +291,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteNetworksUUIDAsync(String uuid, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteNetworksUUIDAsync(String uuid, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteNetworksUUIDValidateBeforeCall(uuid, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -500,7 +497,7 @@ public class NetworksApi {
      * @param name Name of the network (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetNetworksByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -510,8 +507,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetNetworksByNameResponse getNetworksByName(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetNetworksByNameResponse> localVarResp = getNetworksByNameWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getNetworksByName(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getNetworksByNameWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -521,7 +518,7 @@ public class NetworksApi {
      * @param name Name of the network (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetNetworksByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -531,9 +528,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetNetworksByNameResponse> getNetworksByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getNetworksByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getNetworksByNameValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetNetworksByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -554,10 +551,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworksByNameAsync(String name, Integer recursion, String filter, final ApiCallback<GetNetworksByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworksByNameAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworksByNameValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetNetworksByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -635,7 +632,7 @@ public class NetworksApi {
      * @param name Name of the network (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetNetworksByNameStateResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -645,8 +642,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetNetworksByNameStateResponse getNetworksByNameState(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetNetworksByNameStateResponse> localVarResp = getNetworksByNameStateWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getNetworksByNameState(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getNetworksByNameStateWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -656,7 +653,7 @@ public class NetworksApi {
      * @param name Name of the network (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetNetworksByNameStateResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -666,9 +663,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetNetworksByNameStateResponse> getNetworksByNameStateWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getNetworksByNameStateWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getNetworksByNameStateValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetNetworksByNameStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -689,10 +686,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworksByNameStateAsync(String name, Integer recursion, String filter, final ApiCallback<GetNetworksByNameStateResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworksByNameStateAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworksByNameStateValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetNetworksByNameStateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -770,7 +767,7 @@ public class NetworksApi {
      * @param uuid UUID (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetNetworksUUIDResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -780,8 +777,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetNetworksUUIDResponse getNetworksUUID(String uuid, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetNetworksUUIDResponse> localVarResp = getNetworksUUIDWithHttpInfo(uuid, recursion, filter);
+    public BackgroundOperationResponse getNetworksUUID(String uuid, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getNetworksUUIDWithHttpInfo(uuid, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -791,7 +788,7 @@ public class NetworksApi {
      * @param uuid UUID (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetNetworksUUIDResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -801,9 +798,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetNetworksUUIDResponse> getNetworksUUIDWithHttpInfo(String uuid, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getNetworksUUIDWithHttpInfo(String uuid, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getNetworksUUIDValidateBeforeCall(uuid, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -824,10 +821,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworksUUIDAsync(String uuid, Integer recursion, String filter, final ApiCallback<GetNetworksUUIDResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworksUUIDAsync(String uuid, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworksUUIDValidateBeforeCall(uuid, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -911,7 +908,7 @@ public class NetworksApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param timeout timeout (optional)
-     * @return GetNetworksUUIDResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -921,8 +918,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetNetworksUUIDResponse getNetworksUUIDWait(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
-        ApiResponse<GetNetworksUUIDResponse> localVarResp = getNetworksUUIDWaitWithHttpInfo(uuid, recursion, filter, timeout);
+    public BackgroundOperationResponse getNetworksUUIDWait(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getNetworksUUIDWaitWithHttpInfo(uuid, recursion, filter, timeout);
         return localVarResp.getData();
     }
 
@@ -933,7 +930,7 @@ public class NetworksApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param timeout timeout (optional)
-     * @return ApiResponse&lt;GetNetworksUUIDResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -943,9 +940,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetNetworksUUIDResponse> getNetworksUUIDWaitWithHttpInfo(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getNetworksUUIDWaitWithHttpInfo(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
         okhttp3.Call localVarCall = getNetworksUUIDWaitValidateBeforeCall(uuid, recursion, filter, timeout, null);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -967,10 +964,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworksUUIDWaitAsync(String uuid, Integer recursion, String filter, BigDecimal timeout, final ApiCallback<GetNetworksUUIDResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworksUUIDWaitAsync(String uuid, Integer recursion, String filter, BigDecimal timeout, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworksUUIDWaitValidateBeforeCall(uuid, recursion, filter, timeout, _callback);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1059,7 +1056,7 @@ public class NetworksApi {
      * @param secret secret (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetNetworksUUIDResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1069,8 +1066,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetNetworksUUIDResponse getNetworksUUIDWebsocket(String uuid, String secret, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetNetworksUUIDResponse> localVarResp = getNetworksUUIDWebsocketWithHttpInfo(uuid, secret, recursion, filter);
+    public BackgroundOperationResponse getNetworksUUIDWebsocket(String uuid, String secret, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getNetworksUUIDWebsocketWithHttpInfo(uuid, secret, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1081,7 +1078,7 @@ public class NetworksApi {
      * @param secret secret (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetNetworksUUIDResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1091,9 +1088,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetNetworksUUIDResponse> getNetworksUUIDWebsocketWithHttpInfo(String uuid, String secret, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getNetworksUUIDWebsocketWithHttpInfo(String uuid, String secret, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getNetworksUUIDWebsocketValidateBeforeCall(uuid, secret, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1115,10 +1112,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNetworksUUIDWebsocketAsync(String uuid, String secret, Integer recursion, String filter, final ApiCallback<GetNetworksUUIDResponse> _callback) throws ApiException {
+    public okhttp3.Call getNetworksUUIDWebsocketAsync(String uuid, String secret, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNetworksUUIDWebsocketValidateBeforeCall(uuid, secret, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetNetworksUUIDResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1186,7 +1183,7 @@ public class NetworksApi {
      * Update the network information
      * @param name Name of the network (required)
      * @param body Update the network information (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1196,8 +1193,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse patchNetworksByName(String name, PatchNetworksByNameRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = patchNetworksByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse patchNetworksByName(String name, PatchNetworksByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchNetworksByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1206,7 +1203,7 @@ public class NetworksApi {
      * Update the network information
      * @param name Name of the network (required)
      * @param body Update the network information (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1216,9 +1213,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> patchNetworksByNameWithHttpInfo(String name, PatchNetworksByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchNetworksByNameWithHttpInfo(String name, PatchNetworksByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchNetworksByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1238,10 +1235,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchNetworksByNameAsync(String name, PatchNetworksByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call patchNetworksByNameAsync(String name, PatchNetworksByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchNetworksByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1301,7 +1298,7 @@ public class NetworksApi {
      * 
      * Define a new network
      * @param body Define a new network (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1311,8 +1308,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse postNetworks(CreateNetworksRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = postNetworksWithHttpInfo(body);
+    public BackgroundOperationResponse postNetworks(CreateNetworksRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postNetworksWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1320,7 +1317,7 @@ public class NetworksApi {
      * 
      * Define a new network
      * @param body Define a new network (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1330,9 +1327,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> postNetworksWithHttpInfo(CreateNetworksRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postNetworksWithHttpInfo(CreateNetworksRequest body) throws ApiException {
         okhttp3.Call localVarCall = postNetworksValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1351,10 +1348,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postNetworksAsync(CreateNetworksRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call postNetworksAsync(CreateNetworksRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postNetworksValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1549,7 +1546,7 @@ public class NetworksApi {
      * Replace the network information
      * @param name Name of the network (required)
      * @param body Replace the network information (optional)
-     * @return StandardServerResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1559,8 +1556,8 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public StandardServerResponse putNetworksByName(String name, UpdateNetworksByNameRequest body) throws ApiException {
-        ApiResponse<StandardServerResponse> localVarResp = putNetworksByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse putNetworksByName(String name, UpdateNetworksByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putNetworksByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1569,7 +1566,7 @@ public class NetworksApi {
      * Replace the network information
      * @param name Name of the network (required)
      * @param body Replace the network information (optional)
-     * @return ApiResponse&lt;StandardServerResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1579,9 +1576,9 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StandardServerResponse> putNetworksByNameWithHttpInfo(String name, UpdateNetworksByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putNetworksByNameWithHttpInfo(String name, UpdateNetworksByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putNetworksByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1601,10 +1598,10 @@ public class NetworksApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putNetworksByNameAsync(String name, UpdateNetworksByNameRequest body, final ApiCallback<StandardServerResponse> _callback) throws ApiException {
+    public okhttp3.Call putNetworksByNameAsync(String name, UpdateNetworksByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putNetworksByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<StandardServerResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
