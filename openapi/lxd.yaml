@@ -8859,11 +8859,11 @@ components:
     ServerConfig:
       example:
         core.https_address: '[::]:8443'
-        core.trust_password: true
+        core.trust_password: 'my-password'
       properties:
         core.trust_password:
-          example: true
-          type: boolean
+          example: 'my-password'
+          type: string
         core.https_address:
           example: '[::]:8443'
           type: string

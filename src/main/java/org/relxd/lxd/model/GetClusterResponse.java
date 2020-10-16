@@ -30,7 +30,7 @@ import org.relxd.lxd.model.MemberConfig;
 /**
  * GetClusterResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:33:23.019065+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:58:36.350241+02:00[Africa/Harare]")
 public class GetClusterResponse {
   public static final String SERIALIZED_NAME_SERVER_NAME = "server_name";
   @SerializedName(SERIALIZED_NAME_SERVER_NAME)

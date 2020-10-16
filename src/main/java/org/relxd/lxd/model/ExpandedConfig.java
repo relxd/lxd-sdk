@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ExpandedConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:33:23.019065+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:58:36.350241+02:00[Africa/Harare]")
 public class ExpandedConfig {
   public static final String SERIALIZED_NAME_LIMITS_CPU = "limits.cpu";
   @SerializedName(SERIALIZED_NAME_LIMITS_CPU)

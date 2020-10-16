@@ -13,6 +13,7 @@
 
 package org.relxd.lxd.api;
 
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateImagesAliasesByNameRequest;
@@ -25,21 +26,35 @@ import org.relxd.lxd.model.UpdateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.UpdateImagesFingerprintRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.spy;
+
 /**
  * API tests for ImagesApi
  */
-@Ignore
+
 public class ImagesApiTest {
 
     private final ImagesApi api = new ImagesApi();
+    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
+    private LinuxCmdService linuxCmdService;
 
-    
+    @Before
+    public void setup() {
+
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+    }
     /**
      * 
      *
@@ -82,11 +97,27 @@ public class ImagesApiTest {
      */
     @Test
     public void getImagesTest() throws ApiException {
+        final String getImagesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/images";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getImages(recursion, filter);
 
-        // TODO: test validations
+        try
+        {
+
+            final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
+
+            BackgroundOperationResponse actualGetImagesResponse = api.getImages(recursion, filter);
+            logger.info("Actual Get Images Response >>>>>>>>>> " + actualGetImagesResponse);
+
+            assertEquals(expectedGetImagesResponse, actualGetImagesResponse);
+
+        } catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
+
     }
     
     /**

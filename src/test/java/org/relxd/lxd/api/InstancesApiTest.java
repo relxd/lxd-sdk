@@ -13,6 +13,7 @@
 
 package org.relxd.lxd.api;
 
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsByNameRequest;
@@ -28,25 +29,43 @@ import java.io.File;
 import org.relxd.lxd.model.GetInstancesByNameMetadataResponse;
 import org.relxd.lxd.model.PatchInstancesByNameRequest;
 import org.relxd.lxd.model.RawFile;
+
+import java.io.IOException;
 import java.util.UUID;
 import org.relxd.lxd.model.UpdateInstancesByNameRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameSnapshotsInformationRequest;
 import org.relxd.lxd.model.UpdateInstancesByNameStateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.spy;
+
 /**
  * API tests for InstancesApi
  */
-@Ignore
+
 public class InstancesApiTest {
 
     private final InstancesApi api = new InstancesApi();
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+
+    private LinuxCmdService linuxCmdService;
+
+    @Before
+    public void setup() {
+
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+    }
 
     
     /**
@@ -176,11 +195,27 @@ public class InstancesApiTest {
      */
     @Test
     public void getInstancesTest() throws ApiException {
+        final String getInstancesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/instances";
+
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getInstances(recursion, filter);
 
-        // TODO: test validations
+        try
+        {
+
+            final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getInstancesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Instances Response >>>>>>>>>> " + expectedBackgroundOperationResponse);
+
+            final BackgroundOperationResponse actualBackgroundOperationResponse = api.getInstances(recursion, filter);
+            logger.info("Actual Get Instances Response >>>>>>>>>> " + actualBackgroundOperationResponse);
+
+            assertEquals(expectedBackgroundOperationResponse, actualBackgroundOperationResponse);
+
+        } catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
     }
     
     /**
@@ -193,10 +228,12 @@ public class InstancesApiTest {
      */
     @Test
     public void getInstancesByNameTest() throws ApiException {
-        String name = null;
+        String name = "my-ubuntu-instance";
         Integer recursion = null;
         String filter = null;
         BackgroundOperationResponse response = api.getInstancesByName(name, recursion, filter);
+
+        logger.info("GET INSTANCE BY NAME RESPONSE >>>>>>> " + response);
 
         // TODO: test validations
     }
@@ -419,11 +456,12 @@ public class InstancesApiTest {
      */
     @Test
     public void getInstancesByNameStateTest() throws ApiException {
-        String name = null;
+        String name = "my-ubuntu-instance";
         Integer recursion = null;
         String filter = null;
         BackgroundOperationResponse response = api.getInstancesByNameState(name, recursion, filter);
 
+        logger.info("GET INSTANCE BY NAME STATE TEST >>>>>>>> " + response);
         // TODO: test validations
     }
     

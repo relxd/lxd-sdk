@@ -33,7 +33,7 @@ import org.relxd.lxd.model.Source10;
  * Source image dictionary (transfers a remote image)
  */
 @ApiModel(description = "Source image dictionary (transfers a remote image)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:33:23.019065+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:58:36.350241+02:00[Africa/Harare]")
 public class CreateImagesRequest {
   public static final String SERIALIZED_NAME_FILENAME = "filename";
   @SerializedName(SERIALIZED_NAME_FILENAME)
