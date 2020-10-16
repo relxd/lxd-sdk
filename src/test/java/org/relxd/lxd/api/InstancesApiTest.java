@@ -494,7 +494,6 @@ public class InstancesApiTest {
      */
     @Test
     public void postInstancesTest() throws ApiException {
-
         String target = null;
 
         Kvm kvm = new Kvm();
