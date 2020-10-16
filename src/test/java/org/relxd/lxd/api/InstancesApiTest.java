@@ -529,7 +529,6 @@ public class InstancesApiTest {
         assertEquals(actualCreateInstancesResponse.getStatusCode(), Integer.valueOf(100));
 
     }
-    
     /**
      * 
      *
