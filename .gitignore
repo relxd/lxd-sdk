@@ -22,3 +22,5 @@ build
 
 #IDE specific folders and files
 ./idea/*
+*.idea
+.idea**
