@@ -15,26 +15,13 @@ package org.relxd.lxd.api;
 
 import org.junit.Before;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BackgroundOperationResponse;
-import org.relxd.lxd.model.CreateInstancesByNameBackupsByNameRequest;
-import org.relxd.lxd.model.CreateInstancesByNameBackupsRequest;
-import org.relxd.lxd.model.CreateInstancesByNameConsoleRequest;
-import org.relxd.lxd.model.CreateInstancesByNameExecRequest;
-import org.relxd.lxd.model.CreateInstancesByNameRequest;
-import org.relxd.lxd.model.CreateInstancesByNameSnapshotRequest;
-import org.relxd.lxd.model.CreateInstancesByNameSnapshotsInformationRequest;
-import org.relxd.lxd.model.CreateInstancesRequest;
-import org.relxd.lxd.model.ErrorResponse;
+import org.relxd.lxd.model.*;
+
 import java.io.File;
-import org.relxd.lxd.model.GetInstancesByNameMetadataResponse;
-import org.relxd.lxd.model.PatchInstancesByNameRequest;
-import org.relxd.lxd.model.RawFile;
 
 import java.io.IOException;
 import java.util.UUID;
-import org.relxd.lxd.model.UpdateInstancesByNameRequest;
-import org.relxd.lxd.model.UpdateInstancesByNameSnapshotsInformationRequest;
-import org.relxd.lxd.model.UpdateInstancesByNameStateRequest;
+
 import org.junit.Test;
 import org.junit.Ignore;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -228,12 +215,27 @@ public class InstancesApiTest {
      */
     @Test
     public void getInstancesByNameTest() throws ApiException {
+        final String getInstancesByNameCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/instances";
         String name = "my-ubuntu-instance";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getInstancesByName(name, recursion, filter);
 
-        logger.info("GET INSTANCE BY NAME RESPONSE >>>>>>> " + response);
+        try
+        {
+
+            final BackgroundOperationResponse expectedInstancesByNameResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getInstancesByNameCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Instances Response >>>>>>>>>> " + expectedInstancesByNameResponse);
+
+            final BackgroundOperationResponse actualInstancesByNameResponse = api.getInstances(recursion, filter);
+            logger.info("Actual Get Instances Response >>>>>>>>>> " + actualInstancesByNameResponse);
+
+            assertEquals(expectedInstancesByNameResponse, actualInstancesByNameResponse);
+
+        } catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
 
         // TODO: test validations
     }
@@ -492,11 +494,41 @@ public class InstancesApiTest {
      */
     @Test
     public void postInstancesTest() throws ApiException {
-        String target = null;
-        CreateInstancesRequest body = null;
-        BackgroundOperationResponse response = api.postInstances(target, body);
 
-        // TODO: test validations
+        String target = null;
+
+        Kvm kvm = new Kvm();
+        kvm.setPath("/dev/kvm");
+        kvm.setType("unix-char");
+
+        Source source = new Source();
+        source.setType("none");
+
+        DevicesKvm devices = new DevicesKvm();
+        devices.setKvm(kvm);
+
+        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+        createInstancesRequestConfig.setLimitsCpu("2");
+
+        List<String> profiles = new ArrayList<>();
+        profiles.add("default");
+
+        CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
+        createInstancesRequest.setName("another-ubuntu-instance");
+        createInstancesRequest.setArchitecture("x86_64");
+        createInstancesRequest.setProfiles(profiles);
+        createInstancesRequest.setEphemeral(true);
+        createInstancesRequest.setConfig(createInstancesRequestConfig);
+        createInstancesRequest.setType("container");
+        createInstancesRequest.setDevices(devices);
+        createInstancesRequest.setSource(source);
+        BackgroundOperationResponse postInstancesResponse = api.postInstances(target, createInstancesRequest);
+
+        BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
+        logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
+
+        assertEquals(actualCreateInstancesResponse.getStatusCode(), Integer.valueOf(100));
+
     }
     
     /**
