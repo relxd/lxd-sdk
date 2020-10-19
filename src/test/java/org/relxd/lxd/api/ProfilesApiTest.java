@@ -132,7 +132,7 @@ public class ProfilesApiTest {
     public void postProfilesByNameTest() throws ApiException {
         String name = null;
         CreateProfilesByNameRequest body = null;
-        Object response = api.postProfilesByName(name, body);
+        BackgroundOperationResponse response = api.postProfilesByName(name, body);
 
         // TODO: test validations
     }

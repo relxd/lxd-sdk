@@ -687,7 +687,7 @@ public class ProjectsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
@@ -743,20 +743,20 @@ public class ProjectsApi {
      * Rename a project
      * @param name Projects name (required)
      * @param body Rename a project (optional)
-     * @return Object
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public Object postProjectsByName(String name, CreateProjectsByNameRequest body) throws ApiException {
-        ApiResponse<Object> localVarResp = postProjectsByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse postProjectsByName(String name, CreateProjectsByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postProjectsByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -765,21 +765,21 @@ public class ProjectsApi {
      * Rename a project
      * @param name Projects name (required)
      * @param body Rename a project (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> postProjectsByNameWithHttpInfo(String name, CreateProjectsByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postProjectsByNameWithHttpInfo(String name, CreateProjectsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postProjectsByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -794,17 +794,17 @@ public class ProjectsApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProjectsByNameAsync(String name, CreateProjectsByNameRequest body, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call postProjectsByNameAsync(String name, CreateProjectsByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postProjectsByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByNameVolumes"></a>
 # **getStoragePoolsByNameVolumes**
-> List&lt;String&gt; getStoragePoolsByNameVolumes(pool, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByNameVolumes(pool, recursion, filter)
 
 
 
@@ -492,7 +492,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getStoragePoolsByNameVolumes(pool, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByNameVolumes(pool, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByNameVolumes");
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoragePoolsByNameVolumesByTypeNameSnapshots"></a>
 # **getStoragePoolsByNameVolumesByTypeNameSnapshots**
-> List&lt;String&gt; getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter)
+> BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter)
 
 
 
@@ -644,7 +644,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragePoolsApi#getStoragePoolsByNameVolumesByTypeNameSnapshots");
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

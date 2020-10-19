@@ -45,9 +45,9 @@ public class ServerConfigApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
     }
 
-    
+
     /**
-     * 
+     *
      *
      * Server configuration and environment information
      *
@@ -79,9 +79,9 @@ public class ServerConfigApiTest {
         }
 
     }
-    
+
     /**
-     * 
+     *
      *
      * Updates the server configuration or other properties
      *
@@ -112,9 +112,9 @@ public class ServerConfigApiTest {
         }
 
     }
-    
+
     /**
-     * 
+     *
      *
      * Replaces the server configuration or other properties
      *
@@ -144,5 +144,5 @@ public class ServerConfigApiTest {
         }
 
     }
-    
+
 }

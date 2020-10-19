@@ -162,7 +162,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getStoragePoolsByNameVolumes(pool, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumes(pool, recursion, filter);
 
         // TODO: test validations
     }
@@ -202,7 +202,7 @@ public class StoragePoolsApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
 
         // TODO: test validations
     }

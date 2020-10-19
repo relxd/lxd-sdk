@@ -19,8 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-
-#IDE specific folders and files
-./idea/*
-*.idea
-.idea**

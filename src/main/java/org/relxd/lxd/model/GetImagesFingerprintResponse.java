@@ -33,7 +33,7 @@ import org.relxd.lxd.model.UpdateSource;
 /**
  * GetImagesFingerprintResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:58:36.350241+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class GetImagesFingerprintResponse {
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)

@@ -82,7 +82,7 @@ public class NetworksApiTest {
     public void getNetworksTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getNetworks(recursion, filter);
+        BackgroundOperationResponse response = api.getNetworks(recursion, filter);
 
         // TODO: test validations
     }
@@ -224,7 +224,7 @@ public class NetworksApiTest {
     public void postNetworksByNameTest() throws ApiException {
         String name = null;
         CreateNetworksByNameRequest body = null;
-        Object response = api.postNetworksByName(name, body);
+        BackgroundOperationResponse response = api.postNetworksByName(name, body);
 
         // TODO: test validations
     }

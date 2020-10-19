@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Fds2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-14T17:58:36.350241+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class Fds2 {
   public static final String SERIALIZED_NAME_0 = "0";
   @SerializedName(SERIALIZED_NAME_0)

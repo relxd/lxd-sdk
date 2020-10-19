@@ -43,9 +43,9 @@ public class SupportedApisApiTest {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
     }
-    
+
     /**
-     * 
+     *
      *
      * List of supported APIs
      *
@@ -77,5 +77,5 @@ public class SupportedApisApiTest {
             e.printStackTrace();
         }
     }
-    
+
 }

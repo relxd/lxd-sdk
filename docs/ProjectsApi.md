@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 <a name="postProjectsByName"></a>
 # **postProjectsByName**
-> Object postProjectsByName(name, body)
+> BackgroundOperationResponse postProjectsByName(name, body)
 
 
 
@@ -398,7 +398,7 @@ public class Example {
     String name = "name_example"; // String | Projects name
     CreateProjectsByNameRequest body = new CreateProjectsByNameRequest(); // CreateProjectsByNameRequest | Rename a project
     try {
-      Object result = apiInstance.postProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#postProjectsByName");
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response |  -  |
+**204** | A standard return value response |  -  |
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 **403** | A standard error response |  -  |

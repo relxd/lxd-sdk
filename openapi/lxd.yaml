@@ -1510,9 +1510,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: snapshots response
         "400":
           content:
@@ -2026,9 +2024,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instances logs response
         "400":
           content:
@@ -2163,9 +2159,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instances logs response
         "400":
           content:
@@ -2423,9 +2417,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: Instances metadata templates response
         "400":
           content:
@@ -2623,9 +2615,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of backups for the instance
         "400":
           content:
@@ -4124,9 +4114,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of networks
         "400":
           content:
@@ -4394,8 +4382,8 @@ paths:
                 Example:
                   $ref: '#/components/examples/Response'
               schema:
-                type: object
-          description: Empty response
+                $ref: '#/components/schemas/BackgroundOperationResponse'
+          description: A standard value return response
         "400":
           content:
             application/json:
@@ -5200,8 +5188,8 @@ paths:
                 Example:
                   $ref: '#/components/examples/Response'
               schema:
-                type: object
-          description: Empty response
+                $ref: '#/components/schemas/BackgroundOperationResponse'
+          description: A standard return value response
         "400":
           content:
             application/json:
@@ -5605,8 +5593,8 @@ paths:
                 Example:
                   $ref: '#/components/examples/Response'
               schema:
-                type: object
-          description: Empty response
+                $ref: '#/components/schemas/BackgroundOperationResponse'
+          description: A standard return value response
         "400":
           content:
             application/json:
@@ -6161,9 +6149,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: list of storage volumes
         "400":
           content:
@@ -6715,9 +6701,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of volume snapshots
         "400":
           content:
@@ -7299,9 +7283,7 @@ paths:
                 Example:
                   $ref: '#/components/examples/BackgroundOperationResponse'
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/BackgroundOperationResponse'
           description: List of LXD members in the cluster
         "400":
           content:

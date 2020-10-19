@@ -683,7 +683,7 @@ public class ProfilesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
@@ -738,19 +738,19 @@ public class ProfilesApi {
      * Rename a profile
      * @param name Profiles name (required)
      * @param body Rename a profile (optional)
-     * @return Object
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public Object postProfilesByName(String name, CreateProfilesByNameRequest body) throws ApiException {
-        ApiResponse<Object> localVarResp = postProfilesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse postProfilesByName(String name, CreateProfilesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postProfilesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -759,20 +759,20 @@ public class ProfilesApi {
      * Rename a profile
      * @param name Profiles name (required)
      * @param body Rename a profile (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> postProfilesByNameWithHttpInfo(String name, CreateProfilesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postProfilesByNameWithHttpInfo(String name, CreateProfilesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postProfilesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -787,16 +787,16 @@ public class ProfilesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Empty response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> A standard return value response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postProfilesByNameAsync(String name, CreateProfilesByNameRequest body, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call postProfilesByNameAsync(String name, CreateProfilesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postProfilesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

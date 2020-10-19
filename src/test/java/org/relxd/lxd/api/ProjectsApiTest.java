@@ -132,7 +132,7 @@ public class ProjectsApiTest {
     public void postProjectsByNameTest() throws ApiException {
         String name = null;
         CreateProjectsByNameRequest body = null;
-        Object response = api.postProjectsByName(name, body);
+        BackgroundOperationResponse response = api.postProjectsByName(name, body);
 
         // TODO: test validations
     }

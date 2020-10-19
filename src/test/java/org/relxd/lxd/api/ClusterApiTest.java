@@ -82,7 +82,7 @@ public class ClusterApiTest {
     public void getClusterMembersTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getClusterMembers(recursion, filter);
+        BackgroundOperationResponse response = api.getClusterMembers(recursion, filter);
 
         // TODO: test validations
     }

@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 <a name="postProfilesByName"></a>
 # **postProfilesByName**
-> Object postProfilesByName(name, body)
+> BackgroundOperationResponse postProfilesByName(name, body)
 
 
 
@@ -397,7 +397,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     CreateProfilesByNameRequest body = new CreateProfilesByNameRequest(); // CreateProfilesByNameRequest | Rename a profile
     try {
-      Object result = apiInstance.postProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#postProfilesByName");
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response |  -  |
+**204** | A standard return value response |  -  |
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 **409** | A standard error response |  -  |

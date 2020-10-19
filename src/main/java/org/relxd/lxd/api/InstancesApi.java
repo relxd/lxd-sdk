@@ -1285,7 +1285,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1295,8 +1295,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstancesByNameBackups(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesByNameBackupsWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameBackups(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameBackupsWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1306,7 +1306,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1316,9 +1316,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesByNameBackupsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameBackupsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameBackupsValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1339,10 +1339,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameBackupsAsync(String name, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameBackupsAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameBackupsValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2020,7 +2020,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2030,8 +2030,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstancesByNameLogs(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesByNameLogsWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameLogs(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameLogsWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2041,7 +2041,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2051,9 +2051,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesByNameLogsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameLogsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameLogsValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2074,10 +2074,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameLogsAsync(String name, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameLogsAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameLogsValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2163,7 +2163,7 @@ public class InstancesApi {
      * @param logFile Instance log file (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2173,8 +2173,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstancesByNameLogsFile(String name, String logFile, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesByNameLogsFileWithHttpInfo(name, logFile, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameLogsFile(String name, String logFile, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameLogsFileWithHttpInfo(name, logFile, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2185,7 +2185,7 @@ public class InstancesApi {
      * @param logFile Instance log file (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2195,9 +2195,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesByNameLogsFileWithHttpInfo(String name, String logFile, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameLogsFileWithHttpInfo(String name, String logFile, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameLogsFileValidateBeforeCall(name, logFile, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2219,10 +2219,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameLogsFileAsync(String name, String logFile, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameLogsFileAsync(String name, String logFile, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameLogsFileValidateBeforeCall(name, logFile, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2441,7 +2441,7 @@ public class InstancesApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param path Template (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2451,8 +2451,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstancesByNameMetadataTemplates(String name, Integer recursion, String filter, String path) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesByNameMetadataTemplatesWithHttpInfo(name, recursion, filter, path);
+    public BackgroundOperationResponse getInstancesByNameMetadataTemplates(String name, Integer recursion, String filter, String path) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameMetadataTemplatesWithHttpInfo(name, recursion, filter, path);
         return localVarResp.getData();
     }
 
@@ -2463,7 +2463,7 @@ public class InstancesApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param path Template (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2473,9 +2473,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesByNameMetadataTemplatesWithHttpInfo(String name, Integer recursion, String filter, String path) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameMetadataTemplatesWithHttpInfo(String name, Integer recursion, String filter, String path) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameMetadataTemplatesValidateBeforeCall(name, recursion, filter, path, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2497,10 +2497,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameMetadataTemplatesAsync(String name, Integer recursion, String filter, String path, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameMetadataTemplatesAsync(String name, Integer recursion, String filter, String path, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameMetadataTemplatesValidateBeforeCall(name, recursion, filter, path, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2578,7 +2578,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2588,8 +2588,8 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getInstancesByNameSnapshots(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getInstancesByNameSnapshotsWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getInstancesByNameSnapshots(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getInstancesByNameSnapshotsWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -2599,7 +2599,7 @@ public class InstancesApi {
      * @param name Instance name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2609,9 +2609,9 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getInstancesByNameSnapshotsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getInstancesByNameSnapshotsWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getInstancesByNameSnapshotsValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2632,10 +2632,10 @@ public class InstancesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstancesByNameSnapshotsAsync(String name, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getInstancesByNameSnapshotsAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstancesByNameSnapshotsValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

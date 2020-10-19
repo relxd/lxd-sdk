@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 <a name="getNetworks"></a>
 # **getNetworks**
-> List&lt;String&gt; getNetworks(recursion, filter)
+> BackgroundOperationResponse getNetworks(recursion, filter)
 
 
 
@@ -187,7 +187,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getNetworks(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getNetworks(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#getNetworks");
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 <a name="postNetworksByName"></a>
 # **postNetworksByName**
-> Object postNetworksByName(name, body)
+> BackgroundOperationResponse postNetworksByName(name, body)
 
 
 
@@ -767,7 +767,7 @@ public class Example {
     String name = "name_example"; // String | Name of the network
     CreateNetworksByNameRequest body = new CreateNetworksByNameRequest(); // CreateNetworksByNameRequest | Rename a network
     try {
-      Object result = apiInstance.postNetworksByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postNetworksByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NetworksApi#postNetworksByName");
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -803,7 +803,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response |  -  |
+**204** | A standard value return response |  -  |
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 **409** | A standard error response |  -  |
