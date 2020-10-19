@@ -13,6 +13,7 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
@@ -31,6 +32,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 import static org.mockito.Mockito.spy;
 
 /**
@@ -658,7 +660,8 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
             logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
-            assertEquals(actualCreateInstancesResponse.getStatusCode(), Integer.valueOf(200));
+            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
+                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -1073,9 +1076,13 @@ public class InstancesApiTest {
 
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
 
-        final ErrorResponse errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
-        logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }
         return errorResponse;
     }
 

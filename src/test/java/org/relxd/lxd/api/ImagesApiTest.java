@@ -13,6 +13,7 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
@@ -269,11 +270,19 @@ public class ImagesApiTest {
      */
     @Test
     public void patchImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        UpdateImagesAliasesByNameRequest body = null;
-        BackgroundOperationResponse response = api.patchImagesAliasesByName(name, body);
+        String name = "new-alias-name";
+        UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest();
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.patchImagesAliasesByName(name, body);
+            logger.info("PATCH IMAGES ALIASES BY NAME >>>>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -411,11 +420,20 @@ public class ImagesApiTest {
      */
     @Test
     public void postImagesFingerprintExportTest() throws ApiException {
-        String fingerprint = null;
-        CreateImagesFingerprintExportRequest body = null;
-        BackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, body);
+        List<String> aliases = new ArrayList<>();
+        aliases.add("new-alias-name");
 
-        // TODO: test validations
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        CreateImagesFingerprintExportRequest request = new CreateImagesFingerprintExportRequest();
+        request.setTarget("98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064");
+        request.setAliases(aliases);
+
+        try {
+            BackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, request);
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -428,11 +446,19 @@ public class ImagesApiTest {
      */
     @Test
     public void postImagesFingerprintSecretTest() throws ApiException {
-        String fingerprint = null;
-        Object body = null;
-        BackgroundOperationResponse response = api.postImagesFingerprintSecret(fingerprint, body);
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        Object body = new Object();
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postImagesFingerprintSecret(fingerprint, body);
+            logger.info("POST FINGER PRINT SECTRET >>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(100));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -445,9 +471,19 @@ public class ImagesApiTest {
      */
     @Test
     public void putImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        UpdateImagesAliasesByNameRequest body = null;
-        BackgroundOperationResponse response = api.putImagesAliasesByName(name, body);
+        String name = "new-alias-name";
+        UpdateImagesAliasesByNameRequest request = new UpdateImagesAliasesByNameRequest();
+        request.setTarget("98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064");
+
+        try {
+            BackgroundOperationResponse response = api.putImagesAliasesByName(name, request);
+            logger.info("PUT IMAGES ALIASES BY NAME RESPONSE >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
 
         // TODO: test validations
     }
@@ -462,18 +498,32 @@ public class ImagesApiTest {
      */
     @Test
     public void putImagesFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        UpdateImagesFingerprintRequest body = null;
-        BackgroundOperationResponse response = api.putImagesFingerprint(fingerprint, body);
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        UpdateImagesFingerprintRequest request = new UpdateImagesFingerprintRequest();
+        request.setAutoUpdate(true);
+        request.setPublic(true);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.putImagesFingerprint(fingerprint, request);
+            logger.info("PUT FINGERPRINT RESPONSE >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
 
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
 
-        final ErrorResponse errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
-        logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }
         return errorResponse;
     }
 }
