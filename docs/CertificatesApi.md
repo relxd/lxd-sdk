@@ -1,12 +1,12 @@
 # CertificatesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteFingerprint**](CertificatesApi.md#deleteFingerprint) | **DELETE** /1.0/certificates/{fingerprint} | 
 [**getCertificates**](CertificatesApi.md#getCertificates) | **GET** /1.0/certificates | 
-[**getFingerprint**](CertificatesApi.md#getFingerprint) | **GET** /1.0/certificates/{fingerprint} | 
+[**getCertificatesByFingerPrint**](CertificatesApi.md#getCertificatesByFingerPrint) | **GET** /1.0/certificates/{fingerprint} | 
 [**patchFingerprint**](CertificatesApi.md#patchFingerprint) | **PATCH** /1.0/certificates/{fingerprint} | 
 [**postCertificates**](CertificatesApi.md#postCertificates) | **POST** /1.0/certificates | 
 [**putFingerprint**](CertificatesApi.md#putFingerprint) | **PUT** /1.0/certificates/{fingerprint} | 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="deleteFingerprint"></a>
 # **deleteFingerprint**
-> BasicStandardReturnValueResponse deleteFingerprint(fingerprint)
+> BackgroundOperationResponse deleteFingerprint(fingerprint)
 
 
 
@@ -33,7 +33,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -42,7 +42,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.deleteFingerprint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#deleteFingerprint");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificates"></a>
 # **getCertificates**
-> List&lt;String&gt; getCertificates(recursion, filter)
+> BackgroundOperationResponse getCertificates(recursion, filter)
 
 
 
@@ -102,7 +102,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -112,7 +112,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getCertificates(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getCertificates(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#getCertificates");
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -152,9 +152,9 @@ Name | Type | Description  | Notes
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 
-<a name="getFingerprint"></a>
-# **getFingerprint**
-> GetFingerprintResponse getFingerprint(fingerprint)
+<a name="getCertificatesByFingerPrint"></a>
+# **getCertificatesByFingerPrint**
+> BackgroundOperationResponse getCertificatesByFingerPrint(fingerprint)
 
 
 
@@ -173,7 +173,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -182,10 +182,10 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      GetFingerprintResponse result = apiInstance.getFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.getCertificatesByFingerPrint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CertificatesApi#getFingerprint");
+      System.err.println("Exception when calling CertificatesApi#getCertificatesByFingerPrint");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFingerprintResponse**](GetFingerprintResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="patchFingerprint"></a>
 # **patchFingerprint**
-> BasicStandardReturnValueResponse patchFingerprint(fingerprint, body)
+> BackgroundOperationResponse patchFingerprint(fingerprint, body)
 
 
 
@@ -242,7 +242,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -252,7 +252,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateFingerprintRequest body = new UpdateFingerprintRequest(); // UpdateFingerprintRequest | Updates the certificate properties
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.patchFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#patchFingerprint");
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="postCertificates"></a>
 # **postCertificates**
-> BasicStandardReturnValueResponse postCertificates(body)
+> BackgroundOperationResponse postCertificates(body)
 
 
 
@@ -313,7 +313,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -322,7 +322,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     CreateCertificatesRequest body = new CreateCertificatesRequest(); // CreateCertificatesRequest | Add a new trusted certificate
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postCertificates(body);
+      BackgroundOperationResponse result = apiInstance.postCertificates(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#postCertificates");
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 <a name="putFingerprint"></a>
 # **putFingerprint**
-> BasicStandardReturnValueResponse putFingerprint(fingerprint, body)
+> BackgroundOperationResponse putFingerprint(fingerprint, body)
 
 
 
@@ -382,7 +382,7 @@ import org.relxd.lxd.api.CertificatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -392,7 +392,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateFingerprintRequest body = new UpdateFingerprintRequest(); // UpdateFingerprintRequest | Replaces the certificate properties
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.putFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#putFingerprint");
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

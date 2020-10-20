@@ -27,12 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetClusterMembersByNameResponse;
-import org.relxd.lxd.model.GetClusterResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
 
@@ -129,7 +126,7 @@ public class ClusterApi {
      * Remove a member of the cluster
      * @param name Members name (required)
      * @param force force (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -139,8 +136,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteClusterMembersByName(String name, BigDecimal force) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteClusterMembersByNameWithHttpInfo(name, force);
+    public BackgroundOperationResponse deleteClusterMembersByName(String name, BigDecimal force) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteClusterMembersByNameWithHttpInfo(name, force);
         return localVarResp.getData();
     }
 
@@ -149,7 +146,7 @@ public class ClusterApi {
      * Remove a member of the cluster
      * @param name Members name (required)
      * @param force force (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -159,9 +156,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteClusterMembersByNameWithHttpInfo(String name, BigDecimal force) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteClusterMembersByNameWithHttpInfo(String name, BigDecimal force) throws ApiException {
         okhttp3.Call localVarCall = deleteClusterMembersByNameValidateBeforeCall(name, force, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -181,10 +178,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteClusterMembersByNameAsync(String name, BigDecimal force, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteClusterMembersByNameAsync(String name, BigDecimal force, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteClusterMembersByNameValidateBeforeCall(name, force, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -254,7 +251,7 @@ public class ClusterApi {
      * Information about a cluster (such as networks and storage pools)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetClusterResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -264,8 +261,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetClusterResponse getCluster(Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetClusterResponse> localVarResp = getClusterWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getCluster(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getClusterWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -274,7 +271,7 @@ public class ClusterApi {
      * Information about a cluster (such as networks and storage pools)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetClusterResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -284,9 +281,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetClusterResponse> getClusterWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getClusterWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getClusterValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetClusterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -306,10 +303,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getClusterAsync(Integer recursion, String filter, final ApiCallback<GetClusterResponse> _callback) throws ApiException {
+    public okhttp3.Call getClusterAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getClusterValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetClusterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -379,7 +376,7 @@ public class ClusterApi {
      * List of LXD members in the cluster
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -389,8 +386,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getClusterMembers(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getClusterMembersWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getClusterMembers(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getClusterMembersWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -399,7 +396,7 @@ public class ClusterApi {
      * List of LXD members in the cluster
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -409,9 +406,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getClusterMembersWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getClusterMembersWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getClusterMembersValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -431,10 +428,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getClusterMembersAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getClusterMembersAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getClusterMembersValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -512,7 +509,7 @@ public class ClusterApi {
      * @param name Members name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetClusterMembersByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -522,8 +519,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetClusterMembersByNameResponse getClusterMembersByName(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetClusterMembersByNameResponse> localVarResp = getClusterMembersByNameWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getClusterMembersByName(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getClusterMembersByNameWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -533,7 +530,7 @@ public class ClusterApi {
      * @param name Members name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetClusterMembersByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -543,9 +540,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetClusterMembersByNameResponse> getClusterMembersByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getClusterMembersByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getClusterMembersByNameValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetClusterMembersByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -566,10 +563,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getClusterMembersByNameAsync(String name, Integer recursion, String filter, final ApiCallback<GetClusterMembersByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getClusterMembersByNameAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getClusterMembersByNameValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetClusterMembersByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -637,7 +634,7 @@ public class ClusterApi {
      * Rename a cluster member
      * @param name Members name (required)
      * @param body Rename a cluster member (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -647,8 +644,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postClusterMembersByName(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postClusterMembersByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse postClusterMembersByName(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postClusterMembersByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -657,7 +654,7 @@ public class ClusterApi {
      * Rename a cluster member
      * @param name Members name (required)
      * @param body Rename a cluster member (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -667,9 +664,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postClusterMembersByNameWithHttpInfo(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postClusterMembersByNameWithHttpInfo(String name, UpdateClusterMembersByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postClusterMembersByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -689,10 +686,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postClusterMembersByNameAsync(String name, UpdateClusterMembersByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postClusterMembersByNameAsync(String name, UpdateClusterMembersByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postClusterMembersByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -752,7 +749,7 @@ public class ClusterApi {
      * 
      * Bootstrap or join a cluster, or disable clustering on this node
      * @param body Bootstrap or join a cluster, or disable clustering on this node (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -762,8 +759,8 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse putCluster(UpdateClusterRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = putClusterWithHttpInfo(body);
+    public BackgroundOperationResponse putCluster(UpdateClusterRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putClusterWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -771,7 +768,7 @@ public class ClusterApi {
      * 
      * Bootstrap or join a cluster, or disable clustering on this node
      * @param body Bootstrap or join a cluster, or disable clustering on this node (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -781,9 +778,9 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> putClusterWithHttpInfo(UpdateClusterRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putClusterWithHttpInfo(UpdateClusterRequest body) throws ApiException {
         okhttp3.Call localVarCall = putClusterValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -802,10 +799,10 @@ public class ClusterApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putClusterAsync(UpdateClusterRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call putClusterAsync(UpdateClusterRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putClusterValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

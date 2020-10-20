@@ -23,17 +23,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config3;
+import org.relxd.lxd.model.CpuConfig;
 import org.relxd.lxd.model.Devices3;
 
 /**
  * PatchInstancesByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class PatchInstancesByNameRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config3 config;
+  private CpuConfig config;
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
@@ -44,7 +44,7 @@ public class PatchInstancesByNameRequest {
   private Boolean ephemeral;
 
 
-  public PatchInstancesByNameRequest config(Config3 config) {
+  public PatchInstancesByNameRequest config(CpuConfig config) {
     
     this.config = config;
     return this;
@@ -57,12 +57,12 @@ public class PatchInstancesByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config3 getConfig() {
+  public CpuConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config3 config) {
+  public void setConfig(CpuConfig config) {
     this.config = config;
   }
 

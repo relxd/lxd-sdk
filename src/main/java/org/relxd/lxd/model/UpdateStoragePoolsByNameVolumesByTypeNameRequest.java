@@ -23,25 +23,25 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config13;
+import org.relxd.lxd.model.FileSystemMountOptionsAndThinPoolConfig;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest2;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequestOneOf;
 
 /**
  * UpdateStoragePoolsByNameVolumesByTypeNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class UpdateStoragePoolsByNameVolumesByTypeNameRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config13 config;
+  private FileSystemMountOptionsAndThinPoolConfig config;
 
   public static final String SERIALIZED_NAME_RESTORE = "restore";
   @SerializedName(SERIALIZED_NAME_RESTORE)
   private String restore;
 
 
-  public UpdateStoragePoolsByNameVolumesByTypeNameRequest config(Config13 config) {
+  public UpdateStoragePoolsByNameVolumesByTypeNameRequest config(FileSystemMountOptionsAndThinPoolConfig config) {
     
     this.config = config;
     return this;
@@ -54,12 +54,12 @@ public class UpdateStoragePoolsByNameVolumesByTypeNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config13 getConfig() {
+  public FileSystemMountOptionsAndThinPoolConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config13 config) {
+  public void setConfig(FileSystemMountOptionsAndThinPoolConfig config) {
     this.config = config;
   }
 

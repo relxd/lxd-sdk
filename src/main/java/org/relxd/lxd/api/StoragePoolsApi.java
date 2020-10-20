@@ -27,8 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest;
@@ -36,10 +35,6 @@ import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesRequest;
 import org.relxd.lxd.model.CreateStoragePoolsRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameResourcesResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse;
 import org.relxd.lxd.model.PatchStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest;
@@ -134,7 +129,7 @@ public class StoragePoolsApi {
      * 
      * Remove a storage pool
      * @param pool Storage pool name (required)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -145,8 +140,8 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteStoragePoolsByName(String pool) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteStoragePoolsByNameWithHttpInfo(pool);
+    public BackgroundOperationResponse deleteStoragePoolsByName(String pool) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteStoragePoolsByNameWithHttpInfo(pool);
         return localVarResp.getData();
     }
 
@@ -154,7 +149,7 @@ public class StoragePoolsApi {
      * 
      * Remove a storage pool
      * @param pool Storage pool name (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -165,9 +160,9 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteStoragePoolsByNameWithHttpInfo(String pool) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteStoragePoolsByNameWithHttpInfo(String pool) throws ApiException {
         okhttp3.Call localVarCall = deleteStoragePoolsByNameValidateBeforeCall(pool, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -187,10 +182,10 @@ public class StoragePoolsApi {
         <tr><td> 403 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStoragePoolsByNameAsync(String pool, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStoragePoolsByNameAsync(String pool, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStoragePoolsByNameValidateBeforeCall(pool, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -272,7 +267,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -282,8 +277,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteStoragePoolsByNameVolumesByTypeName(String pool, String type, String name) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name);
+    public BackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeName(String pool, String type, String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name);
         return localVarResp.getData();
     }
 
@@ -293,7 +288,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -303,9 +298,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name) throws ApiException {
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -326,10 +321,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -411,7 +406,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -421,8 +416,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name);
+    public BackgroundOperationResponse deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name);
         return localVarResp.getData();
     }
 
@@ -432,7 +427,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param name name (required)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -442,9 +437,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name) throws ApiException {
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -465,10 +460,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -538,7 +533,7 @@ public class StoragePoolsApi {
      * List of storage pools
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -548,8 +543,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getStoragePools(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getStoragePoolsWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getStoragePools(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -558,7 +553,7 @@ public class StoragePoolsApi {
      * List of storage pools
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -568,9 +563,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getStoragePoolsWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -590,10 +585,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -671,7 +666,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetStoragePoolsByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -681,8 +676,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStoragePoolsByNameResponse getStoragePoolsByName(String pool, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetStoragePoolsByNameResponse> localVarResp = getStoragePoolsByNameWithHttpInfo(pool, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByName(String pool, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameWithHttpInfo(pool, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -692,7 +687,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetStoragePoolsByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -702,9 +697,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStoragePoolsByNameResponse> getStoragePoolsByNameWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameValidateBeforeCall(pool, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -725,10 +720,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameAsync(String pool, Integer recursion, String filter, final ApiCallback<GetStoragePoolsByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameAsync(String pool, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameValidateBeforeCall(pool, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -806,7 +801,7 @@ public class StoragePoolsApi {
      * @param pool Profiles name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetStoragePoolsByNameResourcesResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -816,8 +811,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStoragePoolsByNameResourcesResponse getStoragePoolsByNameResources(String pool, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetStoragePoolsByNameResourcesResponse> localVarResp = getStoragePoolsByNameResourcesWithHttpInfo(pool, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByNameResources(String pool, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameResourcesWithHttpInfo(pool, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -827,7 +822,7 @@ public class StoragePoolsApi {
      * @param pool Profiles name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetStoragePoolsByNameResourcesResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -837,9 +832,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStoragePoolsByNameResourcesResponse> getStoragePoolsByNameResourcesWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameResourcesWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameResourcesValidateBeforeCall(pool, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameResourcesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -860,10 +855,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameResourcesAsync(String pool, Integer recursion, String filter, final ApiCallback<GetStoragePoolsByNameResourcesResponse> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameResourcesAsync(String pool, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameResourcesValidateBeforeCall(pool, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameResourcesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -941,7 +936,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -951,8 +946,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getStoragePoolsByNameVolumes(String pool, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getStoragePoolsByNameVolumesWithHttpInfo(pool, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByNameVolumes(String pool, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameVolumesWithHttpInfo(pool, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -962,7 +957,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -972,9 +967,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getStoragePoolsByNameVolumesWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameVolumesWithHttpInfo(String pool, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesValidateBeforeCall(pool, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -995,10 +990,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameVolumesAsync(String pool, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameVolumesAsync(String pool, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesValidateBeforeCall(pool, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1092,7 +1087,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetStoragePoolsByNameVolumesByTypeNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1102,8 +1097,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStoragePoolsByNameVolumesByTypeNameResponse getStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetStoragePoolsByNameVolumesByTypeNameResponse> localVarResp = getStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1115,7 +1110,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetStoragePoolsByNameVolumesByTypeNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1125,9 +1120,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStoragePoolsByNameVolumesByTypeNameResponse> getStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1150,10 +1145,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<GetStoragePoolsByNameVolumesByTypeNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1247,7 +1242,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1257,8 +1252,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getStoragePoolsByNameVolumesByTypeNameSnapshots(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(pool, type, name, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeNameSnapshots(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(pool, type, name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1270,7 +1265,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1280,9 +1275,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameSnapshotsValidateBeforeCall(pool, type, name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1305,10 +1300,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameSnapshotsAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameSnapshotsAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameSnapshotsValidateBeforeCall(pool, type, name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1402,7 +1397,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1412,8 +1407,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse getStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> localVarResp = getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, recursion, filter);
+    public BackgroundOperationResponse getStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1425,7 +1420,7 @@ public class StoragePoolsApi {
      * @param name name (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1435,9 +1430,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1460,10 +1455,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1531,7 +1526,7 @@ public class StoragePoolsApi {
      * Update the storage pool information
      * @param pool Storage pool name (required)
      * @param body Update the storage pool information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1541,8 +1536,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchStoragePoolsByName(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchStoragePoolsByNameWithHttpInfo(pool, body);
+    public BackgroundOperationResponse patchStoragePoolsByName(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchStoragePoolsByNameWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -1551,7 +1546,7 @@ public class StoragePoolsApi {
      * Update the storage pool information
      * @param pool Storage pool name (required)
      * @param body Update the storage pool information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1561,9 +1556,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchStoragePoolsByNameWithHttpInfo(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchStoragePoolsByNameWithHttpInfo(String pool, PatchStoragePoolsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchStoragePoolsByNameValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1583,10 +1578,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchStoragePoolsByNameAsync(String pool, PatchStoragePoolsByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchStoragePoolsByNameAsync(String pool, PatchStoragePoolsByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchStoragePoolsByNameValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1670,7 +1665,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Update the storage volume information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1680,8 +1675,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse patchStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -1692,7 +1687,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Update the storage volume information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1702,9 +1697,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body) throws ApiException {
         okhttp3.Call localVarCall = patchStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1726,10 +1721,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1789,7 +1784,7 @@ public class StoragePoolsApi {
      * 
      * Define a new storage pool
      * @param body Define a new storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1799,8 +1794,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePools(CreateStoragePoolsRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsWithHttpInfo(body);
+    public BackgroundOperationResponse postStoragePools(CreateStoragePoolsRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1808,7 +1803,7 @@ public class StoragePoolsApi {
      * 
      * Define a new storage pool
      * @param body Define a new storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1818,9 +1813,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsWithHttpInfo(CreateStoragePoolsRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsWithHttpInfo(CreateStoragePoolsRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1839,10 +1834,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsAsync(CreateStoragePoolsRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsAsync(CreateStoragePoolsRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1910,7 +1905,7 @@ public class StoragePoolsApi {
      * Create a new storage volume on a given storage pool
      * @param pool Storage pool name (required)
      * @param body Create a new storage volume on a given storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1920,8 +1915,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePoolsByNameVolumes(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsByNameVolumesWithHttpInfo(pool, body);
+    public BackgroundOperationResponse postStoragePoolsByNameVolumes(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -1930,7 +1925,7 @@ public class StoragePoolsApi {
      * Create a new storage volume on a given storage pool
      * @param pool Storage pool name (required)
      * @param body Create a new storage volume on a given storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1940,9 +1935,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsByNameVolumesWithHttpInfo(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsByNameVolumesWithHttpInfo(String pool, CreateStoragePoolsByNameVolumesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1962,10 +1957,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesAsync(String pool, CreateStoragePoolsByNameVolumesRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesAsync(String pool, CreateStoragePoolsByNameVolumesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2041,7 +2036,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param body Create a new storage volume of a particular type on a given storage pool (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2051,8 +2046,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postStoragePoolsByNameVolumesByType(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postStoragePoolsByNameVolumesByTypeWithHttpInfo(pool, type, body);
+    public BackgroundOperationResponse postStoragePoolsByNameVolumesByType(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeWithHttpInfo(pool, type, body);
         return localVarResp.getData();
     }
 
@@ -2062,7 +2057,7 @@ public class StoragePoolsApi {
      * @param pool Storage pool name (required)
      * @param type Type of the volume (required)
      * @param body Create a new storage volume of a particular type on a given storage pool (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2072,9 +2067,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postStoragePoolsByNameVolumesByTypeWithHttpInfo(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeWithHttpInfo(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeValidateBeforeCall(pool, type, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2095,10 +2090,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesByTypeAsync(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesByTypeAsync(String pool, String type, CreateStoragePoolsByNameVolumesByTypeRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeValidateBeforeCall(pool, type, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2182,7 +2177,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Rename a storage volume on a given storage pool (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2192,8 +2187,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2204,7 +2199,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Rename a storage volume on a given storage pool (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2214,9 +2209,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2238,10 +2233,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2325,7 +2320,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Create a new volume snapshot (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2335,8 +2330,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshots(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshots(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2347,7 +2342,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Create a new volume snapshot (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2357,9 +2352,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameSnapshotsValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2381,10 +2376,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameSnapshotsAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameSnapshotsAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameSnapshotsValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2468,7 +2463,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Used to rename the volume snapshot (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2478,8 +2473,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse postStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2490,7 +2485,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Used to rename the volume snapshot (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2500,9 +2495,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2524,10 +2519,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2595,7 +2590,7 @@ public class StoragePoolsApi {
      * Replace the storage pool information
      * @param pool Storage pool name (required)
      * @param body Replace the storage pool information (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2605,8 +2600,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putStoragePoolsByName(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putStoragePoolsByNameWithHttpInfo(pool, body);
+    public BackgroundOperationResponse putStoragePoolsByName(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putStoragePoolsByNameWithHttpInfo(pool, body);
         return localVarResp.getData();
     }
 
@@ -2615,7 +2610,7 @@ public class StoragePoolsApi {
      * Replace the storage pool information
      * @param pool Storage pool name (required)
      * @param body Replace the storage pool information (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2625,9 +2620,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putStoragePoolsByNameWithHttpInfo(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putStoragePoolsByNameWithHttpInfo(String pool, UpdateStoragePoolsByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putStoragePoolsByNameValidateBeforeCall(pool, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2647,10 +2642,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putStoragePoolsByNameAsync(String pool, UpdateStoragePoolsByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putStoragePoolsByNameAsync(String pool, UpdateStoragePoolsByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putStoragePoolsByNameValidateBeforeCall(pool, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2734,7 +2729,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Replace the storage volume information or restore from snapshot (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2744,8 +2739,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse putStoragePoolsByNameVolumesByTypeName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2756,7 +2751,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Replace the storage volume information or restore from snapshot (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2766,9 +2761,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putStoragePoolsByNameVolumesByTypeNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2790,10 +2785,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2877,7 +2872,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Volume snapshot information (optional)
-     * @return GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2887,8 +2882,8 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse putStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
-        ApiResponse<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, body);
+    public BackgroundOperationResponse putStoragePoolsByNameVolumesByTypeNameSnapshotsName(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(pool, type, name, body);
         return localVarResp.getData();
     }
 
@@ -2899,7 +2894,7 @@ public class StoragePoolsApi {
      * @param type Type of the volume (required)
      * @param name name (required)
      * @param body Volume snapshot information (optional)
-     * @return ApiResponse&lt;GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2909,9 +2904,9 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, body, null);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2933,10 +2928,10 @@ public class StoragePoolsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body, final ApiCallback<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse> _callback) throws ApiException {
+    public okhttp3.Call putStoragePoolsByNameVolumesByTypeNameSnapshotsNameAsync(String pool, String type, String name, UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putStoragePoolsByNameVolumesByTypeNameSnapshotsNameValidateBeforeCall(pool, type, name, body, _callback);
-        Type localVarReturnType = new TypeToken<GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

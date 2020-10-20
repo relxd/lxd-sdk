@@ -14,14 +14,11 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.CreateNetworksByNameRequest;
 import org.relxd.lxd.model.CreateNetworksRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetNetworksByNameResponse;
-import org.relxd.lxd.model.GetNetworksByNameStateResponse;
-import org.relxd.lxd.model.GetNetworksUUIDResponse;
 import org.relxd.lxd.model.PatchNetworksByNameRequest;
 import org.relxd.lxd.model.UpdateNetworksByNameRequest;
 import org.junit.Test;
@@ -52,7 +49,7 @@ public class NetworksApiTest {
     @Test
     public void deleteNetworksByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksByName(name);
+        BackgroundOperationResponse response = api.deleteNetworksByName(name);
 
         // TODO: test validations
     }
@@ -68,7 +65,7 @@ public class NetworksApiTest {
     @Test
     public void deleteNetworksUUIDTest() throws ApiException {
         String uuid = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksUUID(uuid);
+        BackgroundOperationResponse response = api.deleteNetworksUUID(uuid);
 
         // TODO: test validations
     }
@@ -85,7 +82,7 @@ public class NetworksApiTest {
     public void getNetworksTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getNetworks(recursion, filter);
+        BackgroundOperationResponse response = api.getNetworks(recursion, filter);
 
         // TODO: test validations
     }
@@ -103,7 +100,7 @@ public class NetworksApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksByNameResponse response = api.getNetworksByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -121,7 +118,7 @@ public class NetworksApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksByNameStateResponse response = api.getNetworksByNameState(name, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksByNameState(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -139,7 +136,7 @@ public class NetworksApiTest {
         String uuid = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUID(uuid, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksUUID(uuid, recursion, filter);
 
         // TODO: test validations
     }
@@ -158,7 +155,7 @@ public class NetworksApiTest {
         Integer recursion = null;
         String filter = null;
         BigDecimal timeout = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUIDWait(uuid, recursion, filter, timeout);
+        BackgroundOperationResponse response = api.getNetworksUUIDWait(uuid, recursion, filter, timeout);
 
         // TODO: test validations
     }
@@ -177,7 +174,7 @@ public class NetworksApiTest {
         String secret = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
 
         // TODO: test validations
     }
@@ -194,7 +191,7 @@ public class NetworksApiTest {
     public void patchNetworksByNameTest() throws ApiException {
         String name = null;
         PatchNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchNetworksByName(name, body);
+        BackgroundOperationResponse response = api.patchNetworksByName(name, body);
 
         // TODO: test validations
     }
@@ -210,7 +207,7 @@ public class NetworksApiTest {
     @Test
     public void postNetworksTest() throws ApiException {
         CreateNetworksRequest body = null;
-        BasicStandardReturnValueResponse response = api.postNetworks(body);
+        BackgroundOperationResponse response = api.postNetworks(body);
 
         // TODO: test validations
     }
@@ -227,7 +224,7 @@ public class NetworksApiTest {
     public void postNetworksByNameTest() throws ApiException {
         String name = null;
         CreateNetworksByNameRequest body = null;
-        Object response = api.postNetworksByName(name, body);
+        BackgroundOperationResponse response = api.postNetworksByName(name, body);
 
         // TODO: test validations
     }
@@ -244,7 +241,7 @@ public class NetworksApiTest {
     public void putNetworksByNameTest() throws ApiException {
         String name = null;
         UpdateNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putNetworksByName(name, body);
+        BackgroundOperationResponse response = api.putNetworksByName(name, body);
 
         // TODO: test validations
     }

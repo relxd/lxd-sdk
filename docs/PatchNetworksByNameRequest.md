@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**Config5**](Config5.md) |  |  [optional]
+**config** | [**DNSModeConfig**](DNSModeConfig.md) |  |  [optional]
 
 
 

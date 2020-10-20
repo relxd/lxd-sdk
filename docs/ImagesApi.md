@@ -1,6 +1,6 @@
 # ImagesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**getImages**](ImagesApi.md#getImages) | **GET** /1.0/images | 
 [**getImagesAliases**](ImagesApi.md#getImagesAliases) | **GET** /1.0/images/aliases | 
 [**getImagesAliasesByName**](ImagesApi.md#getImagesAliasesByName) | **GET** /1.0/images/aliases/{name} | 
+[**getImagesByFingerprintExport**](ImagesApi.md#getImagesByFingerprintExport) | **GET** /1.0/images/{fingerprint}/export | 
 [**getImagesFingerprint**](ImagesApi.md#getImagesFingerprint) | **GET** /1.0/images/{fingerprint} | 
-[**getImagesFingerprintExport**](ImagesApi.md#getImagesFingerprintExport) | **GET** /1.0/images/{fingerprint}/export | 
 [**getImagesFingerprintRefresh**](ImagesApi.md#getImagesFingerprintRefresh) | **GET** /1.0/images/{fingerprint}/refresh | 
 [**patchImagesAliasesByName**](ImagesApi.md#patchImagesAliasesByName) | **PATCH** /1.0/images/aliases/{name} | 
 [**patchImagesFingerprint**](ImagesApi.md#patchImagesFingerprint) | **PATCH** /1.0/images/{fingerprint} | 
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="deleteImagesAliasesByName"></a>
 # **deleteImagesAliasesByName**
-> BasicStandardReturnValueResponse deleteImagesAliasesByName(name)
+> BackgroundOperationResponse deleteImagesAliasesByName(name)
 
 
 
@@ -44,7 +44,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -53,7 +53,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     String name = "name_example"; // String | Name of the alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteImagesAliasesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteImagesAliasesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#deleteImagesAliasesByName");
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteImagesFingerprint"></a>
 # **deleteImagesFingerprint**
-> BasicBackgroundOperationResponse deleteImagesFingerprint(fingerprint)
+> BackgroundOperationResponse deleteImagesFingerprint(fingerprint)
 
 
 
@@ -113,7 +113,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -122,7 +122,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteImagesFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.deleteImagesFingerprint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#deleteImagesFingerprint");
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="getImages"></a>
 # **getImages**
-> List&lt;String&gt; getImages(recursion, filter)
+> BackgroundOperationResponse getImages(recursion, filter)
 
 
 
@@ -182,7 +182,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -192,7 +192,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getImages(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImages(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImages");
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesAliases"></a>
 # **getImagesAliases**
-> List&lt;String&gt; getImagesAliases(recursion, filter)
+> BackgroundOperationResponse getImagesAliases(recursion, filter)
 
 
 
@@ -253,7 +253,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -263,7 +263,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getImagesAliases(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesAliases(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesAliases");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesAliasesByName"></a>
 # **getImagesAliasesByName**
-> GetImagesAliasesByNameResponse getImagesAliasesByName(name, recursion, filter)
+> BackgroundOperationResponse getImagesAliasesByName(name, recursion, filter)
 
 
 
@@ -324,7 +324,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -335,7 +335,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetImagesAliasesByNameResponse result = apiInstance.getImagesAliasesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesAliasesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesAliasesByName");
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetImagesAliasesByNameResponse**](GetImagesAliasesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -376,9 +376,84 @@ Name | Type | Description  | Notes
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 
+<a name="getImagesByFingerprintExport"></a>
+# **getImagesByFingerprintExport**
+> BackgroundOperationResponse getImagesByFingerprintExport(fingerprint, recursion, filter, secret)
+
+
+
+Download the image tarball
+
+### Example
+```java
+// Import classes:
+import org.relxd.lxd.ApiClient;
+import org.relxd.lxd.ApiException;
+import org.relxd.lxd.Configuration;
+import org.relxd.lxd.auth.*;
+import org.relxd.lxd.models.*;
+import org.relxd.lxd.api.ImagesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:2375");
+    
+    // Configure OAuth2 access token for authorization: authentication
+    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
+    authentication.setAccessToken("YOUR ACCESS TOKEN");
+
+    ImagesApi apiInstance = new ImagesApi(defaultClient);
+    String fingerprint = "fingerprint_example"; // String | Unique fingerprint
+    Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
+    String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
+    String secret = SECRET; // String | secret
+    try {
+      BackgroundOperationResponse result = apiInstance.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ImagesApi#getImagesByFingerprintExport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fingerprint** | **String**| Unique fingerprint |
+ **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
+ **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+ **secret** | **String**| secret | [optional]
+
+### Return type
+
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
+
+### Authorization
+
+[authentication](../README.md#authentication)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Download the image tarball |  -  |
+**400** | A standard error response |  -  |
+**401** | A standard error response |  -  |
+
 <a name="getImagesFingerprint"></a>
 # **getImagesFingerprint**
-> GetImagesFingerprintResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
+> BackgroundOperationResponse getImagesFingerprint(fingerprint, recursion, filter, secret)
 
 
 
@@ -397,7 +472,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -409,7 +484,7 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String secret = SECRET; // String | secret
     try {
-      GetImagesFingerprintResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
+      BackgroundOperationResponse result = apiInstance.getImagesFingerprint(fingerprint, recursion, filter, secret);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesFingerprint");
@@ -433,82 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetImagesFingerprintResponse**](GetImagesFingerprintResponse.md)
-
-### Authorization
-
-[authentication](../README.md#authentication)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Download the image tarball |  -  |
-**400** | A standard error response |  -  |
-**401** | A standard error response |  -  |
-
-<a name="getImagesFingerprintExport"></a>
-# **getImagesFingerprintExport**
-> GetImagesFingerprintResponse getImagesFingerprintExport(fingerprint, recursion, filter, secret)
-
-
-
-Download the image tarball
-
-### Example
-```java
-// Import classes:
-import org.relxd.lxd.ApiClient;
-import org.relxd.lxd.ApiException;
-import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
-import org.relxd.lxd.models.*;
-import org.relxd.lxd.api.ImagesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
-
-    ImagesApi apiInstance = new ImagesApi(defaultClient);
-    String fingerprint = "fingerprint_example"; // String | Unique fingerprint
-    Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
-    String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
-    String secret = SECRET; // String | secret
-    try {
-      GetImagesFingerprintResponse result = apiInstance.getImagesFingerprintExport(fingerprint, recursion, filter, secret);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ImagesApi#getImagesFingerprintExport");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **secret** | **String**| secret | [optional]
-
-### Return type
-
-[**GetImagesFingerprintResponse**](GetImagesFingerprintResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 <a name="getImagesFingerprintRefresh"></a>
 # **getImagesFingerprintRefresh**
-> BasicBackgroundOperationResponse getImagesFingerprintRefresh(fingerprint, recursion, filter)
+> BackgroundOperationResponse getImagesFingerprintRefresh(fingerprint, recursion, filter)
 
 
 
@@ -547,7 +547,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -558,7 +558,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      BasicBackgroundOperationResponse result = apiInstance.getImagesFingerprintRefresh(fingerprint, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getImagesFingerprintRefresh(fingerprint, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#getImagesFingerprintRefresh");
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesAliasesByName"></a>
 # **patchImagesAliasesByName**
-> BasicStandardReturnValueResponse patchImagesAliasesByName(name, body)
+> BackgroundOperationResponse patchImagesAliasesByName(name, body)
 
 
 
@@ -620,7 +620,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -630,7 +630,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Updates the alias target or description
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesAliasesByName");
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 <a name="patchImagesFingerprint"></a>
 # **patchImagesFingerprint**
-> BasicStandardReturnValueResponse patchImagesFingerprint(fingerprint, body)
+> BackgroundOperationResponse patchImagesFingerprint(fingerprint, body)
 
 
 
@@ -691,7 +691,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -701,7 +701,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     PatchImagesFingerprintRequest body = new PatchImagesFingerprintRequest(); // PatchImagesFingerprintRequest | Updates the image properties, update information and visibility
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.patchImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#patchImagesFingerprint");
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 
 <a name="postImages"></a>
 # **postImages**
-> BasicBackgroundOperationResponse postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body)
+> BackgroundOperationResponse postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body)
 
 
 
@@ -762,7 +762,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -775,7 +775,7 @@ public class Example {
     String xLXDProperties = URL-encoded key value pairs without duplicate keys; // String | 
     CreateImagesRequest body = new CreateImagesRequest(); // CreateImagesRequest | Create and publish a new image
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
+      BackgroundOperationResponse result = apiInstance.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImages");
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliases"></a>
 # **postImagesAliases**
-> BasicStandardReturnValueResponse postImagesAliases(body)
+> BackgroundOperationResponse postImagesAliases(body)
 
 
 
@@ -839,7 +839,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -848,7 +848,7 @@ public class Example {
     ImagesApi apiInstance = new ImagesApi(defaultClient);
     CreateImagesAliasesRequest body = new CreateImagesAliasesRequest(); // CreateImagesAliasesRequest | Create a new alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postImagesAliases(body);
+      BackgroundOperationResponse result = apiInstance.postImagesAliases(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliases");
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesAliasesByName"></a>
 # **postImagesAliasesByName**
-> BasicStandardReturnValueResponse postImagesAliasesByName(name, body)
+> BackgroundOperationResponse postImagesAliasesByName(name, body)
 
 
 
@@ -908,7 +908,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -918,7 +918,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     CreateImagesAliasesByNameRequest body = new CreateImagesAliasesByNameRequest(); // CreateImagesAliasesByNameRequest | Rename an alias
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesAliasesByName");
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesFingerprintExport"></a>
 # **postImagesFingerprintExport**
-> BasicBackgroundOperationResponse postImagesFingerprintExport(fingerprint, body)
+> BackgroundOperationResponse postImagesFingerprintExport(fingerprint, body)
 
 
 
@@ -980,7 +980,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -990,7 +990,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     CreateImagesFingerprintExportRequest body = new CreateImagesFingerprintExportRequest(); // CreateImagesFingerprintExportRequest | Upload the image tarball
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postImagesFingerprintExport(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.postImagesFingerprintExport(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesFingerprintExport");
@@ -1012,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 <a name="postImagesFingerprintSecret"></a>
 # **postImagesFingerprintSecret**
-> CreateImagesFingerprintSecretResponse postImagesFingerprintSecret(fingerprint, body)
+> BackgroundOperationResponse postImagesFingerprintSecret(fingerprint, body)
 
 
 
@@ -1051,7 +1051,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1061,7 +1061,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     Object body = null; // Object | Generate a random token and tell LXD to expect it be used by a guest
     try {
-      CreateImagesFingerprintSecretResponse result = apiInstance.postImagesFingerprintSecret(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.postImagesFingerprintSecret(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#postImagesFingerprintSecret");
@@ -1083,7 +1083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateImagesFingerprintSecretResponse**](CreateImagesFingerprintSecretResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1103,7 +1103,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesAliasesByName"></a>
 # **putImagesAliasesByName**
-> BasicStandardReturnValueResponse putImagesAliasesByName(name, body)
+> BackgroundOperationResponse putImagesAliasesByName(name, body)
 
 
 
@@ -1122,7 +1122,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1132,7 +1132,7 @@ public class Example {
     String name = "name_example"; // String | Name of the alias
     UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest(); // UpdateImagesAliasesByNameRequest | Replaces the alias target or description
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putImagesAliasesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putImagesAliasesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesAliasesByName");
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -1174,7 +1174,7 @@ Name | Type | Description  | Notes
 
 <a name="putImagesFingerprint"></a>
 # **putImagesFingerprint**
-> BasicStandardReturnValueResponse putImagesFingerprint(fingerprint, body)
+> BackgroundOperationResponse putImagesFingerprint(fingerprint, body)
 
 
 
@@ -1193,7 +1193,7 @@ import org.relxd.lxd.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -1203,7 +1203,7 @@ public class Example {
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     UpdateImagesFingerprintRequest body = new UpdateImagesFingerprintRequest(); // UpdateImagesFingerprintRequest | Replaces the image properties, update information and visibility
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
+      BackgroundOperationResponse result = apiInstance.putImagesFingerprint(fingerprint, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ImagesApi#putImagesFingerprint");
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

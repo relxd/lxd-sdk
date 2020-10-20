@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.StandardReturnValueResponse;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -63,6 +63,22 @@ public class RawFileTest {
     @Test
     public void statusCodeTest() {
         // TODO: test statusCode
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
+     * Test the property 'errorCode'
+     */
+    @Test
+    public void errorCodeTest() {
+        // TODO: test errorCode
     }
 
     /**

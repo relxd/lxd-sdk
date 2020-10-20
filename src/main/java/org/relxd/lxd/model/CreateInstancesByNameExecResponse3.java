@@ -29,7 +29,7 @@ import org.relxd.lxd.model.Output;
  * Return (with interactive&#x3D;false and record-output&#x3D;true)
  */
 @ApiModel(description = "Return (with interactive=false and record-output=true)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class CreateInstancesByNameExecResponse3 {
   public static final String SERIALIZED_NAME_FDS = "fds";
   @SerializedName(SERIALIZED_NAME_FDS)

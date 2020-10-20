@@ -25,15 +25,15 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config2;
-import org.relxd.lxd.model.Devices2;
+import org.relxd.lxd.model.DevicesRoot;
 import org.relxd.lxd.model.ExpandedConfig;
 import org.relxd.lxd.model.ExpandedDevices;
+import org.relxd.lxd.model.HardwareSpecsConfig;
 
 /**
  * GetInstancesByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class GetInstancesByNameResponse {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)
@@ -41,7 +41,7 @@ public class GetInstancesByNameResponse {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config2 config;
+  private HardwareSpecsConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -49,7 +49,7 @@ public class GetInstancesByNameResponse {
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices2 devices;
+  private DevicesRoot devices;
 
   public static final String SERIALIZED_NAME_EPHEMERAL = "ephemeral";
   @SerializedName(SERIALIZED_NAME_EPHEMERAL)
@@ -111,7 +111,7 @@ public class GetInstancesByNameResponse {
   }
 
 
-  public GetInstancesByNameResponse config(Config2 config) {
+  public GetInstancesByNameResponse config(HardwareSpecsConfig config) {
     
     this.config = config;
     return this;
@@ -124,12 +124,12 @@ public class GetInstancesByNameResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config2 getConfig() {
+  public HardwareSpecsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config2 config) {
+  public void setConfig(HardwareSpecsConfig config) {
     this.config = config;
   }
 
@@ -157,7 +157,7 @@ public class GetInstancesByNameResponse {
   }
 
 
-  public GetInstancesByNameResponse devices(Devices2 devices) {
+  public GetInstancesByNameResponse devices(DevicesRoot devices) {
     
     this.devices = devices;
     return this;
@@ -170,12 +170,12 @@ public class GetInstancesByNameResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices2 getDevices() {
+  public DevicesRoot getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices2 devices) {
+  public void setDevices(DevicesRoot devices) {
     this.devices = devices;
   }
 

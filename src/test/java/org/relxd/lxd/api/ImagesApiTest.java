@@ -13,35 +13,43 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
-import org.relxd.lxd.model.CreateImagesAliasesByNameRequest;
-import org.relxd.lxd.model.CreateImagesAliasesRequest;
-import org.relxd.lxd.model.CreateImagesFingerprintExportRequest;
-import org.relxd.lxd.model.CreateImagesFingerprintSecretResponse;
-import org.relxd.lxd.model.CreateImagesRequest;
-import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetImagesAliasesByNameResponse;
-import org.relxd.lxd.model.GetImagesFingerprintResponse;
-import org.relxd.lxd.model.PatchImagesFingerprintRequest;
-import org.relxd.lxd.model.UpdateImagesAliasesByNameRequest;
-import org.relxd.lxd.model.UpdateImagesFingerprintRequest;
+import org.relxd.lxd.JSON;
+import org.relxd.lxd.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.spy;
+
 /**
  * API tests for ImagesApi
  */
-@Ignore
+
 public class ImagesApiTest {
 
     private final ImagesApi api = new ImagesApi();
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+
+    private LinuxCmdService linuxCmdService;
+
+    @Before
+    public void setup() {
+
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+    }
 
     
     /**
@@ -53,11 +61,17 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        BasicStandardReturnValueResponse response = api.deleteImagesAliasesByName(name);
+    public void deleteImagesAliasesByNameTest(){
+        String name = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteImagesAliasesByName(name);
+            logger.info("DELETE IMAGES ALIASES BY NAME RESPONSE >>>>>  {}", response);
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -69,11 +83,16 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteImagesFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        BasicBackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
+    public void deleteImagesFingerprintTest() {
+        String fingerprint = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
+            logger.info("DELETE IMAGES BY FINGERPRINT RESPONSE >>>> {}", response);
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -85,12 +104,25 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getImagesTest() throws ApiException {
+    public void getImagesTest() {
+        final String getImagesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/images";
+
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getImages(recursion, filter);
+        try {
+            final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
+            BackgroundOperationResponse actualGetImagesResponse = api.getImages(recursion, filter);
+            logger.info("Actual Get Images Response >>>>> {}", actualGetImagesResponse);
 
-        // TODO: test validations
+            assertEquals(actualGetImagesResponse,expectedGetImagesResponse);
+
+        }catch (IOException | InterruptedException e){
+
+        }
+        catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -102,12 +134,26 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getImagesAliasesTest() throws ApiException {
+    public void getImagesAliasesTest() {
+        final String getImageAliasesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/images/aliases";
+
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getImagesAliases(recursion, filter);
 
-        // TODO: test validations
+        try {
+            final BackgroundOperationResponse expectedGetImageAliasesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImageAliasesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Image Aliases Response >>>>>>>>>> " + expectedGetImageAliasesResponse);
+            BackgroundOperationResponse actualGetImageAliasesResponse = api.getImagesAliases(recursion, filter);
+            logger.info("Actual Get Image Aliases Response >>>>>> {}", actualGetImageAliasesResponse);
+
+            assertEquals(actualGetImageAliasesResponse, expectedGetImageAliasesResponse);
+
+        }catch(IOException | InterruptedException ex){
+
+        }catch(ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -119,13 +165,52 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getImagesAliasesByNameTest() throws ApiException {
-        String name = null;
+    public void getImagesAliasesByNameTest() {
+        String name = "myvm";
+        final String getImageAliasesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/images/aliases" + name;
+
         Integer recursion = null;
         String filter = null;
-        GetImagesAliasesByNameResponse response = api.getImagesAliasesByName(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            final BackgroundOperationResponse expectedGetImageAliasesByNameResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImageAliasesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Image Aliases By Name Response >>>>>>>>>> " + expectedGetImageAliasesByNameResponse);
+
+            BackgroundOperationResponse actualGetImageAliasesByNameResponse = api.getImagesAliasesByName(name, recursion, filter);
+            logger.info("Actual Get Images Aliases By Name >>>>>> {}", actualGetImageAliasesByNameResponse);
+
+            assertEquals(actualGetImageAliasesByNameResponse,expectedGetImageAliasesByNameResponse);
+
+        }catch (IOException | InterruptedException ex){
+
+        } catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+    
+    /**
+     * 
+     *
+     * Download the image tarball
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getImagesByFingerprintExportTest() throws ApiException {
+        String fingerprint = "b789b81c7261b971e45b904c372b19b9a245172a50c6b88780554efbc582dab6";
+        Integer recursion = null;
+        String filter = null;
+        String secret = null;
+
+        try {
+            BackgroundOperationResponse response = api.getImagesByFingerprintExport(fingerprint, recursion, filter, secret);
+            logger.info("Get Images By FingerPrint Export Response >>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -138,32 +223,19 @@ public class ImagesApiTest {
      */
     @Test
     public void getImagesFingerprintTest() throws ApiException {
-        String fingerprint = null;
+        String fingerprint = "b789b81c7261b971e45b904c372b19b9a245172a50c6b88780554efbc582dab6";
         Integer recursion = null;
         String filter = null;
         String secret = null;
-        GetImagesFingerprintResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
 
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Download the image tarball
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getImagesFingerprintExportTest() throws ApiException {
-        String fingerprint = null;
-        Integer recursion = null;
-        String filter = null;
-        String secret = null;
-        GetImagesFingerprintResponse response = api.getImagesFingerprintExport(fingerprint, recursion, filter, secret);
+        try {
+            BackgroundOperationResponse response = api.getImagesFingerprint(fingerprint, recursion, filter, secret);
+            logger.info("Get Images Fingerprint Response >>>>> {}", response);
+            assertEquals(response.getStatusCode(),Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
 
-        // TODO: test validations
     }
     
     /**
@@ -176,12 +248,16 @@ public class ImagesApiTest {
      */
     @Test
     public void getImagesFingerprintRefreshTest() throws ApiException {
-        String fingerprint = null;
+        String fingerprint = "b789b81c7261b971e45b904c372b19b9a245172a50c6b88780554efbc582dab6";
         Integer recursion = null;
         String filter = null;
-        BasicBackgroundOperationResponse response = api.getImagesFingerprintRefresh(fingerprint, recursion, filter);
-
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getImagesFingerprintRefresh(fingerprint, recursion, filter);
+            logger.info("Get Images Fingerprint Refresh Response >>>>> {}", response);
+            assertEquals(response.getStatusCode(),Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -194,11 +270,19 @@ public class ImagesApiTest {
      */
     @Test
     public void patchImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        UpdateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchImagesAliasesByName(name, body);
+        String name = "new-alias-name";
+        UpdateImagesAliasesByNameRequest body = new UpdateImagesAliasesByNameRequest();
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.patchImagesAliasesByName(name, body);
+            logger.info("PATCH IMAGES ALIASES BY NAME >>>>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -211,11 +295,23 @@ public class ImagesApiTest {
      */
     @Test
     public void patchImagesFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        PatchImagesFingerprintRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchImagesFingerprint(fingerprint, body);
+        String fingerprint = "b789b81c7261b971e45b904c372b19b9a245172a50c6b88780554efbc582dab6";
 
-        // TODO: test validations
+        Properties5 properties5 = new Properties5();
+        properties5.setOs("ubuntu");
+        properties5.setRelease("20201014");
+        PatchImagesFingerprintRequest request = new PatchImagesFingerprintRequest();
+        request.setProperties(properties5);
+        request.setPublic(true);
+
+        try {
+            BackgroundOperationResponse response = api.patchImagesFingerprint(fingerprint, request);
+            logger.info("Patch Images Fingerprint Response >>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -227,15 +323,40 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postImagesTest() throws ApiException {
+    public void postImagesTest() {
+
         String xLXDFingerprint = null;
         String xLXDFilename = null;
         Boolean xLXDPublic = null;
         String xLXDProperties = null;
-        CreateImagesRequest body = null;
-        BasicBackgroundOperationResponse response = api.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
 
-        // TODO: test validations
+        Source10 source10 = new Source10();
+        source10.setType("image");
+        source10.setMode("pull");
+        source10.setProtocol("simplestreams");
+        source10.setServer("https://cloud-images.ubuntu.com/releases");
+        source10.setAlias("20.04");
+
+        Properties3 properties3 = new Properties3();
+        properties3.setOs("ubuntu");
+
+        CreateImagesRequest request = new CreateImagesRequest();
+        request.setFilename("another-ubuntu");
+        request.setSource(source10);
+        request.setProperties(properties3);
+        //request.setCompressionAlgorithm("");
+        request.setAutoUpdate(true);
+
+
+        try {
+            BackgroundOperationResponse response = api.postImages(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, request);
+            logger.info("POST IMAGES RESPONSE >>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(100));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -248,10 +369,20 @@ public class ImagesApiTest {
      */
     @Test
     public void postImagesAliasesTest() throws ApiException {
-        CreateImagesAliasesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postImagesAliases(body);
+        CreateImagesAliasesRequest request = new CreateImagesAliasesRequest();
+        request.setName("my-first-alias");
+        request.setDescription("This is my alias");
+        request.setTarget("98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postImagesAliases(request);
+            logger.info("POST ALIASES RESPONSE >>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -263,12 +394,20 @@ public class ImagesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        CreateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.postImagesAliasesByName(name, body);
+    public void postImagesAliasesByNameTest() {
+        String name = "my-first-alias";
+        CreateImagesAliasesByNameRequest request = new CreateImagesAliasesByNameRequest();
+        request.setName("new-alias-name");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postImagesAliasesByName(name, request);
+            logger.info("POST IMAGE ALIASES BY NAME RESPONSE >>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -281,11 +420,20 @@ public class ImagesApiTest {
      */
     @Test
     public void postImagesFingerprintExportTest() throws ApiException {
-        String fingerprint = null;
-        CreateImagesFingerprintExportRequest body = null;
-        BasicBackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, body);
+        List<String> aliases = new ArrayList<>();
+        aliases.add("new-alias-name");
 
-        // TODO: test validations
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        CreateImagesFingerprintExportRequest request = new CreateImagesFingerprintExportRequest();
+        request.setTarget("98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064");
+        request.setAliases(aliases);
+
+        try {
+            BackgroundOperationResponse response = api.postImagesFingerprintExport(fingerprint, request);
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -298,11 +446,19 @@ public class ImagesApiTest {
      */
     @Test
     public void postImagesFingerprintSecretTest() throws ApiException {
-        String fingerprint = null;
-        Object body = null;
-        CreateImagesFingerprintSecretResponse response = api.postImagesFingerprintSecret(fingerprint, body);
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        Object body = new Object();
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postImagesFingerprintSecret(fingerprint, body);
+            logger.info("POST FINGER PRINT SECTRET >>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(100));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -315,9 +471,19 @@ public class ImagesApiTest {
      */
     @Test
     public void putImagesAliasesByNameTest() throws ApiException {
-        String name = null;
-        UpdateImagesAliasesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putImagesAliasesByName(name, body);
+        String name = "new-alias-name";
+        UpdateImagesAliasesByNameRequest request = new UpdateImagesAliasesByNameRequest();
+        request.setTarget("98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064");
+
+        try {
+            BackgroundOperationResponse response = api.putImagesAliasesByName(name, request);
+            logger.info("PUT IMAGES ALIASES BY NAME RESPONSE >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
 
         // TODO: test validations
     }
@@ -332,11 +498,32 @@ public class ImagesApiTest {
      */
     @Test
     public void putImagesFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        UpdateImagesFingerprintRequest body = null;
-        BasicStandardReturnValueResponse response = api.putImagesFingerprint(fingerprint, body);
+        String fingerprint = "98f390c5e26031f059d6f49c48c12e3c245cb475fe7424af3728a0dc88e60064";
+        UpdateImagesFingerprintRequest request = new UpdateImagesFingerprintRequest();
+        request.setAutoUpdate(true);
+        request.setPublic(true);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.putImagesFingerprint(fingerprint, request);
+            logger.info("PUT FINGERPRINT RESPONSE >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
-    
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
+    }
 }

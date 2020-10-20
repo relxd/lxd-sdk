@@ -26,13 +26,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.relxd.lxd.model.CreateInstancesRequestConfig;
-import org.relxd.lxd.model.Devices1;
+import org.relxd.lxd.model.DevicesKvm;
 import org.relxd.lxd.model.Source;
 
 /**
  * CreateInstancesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class CreateInstancesRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -60,7 +60,7 @@ public class CreateInstancesRequest {
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices1 devices;
+  private DevicesKvm devices;
 
   public static final String SERIALIZED_NAME_INSTANCE_TYPE = "instance_type";
   @SerializedName(SERIALIZED_NAME_INSTANCE_TYPE)
@@ -209,7 +209,7 @@ public class CreateInstancesRequest {
   }
 
 
-  public CreateInstancesRequest devices(Devices1 devices) {
+  public CreateInstancesRequest devices(DevicesKvm devices) {
     
     this.devices = devices;
     return this;
@@ -222,12 +222,12 @@ public class CreateInstancesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices1 getDevices() {
+  public DevicesKvm getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices1 devices) {
+  public void setDevices(DevicesKvm devices) {
     this.devices = devices;
   }
 

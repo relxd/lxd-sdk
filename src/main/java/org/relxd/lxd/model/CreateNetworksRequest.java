@@ -23,12 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config;
+import org.relxd.lxd.model.NetworkIPConfig;
 
 /**
  * CreateNetworksRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class CreateNetworksRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -40,7 +40,7 @@ public class CreateNetworksRequest {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config config;
+  private NetworkIPConfig config;
 
 
   public CreateNetworksRequest name(String name) {
@@ -89,7 +89,7 @@ public class CreateNetworksRequest {
   }
 
 
-  public CreateNetworksRequest config(Config config) {
+  public CreateNetworksRequest config(NetworkIPConfig config) {
     
     this.config = config;
     return this;
@@ -102,12 +102,12 @@ public class CreateNetworksRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config getConfig() {
+  public NetworkIPConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config config) {
+  public void setConfig(NetworkIPConfig config) {
     this.config = config;
   }
 

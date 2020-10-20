@@ -1,6 +1,6 @@
 # ProfilesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProfilesByName"></a>
 # **deleteProfilesByName**
-> BasicStandardReturnValueResponse deleteProfilesByName(name)
+> BackgroundOperationResponse deleteProfilesByName(name)
 
 
 
@@ -34,7 +34,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -43,7 +43,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     String name = "name_example"; // String | Profiles name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteProfilesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteProfilesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#deleteProfilesByName");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="getProfiles"></a>
 # **getProfiles**
-> List&lt;String&gt; getProfiles(recursion, filter)
+> BackgroundOperationResponse getProfiles(recursion, filter)
 
 
 
@@ -103,7 +103,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -113,7 +113,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getProfiles(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProfiles(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#getProfiles");
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 <a name="getProfilesByName"></a>
 # **getProfilesByName**
-> GetProfilesByNameResponse getProfilesByName(name, recursion, filter)
+> BackgroundOperationResponse getProfilesByName(name, recursion, filter)
 
 
 
@@ -174,7 +174,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -185,7 +185,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetProfilesByNameResponse result = apiInstance.getProfilesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProfilesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#getProfilesByName");
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetProfilesByNameResponse**](GetProfilesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProfilesByName"></a>
 # **patchProfilesByName**
-> BasicStandardReturnValueResponse patchProfilesByName(name, body)
+> BackgroundOperationResponse patchProfilesByName(name, body)
 
 
 
@@ -247,7 +247,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -257,7 +257,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Update the profile information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#patchProfilesByName");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="postProfiles"></a>
 # **postProfiles**
-> BasicStandardReturnValueResponse postProfiles(body)
+> BackgroundOperationResponse postProfiles(body)
 
 
 
@@ -318,7 +318,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -327,7 +327,7 @@ public class Example {
     ProfilesApi apiInstance = new ProfilesApi(defaultClient);
     CreateProfilesRequest body = new CreateProfilesRequest(); // CreateProfilesRequest | Define a new profile
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postProfiles(body);
+      BackgroundOperationResponse result = apiInstance.postProfiles(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#postProfiles");
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 <a name="postProfilesByName"></a>
 # **postProfilesByName**
-> Object postProfilesByName(name, body)
+> BackgroundOperationResponse postProfilesByName(name, body)
 
 
 
@@ -387,7 +387,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -397,7 +397,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     CreateProfilesByNameRequest body = new CreateProfilesByNameRequest(); // CreateProfilesByNameRequest | Rename a profile
     try {
-      Object result = apiInstance.postProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#postProfilesByName");
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
@@ -433,14 +433,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response |  -  |
+**204** | A standard return value response |  -  |
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 **409** | A standard error response |  -  |
 
 <a name="putProfilesByName"></a>
 # **putProfilesByName**
-> BasicStandardReturnValueResponse putProfilesByName(name, body)
+> BackgroundOperationResponse putProfilesByName(name, body)
 
 
 
@@ -459,7 +459,7 @@ import org.relxd.lxd.api.ProfilesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -469,7 +469,7 @@ public class Example {
     String name = "name_example"; // String | Profiles name
     UpdateProfilesByNameRequest body = new UpdateProfilesByNameRequest(); // UpdateProfilesByNameRequest | Replace the profile information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putProfilesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putProfilesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProfilesApi#putProfilesByName");
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 

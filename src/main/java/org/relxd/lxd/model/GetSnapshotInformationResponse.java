@@ -26,13 +26,13 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config4;
 import org.relxd.lxd.model.ExpandedDevices;
+import org.relxd.lxd.model.SecurityNestingConfig;
 
 /**
  * GetSnapshotInformationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class GetSnapshotInformationResponse {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)
@@ -40,7 +40,7 @@ public class GetSnapshotInformationResponse {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config4 config;
+  private SecurityNestingConfig config;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -56,7 +56,7 @@ public class GetSnapshotInformationResponse {
 
   public static final String SERIALIZED_NAME_EXPANDED_CONFIG = "expanded_config";
   @SerializedName(SERIALIZED_NAME_EXPANDED_CONFIG)
-  private Config4 expandedConfig;
+  private SecurityNestingConfig expandedConfig;
 
   public static final String SERIALIZED_NAME_EXPANDED_DEVICES = "expanded_devices";
   @SerializedName(SERIALIZED_NAME_EXPANDED_DEVICES)
@@ -102,7 +102,7 @@ public class GetSnapshotInformationResponse {
   }
 
 
-  public GetSnapshotInformationResponse config(Config4 config) {
+  public GetSnapshotInformationResponse config(SecurityNestingConfig config) {
     
     this.config = config;
     return this;
@@ -115,12 +115,12 @@ public class GetSnapshotInformationResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config4 getConfig() {
+  public SecurityNestingConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config4 config) {
+  public void setConfig(SecurityNestingConfig config) {
     this.config = config;
   }
 
@@ -194,7 +194,7 @@ public class GetSnapshotInformationResponse {
   }
 
 
-  public GetSnapshotInformationResponse expandedConfig(Config4 expandedConfig) {
+  public GetSnapshotInformationResponse expandedConfig(SecurityNestingConfig expandedConfig) {
     
     this.expandedConfig = expandedConfig;
     return this;
@@ -207,12 +207,12 @@ public class GetSnapshotInformationResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config4 getExpandedConfig() {
+  public SecurityNestingConfig getExpandedConfig() {
     return expandedConfig;
   }
 
 
-  public void setExpandedConfig(Config4 expandedConfig) {
+  public void setExpandedConfig(SecurityNestingConfig expandedConfig) {
     this.expandedConfig = expandedConfig;
   }
 

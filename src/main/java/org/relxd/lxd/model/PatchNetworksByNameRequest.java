@@ -23,19 +23,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config5;
+import org.relxd.lxd.model.DNSModeConfig;
 
 /**
  * PatchNetworksByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
 public class PatchNetworksByNameRequest {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config5 config;
+  private DNSModeConfig config;
 
 
-  public PatchNetworksByNameRequest config(Config5 config) {
+  public PatchNetworksByNameRequest config(DNSModeConfig config) {
     
     this.config = config;
     return this;
@@ -48,12 +48,12 @@ public class PatchNetworksByNameRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config5 getConfig() {
+  public DNSModeConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config5 config) {
+  public void setConfig(DNSModeConfig config) {
     this.config = config;
   }
 
