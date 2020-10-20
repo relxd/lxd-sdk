@@ -62,7 +62,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameTest() throws ApiException {
+    public void deleteInstancesByNameTest() {
         String name = "";
 
         try {
@@ -83,7 +83,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameBackupsByNameTest() throws ApiException {
+    public void deleteInstancesByNameBackupsByNameTest() {
         String name = "";
         String backupsName = "";
 
@@ -106,7 +106,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameConsoleTest() throws ApiException {
+    public void deleteInstancesByNameConsoleTest() {
         String name = "";
 
         try {
@@ -126,7 +126,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameFilesTest() throws ApiException {
+    public void deleteInstancesByNameFilesTest() {
         String name = "";
         String path = "";
 
@@ -149,7 +149,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameLogsFileTest() throws ApiException {
+    public void deleteInstancesByNameLogsFileTest() {
         String name = "";
         String logFile = "";
 
@@ -196,7 +196,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteInstancesByNameSnapshotsInformationTest() throws ApiException {
+    public void deleteInstancesByNameSnapshotsInformationTest() {
         String name = "";
         String snapshotName = "";
 
