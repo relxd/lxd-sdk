@@ -15,6 +15,7 @@ package org.relxd.lxd.api;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -35,6 +36,7 @@ import static org.mockito.Mockito.spy;
 public class SupportedApisApiTest {
 
     private final SupportedApisApi api = new SupportedApisApi();
+    private final ApiClient apiClient = new ApiClient();
     private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
     private LinuxCmdService linuxCmdService;
 
@@ -55,7 +57,9 @@ public class SupportedApisApiTest {
     @Test
     public void getApiListTest() throws ApiException {
 
-        final String getApiListCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/";
+        final String unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+
+        final String getApiListCommand = "curl -s --unix-socket " + unixSocketPath + " a/";
         Integer recursion = null;
         String filter = null;
 

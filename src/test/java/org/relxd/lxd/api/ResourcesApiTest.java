@@ -13,24 +13,32 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+
 /**
  * API tests for ResourcesApi
  */
-@Ignore
+
 public class ResourcesApiTest {
 
     private final ResourcesApi api = new ResourcesApi();
+
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
     
     /**
@@ -45,9 +53,29 @@ public class ResourcesApiTest {
     public void getResourcesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getResources(recursion, filter);
 
-        // TODO: test validations
+        try {
+        BackgroundOperationResponse response = api.getResources(recursion, filter);
+        logger.info("Get Operations Response >>>>>> {}", response);
+
+        assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+    }catch (ApiException ex){
+        catchApiException(ex);
+    }
+
+}
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
     }
     
 }

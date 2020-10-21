@@ -13,21 +13,24 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BackgroundOperationResponse;
+import org.relxd.lxd.JSON;
+import org.relxd.lxd.model.*;
+
 import java.math.BigDecimal;
-import org.relxd.lxd.model.CreateNetworksByNameRequest;
-import org.relxd.lxd.model.CreateNetworksRequest;
-import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.PatchNetworksByNameRequest;
-import org.relxd.lxd.model.UpdateNetworksByNameRequest;
+
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * API tests for NetworksApi
@@ -37,6 +40,7 @@ public class NetworksApiTest {
 
     private final NetworksApi api = new NetworksApi();
 
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
     
     /**
      * 
@@ -47,11 +51,18 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteNetworksByNameTest() throws ApiException {
-        String name = null;
-        BackgroundOperationResponse response = api.deleteNetworksByName(name);
+    public void deleteNetworksByNameTest() {
+        String name = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteNetworksByName(name);
+            logger.info("Delete Networks By Name Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+
     }
     
     /**
@@ -63,11 +74,16 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteNetworksUUIDTest() throws ApiException {
-        String uuid = null;
-        BackgroundOperationResponse response = api.deleteNetworksUUID(uuid);
+    public void deleteNetworksUUIDTest() {
+        String uuid = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteNetworksUUID(uuid);
+            logger.info("Get Networks Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -79,12 +95,19 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getNetworksTest() throws ApiException {
+    public void getNetworksTest() {
+
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getNetworks(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getNetworks(recursion, filter);
+            logger.info("Get Networks Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -96,13 +119,19 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getNetworksByNameTest() throws ApiException {
-        String name = null;
+    public void getNetworksByNameTest() {
+        String name = "lxdbr0";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getNetworksByName(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getNetworksByName(name, recursion, filter);
+            logger.info("Get Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -114,13 +143,19 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getNetworksByNameStateTest() throws ApiException {
-        String name = null;
+    public void getNetworksByNameStateTest() {
+        String name = "lxdbr0";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getNetworksByNameState(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getNetworksByNameState(name, recursion, filter);
+            logger.info("Get Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -189,11 +224,21 @@ public class NetworksApiTest {
      */
     @Test
     public void patchNetworksByNameTest() throws ApiException {
-        String name = null;
-        PatchNetworksByNameRequest body = null;
-        BackgroundOperationResponse response = api.patchNetworksByName(name, body);
+        String name = "lxdbr0";
 
-        // TODO: test validations
+        DNSModeConfig dnsModeConfig = new DNSModeConfig();
+        dnsModeConfig.setDnsMode("dynamic");
+
+        PatchNetworksByNameRequest request = new PatchNetworksByNameRequest();
+        request.setConfig(dnsModeConfig);
+
+        try {
+            BackgroundOperationResponse response = api.patchNetworksByName(name, request);
+            logger.info("Patch Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -206,10 +251,27 @@ public class NetworksApiTest {
      */
     @Test
     public void postNetworksTest() throws ApiException {
-        CreateNetworksRequest body = null;
-        BackgroundOperationResponse response = api.postNetworks(body);
 
-        // TODO: test validations
+        CreateNetworksRequest request = new CreateNetworksRequest();
+
+        NetworkIPConfig networkIPConfig = new NetworkIPConfig();
+        networkIPConfig.setIpv4Address("none");
+        networkIPConfig.setIpv6Address("2001:470:b368:4242::1/64");
+        networkIPConfig.setIpv6Nat("true");
+
+
+        request.setName("myNewNetwork");
+        request.setDescription("This is my new Network for testing");
+        request.setConfig(networkIPConfig);
+
+        try {
+            BackgroundOperationResponse response = api.postNetworks(request);
+            logger.info("Post Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -222,11 +284,17 @@ public class NetworksApiTest {
      */
     @Test
     public void postNetworksByNameTest() throws ApiException {
-        String name = null;
-        CreateNetworksByNameRequest body = null;
-        BackgroundOperationResponse response = api.postNetworksByName(name, body);
+        String name = "myNewNetwork";
+        CreateNetworksByNameRequest request = new CreateNetworksByNameRequest();
+        request.setName("new-ntwrk-name");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postNetworksByName(name, request);
+            logger.info("Post Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -239,11 +307,32 @@ public class NetworksApiTest {
      */
     @Test
     public void putNetworksByNameTest() throws ApiException {
-        String name = null;
-        UpdateNetworksByNameRequest body = null;
-        BackgroundOperationResponse response = api.putNetworksByName(name, body);
 
-        // TODO: test validations
+        String name = "new-ntwrk-name";
+        UpdateNetworksByNameRequest request = new UpdateNetworksByNameRequest();
+        request.setBridgeDriver("openvswitch");
+        request.setIpv4Address("10.0.3.1/24");
+        request.setIpv6Address("fd1:6997:4939:495d::1/64");
+
+        try {
+            BackgroundOperationResponse response = api.putNetworksByName(name, request);
+            logger.info("Put Networks By Name Reponse >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
-    
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+            ex.printStackTrace();
+        }
+        return errorResponse;
+    }
 }

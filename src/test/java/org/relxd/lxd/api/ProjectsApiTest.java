@@ -13,28 +13,30 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BackgroundOperationResponse;
-import org.relxd.lxd.model.CreateProjectsByNameRequest;
-import org.relxd.lxd.model.CreateProjectsRequest;
-import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.UpdateProjectsByNameRequest;
+import org.relxd.lxd.JSON;
+import org.relxd.lxd.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+
 /**
  * API tests for ProjectsApi
  */
-@Ignore
+
 public class ProjectsApiTest {
 
     private final ProjectsApi api = new ProjectsApi();
-
+    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
     
     /**
      * 
@@ -46,10 +48,15 @@ public class ProjectsApiTest {
      */
     @Test
     public void deleteProjectsByNameTest() throws ApiException {
-        String name = null;
-        BackgroundOperationResponse response = api.deleteProjectsByName(name);
+        String name = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteProjectsByName(name);
+            logger.info("Delete Projects By Name Response >>>>> {}", response);
+            assertEquals(Integer.valueOf(200),response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -61,12 +68,18 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getProjectsTest() throws ApiException {
+    public void getProjectsTest() {
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getProjects(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getProjects(recursion, filter);
+            logger.info("Get Projects Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -79,12 +92,18 @@ public class ProjectsApiTest {
      */
     @Test
     public void getProjectsByNameTest() throws ApiException {
-        String name = null;
+        String name = "project1rename";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getProjectsByName(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getProjectsByName(name, recursion, filter);
+            logger.info("Get Projects By Name Response >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -96,12 +115,18 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void patchProjectsByNameTest() throws ApiException {
-        String name = null;
-        UpdateProjectsByNameRequest body = null;
-        BackgroundOperationResponse response = api.patchProjectsByName(name, body);
+    public void patchProjectsByNameTest() {
+        String name = "default";
+        UpdateProjectsByNameRequest request = new UpdateProjectsByNameRequest();
+        request.setDescription("My new Profile Description");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.patchProjectsByName(name, request);
+            logger.info("Patch Projects By Name >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -114,10 +139,24 @@ public class ProjectsApiTest {
      */
     @Test
     public void postProjectsTest() throws ApiException {
-        CreateProjectsRequest body = null;
-        BackgroundOperationResponse response = api.postProjects(body);
+        CreateProjectsRequest request = new CreateProjectsRequest();
 
-        // TODO: test validations
+        FeaturesConfig featuresConfig = new FeaturesConfig();
+        featuresConfig.setFeaturesImages("true");
+        featuresConfig.setFeaturesProfiles("true");
+
+        request.setName("project1");
+        request.setDescription("My new description for new project");
+        request.setConfig(featuresConfig);
+
+        try {
+            BackgroundOperationResponse response = api.postProjects(request);
+            logger.info("Post Projects Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -130,11 +169,18 @@ public class ProjectsApiTest {
      */
     @Test
     public void postProjectsByNameTest() throws ApiException {
-        String name = null;
-        CreateProjectsByNameRequest body = null;
-        BackgroundOperationResponse response = api.postProjectsByName(name, body);
+        String name = "project1";
+        CreateProjectsByNameRequest request = new CreateProjectsByNameRequest();
+        request.setName("project1rename");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postProjectsByName(name, request);
+            logger.info("Post Projects By Name Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -147,11 +193,36 @@ public class ProjectsApiTest {
      */
     @Test
     public void putProjectsByNameTest() throws ApiException {
-        String name = null;
-        UpdateProjectsByNameRequest body = null;
-        BackgroundOperationResponse response = api.putProjectsByName(name, body);
+        String name = "project1rename";
 
-        // TODO: test validations
+        FeaturesConfig featuresConfig = new FeaturesConfig();
+        featuresConfig.setFeaturesProfiles("true");
+        featuresConfig.setFeaturesImages("true");
+
+        UpdateProjectsByNameRequest request = new UpdateProjectsByNameRequest();
+        request.setDescription("New Description for project1rename");
+        request.setConfig(featuresConfig);
+
+        try {
+            BackgroundOperationResponse response = api.putProjectsByName(name, request);
+            logger.info("Put Projects By Name Response >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
     }
     
 }

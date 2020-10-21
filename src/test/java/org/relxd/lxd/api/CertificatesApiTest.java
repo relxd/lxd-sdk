@@ -13,26 +13,34 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateCertificatesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.UpdateFingerprintRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+
 /**
  * API tests for CertificatesApi
  */
-@Ignore
+
 public class CertificatesApiTest {
 
     private final CertificatesApi api = new CertificatesApi();
+
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
     
     /**
@@ -45,10 +53,17 @@ public class CertificatesApiTest {
      */
     @Test
     public void deleteFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        BackgroundOperationResponse response = api.deleteFingerprint(fingerprint);
+        String fingerprint = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteFingerprint(fingerprint);
+            logger.info("Get Certificates Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -63,9 +78,16 @@ public class CertificatesApiTest {
     public void getCertificatesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getCertificates(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getCertificates(recursion, filter);
+            logger.info("Get Certificates Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -78,10 +100,18 @@ public class CertificatesApiTest {
      */
     @Test
     public void getCertificatesByFingerPrintTest() throws ApiException {
-        String fingerprint = null;
-        BackgroundOperationResponse response = api.getCertificatesByFingerPrint(fingerprint);
 
-        // TODO: test validations
+        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
+
+        try {
+            BackgroundOperationResponse response = api.getCertificatesByFingerPrint(fingerprint);
+            logger.info("Get Certificates Fingerprint Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -94,11 +124,20 @@ public class CertificatesApiTest {
      */
     @Test
     public void patchFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        UpdateFingerprintRequest body = null;
-        BackgroundOperationResponse response = api.patchFingerprint(fingerprint, body);
+        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
+        UpdateFingerprintRequest request = new UpdateFingerprintRequest();
+        request.setName("new-cert-name");
+        request.setType("client");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.patchFingerprint(fingerprint, request);
+            logger.info("Patch Certificates Fingerprint Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -111,10 +150,21 @@ public class CertificatesApiTest {
      */
     @Test
     public void postCertificatesTest() throws ApiException {
-        CreateCertificatesRequest body = null;
-        BackgroundOperationResponse response = api.postCertificates(body);
+        CreateCertificatesRequest request = new CreateCertificatesRequest();
+        request.setName("my-certificate");
+        request.setType("client");
+        request.setPassword("pass123");
+        request.setCertificate("MIIEOzCCAyOgAwIBAgIUHmwoNiAlHHzPQXK/7bOcQDinLO8wDQYJKoZIhvcNAQELBQAwgawxCzAJBgNVBAYTAlpXMQ8wDQYDVQQIDAZIYXJhcmUxDzANBgNVBAcMBkhhcmFyZTEZMBcGA1UECgwQQ29tcGV0aXRpb24gTGFiczEdMBsGA1UECwwUU29mdHdhcmUgRGV2ZWxvcG1lbnQxFzAVBgNVBAMMDkdpdmVuIFBmdW5ndXJvMSgwJgYJKoZIhvcNAQkBFhlnaXZlbkBjb21wZXRpdGlvbmxhYnMuY29tMB4XDTIwMTAxMTAxMzg1NVoXDTIxMTAxMTAxMzg1NVowgawxCzAJBgNVBAYTAlpXMQ8wDQYDVQQIDAZIYXJhcmUxDzANBgNVBAcMBkhhcmFyZTEZMBcGA1UECgwQQ29tcGV0aXRpb24gTGFiczEdMBsGA1UECwwUU29mdHdhcmUgRGV2ZWxvcG1lbnQxFzAVBgNVBAMMDkdpdmVuIFBmdW5ndXJvMSgwJgYJKoZIhvcNAQkBFhlnaXZlbkBjb21wZXRpdGlvbmxhYnMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2qyPVx7pwVgz1FDHy3NLWIT2kRk02SdWbtDPyS2/eES+6Dkdn2bFzi+RLEDMnO950B0uhOC6DyRdGB+SXQXpV4QTxS8AuJrIfEPAcV51c43iTxi1mBgzJ5PAwNME7/k2ef27gY/5fPcllwAlutUU1VqURseMzNpJK317hU8mAGPHHoKKBYJqrt5gw+gD+zVkTe2dB2PALf6bidHGY16E/+33yRQkysYPd1cpq5G8fIdlX7hZxbTFsvDKZWZQNUWRrSlqovVHwIrjVoh7WdPCi17osXFep3YmgSaOTTaVvGjsWJMfKeoQQU0LeIMjPgbYqPg8NzZXJXgUJgoDSN+IfwIDAQABo1MwUTAdBgNVHQ4EFgQUlhMFs/ye5EV9Fcww85vz1bswpJgwHwYDVR0jBBgwFoAUlhMFs/ye5EV9Fcww85vz1bswpJgwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEACdIbzOHTcD95pz0Bk5Vqp3ziNW7c0Uoq7pPihdHNwVmuuDFH17+J4u7syu4z3Wedsxyrtxm5LN8zMnXFY5hvJ5P0hYSYEu0r1dIA7GA+qqtoyWHHhx7vKZm7Z5nWvodZtHQVk20WyTPZfH6oF5RMYbAB/nkAn7L4C/XfuEyGkd20g+y2o0ee+/MHuDSNH4QD9sB13GHTWULdJj9yXLi+bUMGwkv2AEmEdIlFLm34cpOmZ6NeJ0IVtxh3H579m3/WMudeMfpXsRKvcuAJdTijDVSNeJxk/iVSfP/Snq8/id2tKmnQlBh/cdEq1UtX1NL7YTHGnAkO4JmHjIp1qIRJYA==");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postCertificates(request);
+            logger.info("Post Certificates Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -127,11 +177,31 @@ public class CertificatesApiTest {
      */
     @Test
     public void putFingerprintTest() throws ApiException {
-        String fingerprint = null;
-        UpdateFingerprintRequest body = null;
-        BackgroundOperationResponse response = api.putFingerprint(fingerprint, body);
+        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
+        UpdateFingerprintRequest request = new UpdateFingerprintRequest();
+        request.setName("baz");
+        request.setType("client");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.putFingerprint(fingerprint, request);
+            logger.info("Put Certificates Fingerprint Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
-    
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
+    }
 }
