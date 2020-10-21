@@ -13,27 +13,31 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
+import io.swagger.annotations.Api;
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BackgroundOperationResponse;
-import org.relxd.lxd.model.CreateProfilesByNameRequest;
-import org.relxd.lxd.model.CreateProfilesRequest;
-import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.UpdateProfilesByNameRequest;
+import org.relxd.lxd.JSON;
+import org.relxd.lxd.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.*;
+
 /**
  * API tests for ProfilesApi
  */
-@Ignore
+
 public class ProfilesApiTest {
 
     private final ProfilesApi api = new ProfilesApi();
+    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
 
     
     /**
@@ -46,10 +50,16 @@ public class ProfilesApiTest {
      */
     @Test
     public void deleteProfilesByNameTest() throws ApiException {
-        String name = null;
-        BackgroundOperationResponse response = api.deleteProfilesByName(name);
+        String name = "";
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteProfilesByName(name);
+            logger.info("Delete Profiles By Name Test");
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -61,12 +71,21 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getProfilesTest() throws ApiException {
+    public void getProfilesTest(){
+
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getProfiles(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getProfiles(recursion, filter);
+            logger.info("Get Profiles Response >>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+
     }
     
     /**
@@ -78,13 +97,20 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getProfilesByNameTest() throws ApiException {
-        String name = null;
+    public void getProfilesByNameTest() {
+        String name = "default";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getProfilesByName(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getProfilesByName(name, recursion, filter);
+            logger.info("Get Profiles By Name Response >>>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+
     }
     
     /**
@@ -97,11 +123,18 @@ public class ProfilesApiTest {
      */
     @Test
     public void patchProfilesByNameTest() throws ApiException {
-        String name = null;
-        UpdateProfilesByNameRequest body = null;
-        BackgroundOperationResponse response = api.patchProfilesByName(name, body);
+        String name = "default";
+        UpdateProfilesByNameRequest request = new UpdateProfilesByNameRequest();
+        request.setDescription("My description for the default profile");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.patchProfilesByName(name, request);
+            logger.info("Patch Profiles By Name Response >>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -114,10 +147,31 @@ public class ProfilesApiTest {
      */
     @Test
     public void postProfilesTest() throws ApiException {
-        CreateProfilesRequest body = null;
-        BackgroundOperationResponse response = api.postProfiles(body);
 
-        // TODO: test validations
+        MemoryLimitsConfig memoryLimitsConfig = new MemoryLimitsConfig();
+        memoryLimitsConfig.setLimitsMemory("2GB");
+
+        Kvm kvm = new Kvm();
+        kvm.setType("unix-char");
+        kvm.setPath("/dev/kvm");
+
+        DevicesKvm devicesKvm = new DevicesKvm();
+        devicesKvm.setKvm(kvm);
+
+        CreateProfilesRequest request = new CreateProfilesRequest();
+        request.setName("profile1");
+        request.setDescription("This is another profile");
+        request.setConfig(memoryLimitsConfig);
+        request.setDevices(devicesKvm);
+
+        try {
+            BackgroundOperationResponse response = api.postProfiles(request);
+            logger.info("Post Profiles Response >>>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -130,11 +184,17 @@ public class ProfilesApiTest {
      */
     @Test
     public void postProfilesByNameTest() throws ApiException {
-        String name = null;
-        CreateProfilesByNameRequest body = null;
-        BackgroundOperationResponse response = api.postProfilesByName(name, body);
+        String name = "profile1";
+        CreateProfilesByNameRequest request = new CreateProfilesByNameRequest();
+        request.setName("profile1rename");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postProfilesByName(name, request);
+            logger.info("Post Profiles By Name Response >>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -147,11 +207,30 @@ public class ProfilesApiTest {
      */
     @Test
     public void putProfilesByNameTest() throws ApiException {
-        String name = null;
-        UpdateProfilesByNameRequest body = null;
-        BackgroundOperationResponse response = api.putProfilesByName(name, body);
+        String name = "profile1rename";
+        UpdateProfilesByNameRequest request = new UpdateProfilesByNameRequest();
+        request.setDescription("A new description for Profile1rename");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.putProfilesByName(name, request);
+            logger.info("Put Profiles By Name Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
     }
     
 }
