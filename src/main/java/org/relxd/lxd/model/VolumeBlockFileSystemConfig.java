@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * VolumeBlockFileSystemConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-18T21:27:43.349207+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-22T12:08:40.528566+02:00[Africa/Harare]")
 public class VolumeBlockFileSystemConfig {
   public static final String SERIALIZED_NAME_VOLUME_BLOCK_FILESYSTEM = "volume.block.filesystem";
   @SerializedName(SERIALIZED_NAME_VOLUME_BLOCK_FILESYSTEM)

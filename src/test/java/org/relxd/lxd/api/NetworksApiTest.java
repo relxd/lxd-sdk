@@ -14,36 +14,28 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
-
-import java.math.BigDecimal;
-
-import org.junit.Test;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
  * API tests for NetworksApi
  */
-@Ignore
+
 public class NetworksApiTest {
 
     private final NetworksApi api = new NetworksApi();
 
     private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
-    
+
     /**
-     * 
+     *
      *
      * Remove a network
      *
@@ -62,32 +54,10 @@ public class NetworksApiTest {
             catchApiException(ex);
         }
 
-
     }
-    
-    /**
-     * 
-     *
-     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteNetworksUUIDTest() {
-        String uuid = "";
 
-        try {
-            BackgroundOperationResponse response = api.deleteNetworksUUID(uuid);
-            logger.info("Get Networks Response >>>>>> {}", response);
-            assertEquals(Integer.valueOf(200), response.getStatusCode());
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-    }
-    
     /**
-     * 
+     *
      *
      * List of networks
      *
@@ -109,9 +79,9 @@ public class NetworksApiTest {
         }
 
     }
-    
+
     /**
-     * 
+     *
      *
      * Information about a network
      *
@@ -133,9 +103,9 @@ public class NetworksApiTest {
         }
 
     }
-    
+
     /**
-     * 
+     *
      *
      * Network state
      *
@@ -157,65 +127,9 @@ public class NetworksApiTest {
         }
 
     }
-    
-    /**
-     * 
-     *
-     * Background operation
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDTest() throws ApiException {
-        String uuid = null;
-        Integer recursion = null;
-        String filter = null;
-        BackgroundOperationResponse response = api.getNetworksUUID(uuid, recursion, filter);
 
-        // TODO: test validations
-    }
-    
     /**
-     * 
      *
-     * Wait for an operation to finish
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDWaitTest() throws ApiException {
-        String uuid = null;
-        Integer recursion = null;
-        String filter = null;
-        BigDecimal timeout = null;
-        BackgroundOperationResponse response = api.getNetworksUUIDWait(uuid, recursion, filter, timeout);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDWebsocketTest() throws ApiException {
-        String uuid = null;
-        String secret = null;
-        Integer recursion = null;
-        String filter = null;
-        BackgroundOperationResponse response = api.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
      *
      * Update the network information
      *
@@ -240,9 +154,9 @@ public class NetworksApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Define a new network
      *
@@ -250,7 +164,7 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postNetworksTest() throws ApiException {
+    public void postNetworksTest() {
 
         CreateNetworksRequest request = new CreateNetworksRequest();
 
@@ -273,9 +187,9 @@ public class NetworksApiTest {
         }
 
     }
-    
+
     /**
-     * 
+     *
      *
      * Rename a network
      *
@@ -296,9 +210,9 @@ public class NetworksApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Replace the network information
      *

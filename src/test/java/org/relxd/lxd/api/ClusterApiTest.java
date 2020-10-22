@@ -13,7 +13,9 @@
 
 package org.relxd.lxd.api;
 
+import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
@@ -21,19 +23,24 @@ import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+
 /**
  * API tests for ClusterApi
  */
-@Ignore
+
 public class ClusterApiTest {
 
     private final ClusterApi api = new ClusterApi();
+    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
     
     /**
@@ -46,11 +53,17 @@ public class ClusterApiTest {
      */
     @Test
     public void deleteClusterMembersByNameTest() throws ApiException {
-        String name = null;
+        String name = "";
         BigDecimal force = null;
-        BackgroundOperationResponse response = api.deleteClusterMembersByName(name, force);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.deleteClusterMembersByName(name, force);
+            logger.info("Delete Cluster Members Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -62,12 +75,20 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getClusterTest() throws ApiException {
+    public void getClusterTest() {
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getCluster(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getCluster(recursion, filter);
+            logger.info("Get Cluster Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+
     }
     
     /**
@@ -79,12 +100,19 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getClusterMembersTest() throws ApiException {
+    public void getClusterMembersTest() {
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getClusterMembers(recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getClusterMembers(recursion, filter);
+            logger.info("Get Cluster Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -96,13 +124,20 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getClusterMembersByNameTest() throws ApiException {
-        String name = null;
+    public void getClusterMembersByNameTest() {
+        String name = "";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getClusterMembersByName(name, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getClusterMembersByName(name, recursion, filter);
+            logger.info("Get Cluster Members By Name Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -114,12 +149,19 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postClusterMembersByNameTest() throws ApiException {
-        String name = null;
-        UpdateClusterMembersByNameRequest body = null;
-        BackgroundOperationResponse response = api.postClusterMembersByName(name, body);
+    public void postClusterMembersByNameTest() {
+        String name = "none";
+        UpdateClusterMembersByNameRequest request = new UpdateClusterMembersByNameRequest();
+        request.serverName("new-server");
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.postClusterMembersByName(name, request);
+            logger.info("Post Cluster Members By Name Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -131,11 +173,31 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void putClusterTest() throws ApiException {
-        UpdateClusterRequest body = null;
-        BackgroundOperationResponse response = api.putCluster(body);
+    public void putClusterTest() {
+        UpdateClusterRequest request = new UpdateClusterRequest();
+        request.setServerName("lxd1");
+        request.setEnabled(true);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.putCluster(request);
+            logger.info("Put Cluster By Name Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+
+    private ErrorResponse catchApiException(ApiException e) {
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+            ex.printStackTrace();
+        }
+        return errorResponse;
     }
     
 }

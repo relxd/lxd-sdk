@@ -17,6 +17,7 @@ import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
+import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -33,13 +34,34 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * API tests for OperationsApi
  */
-
+@Ignore
 public class OperationsApiTest {
 
     private final OperationsApi api = new OperationsApi();
 
     private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
+    
+    /**
+     * 
+     *
+     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteOperationsUUIDTest() throws ApiException {
+        String uuid = "";
+
+        try {
+            BackgroundOperationResponse response = api.deleteOperationsUUID(uuid);
+            logger.info("Get Networks Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
     
     /**
      * 
@@ -64,6 +86,62 @@ public class OperationsApiTest {
             catchApiException(ex);
         }
 
+    }
+    
+    /**
+     * 
+     *
+     * Background operation
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDTest() throws ApiException {
+        String uuid = null;
+        Integer recursion = null;
+        String filter = null;
+        BackgroundOperationResponse response = api.getOperationsUUID(uuid, recursion, filter);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * Wait for an operation to finish
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDWaitTest() throws ApiException {
+        String uuid = null;
+        Integer recursion = null;
+        String filter = null;
+        BigDecimal timeout = null;
+        BackgroundOperationResponse response = api.getOperationsUUIDWait(uuid, recursion, filter, timeout);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDWebsocketTest() throws ApiException {
+        String uuid = null;
+        String secret = null;
+        Integer recursion = null;
+        String filter = null;
+        BackgroundOperationResponse response = api.getOperationsUUIDWebsocket(uuid, secret, recursion, filter);
+
+        // TODO: test validations
     }
 
     private ErrorResponse catchApiException(ApiException e) {
