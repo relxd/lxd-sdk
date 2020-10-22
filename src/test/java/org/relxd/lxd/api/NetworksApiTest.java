@@ -14,7 +14,6 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;

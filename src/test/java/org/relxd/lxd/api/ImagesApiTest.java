@@ -15,11 +15,10 @@ package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.Before;
+import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 import org.slf4j.Logger;
@@ -27,9 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.spy;
@@ -60,6 +57,7 @@ public class ImagesApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+
     @Test
     public void deleteImagesAliasesByNameTest(){
         String name = "";

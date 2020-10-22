@@ -34,7 +34,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * API tests for OperationsApi
  */
-@Ignore
+
 public class OperationsApiTest {
 
     private final OperationsApi api = new OperationsApi();
@@ -56,7 +56,7 @@ public class OperationsApiTest {
 
         try {
             BackgroundOperationResponse response = api.deleteOperationsUUID(uuid);
-            logger.info("Get Networks Response >>>>>> {}", response);
+            logger.info("Delete Networks Response >>>>>> {}", response);
             assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
@@ -98,12 +98,18 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsUUIDTest() throws ApiException {
-        String uuid = null;
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getOperationsUUID(uuid, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUID(uuid, recursion, filter);
+            logger.info("Get Operations UUID Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
     
     /**
@@ -115,14 +121,21 @@ public class OperationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getOperationsUUIDWaitTest() throws ApiException {
-        String uuid = null;
+    public void getOperationsUUIDWaitTest() {
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
         Integer recursion = null;
         String filter = null;
-        BigDecimal timeout = null;
-        BackgroundOperationResponse response = api.getOperationsUUIDWait(uuid, recursion, filter, timeout);
+        BigDecimal timeout = new BigDecimal(10);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUIDWait(uuid, recursion, filter, timeout);
+            logger.info("Get Operations UUID Wait Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
     
     /**
@@ -135,13 +148,20 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsUUIDWebsocketTest() throws ApiException {
-        String uuid = null;
-        String secret = null;
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        String secret = "secret";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getOperationsUUIDWebsocket(uuid, secret, recursion, filter);
 
-        // TODO: test validations
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUIDWebsocket(uuid,secret,recursion,filter);
+            logger.info("Get Operations UUID Websocket Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
     }
 
     private ErrorResponse catchApiException(ApiException e) {

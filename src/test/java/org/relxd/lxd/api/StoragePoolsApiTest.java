@@ -166,7 +166,7 @@ public class StoragePoolsApiTest {
      */
     @Test
     public void getStoragePoolsByNameTest() {
-        final String pool = "default";
+        final String pool = "local";
         final String getStoragePoolsCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool;
         Integer recursion = null;
         String filter = null;
@@ -198,7 +198,7 @@ public class StoragePoolsApiTest {
      */
     @Test
     public void getStoragePoolsByNameResourcesTest()  {
-        String pool = "default";
+        String pool = "local";
         final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool+"/resources";
         Integer recursion = null;
         String filter = null;
@@ -230,7 +230,7 @@ public class StoragePoolsApiTest {
      */
     @Test
     public void getStoragePoolsByNameVolumesTest() throws ApiException {
-        String pool = "default";
+        String pool = "local";
         final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool+"/volumes";
         Integer recursion = null;
         String filter = null;
