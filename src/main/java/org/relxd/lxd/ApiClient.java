@@ -20,13 +20,12 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.relxd.lxd.auth.*;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
+import org.apache.oltu.oauth2.common.message.types.GrantType;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -40,11 +39,21 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.relxd.lxd.auth.Authentication;
+import org.relxd.lxd.auth.HttpBasicAuth;
+import org.relxd.lxd.auth.HttpBearerAuth;
+import org.relxd.lxd.auth.ApiKeyAuth;
+import org.relxd.lxd.auth.OAuth;
+import org.relxd.lxd.auth.RetryingOAuth;
+import org.relxd.lxd.auth.OAuthFlow;
 
 public class ApiClient {
 
@@ -53,8 +62,6 @@ public class ApiClient {
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
     private String tempFolderPath = null;
-    private Logger logger;
-    private InputStream propertiesLocation;
 
     private Map<String, Authentication> authentications;
 
@@ -84,11 +91,8 @@ public class ApiClient {
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
 
-        logger = LoggerFactory.getLogger(ApiClient.class);
-
         basePath = this.getApplicationProperties().getProperty("base.url");
     }
-
 
     public Properties getApplicationProperties() {
 
@@ -112,6 +116,7 @@ public class ApiClient {
         return props;
 
     }
+
 
     /*
      * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
@@ -1230,10 +1235,10 @@ public class ApiClient {
      * @param reqBuilder Request.Builder
      */
     public void processHeaderParams(Map<String, String> headerParams, Request.Builder reqBuilder) {
-        for (Map.Entry<String, String> param : headerParams.entrySet()) {
+        for (Entry<String, String> param : headerParams.entrySet()) {
             reqBuilder.header(param.getKey(), parameterToString(param.getValue()));
         }
-        for (Map.Entry<String, String> header : defaultHeaderMap.entrySet()) {
+        for (Entry<String, String> header : defaultHeaderMap.entrySet()) {
             if (!headerParams.containsKey(header.getKey())) {
                 reqBuilder.header(header.getKey(), parameterToString(header.getValue()));
             }
@@ -1247,10 +1252,10 @@ public class ApiClient {
      * @param reqBuilder Request.Builder
      */
     public void processCookieParams(Map<String, String> cookieParams, Request.Builder reqBuilder) {
-        for (Map.Entry<String, String> param : cookieParams.entrySet()) {
+        for (Entry<String, String> param : cookieParams.entrySet()) {
             reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
         }
-        for (Map.Entry<String, String> param : defaultCookieMap.entrySet()) {
+        for (Entry<String, String> param : defaultCookieMap.entrySet()) {
             if (!cookieParams.containsKey(param.getKey())) {
                 reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
             }
@@ -1283,7 +1288,7 @@ public class ApiClient {
      */
     public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
         okhttp3.FormBody.Builder formBuilder = new okhttp3.FormBody.Builder();
-        for (Map.Entry<String, Object> param : formParams.entrySet()) {
+        for (Entry<String, Object> param : formParams.entrySet()) {
             formBuilder.add(param.getKey(), parameterToString(param.getValue()));
         }
         return formBuilder.build();
@@ -1298,7 +1303,7 @@ public class ApiClient {
      */
     public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
         MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
-        for (Map.Entry<String, Object> param : formParams.entrySet()) {
+        for (Entry<String, Object> param : formParams.entrySet()) {
             if (param.getValue() instanceof File) {
                 File file = (File) param.getValue();
                 Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + param.getKey() + "\"; filename=\"" + file.getName() + "\"");

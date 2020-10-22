@@ -17,6 +17,7 @@ import com.google.gson.JsonSyntaxException;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
+import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -44,6 +45,27 @@ public class OperationsApiTest {
     /**
      * 
      *
+     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteOperationsUUIDTest() throws ApiException {
+        String uuid = "";
+
+        try {
+            BackgroundOperationResponse response = api.deleteOperationsUUID(uuid);
+            logger.info("Delete Networks Response >>>>>> {}", response);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+    
+    /**
+     * 
+     *
      * List of operations
      *
      * @throws ApiException
@@ -60,6 +82,82 @@ public class OperationsApiTest {
 
             assertEquals(response.getStatusCode(), Integer.valueOf(200));
 
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+    
+    /**
+     * 
+     *
+     * Background operation
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDTest() throws ApiException {
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        Integer recursion = null;
+        String filter = null;
+
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUID(uuid, recursion, filter);
+            logger.info("Get Operations UUID Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+    
+    /**
+     * 
+     *
+     * Wait for an operation to finish
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDWaitTest() {
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        Integer recursion = null;
+        String filter = null;
+        BigDecimal timeout = new BigDecimal(10);
+
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUIDWait(uuid, recursion, filter, timeout);
+            logger.info("Get Operations UUID Wait Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+    
+    /**
+     * 
+     *
+     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOperationsUUIDWebsocketTest() throws ApiException {
+        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        String secret = "secret";
+        Integer recursion = null;
+        String filter = null;
+
+        try {
+            BackgroundOperationResponse response = api.getOperationsUUIDWebsocket(uuid,secret,recursion,filter);
+            logger.info("Get Operations UUID Websocket Response >>>>>> {}", response);
+
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
         }catch (ApiException ex){
             catchApiException(ex);
         }

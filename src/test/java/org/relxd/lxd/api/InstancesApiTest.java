@@ -294,7 +294,6 @@ public class InstancesApiTest {
         String name = "lxd-instance";
         Integer recursion = null;
         String filter = null;
-        BackgroundOperationResponse response = api.getInstancesByNameBackups(name, recursion, filter);
 
         try {
 

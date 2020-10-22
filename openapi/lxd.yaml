@@ -4603,11 +4603,11 @@ paths:
         - operations
       x-codegen-request-body-name: body
       x-accepts: application/json
-  /1.0/networks/{uuid}:
+  /1.0/operations/{uuid}:
     delete:
       description: Cancel an operation. Calling this will change the state to "cancelling"
         rather than actually removing the entry.
-      operationId: deleteNetworksUUID
+      operationId: deleteOperationsUUID
       parameters:
         - description: UUID
           explode: false
@@ -4649,12 +4649,12 @@ paths:
         - authentication:
             - trusted
       tags:
-        - networks
+        - operations
       x-codegen-request-body-name: body
       x-accepts: application/json
     get:
       description: Background operation
-      operationId: getNetworksUUID
+      operationId: getOperationsUUID
       parameters:
         - description: UUID
           explode: false
@@ -4717,13 +4717,13 @@ paths:
         - authentication:
             - trusted
       tags:
-        - networks
+        - operations
       x-codegen-request-body-name: body
       x-accepts: application/json
-  /1.0/networks/{uuid}/wait:
+  /1.0/operations/{uuid}/wait:
     get:
       description: Wait for an operation to finish
-      operationId: getNetworksUUIDWait
+      operationId: getOperationsUUIDWait
       parameters:
         - description: UUID
           explode: false
@@ -4795,10 +4795,10 @@ paths:
         - authentication:
             - trusted
       tags:
-        - networks
+        - operations
       x-codegen-request-body-name: body
       x-accepts: application/json
-  /1.0/networks/{uuid}/websocket:
+  /1.0/operations/{uuid}/websocket:
     get:
       description: -< This connection is upgraded into a websocket connection speaking
         the protocol defined by the operation type. For example, in the case of an
@@ -4807,7 +4807,7 @@ paths:
         it will be the primary interface over which the migration information is communicated.
         The secret here is the one that was provided when the operation was created.
         Guests are allowed to connect provided they have the right secret.
-      operationId: getNetworksUUIDWebsocket
+      operationId: getOperationsUUIDWebsocket
       parameters:
         - description: UUID
           explode: false
@@ -4880,7 +4880,7 @@ paths:
             - guest
             - trusted
       tags:
-        - networks
+        - operations
       x-codegen-request-body-name: body
       x-accepts: application/json
   /1.0/profiles:

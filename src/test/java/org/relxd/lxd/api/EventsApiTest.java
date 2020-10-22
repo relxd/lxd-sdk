@@ -28,6 +28,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static junit.framework.TestCase.assertEquals;
+
 /**
  * API tests for EventsApi
  */
@@ -55,6 +57,8 @@ public class EventsApiTest {
         try {
             BackgroundOperationResponse response = api.getEvents(type, recursion, filter);
             logger.info("Get Events Response >>>>>> {}", response);
+
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }

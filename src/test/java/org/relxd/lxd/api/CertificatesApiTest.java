@@ -14,21 +14,15 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateCertificatesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.UpdateFingerprintRequest;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -42,9 +36,9 @@ public class CertificatesApiTest {
 
     private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
-    
+
     /**
-     * 
+     *
      *
      * Remove a trusted certificate
      *
@@ -65,9 +59,9 @@ public class CertificatesApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Return a list of trusted certificates
      *
@@ -89,9 +83,9 @@ public class CertificatesApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Return a trusted certificate information
      *
@@ -113,9 +107,9 @@ public class CertificatesApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Updates the certificate properties
      *
@@ -139,9 +133,9 @@ public class CertificatesApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Add a new trusted certificate
      *
@@ -166,9 +160,9 @@ public class CertificatesApiTest {
             catchApiException(ex);
         }
     }
-    
+
     /**
-     * 
+     *
      *
      * Replaces the certificate properties
      *
