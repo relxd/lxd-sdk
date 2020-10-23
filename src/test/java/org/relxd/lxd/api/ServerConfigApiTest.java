@@ -34,15 +34,17 @@ import static org.mockito.Mockito.spy;
 public class ServerConfigApiTest {
 
 
-    private final ServerConfigApi api = new ServerConfigApi();
+    private ServerConfigApi api;
     private LinuxCmdService linuxCmdService;
-    private final Logger logger = LoggerFactory.getLogger(ServerConfigApiTest.class);
+    private Logger logger;
 
 
     @Before
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
+        api = new ServerConfigApi();
     }
 
 

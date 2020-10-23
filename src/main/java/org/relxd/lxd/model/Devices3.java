@@ -28,7 +28,7 @@ import org.relxd.lxd.model.Root2;
 /**
  * Devices3
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-22T12:08:40.528566+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-23T12:53:01.261363+02:00[Africa/Harare]")
 public class Devices3 {
   public static final String SERIALIZED_NAME_ROOT = "root";
   @SerializedName(SERIALIZED_NAME_ROOT)

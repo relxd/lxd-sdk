@@ -14,6 +14,7 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
 import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
@@ -40,9 +41,9 @@ import static org.mockito.Mockito.spy;
 
 public class StoragePoolsApiTest {
 
-    private final StoragePoolsApi api = new StoragePoolsApi();
+    private StoragePoolsApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
 
     private LinuxCmdService linuxCmdService;
 
@@ -50,6 +51,15 @@ public class StoragePoolsApiTest {
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        api = new StoragePoolsApi();
+    }
+
+    @After
+    public void deleteStoragePools(){
+        deleteStoragePoolsByNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest();
     }
 
     
@@ -83,7 +93,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
+    public void deleteStoragePoolsByNameVolumesByTypeNameTest() {
         String pool = "";
         String type = "";
         String name = "";
@@ -106,7 +116,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() throws ApiException {
+    public void deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() {
         String pool = "default";
         String type = "xfs";
         String name = "default";

@@ -15,6 +15,8 @@ package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
 import io.swagger.annotations.Api;
+import org.junit.After;
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
@@ -36,9 +38,19 @@ import static junit.framework.TestCase.*;
 
 public class ProfilesApiTest {
 
-    private final ProfilesApi api = new ProfilesApi();
-    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
+    private ProfilesApi api;
+    private Logger logger;
 
+    @Before
+    public void setup() {
+        api  = new ProfilesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteProjects(){
+        deleteProfilesByNameTest();
+    }
     
     /**
      * 
@@ -49,7 +61,7 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteProfilesByNameTest() throws ApiException {
+    public void deleteProfilesByNameTest() {
         String name = "";
 
         try {

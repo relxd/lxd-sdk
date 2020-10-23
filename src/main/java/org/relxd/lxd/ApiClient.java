@@ -20,6 +20,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
@@ -57,7 +58,7 @@ import org.relxd.lxd.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath;
+    private String basePath = "http://localhost:2375";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -79,6 +80,8 @@ public class ApiClient {
 
     private HttpLoggingInterceptor loggingInterceptor;
 
+    private Logger logger;
+
     /*
      * Basic constructor for ApiClient
      */
@@ -90,6 +93,8 @@ public class ApiClient {
         authentications.put("authentication", new OAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
+
+        logger = LoggerFactory.getLogger(ApiClient.class);
 
         basePath = this.getApplicationProperties().getProperty("base.url");
     }
@@ -116,7 +121,6 @@ public class ApiClient {
         return props;
 
     }
-
 
     /*
      * Constructor for ApiClient to support access token retry on 401/403 configured with client ID

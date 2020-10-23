@@ -14,6 +14,7 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
@@ -29,7 +30,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * API tests for CertificatesApi
  */
-
+@Ignore
 public class CertificatesApiTest {
 
     private final CertificatesApi api = new CertificatesApi();

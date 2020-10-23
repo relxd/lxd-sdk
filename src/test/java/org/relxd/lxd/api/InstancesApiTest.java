@@ -14,6 +14,7 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
@@ -41,8 +42,8 @@ import static org.mockito.Mockito.spy;
 
 public class InstancesApiTest {
 
-    private final InstancesApi api = new InstancesApi();
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private InstancesApi api;
+    private Logger logger;
 
     private LinuxCmdService linuxCmdService;
 
@@ -50,6 +51,13 @@ public class InstancesApiTest {
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        api = new InstancesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteNetworks(){
+        deleteInstancesByNameTest();
     }
 
 

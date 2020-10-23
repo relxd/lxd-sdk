@@ -14,6 +14,8 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
@@ -29,9 +31,20 @@ import static junit.framework.TestCase.assertEquals;
 
 public class NetworksApiTest {
 
-    private final NetworksApi api = new NetworksApi();
+    private NetworksApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
+
+    @Before
+    public void setup() {
+        api  = new NetworksApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteNetworks(){
+        deleteNetworksByNameTest();
+    }
 
     /**
      *
