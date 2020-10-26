@@ -1,4 +1,4 @@
-package org.relxd.lxd.auth.javakeystore;
+package org.relxd.lxd.auth.javakeystore.service;
 
 import javax.crypto.SecretKey;
 import java.io.*;
