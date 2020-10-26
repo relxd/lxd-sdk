@@ -39,11 +39,13 @@ public class SupportedApisApiTest {
     private final ApiClient apiClient = new ApiClient();
     private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
     private LinuxCmdService linuxCmdService;
+    private String unixSocketPath;
 
     @Before
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        unixSocketPath =apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 
     /**
@@ -56,8 +58,6 @@ public class SupportedApisApiTest {
      */
     @Test
     public void getApiListTest() throws ApiException {
-
-        final String unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
 
         final String getApiListCommand = "curl -s --unix-socket " + unixSocketPath + " a/";
         Integer recursion = null;

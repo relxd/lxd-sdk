@@ -15,8 +15,7 @@ package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
@@ -28,14 +27,14 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * API tests for NetworksApi
  */
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class NetworksApiTest {
 
     private NetworksApi api;
 
     private Logger logger;
 
-    @Before
+    @BeforeEach
     public void setup() {
         api  = new NetworksApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
@@ -55,8 +54,9 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(8)
     public void deleteNetworksByNameTest() {
-        String name = "";
+        String name = "myNewNetwork";
 
         try {
             BackgroundOperationResponse response = api.deleteNetworksByName(name);
@@ -77,6 +77,7 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getNetworksTest() {
 
         Integer recursion = null;
@@ -101,14 +102,15 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(3)
     public void getNetworksByNameTest() {
-        String name = "lxdbr0";
+        String name = "myNewNetwork";
         Integer recursion = null;
         String filter = null;
 
         try {
             BackgroundOperationResponse response = api.getNetworksByName(name, recursion, filter);
-            logger.info("Get Networks By Name Reponse >>>>> {}", response);
+            logger.info("Get Networks By Name Response >>>>> {}", response);
             assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
@@ -125,8 +127,9 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(5)
     public void getNetworksByNameStateTest() {
-        String name = "lxdbr0";
+        String name = "myNewNetwork";
         Integer recursion = null;
         String filter = null;
 
@@ -149,8 +152,9 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(6)
     public void patchNetworksByNameTest() throws ApiException {
-        String name = "lxdbr0";
+        String name = "myNewNetwork";
 
         DNSModeConfig dnsModeConfig = new DNSModeConfig();
         dnsModeConfig.setDnsMode("dynamic");
@@ -176,6 +180,7 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(1)
     public void postNetworksTest() {
 
         CreateNetworksRequest request = new CreateNetworksRequest();
@@ -209,10 +214,11 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(4)
     public void postNetworksByNameTest() throws ApiException {
         String name = "myNewNetwork";
         CreateNetworksByNameRequest request = new CreateNetworksByNameRequest();
-        request.setName("new-ntwrk-name");
+        request.setName("myNewNetwork");
 
         try {
             BackgroundOperationResponse response = api.postNetworksByName(name, request);
@@ -232,9 +238,10 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(7)
     public void putNetworksByNameTest() throws ApiException {
 
-        String name = "new-ntwrk-name";
+        String name = "myNewNetwork";
         UpdateNetworksByNameRequest request = new UpdateNetworksByNameRequest();
         request.setBridgeDriver("openvswitch");
         request.setIpv4Address("10.0.3.1/24");
