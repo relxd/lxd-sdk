@@ -14,22 +14,18 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
-import org.junit.Before;
+import org.junit.After;
+import org.junit.jupiter.api.*;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.spy;
@@ -38,18 +34,34 @@ import static org.mockito.Mockito.spy;
  * API tests for StoragePoolsApi
  */
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class StoragePoolsApiTest {
 
-    private final StoragePoolsApi api = new StoragePoolsApi();
+    private StoragePoolsApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
 
     private LinuxCmdService linuxCmdService;
 
-    @Before
+    private ApiClient apiClient;
+
+    private String unixSocketPath;
+
+    @BeforeEach
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        api = new StoragePoolsApi();
+        apiClient = new ApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
+    @After
+    public void deleteStoragePools(){
+        deleteStoragePoolsByNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest();
     }
 
     
@@ -63,7 +75,7 @@ public class StoragePoolsApiTest {
      */
     @Test
     public void deleteStoragePoolsByNameTest() {
-        String pool = "";
+        String pool = "pool1";
 
         try {
             BackgroundOperationResponse response = api.deleteStoragePoolsByName(pool);
@@ -83,10 +95,10 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
-        String pool = "";
-        String type = "";
-        String name = "";
+    public void deleteStoragePoolsByNameVolumesByTypeNameTest() {
+        String pool = "pool1";
+        String type = "xfs";
+        String name = "pool2";
 
         try {
             BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
@@ -106,10 +118,11 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() throws ApiException {
-        String pool = "default";
+    @Order(19)
+    public void deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() {
+        String pool = "pool1";
         String type = "xfs";
-        String name = "default";
+        String name = "pool2";
 
         try {
             BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
@@ -130,8 +143,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getStoragePoolsTest() {
-        final String getStoragePoolsCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools";
+        final String getStoragePoolsCommand = "curl -s --unix-socket "+ unixSocketPath +" a/1.0/storage-pools";
 
         Integer recursion = null;
         String filter = null;
@@ -165,9 +179,10 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(3)
     public void getStoragePoolsByNameTest() {
-        final String pool = "local";
-        final String getStoragePoolsCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool;
+        final String pool = "pool1";
+        final String getStoragePoolsCommand = "curl -s --unix-socket "+ unixSocketPath +" a/1.0/storage-pools/"+pool;
         Integer recursion = null;
         String filter = null;
 
@@ -197,9 +212,10 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(6)
     public void getStoragePoolsByNameResourcesTest()  {
-        String pool = "local";
-        final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool+"/resources";
+        String pool = "pool1";
+        final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket " + unixSocketPath +" a/1.0/storage-pools/"+pool+"/resources";
         Integer recursion = null;
         String filter = null;
 
@@ -229,9 +245,10 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(7)
     public void getStoragePoolsByNameVolumesTest() throws ApiException {
-        String pool = "local";
-        final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/storage-pools/"+pool+"/volumes";
+        String pool = "pool1";
+        final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/storage-pools/"+pool+"/volumes";
         Integer recursion = null;
         String filter = null;
 
@@ -261,8 +278,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(8)
     public void getStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "xfs";
         String name = "default";
         Integer recursion = null;
@@ -287,8 +305,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(9)
     public void getStoragePoolsByNameVolumesByTypeNameSnapshotsTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "xfs";
         String name = "default";
         Integer recursion = null;
@@ -313,6 +332,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(18)
     public void getStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() throws ApiException {
         String pool = "default";
         String type = "xfs";
@@ -339,6 +359,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(10)
     public void patchStoragePoolsByNameTest() throws ApiException {
         String pool = "pool1";
 
@@ -369,8 +390,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(11)
     public void patchStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "xfs";
         String name = "default";
 
@@ -406,6 +428,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(1)
     public void postStoragePoolsTest() {
         SizeConfig sizeConfig = new SizeConfig();
         sizeConfig.setSize("10GB");
@@ -434,8 +457,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(4)
     public void postStoragePoolsByNameVolumesTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
 
         CreateStoragePoolsByNameVolumesRequest request = new CreateStoragePoolsByNameVolumesRequest();
         request.setName("vol2");
@@ -460,8 +484,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(12)
     public void postStoragePoolsByNameVolumesByTypeTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "xfs";
 
         Source13 source13 = new Source13();
@@ -489,8 +514,9 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(13)
     public void postStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "default";
         String name = "pool2";
         CreateStoragePoolsByNameVolumesByTypeNameRequest request = new CreateStoragePoolsByNameVolumesByTypeNameRequest();
@@ -517,6 +543,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(14)
     public void postStoragePoolsByNameVolumesByTypeNameSnapshotsTest() throws ApiException {
         String pool = "default";
         String type = "xfs";
@@ -542,6 +569,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(15)
     public void postStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() throws ApiException {
         String pool = "default";
         String type = "xfs";
@@ -568,6 +596,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(5)
     public void putStoragePoolsByNameTest() throws ApiException {
 
         String pool = "pool1";
@@ -605,10 +634,11 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(16)
     public void putStoragePoolsByNameVolumesByTypeNameTest() throws ApiException {
-        String pool = "default";
+        String pool = "pool1";
         String type = "xfs";
-        String name = "pool1";
+        String name = "pool4";
 
         FileSystemMountOptionsAndThinPoolConfig fileSystemMountOptionsAndThinPoolConfig = new FileSystemMountOptionsAndThinPoolConfig();
         fileSystemMountOptionsAndThinPoolConfig.setVolumeSize("10737418240");
@@ -642,6 +672,7 @@ public class StoragePoolsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(17)
     public void putStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() throws ApiException {
         String pool = "default";
         String type = "xfs";

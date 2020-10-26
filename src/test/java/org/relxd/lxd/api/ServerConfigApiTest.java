@@ -15,6 +15,7 @@ package org.relxd.lxd.api;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ServerConfig;
@@ -34,15 +35,20 @@ import static org.mockito.Mockito.spy;
 public class ServerConfigApiTest {
 
 
-    private final ServerConfigApi api = new ServerConfigApi();
+    private ServerConfigApi api;
     private LinuxCmdService linuxCmdService;
-    private final Logger logger = LoggerFactory.getLogger(ServerConfigApiTest.class);
-
+    private Logger logger;
+    private ApiClient apiClient;
+    private String unixSocketPath;
 
     @Before
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
+        api = new ServerConfigApi();
+        apiClient = new ApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 
 
@@ -58,7 +64,7 @@ public class ServerConfigApiTest {
     public void getServerStateTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        final String getServerStateCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0";
+        final String getServerStateCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0";
 
         try
         {
@@ -90,7 +96,7 @@ public class ServerConfigApiTest {
      */
     @Test
     public void patchServerStateTest() throws ApiException {
-        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0";
+        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();
         serverConfigRequest.setCoreTrustPassword("lxdpassword123");
 
@@ -123,7 +129,7 @@ public class ServerConfigApiTest {
      */
     @Test
     public void putServerStateTest() throws ApiException {
-        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0";
+        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();
         serverConfigRequest.setCoreTrustPassword("lxdpassword1234");
 

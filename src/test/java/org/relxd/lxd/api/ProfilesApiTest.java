@@ -14,31 +14,35 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
-import io.swagger.annotations.Api;
+import org.junit.After;
+import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * API tests for ProfilesApi
  */
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProfilesApiTest {
 
-    private final ProfilesApi api = new ProfilesApi();
-    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
+    private ProfilesApi api;
+    private Logger logger;
 
+    @BeforeEach
+    public void setup() {
+        api  = new ProfilesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteProjects(){
+        deleteProfilesByNameTest();
+    }
     
     /**
      * 
@@ -49,12 +53,12 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteProfilesByNameTest() throws ApiException {
-        String name = "";
+    public void deleteProfilesByNameTest() {
+        String name = "profile1rename";
 
         try {
             BackgroundOperationResponse response = api.deleteProfilesByName(name);
-            logger.info("Delete Profiles By Name Test");
+            logger.info("Delete Profiles By Name Response >>>>>> {}", response);
             assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
@@ -71,6 +75,7 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getProfilesTest(){
 
         Integer recursion = null;
@@ -97,8 +102,9 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(4)
     public void getProfilesByNameTest() {
-        String name = "default";
+        String name = "profile1rename";
         Integer recursion = null;
         String filter = null;
 
@@ -122,8 +128,9 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void patchProfilesByNameTest() throws ApiException {
-        String name = "default";
+    @Order(5)
+    public void patchProfilesByNameTest() {
+        String name = "profile1rename";
         UpdateProfilesByNameRequest request = new UpdateProfilesByNameRequest();
         request.setDescription("My description for the default profile");
 
@@ -146,7 +153,8 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postProfilesTest() throws ApiException {
+    @Order(1)
+    public void postProfilesTest() {
 
         MemoryLimitsConfig memoryLimitsConfig = new MemoryLimitsConfig();
         memoryLimitsConfig.setLimitsMemory("2GB");
@@ -183,7 +191,8 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postProfilesByNameTest() throws ApiException {
+    @Order(3)
+    public void postProfilesByNameTest() {
         String name = "profile1";
         CreateProfilesByNameRequest request = new CreateProfilesByNameRequest();
         request.setName("profile1rename");
@@ -206,6 +215,7 @@ public class ProfilesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(6)
     public void putProfilesByNameTest() throws ApiException {
         String name = "profile1rename";
         UpdateProfilesByNameRequest request = new UpdateProfilesByNameRequest();

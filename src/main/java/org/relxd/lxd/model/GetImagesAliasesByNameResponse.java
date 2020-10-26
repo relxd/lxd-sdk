@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetImagesAliasesByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-22T12:08:40.528566+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-23T12:53:01.261363+02:00[Africa/Harare]")
 public class GetImagesAliasesByNameResponse {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -40,6 +40,10 @@ public class GetImagesAliasesByNameResponse {
   public static final String SERIALIZED_NAME_TARGET = "target";
   @SerializedName(SERIALIZED_NAME_TARGET)
   private String target;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type;
 
 
   public GetImagesAliasesByNameResponse name(String name) {
@@ -111,6 +115,29 @@ public class GetImagesAliasesByNameResponse {
   }
 
 
+  public GetImagesAliasesByNameResponse type(String type) {
+    
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "container", value = "")
+
+  public String getType() {
+    return type;
+  }
+
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,12 +149,13 @@ public class GetImagesAliasesByNameResponse {
     GetImagesAliasesByNameResponse getImagesAliasesByNameResponse = (GetImagesAliasesByNameResponse) o;
     return Objects.equals(this.name, getImagesAliasesByNameResponse.name) &&
         Objects.equals(this.description, getImagesAliasesByNameResponse.description) &&
-        Objects.equals(this.target, getImagesAliasesByNameResponse.target);
+        Objects.equals(this.target, getImagesAliasesByNameResponse.target) &&
+        Objects.equals(this.type, getImagesAliasesByNameResponse.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, target);
+    return Objects.hash(name, description, target, type);
   }
 
 
@@ -138,6 +166,7 @@ public class GetImagesAliasesByNameResponse {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

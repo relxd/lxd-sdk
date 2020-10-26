@@ -14,6 +14,8 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
@@ -36,9 +38,15 @@ import static junit.framework.TestCase.assertEquals;
 
 public class EventsApiTest {
 
-    private final EventsApi api = new EventsApi();
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private EventsApi api;
+    private Logger logger;
 
+    @Before
+    public void setup() {
+
+        api = new EventsApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
     
     /**
      * 
@@ -66,6 +74,7 @@ public class EventsApiTest {
 
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
+        logger.info("ERROR >>>> " + e);
         ErrorResponse errorResponse = new ErrorResponse();
         try {
             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);

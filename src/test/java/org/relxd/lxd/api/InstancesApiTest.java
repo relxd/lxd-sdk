@@ -14,8 +14,9 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.After;
+import org.junit.jupiter.api.*;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
@@ -39,17 +40,30 @@ import static org.mockito.Mockito.spy;
  * API tests for InstancesApi
  */
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class InstancesApiTest {
 
-    private final InstancesApi api = new InstancesApi();
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private InstancesApi api;
+    private Logger logger;
+    private List<String> actualGetInstancesResponseUrls;
 
     private LinuxCmdService linuxCmdService;
+    private String unixSocketPath;
+    private ApiClient apiClient;
 
-    @Before
+    @BeforeEach
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
+        api = new InstancesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        apiClient = new ApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
+    @After
+    public void deleteInstances(){
+        deleteInstancesByNameTest();
     }
 
 
@@ -63,12 +77,12 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameTest() {
-        String name = "";
+        String name = "ubuntu-instance";
 
         try {
             BackgroundOperationResponse response = api.deleteInstancesByName(name);
             logger.info("DELETE INSTANCE BY NAME RESPONSE >>>>>> {}", response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+            assertEquals( Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -84,7 +98,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameBackupsByNameTest() {
-        String name = "";
+        String name = "ubuntu-instance-backup";
         String backupsName = "";
 
         try {
@@ -107,7 +121,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameConsoleTest() {
-        String name = "";
+        String name = "ubuntu-instance";
 
         try {
             api.deleteInstancesByNameConsole(name);
@@ -127,7 +141,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameFilesTest() {
-        String name = "";
+        String name = "ubuntu-instance";
         String path = "";
 
         try{
@@ -150,7 +164,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameLogsFileTest() {
-        String name = "";
+        String name = "ubuntu-instance";
         String logFile = "";
 
         try {
@@ -173,7 +187,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameMetadataTemplatesTest() {
-        String name = "";
+        String name = "ubuntu-instance";
         String path = "";
 
         try {
@@ -197,8 +211,8 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameSnapshotsInformationTest() {
-        String name = "";
-        String snapshotName = "";
+        String name = "ubuntu-instance";
+        String snapshotName = "ubuntu-instance-snapshot";
 
         try {
             BackgroundOperationResponse response = api.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
@@ -219,8 +233,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getInstancesTest() {
-        final String getInstancesCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/instances";
+        final String getInstancesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/instances";
 
         Integer recursion = null;
         String filter = null;
@@ -233,6 +248,12 @@ public class InstancesApiTest {
 
             final BackgroundOperationResponse actualBackgroundOperationResponse = api.getInstances(recursion, filter);
             logger.info("Actual Get Instances Response >>>>>>>>>> " + actualBackgroundOperationResponse);
+
+            if (actualBackgroundOperationResponse != null){
+                actualGetInstancesResponseUrls = (List<String>) actualBackgroundOperationResponse.getMetadata();
+
+                logger.info("Metadata >>>>>>> {}", actualGetInstancesResponseUrls);
+            }
 
             assertEquals(expectedBackgroundOperationResponse, actualBackgroundOperationResponse);
 
@@ -254,9 +275,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getInstancesByNameTest() throws ApiException {
-        final String getInstancesByNameCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/instances/my-ubuntu-instance";
-        String name = "my-ubuntu-instance";
+    @Order(4)
+    public void getInstancesByNameTest() {
+        final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/ubuntu-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
@@ -289,9 +311,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(6)
     public void getInstancesByNameBackupsTest() throws ApiException {
-        String getInstancesByNameBackupsCommand = "curl -s --unix-socket /var/snap/lxd/common/lxd/unix.socket a/1.0/instances/lxd-instance/backups";
-        String name = "lxd-instance";
+        String getInstancesByNameBackupsCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/instances/lxd-instance/backups/ubuntu-instance-backup";
+        String name = "ubuntu-instance-backup";
         Integer recursion = null;
         String filter = null;
 
@@ -322,9 +345,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getInstancesByNameBackupsByNameTest() throws ApiException {
-        String name = "lxd-instance";
-        String backupsName = "lxd-instance-backup";
+    @Order(8)
+    public void getInstancesByNameBackupsByNameTest() {
+        String name = "ubuntu-instance";
+        String backupsName = "ubuntu-instance-backup-rename";
         Integer recursion = null;
         String filter = null;
 
@@ -346,9 +370,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getInstancesByNameBackupsByNameExportTest() throws ApiException {
-        String name = "lxd-instance";
-        String backupsName = "lxd-instance-backup";
+    @Order(9)
+    public void getInstancesByNameBackupsByNameExportTest() {
+        String name = "ubuntu-instance";
+        String backupsName = "ubuntu-instance-backup";
         Integer recursion = null;
         String filter = null;
 
@@ -369,8 +394,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(11)
     public void getInstancesByNameConsoleTest() {
-        String name = "lxd-sdk";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
@@ -392,8 +418,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(13)
     public void getInstancesByNameFilesTest(){
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
         String path = "/";
@@ -421,8 +448,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(14)
     public void getInstancesByNameLogsTest() throws ApiException {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
@@ -444,8 +472,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(15)
     public void getInstancesByNameLogsFileTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         String logFile = "lxc.log";
         Integer recursion = null;
         String filter = null;
@@ -469,15 +498,19 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(26)
     public void getInstancesByNameMetadataTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
         try {
             BackgroundOperationResponse response = api.getInstancesByNameMetadata(name, recursion, filter);
             logger.info("GET INSTANCES BY NAME METADATA RESPONSE >>>>>> {}", response);
-            assertEquals(response.getStatusCode(),Integer.valueOf(200));
+
+            if (response != null)
+            assertEquals(Integer.valueOf(200),response.getStatusCode());
+
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -492,8 +525,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(17)
     public void getInstancesByNameMetadataTemplatesTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
         String path = null;
@@ -501,7 +535,8 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.getInstancesByNameMetadataTemplates(name, recursion, filter, path);
             logger.info("GET INSTANCES BY NAME METADATA TEMPLATES RESPONSE >>>>> {}", response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+            if (response != null)
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -517,8 +552,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(20)
     public void getInstancesByNameSnapshotsTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
@@ -541,9 +577,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(22)
     public void getInstancesByNameSnapshotsInformationTest() {
-        String name = "lxd-instance";
-        String snapshotName = "lxd-instance-snapshot";
+        String name = "ubuntu-instance";
+        String snapshotName = "ubuntu-instance-snapshot";
         Integer recursion = null;
         String filter = null;
 
@@ -565,8 +602,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(24)
     public void getInstancesByNameStateTest(){
-        String name = "my-ubuntu-instance";
+        String name = "ubuntu-instance";
         Integer recursion = null;
         String filter = null;
 
@@ -588,9 +626,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(25)
     public void patchInstancesByNameTest(){
 
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         CpuConfig cpuConfig = new CpuConfig();
         cpuConfig.setLimitsCpu("2");
 
@@ -611,7 +650,7 @@ public class InstancesApiTest {
         try{
             BackgroundOperationResponse response = api.patchInstancesByName(name, request);
             logger.info("PATCH INSTANCES BY NAME RESPONSE >>>>>> {}", response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -627,6 +666,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(1)
     public void postInstancesTest() {
         String target = null;
 
@@ -647,7 +687,7 @@ public class InstancesApiTest {
         profiles.add("default");
 
         CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
-        createInstancesRequest.setName("another-ubuntu-instance");
+        createInstancesRequest.setName("ubuntu-instance");
         createInstancesRequest.setArchitecture("x86_64");
         createInstancesRequest.setProfiles(profiles);
         createInstancesRequest.setEphemeral(true);
@@ -675,11 +715,13 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(3)
     public void postInstancesByNameTest() {
-        String name = "another-ubuntu-instance";
+
+        String name = "ubuntu-instance";
         String target = null;
         CreateInstancesByNameRequest createInstancesByNameRequest = new CreateInstancesByNameRequest();
-        createInstancesByNameRequest.setName("another-ubuntu-instance-1");
+        createInstancesByNameRequest.setName("another-ubuntu-instance");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByName(name, target, createInstancesByNameRequest);
@@ -700,10 +742,11 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(5)
     public void postInstancesByNameBackupsTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         CreateInstancesByNameBackupsRequest createInstancesByNameBackupsRequest = new CreateInstancesByNameBackupsRequest();
-        createInstancesByNameBackupsRequest.setName("lxd-instance-backup");
+        createInstancesByNameBackupsRequest.setName("ubuntu-instance-backup");
         createInstancesByNameBackupsRequest.setExpiry(new BigDecimal(3600));
         createInstancesByNameBackupsRequest.setInstanceOnly(true);
         createInstancesByNameBackupsRequest.setOptimizedStorage(true);
@@ -727,11 +770,12 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(7)
     public void postInstancesByNameBackupsByNameTest() {
-        String name = "lxd-instance";
-        String backupsName = "lxd-instance-backup-rename";
+        String name = "ubuntu-instance";
+        String backupsName = "ubuntu-instance-backup";
         CreateInstancesByNameBackupsByNameRequest request = new CreateInstancesByNameBackupsByNameRequest();
-        request.setName("lxd-instance-backup-rename");
+        request.setName("ubuntu-instance-backup-rename");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByNameBackupsByName(name, backupsName, request);
@@ -751,8 +795,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(10)
     public void postInstancesByNameConsoleTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         CreateInstancesByNameConsoleRequest request = new CreateInstancesByNameConsoleRequest();
         request.setWidth(80);
         request.setHeight(25);
@@ -776,8 +821,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(12)
     public void postInstancesByNameExecTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         List<String> command = new ArrayList<>();
         command.add("/bin/bash");
         Environment environment = new Environment();
@@ -812,11 +858,12 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(12)
     public void postInstancesByNameFilesTest() {
 
         UUID uuid = new UUID(10,00);
 
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         String path = "/data";
         Integer xLXDUid = 0;
         Integer xLXDGid = 0;
@@ -844,14 +891,16 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(16)
     public void postInstancesByNameMetadataTemplatesTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         String path = "";
         File body = new File("");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByNameMetadataTemplates(name, path, body);
             logger.info("POST INSTANCES BY NAME METADATA RESPONSE >>>>> " + response);
+
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -866,16 +915,17 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(19)
     public void postInstancesByNameSnapshotTest() {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         CreateInstancesByNameSnapshotRequest request = new CreateInstancesByNameSnapshotRequest();
-        request.setName("lxd-instance-snapshot");
+        request.setName("ubuntu-instance-snapshot");
         request.setStateful(true);
 
         try {
             BackgroundOperationResponse response = api.postInstancesByNameSnapshot(name, request);
             logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(100));
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -890,17 +940,18 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(21)
     public void postInstancesByNameSnapshotsInformationTest() {
-        String name = "lxd-instance";
-        String snapshotName = "lxd-instance-snapshot";
+        String name = "ubuntu-instance";
+        String snapshotName = "ubuntu-instance-snapshot";
         CreateInstancesByNameSnapshotsInformationRequest request = new CreateInstancesByNameSnapshotsInformationRequest();
-        request.setName("lxd-instance-snapshot");
+        request.setName("ubuntu-instance-snapshot");
 
         try {
 
             BackgroundOperationResponse response = api.postInstancesByNameSnapshotsInformation(name, snapshotName, request);
             logger.info("SNAPSHOT INFORMATION RESPONSE >>>>>> ", response);
-            assertEquals(response.getStatusCode(),Integer.valueOf(200));
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -915,6 +966,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(26)
     public void putInstancesByNameTest() {
 
         HardwareSpecsConfig hardwareSpecsConfig = new HardwareSpecsConfig();
@@ -942,7 +994,7 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.putInstancesByName(name, request);
             logger.info("PUT INSTANCES BY NAME RESPONSE >>>>>>> " + response);
-            assertEquals(response.getStatusCode(),Integer.valueOf(100));
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -958,6 +1010,7 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(27)
     public void putInstancesByNameMetadataTest() throws ApiException {
 
         Properties2 properties2 = new Properties2();
@@ -1005,8 +1058,9 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(28)
     public void putInstancesByNameMetadataTemplatesTest() throws ApiException {
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         String path = "/";
         File body = new File("./");
 
@@ -1028,16 +1082,17 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(29)
     public void putInstancesByNameSnapshotsInformationTest() throws ApiException {
-        String name = "lxd-instance";
-        String snapshotName = "lxd-instance-snapshot";
+        String name = "ubuntu-instance";
+        String snapshotName = "ubuntu-instance-snapshot";
         UpdateInstancesByNameSnapshotsInformationRequest request = new UpdateInstancesByNameSnapshotsInformationRequest();
         request.setExpiresAt("2020-11-16T12:34:56+02:00");
 
         try {
             BackgroundOperationResponse response = api.putInstancesByNameSnapshotsInformation(name, snapshotName, request);
             logger.info("PUT INSTANCE BY NAME SNAPSHOT RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(100));
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
 
         }catch (ApiException ex){
             catchApiException(ex);
@@ -1053,9 +1108,10 @@ public class InstancesApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(23)
     public void putInstancesByNameStateTest() throws ApiException {
 
-        String name = "lxd-instance";
+        String name = "ubuntu-instance";
         UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
         request.setAction("start");
         request.setForce(true);
@@ -1074,6 +1130,7 @@ public class InstancesApiTest {
     }
 
     private ErrorResponse catchApiException(ApiException e) {
+        logger.info("Exception >>>> " + e);
         JSON json = new JSON();
         ErrorResponse errorResponse = new ErrorResponse();
         try {

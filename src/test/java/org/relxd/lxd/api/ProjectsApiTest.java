@@ -14,30 +14,39 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.*;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
  * API tests for ProjectsApi
  */
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProjectsApiTest {
 
-    private final ProjectsApi api = new ProjectsApi();
-    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
-    
+    private ProjectsApi api;
+    private Logger logger;
+
+    @BeforeEach
+    public void setup() {
+        api = new ProjectsApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteProjects(){
+        deleteProjectsByNameTest();
+    }
     /**
      * 
      *
@@ -47,8 +56,8 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteProjectsByNameTest() throws ApiException {
-        String name = "";
+    public void deleteProjectsByNameTest() {
+        String name = "project1rename";
 
         try {
             BackgroundOperationResponse response = api.deleteProjectsByName(name);
@@ -68,6 +77,7 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getProjectsTest() {
         Integer recursion = null;
         String filter = null;
@@ -91,6 +101,7 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(4)
     public void getProjectsByNameTest() throws ApiException {
         String name = "project1rename";
         Integer recursion = null;
@@ -115,8 +126,9 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(6)
     public void patchProjectsByNameTest() {
-        String name = "default";
+        String name = "project1rename";
         UpdateProjectsByNameRequest request = new UpdateProjectsByNameRequest();
         request.setDescription("My new Profile Description");
 
@@ -138,6 +150,7 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(1)
     public void postProjectsTest() throws ApiException {
         CreateProjectsRequest request = new CreateProjectsRequest();
 
@@ -168,6 +181,7 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(3)
     public void postProjectsByNameTest() throws ApiException {
         String name = "project1";
         CreateProjectsByNameRequest request = new CreateProjectsByNameRequest();
@@ -192,6 +206,7 @@ public class ProjectsApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(5)
     public void putProjectsByNameTest() throws ApiException {
         String name = "project1rename";
 

@@ -14,34 +14,41 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
+import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
-import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
 import org.relxd.lxd.model.UpdateClusterRequest;
-import org.junit.Test;
-import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.math.BigDecimal;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
  * API tests for ClusterApi
  */
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ClusterApiTest {
 
-    private final ClusterApi api = new ClusterApi();
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private ClusterApi api;
+    private Logger logger;
 
+    @BeforeEach
+    public void setup() {
+
+        api = new ClusterApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteClusters(){
+        deleteClusterMembersByNameTest();
+    }
     
     /**
      * 
@@ -52,8 +59,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteClusterMembersByNameTest() throws ApiException {
-        String name = "";
+    @Order(6)
+    public void deleteClusterMembersByNameTest() {
+        String name = "new-server";
         BigDecimal force = null;
 
         try {
@@ -75,6 +83,7 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(2)
     public void getClusterTest() {
         Integer recursion = null;
         String filter = null;
@@ -100,6 +109,7 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(4)
     public void getClusterMembersTest() {
         Integer recursion = null;
         String filter = null;
@@ -124,8 +134,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(5)
     public void getClusterMembersByNameTest() {
-        String name = "";
+        String name = "new-server";
         Integer recursion = null;
         String filter = null;
 
@@ -149,8 +160,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(1)
     public void postClusterMembersByNameTest() {
-        String name = "none";
+        String name = "another-server";
         UpdateClusterMembersByNameRequest request = new UpdateClusterMembersByNameRequest();
         request.serverName("new-server");
 
@@ -173,6 +185,7 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
+    @Order(3)
     public void putClusterTest() {
         UpdateClusterRequest request = new UpdateClusterRequest();
         request.setServerName("lxd1");

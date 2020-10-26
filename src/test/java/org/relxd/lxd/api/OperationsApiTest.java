@@ -14,6 +14,8 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.After;
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
@@ -37,11 +39,20 @@ import static junit.framework.TestCase.assertEquals;
 
 public class OperationsApiTest {
 
-    private final OperationsApi api = new OperationsApi();
+    private OperationsApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
 
-    
+    @Before
+    public void setup() {
+        api  = new OperationsApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
+    @After
+    public void deleteOperations(){
+        deleteOperationsUUIDTest();
+    }
     /**
      * 
      *
@@ -51,7 +62,7 @@ public class OperationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteOperationsUUIDTest() throws ApiException {
+    public void deleteOperationsUUIDTest() {
         String uuid = "";
 
         try {

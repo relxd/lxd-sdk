@@ -14,12 +14,14 @@
 package org.relxd.lxd.api;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.spy;
 
 /**
  * API tests for ResourcesApi
@@ -36,11 +39,17 @@ import static junit.framework.TestCase.assertEquals;
 
 public class ResourcesApiTest {
 
-    private final ResourcesApi api = new ResourcesApi();
+    private ResourcesApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
 
-    
+    @Before
+    public void setup() {
+
+        api = new ResourcesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
     /**
      * 
      *

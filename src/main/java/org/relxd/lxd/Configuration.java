@@ -13,7 +13,7 @@
 
 package org.relxd.lxd;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-22T12:08:40.528566+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-10-23T12:53:01.261363+02:00[Africa/Harare]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
