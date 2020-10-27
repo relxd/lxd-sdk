@@ -1,43 +1,71 @@
 package org.relxd.lxd.auth.javakeystore.service;
 
-import javax.crypto.SecretKey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.KeyPair;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
 import java.util.Enumeration;
 
 public class JavaKeyStoreServiceImpl implements JavaKeyStoreService{
 
+    private static final String BC_PROVIDER = "BC";
 
-    public void StoreCertificateToKeyStore(String alias, X509Certificate[] certificateChain, SecretKey privateKey, String password, String filePath) throws Exception{
+    Logger logger = LoggerFactory.getLogger(JavaKeyStoreService.class);
 
-        File file = new File(filePath);
-        KeyStore javaKeyStore = KeyStore.getInstance("JCEKS");
-        if (!file.exists()){
-            javaKeyStore.load(null, null);
+    public void exportKeyPairToKeystoreFile(KeyPair keyPair, Certificate certificate, String alias, String fileName, String storeType, String storePass) throws Exception {
+        KeyStore sslKeyStore = KeyStore.getInstance(storeType, BC_PROVIDER);
+        File file = new File(fileName);
+        if (!file.exists()) {
+            sslKeyStore.load(null, null);
+        }else {
+            InputStream readCert = new FileInputStream(file);
+            try {
+                sslKeyStore.load(readCert, storePass.toCharArray());
+            } finally {
+                readCert.close();
+            }
         }
-        if (javaKeyStore.containsAlias(alias)){
-            throw new Exception("The keystore already contains that alias, try another one");
+
+        if (sslKeyStore.containsAlias(alias)){
+            throw new Exception("The keystore already contains alias :" + alias + ", try another one");
         }
 
-        javaKeyStore.setKeyEntry(alias,privateKey, password.toCharArray(),certificateChain);
-        OutputStream writeStream = new FileOutputStream(filePath);
-        javaKeyStore.store(writeStream, password.toCharArray());
+        sslKeyStore.setKeyEntry(alias, keyPair.getPrivate(),null, new Certificate[]{certificate});
+        FileOutputStream keyStoreOs = new FileOutputStream(fileName);
+        sslKeyStore.store(keyStoreOs, storePass.toCharArray());
     }
 
-    public Certificate[] LoadCertificateFromKeyStore(String alias, String filePath, String password){
+    public Certificate[] loadCertificateFromKeyStore(String alias, String filePath, String password){
 
         try{
-        KeyStore keyStore = KeyStore.getInstance("JCEKS");
-            InputStream readStream = new FileInputStream(filePath);
-            keyStore.load(readStream, password.toCharArray());
-            final Certificate[] certificateChain = keyStore.getCertificateChain(alias);
+            File file = new File(filePath);
+            if (!file.exists()) {
+                throw new Exception("Keystore does not exist at path :"+ filePath);
+            }
 
-            return certificateChain;
+        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+
+
+            InputStream readStream = new FileInputStream(filePath);
+
+        try{
+            keyStore.load(readStream, password.toCharArray());
+        }finally {
+            readStream.close();
+        }
+            final Certificate[] certificateChain = keyStore.getCertificateChain(alias);
+            if (null == certificateChain) {
+                throw new Exception("There is no X.509 certificate chain under alias " + alias);
+            }else {
+                logger.info("FOUND CERTIFICATES ::>> {}", certificateChain.length);
+                return certificateChain;
+            }
 
         }catch (Exception ex){
             ex.printStackTrace();
@@ -46,13 +74,13 @@ public class JavaKeyStoreServiceImpl implements JavaKeyStoreService{
         return null;
     }
 
-    public void DeleteKeyStore(String keystorePath) throws IOException{
+    public void deleteKeyStore(String keystorePath) throws IOException{
 
         Files.delete(Paths.get(keystorePath));
 
     }
 
-    public void RemoveAllKeyStoreElements(KeyStore keyStore) throws KeyStoreException {
+    public void removeAllKeyStoreElements(KeyStore keyStore) throws KeyStoreException {
 
         Enumeration<String> aliases = keyStore.aliases();
         while (aliases.hasMoreElements()) {
@@ -61,7 +89,7 @@ public class JavaKeyStoreServiceImpl implements JavaKeyStoreService{
         }
     }
 
-    public void RemoveKeyStoreElement(KeyStore keyStore, String secretKey) throws KeyStoreException{
+    public void removeKeyStoreElement(KeyStore keyStore, String secretKey) throws KeyStoreException{
         keyStore.deleteEntry(secretKey);
     }
 
