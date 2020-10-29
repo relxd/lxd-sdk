@@ -47,7 +47,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteFingerprintTest() throws ApiException {
+    public void deleteFingerprintTest() {
         String fingerprint = "";
 
         try {
@@ -70,7 +70,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getCertificatesTest() throws ApiException {
+    public void getCertificatesTest() {
         Integer recursion = null;
         String filter = null;
 
@@ -94,7 +94,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getCertificatesByFingerPrintTest() throws ApiException {
+    public void getCertificatesByFingerPrintTest() {
 
         String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
 
@@ -118,7 +118,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void patchFingerprintTest() throws ApiException {
+    public void patchFingerprintTest() {
         String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
         UpdateFingerprintRequest request = new UpdateFingerprintRequest();
         request.setName("new-cert-name");
@@ -144,7 +144,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postCertificatesTest() throws ApiException {
+    public void postCertificatesTest() {
         CreateCertificatesRequest request = new CreateCertificatesRequest();
         request.setName("my-certificate");
         request.setType("client");
@@ -171,7 +171,7 @@ public class CertificatesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void putFingerprintTest() throws ApiException {
+    public void putFingerprintTest() {
         String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
         UpdateFingerprintRequest request = new UpdateFingerprintRequest();
         request.setName("baz");

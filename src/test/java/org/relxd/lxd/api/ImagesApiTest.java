@@ -717,6 +717,7 @@ public class ImagesApiTest {
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
         ErrorResponse errorResponse = new ErrorResponse();
+        logger.info("EXCEPTION >>>> " + e);
         try {
             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
             logger.info("ERROR RESPONSE >>>> " + errorResponse);

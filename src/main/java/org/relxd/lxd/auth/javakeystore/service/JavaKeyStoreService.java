@@ -12,6 +12,8 @@ public interface JavaKeyStoreService {
 
     Certificate[] loadCertificateFromKeyStore(String alias, String filePath, String password);
 
+    public KeyStore getKeyStore(String filePath, String password);
+
     void deleteKeyStore(String keystorePath) throws IOException;
 
     void removeAllKeyStoreElements(KeyStore keyStore) throws KeyStoreException;

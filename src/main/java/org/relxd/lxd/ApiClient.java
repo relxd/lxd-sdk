@@ -13,6 +13,7 @@
 
 package org.relxd.lxd;
 
+import nl.altindag.sslcontext.SSLFactory;
 import okhttp3.*;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.internal.tls.OkHostnameVerifier;
@@ -20,13 +21,15 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
+import org.relxd.lxd.auth.*;
+import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
+import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.apache.oltu.oauth2.common.message.types.GrantType;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -48,17 +51,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.relxd.lxd.auth.Authentication;
-import org.relxd.lxd.auth.HttpBasicAuth;
-import org.relxd.lxd.auth.HttpBearerAuth;
-import org.relxd.lxd.auth.ApiKeyAuth;
-import org.relxd.lxd.auth.OAuth;
-import org.relxd.lxd.auth.RetryingOAuth;
-import org.relxd.lxd.auth.OAuthFlow;
-
 public class ApiClient {
 
-    private String basePath = "http://localhost:2375";
+    private String basePath;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -82,12 +77,17 @@ public class ApiClient {
 
     private Logger logger;
 
+    private JavaKeyStoreService javaKeyStoreService;
+
+    private String javaKeyStoreFilePath;
+
+    private String javaKeyStorePassword;
+
     /*
      * Basic constructor for ApiClient
      */
     public ApiClient() {
         init();
-        initHttpClient();
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("authentication", new OAuth());
@@ -97,6 +97,11 @@ public class ApiClient {
         logger = LoggerFactory.getLogger(ApiClient.class);
 
         basePath = this.getApplicationProperties().getProperty("base.url");
+        javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
+        javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
+        javaKeyStoreService = new JavaKeyStoreServiceImpl();
+
+        initHttpClient();
     }
 
     public Properties getApplicationProperties() {
@@ -174,16 +179,52 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
     }
 
+
+
+
     private void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
     }
 
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
+
+        try{
+            KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
+
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(
+                    TrustManagerFactory.getDefaultAlgorithm());
+            trustManagerFactory.init(keyStore);
+            TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
+            if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
+                throw new IllegalStateException("Unexpected default trust managers:"
+                        + Arrays.toString(trustManagers));
+            }
+            X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
+
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+            sslContext.init(null, new TrustManager[] { trustManager }, null);
+            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            builder.sslSocketFactory(sslSocketFactory, trustManager);
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
         builder.addNetworkInterceptor(getProgressInterceptor());
         for (Interceptor interceptor: interceptors) {
             builder.addInterceptor(interceptor);
         }
+
+        builder.hostnameVerifier(new HostnameVerifier() {
+            @Override
+            public boolean verify(String hostname, SSLSession session) {
+                HostnameVerifier hv =
+                        HttpsURLConnection.getDefaultHostnameVerifier();
+                return hv.verify(hostname, session);
+            }
+        });
 
         httpClient = builder.build();
     }

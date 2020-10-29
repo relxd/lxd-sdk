@@ -2,6 +2,7 @@ package org.relxd.lxd.javakeystore;
 
 
 import org.junit.jupiter.api.*;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreServiceImpl;
 import org.relxd.lxd.auth.javakeystore.x509certificate.X509CertificateAndKeyPair;
@@ -24,12 +25,18 @@ public class JavaKeyStoreServiceTest {
     private JavaKeyStoreService javaKeyStoreService;
     private CertificateChainGenerationService certificateChainGenerationService;
     private Logger logger;
+    private ApiClient apiClient;
+    private String javaKeyStoreFilePath;
+    private String javaKeyStorePassword;
 
     @BeforeEach
     public void init(){
         javaKeyStoreService = spy(new JavaKeyStoreServiceImpl());
         certificateChainGenerationService = spy(new CertificateChainGenerationServiceImpl());
         logger = LoggerFactory.getLogger(JavaKeyStoreServiceTest.class);
+        apiClient = new ApiClient();
+        javaKeyStoreFilePath = apiClient.getApplicationProperties().getProperty("java.keystore.path");
+        javaKeyStorePassword = apiClient.getApplicationProperties().getProperty("java.keystore.password");
     }
 
 
@@ -38,13 +45,13 @@ public class JavaKeyStoreServiceTest {
     public void storeCertificateToKeyStore(){
 
         try {
-            final X509CertificateAndKeyPair x509CertificateAndPrivateKey = certificateChainGenerationService.generateX509Certificate("Lxd Application", "rootcert","lxdCertificate");
+            final X509CertificateAndKeyPair x509CertificateAndPrivateKey = certificateChainGenerationService.generateX509Certificate("another Lxd Application", "rootcert","lxdCertificate");
 
             if (x509CertificateAndPrivateKey != null) {
                 final X509Certificate x509Certificate = x509CertificateAndPrivateKey.getX509Certificate();
                 final KeyPair keyPair = x509CertificateAndPrivateKey.getKeyPair();
-                final String keyStoreFileName = "./certificates/java-key-store.jks";
-                javaKeyStoreService.exportKeyPairToKeystoreFile(keyPair, x509Certificate, "anotherLxdCertificate", keyStoreFileName, KeyStore.getDefaultType(), "pass");
+                final String keyStoreFileName = javaKeyStoreFilePath;
+                javaKeyStoreService.exportKeyPairToKeystoreFile(keyPair, x509Certificate, "anotherLxdCertificate", keyStoreFileName, KeyStore.getDefaultType(), javaKeyStorePassword);
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -54,11 +61,13 @@ public class JavaKeyStoreServiceTest {
 
     @Test
     @Order(3)
-    public void loadCertificateFromKeyStore(){
+    public void loadCertificateFromKeyStore() throws Exception{
 
-        final Certificate[] certificates = javaKeyStoreService.loadCertificateFromKeyStore("anotherLxdCertificate", "./certificates/java-key-store.jks", "pass");
+        final Certificate[] certificates = javaKeyStoreService.loadCertificateFromKeyStore("anotherLxdCertificate", javaKeyStoreFilePath, javaKeyStorePassword);
 
-        logger.info("Certficates in KeyStore ====>>>> {}", certificates[0]);
+        logger.info("Certificates in KeyStore ====>>>> {}", certificates[0].getPublicKey());
+
+        certificateChainGenerationService.writeCertToFileBase64Encoded(certificates[0],javaKeyStoreFilePath);
 
     }
 
@@ -78,7 +87,7 @@ public class JavaKeyStoreServiceTest {
     @Order(4)
     public void deleteKeyStore(){
         try {
-            javaKeyStoreService.deleteKeyStore("./certificates/java-key-store.jks");
+            javaKeyStoreService.deleteKeyStore(javaKeyStoreFilePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
