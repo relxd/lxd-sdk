@@ -188,7 +188,7 @@ public class ImagesApiTest {
             if (actualGetImageAliasesResponse != null){
                 getImageAliasesResponseUrls = (List<String>) actualGetImageAliasesResponse.getMetadata();
 
-                logger.info("My Metadata >>>>>>> {}", getImageAliasesResponseUrls);
+                logger.info("Metadata >>>>>>> {}", getImageAliasesResponseUrls);
             }
 
             assertEquals(actualGetImageAliasesResponse, expectedGetImageAliasesResponse);

@@ -104,7 +104,9 @@ public class ApiClient {
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
 
+
         initHttpClient();
+
     }
 
     public Properties getApplicationProperties() {
@@ -192,30 +194,38 @@ public class ApiClient {
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
+        if ((basePath != null) && (basePath.contains("https"))) {
+
+            try {
+                KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
+
+                SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+                TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                trustManagerFactory.init(keyStore);
+                KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+                keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
+
+                TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
+                if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
+                    throw new IllegalStateException("Unexpected default trust managers:"
+                            + Arrays.toString(trustManagers));
+                }
+                X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
+
+                sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), new SecureRandom());
+                builder.sslSocketFactory(sslContext.getSocketFactory(), trustManager);
 
 
-        try{
-            KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
-
-            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-            trustManagerFactory.init(keyStore);
-            KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
-
-            TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
-            if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
-                throw new IllegalStateException("Unexpected default trust managers:"
-                        + Arrays.toString(trustManagers));
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-            X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
+            builder.hostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            });
 
-            sslContext.init(keyManagerFactory.getKeyManagers(),trustManagerFactory.getTrustManagers(), new SecureRandom());
-            builder.sslSocketFactory(sslContext.getSocketFactory(),trustManager);
-
-
-        }catch (Exception ex){
-            ex.printStackTrace();
         }
 
         builder.addNetworkInterceptor(getProgressInterceptor());
@@ -223,15 +233,6 @@ public class ApiClient {
             builder.addInterceptor(interceptor);
         }
 
-        builder.hostnameVerifier(new HostnameVerifier() {
-            @Override
-            public boolean verify(String hostname, SSLSession session) {
-                /*HostnameVerifier hv =
-                        HttpsURLConnection.getDefaultHostnameVerifier();
-                return hv.verify(hostname, session);*/
-                return true;
-            }
-        });
 
         httpClient = builder.build();
 

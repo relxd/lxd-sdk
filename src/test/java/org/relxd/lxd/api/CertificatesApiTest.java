@@ -30,7 +30,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * API tests for CertificatesApi
  */
-@Ignore
+
 public class CertificatesApiTest {
 
     private final CertificatesApi api = new CertificatesApi();
