@@ -13,7 +13,6 @@
 
 package org.relxd.lxd;
 
-import nl.altindag.sslcontext.SSLFactory;
 import okhttp3.*;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.internal.tls.OkHostnameVerifier;
@@ -21,6 +20,11 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
+import org.apache.http.client.HttpClient;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.ssl.SSLContexts;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
 import org.relxd.lxd.auth.*;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
@@ -43,7 +47,6 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.util.*;
 import java.util.Map.Entry;
@@ -189,12 +192,17 @@ public class ApiClient {
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
+
+
         try{
             KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
 
-            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(
-                    TrustManagerFactory.getDefaultAlgorithm());
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(keyStore);
+            KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
+
             TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
             if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
                 throw new IllegalStateException("Unexpected default trust managers:"
@@ -202,11 +210,9 @@ public class ApiClient {
             }
             X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
 
-            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-            sslContext.init(null, new TrustManager[] { trustManager }, null);
-            SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+            sslContext.init(keyManagerFactory.getKeyManagers(),trustManagerFactory.getTrustManagers(), new SecureRandom());
+            builder.sslSocketFactory(sslContext.getSocketFactory(),trustManager);
 
-            builder.sslSocketFactory(sslSocketFactory, trustManager);
 
         }catch (Exception ex){
             ex.printStackTrace();
@@ -220,13 +226,15 @@ public class ApiClient {
         builder.hostnameVerifier(new HostnameVerifier() {
             @Override
             public boolean verify(String hostname, SSLSession session) {
-                HostnameVerifier hv =
+                /*HostnameVerifier hv =
                         HttpsURLConnection.getDefaultHostnameVerifier();
-                return hv.verify(hostname, session);
+                return hv.verify(hostname, session);*/
+                return true;
             }
         });
 
         httpClient = builder.build();
+
     }
 
     private void init() {
