@@ -44,21 +44,8 @@ public class JavaKeyStoreServiceImpl implements JavaKeyStoreService{
     public Certificate[] loadCertificateFromKeyStore(String alias, String filePath, String password){
 
         try{
-            File file = new File(filePath);
-            if (!file.exists()) {
-                throw new Exception("Keystore does not exist at path :"+ filePath);
-            }
+        KeyStore keyStore = getKeyStore(filePath, password);
 
-        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-
-
-            InputStream readStream = new FileInputStream(filePath);
-
-        try{
-            keyStore.load(readStream, password.toCharArray());
-        }finally {
-            readStream.close();
-        }
             final Certificate[] certificateChain = keyStore.getCertificateChain(alias);
             if (null == certificateChain) {
                 throw new Exception("There is no X.509 certificate chain under alias " + alias);
@@ -73,6 +60,33 @@ public class JavaKeyStoreServiceImpl implements JavaKeyStoreService{
 
         return null;
     }
+
+    public KeyStore getKeyStore(String filePath, String password) {
+
+        try{
+            File file = new File(filePath);
+            if (!file.exists()) {
+                throw new Exception("Keystore does not exist at path :"+ filePath);
+            }
+
+            KeyStore keyStore = KeyStore.getInstance("PKCS12");
+
+
+            InputStream readStream = new FileInputStream(filePath);
+
+            try{
+                keyStore.load(readStream, password.toCharArray());
+            }finally {
+                readStream.close();
+            }
+
+            return keyStore;
+
+    }catch (Exception ex){
+            throw new RuntimeException(ex);
+        }
+
+}
 
     public void deleteKeyStore(String keystorePath) throws IOException{
 

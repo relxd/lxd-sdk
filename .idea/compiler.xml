@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="lxd-sdk" options="-Xlint:all -J-Xss4m" />
+      <module name="lxd-sdk" options="-XDignore.symbol.file -Xlint:all -J-Xss4m" />
     </option>
   </component>
 </project>

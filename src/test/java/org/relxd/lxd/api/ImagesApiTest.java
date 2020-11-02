@@ -188,7 +188,7 @@ public class ImagesApiTest {
             if (actualGetImageAliasesResponse != null){
                 getImageAliasesResponseUrls = (List<String>) actualGetImageAliasesResponse.getMetadata();
 
-                logger.info("My Metadata >>>>>>> {}", getImageAliasesResponseUrls);
+                logger.info("Metadata >>>>>>> {}", getImageAliasesResponseUrls);
             }
 
             assertEquals(actualGetImageAliasesResponse, expectedGetImageAliasesResponse);
@@ -717,6 +717,7 @@ public class ImagesApiTest {
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
         ErrorResponse errorResponse = new ErrorResponse();
+        logger.info("EXCEPTION >>>> " + e);
         try {
             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
             logger.info("ERROR RESPONSE >>>> " + errorResponse);
