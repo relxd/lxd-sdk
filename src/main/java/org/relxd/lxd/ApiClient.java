@@ -20,11 +20,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
-import org.apache.http.client.HttpClient;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.ssl.SSLContexts;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
 import org.relxd.lxd.auth.*;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
@@ -84,7 +79,21 @@ public class ApiClient {
 
     private String javaKeyStoreFilePath;
 
+    private String guestKeyStoreFilePath;
+
     private String javaKeyStorePassword;
+
+    private String guestKeyStorePassword;
+
+    private String authenticationType;
+
+
+
+    private static final String GUEST = "Guest";
+
+    private static final String TRUSTED = "Trusted";
+
+    private static final String NOT_TRUSTED = "Not Trusted";
 
     /*
      * Basic constructor for ApiClient
@@ -103,6 +112,9 @@ public class ApiClient {
         javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
+        authenticationType = this.getApplicationProperties().getProperty("authentication.type");
+        guestKeyStoreFilePath = this.getApplicationProperties().getProperty("java.guest.keystore.path");
+        guestKeyStorePassword = this.getApplicationProperties().getProperty("java.guest.keystore.password");
 
 
         initHttpClient();
@@ -111,18 +123,18 @@ public class ApiClient {
 
     public Properties getApplicationProperties() {
 
-        final String PROPERTIESFILELOCATION = "application.properties";
+        final String PROPERTIES_FILE_LOCATION = "application.properties";
 
         Properties props = new Properties();
 
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(PROPERTIESFILELOCATION);
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE_LOCATION);
 
         try {
 
             if (inputStream != null) {
                 props.load(inputStream);
             } else {
-                throw new FileNotFoundException("property file '" + PROPERTIESFILELOCATION + "' not found in the classpath");
+                throw new FileNotFoundException("property file '" + PROPERTIES_FILE_LOCATION + "' not found in the classpath");
             }
 
         }catch (IOException ex){
@@ -202,8 +214,25 @@ public class ApiClient {
                 SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
                 TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
                 trustManagerFactory.init(keyStore);
-                KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-                keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
+
+                KeyManager[] keyManagers = null;
+
+                if (TRUSTED.equalsIgnoreCase(authenticationType))
+                {
+                    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+                    keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
+
+                    keyManagers  = keyManagerFactory.getKeyManagers();
+
+                }else if (GUEST.equalsIgnoreCase(authenticationType)){
+
+                    keyStore = javaKeyStoreService.getKeyStore(guestKeyStoreFilePath, guestKeyStorePassword);
+
+                    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+                    keyManagerFactory.init(keyStore, guestKeyStorePassword.toCharArray());
+
+                    keyManagers  = keyManagerFactory.getKeyManagers();
+                }
 
                 TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
                 if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
@@ -212,7 +241,7 @@ public class ApiClient {
                 }
                 X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
 
-                sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), new SecureRandom());
+                sslContext.init(keyManagers, trustManagerFactory.getTrustManagers(), new SecureRandom());
                 builder.sslSocketFactory(sslContext.getSocketFactory(), trustManager);
 
 
