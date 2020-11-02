@@ -100,7 +100,6 @@ public class ServerConfigApiTest {
         ServerConfig serverConfigRequest = new ServerConfig();
         serverConfigRequest.setCoreTrustPassword("lxdpassword123");
 
-
         try {
 
             final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(patchServerStateCommand, BackgroundOperationResponse.class);
