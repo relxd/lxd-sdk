@@ -19,6 +19,7 @@ import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
@@ -49,7 +50,7 @@ public class InstancesApiTest {
 
     private LinuxCmdService linuxCmdService;
     private String unixSocketPath;
-    private ApiClient apiClient;
+    private RelxdApiClient apiClient;
 
     @BeforeEach
     public void setup() {
@@ -57,7 +58,7 @@ public class InstancesApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new InstancesApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        apiClient = new ApiClient();
+        apiClient = new RelxdApiClient();
         unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 

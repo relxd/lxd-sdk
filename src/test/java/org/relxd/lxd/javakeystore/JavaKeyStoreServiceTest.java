@@ -3,6 +3,7 @@ package org.relxd.lxd.javakeystore;
 
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiClient;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreServiceImpl;
 import org.relxd.lxd.auth.javakeystore.x509certificate.X509CertificateAndKeyPair;
@@ -25,7 +26,7 @@ public class JavaKeyStoreServiceTest {
     private JavaKeyStoreService javaKeyStoreService;
     private CertificateChainGenerationService certificateChainGenerationService;
     private Logger logger;
-    private ApiClient apiClient;
+    private RelxdApiClient apiClient;
     private String javaKeyStoreFilePath;
     private String javaKeyStorePassword;
 
@@ -34,7 +35,7 @@ public class JavaKeyStoreServiceTest {
         javaKeyStoreService = spy(new JavaKeyStoreServiceImpl());
         certificateChainGenerationService = spy(new CertificateChainGenerationServiceImpl());
         logger = LoggerFactory.getLogger(JavaKeyStoreServiceTest.class);
-        apiClient = new ApiClient();
+        apiClient = new RelxdApiClient();
         javaKeyStoreFilePath = apiClient.getApplicationProperties().getProperty("java.guest.keystore.path");
         javaKeyStorePassword = apiClient.getApplicationProperties().getProperty("java.keystore.password");
     }

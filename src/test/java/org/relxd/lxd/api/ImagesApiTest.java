@@ -18,6 +18,7 @@ import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
@@ -41,7 +42,7 @@ public class ImagesApiTest {
     private ImagesApi api;
     private OperationsApi operationsApi;
     private Logger logger;
-    private ApiClient apiClient;
+    private RelxdApiClient apiClient;
 
     private LinuxCmdService linuxCmdService;
 
@@ -56,7 +57,7 @@ public class ImagesApiTest {
         api = new ImagesApi();
         operationsApi = new OperationsApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        apiClient = new ApiClient();
+        apiClient = new RelxdApiClient();
         unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 

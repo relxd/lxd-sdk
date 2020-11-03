@@ -19,6 +19,7 @@ import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
@@ -43,7 +44,7 @@ public class StoragePoolsApiTest {
 
     private LinuxCmdService linuxCmdService;
 
-    private ApiClient apiClient;
+    private RelxdApiClient apiClient;
 
     private String unixSocketPath;
 
@@ -53,7 +54,7 @@ public class StoragePoolsApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         api = new StoragePoolsApi();
-        apiClient = new ApiClient();
+        apiClient = new RelxdApiClient();
         unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 
