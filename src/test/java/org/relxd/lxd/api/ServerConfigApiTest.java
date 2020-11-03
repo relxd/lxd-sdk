@@ -128,11 +128,12 @@ public class ServerConfigApiTest {
      */
     @Test
     public void putServerStateTest() throws ApiException {
-        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
+        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\", \"core.https_address\": \"192.168.43.157:8443\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();
         serverConfigRequest.setCoreTrustPassword("lxdpassword1234");
+        serverConfigRequest.setCoreHttpsAddress("192.168.43.157:8443");
 
-        try {
+       try {
 
             final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(patchServerStateCommand, BackgroundOperationResponse.class);
             logger.info("EXPECTED PUT SERVER CONFIG INFOR RESPONSE >>>>>>>> " + expectedBackgroundOperationResponse);
