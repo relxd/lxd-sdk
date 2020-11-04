@@ -17,6 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
@@ -36,7 +37,7 @@ import static org.mockito.Mockito.spy;
 public class SupportedApisApiTest {
 
     private final SupportedApisApi api = new SupportedApisApi();
-    private final ApiClient apiClient = new ApiClient();
+    private final RelxdApiClient apiClient = new RelxdApiClient();
     private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
     private LinuxCmdService linuxCmdService;
     private String unixSocketPath;

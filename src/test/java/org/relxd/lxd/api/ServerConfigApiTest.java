@@ -17,6 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ServerConfig;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -34,11 +35,10 @@ import static org.mockito.Mockito.spy;
  */
 public class ServerConfigApiTest {
 
-
     private ServerConfigApi api;
     private LinuxCmdService linuxCmdService;
     private Logger logger;
-    private ApiClient apiClient;
+    private RelxdApiClient apiClient;
     private String unixSocketPath;
 
     @Before
@@ -47,7 +47,7 @@ public class ServerConfigApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
         api = new ServerConfigApi();
-        apiClient = new ApiClient();
+        apiClient = new RelxdApiClient();
         unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 
@@ -66,23 +66,23 @@ public class ServerConfigApiTest {
         String filter = null;
         final String getServerStateCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0";
 
-        //try
-        //{
+        try
+        {
 
-            //final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getServerStateCommand, BackgroundOperationResponse.class);
-            //logger.info("Expected Server Information Response >>>>>>>>>> " + expectedBackgroundOperationResponse);
+            final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getServerStateCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Server Information Response >>>>>>>>>> " + expectedBackgroundOperationResponse);
 
             BackgroundOperationResponse actualBackgroundOperationResponse = api.getServerState(recursion, filter);
             logger.info("Actual Server Information Response >>>>>>>>>> " + actualBackgroundOperationResponse);
 
             assertEquals(actualBackgroundOperationResponse.getStatusCode(),Integer.valueOf(200));
-            //assertEquals(expectedBackgroundOperationResponse.getStatusCode(),Integer.valueOf(200));
-            //assertEquals(actualBackgroundOperationResponse, expectedBackgroundOperationResponse);
+            assertEquals(expectedBackgroundOperationResponse.getStatusCode(),Integer.valueOf(200));
+            assertEquals(actualBackgroundOperationResponse, expectedBackgroundOperationResponse);
 
-        //} catch (IOException | InterruptedException e)
-        //{
-          //  e.printStackTrace();
-        //}
+        } catch (IOException | InterruptedException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 
@@ -128,11 +128,12 @@ public class ServerConfigApiTest {
      */
     @Test
     public void putServerStateTest() throws ApiException {
-        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
+        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\", \"core.https_address\": \"192.168.43.157:8443\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();
         serverConfigRequest.setCoreTrustPassword("lxdpassword1234");
+        serverConfigRequest.setCoreHttpsAddress("192.168.43.157:8443");
 
-        try {
+       try {
 
             final BackgroundOperationResponse expectedBackgroundOperationResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(patchServerStateCommand, BackgroundOperationResponse.class);
             logger.info("EXPECTED PUT SERVER CONFIG INFOR RESPONSE >>>>>>>> " + expectedBackgroundOperationResponse);

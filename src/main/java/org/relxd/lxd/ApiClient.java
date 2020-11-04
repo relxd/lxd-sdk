@@ -73,27 +73,6 @@ public class ApiClient {
 
     private HttpLoggingInterceptor loggingInterceptor;
 
-    private Logger logger;
-
-    private JavaKeyStoreService javaKeyStoreService;
-
-    private String javaKeyStoreFilePath;
-
-    private String guestKeyStoreFilePath;
-
-    private String javaKeyStorePassword;
-
-    private String guestKeyStorePassword;
-
-    private String authenticationType;
-
-
-
-    private static final String GUEST = "Guest";
-
-    private static final String TRUSTED = "Trusted";
-
-    private static final String NOT_TRUSTED = "Not Trusted";
 
     /*
      * Basic constructor for ApiClient
@@ -106,43 +85,16 @@ public class ApiClient {
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
 
-        logger = LoggerFactory.getLogger(ApiClient.class);
-
-        basePath = this.getApplicationProperties().getProperty("base.url");
-        javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
-        javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
-        javaKeyStoreService = new JavaKeyStoreServiceImpl();
-        authenticationType = this.getApplicationProperties().getProperty("authentication.type");
-        guestKeyStoreFilePath = this.getApplicationProperties().getProperty("java.guest.keystore.path");
-        guestKeyStorePassword = this.getApplicationProperties().getProperty("java.guest.keystore.password");
-
-
         initHttpClient();
 
-    }
+        final RelxdApiClient relxdApiClient = new RelxdApiClient();
+        relxdApiClient.initHttpClient();
 
-    public Properties getApplicationProperties() {
-
-        final String PROPERTIES_FILE_LOCATION = "application.properties";
-
-        Properties props = new Properties();
-
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE_LOCATION);
-
-        try {
-
-            if (inputStream != null) {
-                props.load(inputStream);
-            } else {
-                throw new FileNotFoundException("property file '" + PROPERTIES_FILE_LOCATION + "' not found in the classpath");
-            }
-
-        }catch (IOException ex){
-            throw new RuntimeException(ex);
-        }
-        return props;
+        basePath = relxdApiClient.getBasePath();
+        httpClient = relxdApiClient.getHttpClient();
 
     }
+
 
     /*
      * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
@@ -205,57 +157,6 @@ public class ApiClient {
 
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
-        if ((basePath != null) && (basePath.contains("https"))) {
-
-            try {
-                KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
-
-                SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-                TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-                trustManagerFactory.init(keyStore);
-
-                KeyManager[] keyManagers = null;
-
-                if (TRUSTED.equalsIgnoreCase(authenticationType))
-                {
-                    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-                    keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
-
-                    keyManagers  = keyManagerFactory.getKeyManagers();
-
-                }else if (GUEST.equalsIgnoreCase(authenticationType)){
-
-                    keyStore = javaKeyStoreService.getKeyStore(guestKeyStoreFilePath, guestKeyStorePassword);
-
-                    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-                    keyManagerFactory.init(keyStore, guestKeyStorePassword.toCharArray());
-
-                    keyManagers  = keyManagerFactory.getKeyManagers();
-                }
-
-                TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
-                if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
-                    throw new IllegalStateException("Unexpected default trust managers:"
-                            + Arrays.toString(trustManagers));
-                }
-                X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
-
-                sslContext.init(keyManagers, trustManagerFactory.getTrustManagers(), new SecureRandom());
-                builder.sslSocketFactory(sslContext.getSocketFactory(), trustManager);
-
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            builder.hostnameVerifier(new HostnameVerifier() {
-                @Override
-                public boolean verify(String hostname, SSLSession session) {
-                    return true;
-                }
-            });
-
-        }
 
         builder.addNetworkInterceptor(getProgressInterceptor());
         for (Interceptor interceptor: interceptors) {
