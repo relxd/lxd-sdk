@@ -20,18 +20,15 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.relxd.lxd.auth.*;
-import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
-import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
 import javax.net.ssl.*;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URLConnection;
@@ -42,6 +39,7 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.util.*;
 import java.util.Map.Entry;
@@ -49,9 +47,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.relxd.lxd.auth.Authentication;
+import org.relxd.lxd.auth.HttpBasicAuth;
+import org.relxd.lxd.auth.HttpBearerAuth;
+import org.relxd.lxd.auth.ApiKeyAuth;
+
 public class ApiClient {
 
-    private String basePath;
+    private String basePath = "http://localhost:2375";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -73,83 +76,23 @@ public class ApiClient {
 
     private HttpLoggingInterceptor loggingInterceptor;
 
-
     /*
      * Basic constructor for ApiClient
      */
     public ApiClient() {
         init();
+        initHttpClient();
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("authentication", new OAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
-
-        initHttpClient();
 
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
         relxdApiClient.initHttpClient();
 
         basePath = relxdApiClient.getBasePath();
         httpClient = relxdApiClient.getHttpClient();
-
     }
-
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
-     */
-    public ApiClient(String clientId) {
-        this(clientId, null, null);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID and additional parameters
-     */
-    public ApiClient(String clientId, Map<String, String> parameters) {
-        this(clientId, null, parameters);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID, secret, and additional parameters
-     */
-    public ApiClient(String clientId, String clientSecret, Map<String, String> parameters) {
-        this(null, clientId, clientSecret, parameters);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with base path, client ID, secret, and additional parameters
-     */
-    public ApiClient(String basePath, String clientId, String clientSecret, Map<String, String> parameters) {
-        init();
-        if (basePath != null) {
-            this.basePath = basePath;
-        }
-
-        String tokenUrl = "";
-        if (!"".equals(tokenUrl) && !URI.create(tokenUrl).isAbsolute()) {
-            URI uri = URI.create(getBasePath());
-            tokenUrl = uri.getScheme() + ":" +
-                (uri.getAuthority() != null ? "//" + uri.getAuthority() : "") +
-                tokenUrl;
-            if (!URI.create(tokenUrl).isAbsolute()) {
-                throw new IllegalArgumentException("OAuth2 token URL must be an absolute URL");
-            }
-        }
-        RetryingOAuth retryingOAuth = new RetryingOAuth(tokenUrl, clientId, OAuthFlow.implicit, clientSecret, parameters);
-        authentications.put(
-                "authentication",
-                retryingOAuth
-        );
-        initHttpClient(Collections.<Interceptor>singletonList(retryingOAuth));
-        // Setup authentications (key: authentication name, value: authentication).
-
-        // Prevent the authentications from being modified.
-        authentications = Collections.unmodifiableMap(authentications);
-    }
-
-
-
 
     private void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
@@ -157,15 +100,12 @@ public class ApiClient {
 
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
         builder.addNetworkInterceptor(getProgressInterceptor());
         for (Interceptor interceptor: interceptors) {
             builder.addInterceptor(interceptor);
         }
 
-
         httpClient = builder.build();
-
     }
 
     private void init() {
@@ -416,12 +356,6 @@ public class ApiClient {
      * @param accessToken Access token
      */
     public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
-        }
         throw new RuntimeException("No OAuth2 authentication configured!");
     }
 
@@ -579,20 +513,6 @@ public class ApiClient {
         return this;
     }
 
-    /**
-     * Helper method to configure the token endpoint of the first oauth found in the apiAuthorizations (there should be only one)
-     *
-     * @return Token request builder
-     */
-    public TokenRequestBuilder getTokenEndPoint() {
-        for (Authentication apiAuth : authentications.values()) {
-            if (apiAuth instanceof RetryingOAuth) {
-                RetryingOAuth retryingOAuth = (RetryingOAuth) apiAuth;
-                return retryingOAuth.getTokenRequestBuilder();
-            }
-        }
-        return null;
-    }
 
     /**
      * Format the given parameter object into string.

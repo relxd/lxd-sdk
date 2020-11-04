@@ -11,13 +11,14 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.api.ClusterApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
 import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
@@ -160,9 +161,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    @Order(1)
+    @Order(3)
     public void postClusterMembersByNameTest() {
-        String name = "another-server";
+        String name = "lxd1";
         UpdateClusterMembersByNameRequest request = new UpdateClusterMembersByNameRequest();
         request.serverName("new-server");
 
@@ -185,7 +186,7 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    @Order(3)
+    @Order(1)
     public void putClusterTest() {
         UpdateClusterRequest request = new UpdateClusterRequest();
         request.setServerName("lxd1");

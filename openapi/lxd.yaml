@@ -100,9 +100,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
       tags:
         - supported-apis
       x-codegen-request-body-name: body
@@ -164,11 +161,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - untrusted
-            - trusted
       tags:
         - server-config
       x-codegen-request-body-name: body
@@ -210,9 +202,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - server-config
       x-codegen-request-body-name: body
@@ -255,9 +244,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - server-config
       x-codegen-request-body-name: body
@@ -320,9 +306,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -364,10 +347,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
-            - untrusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -414,9 +393,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -458,9 +434,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -511,9 +484,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -565,9 +535,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - certificates
       x-codegen-request-body-name: body
@@ -630,9 +597,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -679,9 +643,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -728,9 +689,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -796,9 +754,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -849,9 +804,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -916,9 +868,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -969,9 +918,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1011,9 +957,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1079,9 +1022,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1128,9 +1068,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1179,9 +1116,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1237,9 +1171,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1350,9 +1281,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1457,9 +1385,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1530,9 +1455,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1583,9 +1505,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1640,9 +1559,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1716,9 +1632,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1784,9 +1697,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1846,9 +1756,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1916,9 +1823,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -1969,9 +1873,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2044,9 +1945,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2100,9 +1998,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2179,9 +2074,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2248,9 +2140,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2301,9 +2190,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2358,9 +2244,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2437,9 +2320,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2499,9 +2379,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2562,9 +2439,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2635,9 +2509,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2688,9 +2559,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2745,9 +2613,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2821,9 +2686,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2882,9 +2744,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -2960,9 +2819,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - instances
       x-codegen-request-body-name: body
@@ -3033,9 +2889,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - events
       x-codegen-request-body-name: body
@@ -3097,10 +2950,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3174,9 +3023,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3223,9 +3069,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3300,10 +3143,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3354,9 +3193,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3408,9 +3244,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3487,10 +3320,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3541,9 +3370,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3614,9 +3440,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3670,10 +3493,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3736,10 +3555,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3781,9 +3596,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3830,9 +3642,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3898,10 +3707,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -3952,9 +3757,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -4015,9 +3817,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -4069,9 +3868,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - images
       x-codegen-request-body-name: body
@@ -4134,9 +3930,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4178,9 +3971,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4227,9 +4017,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4295,9 +4082,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4348,9 +4132,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4411,9 +4192,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4465,9 +4243,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4535,9 +4310,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - networks
       x-codegen-request-body-name: body
@@ -4596,9 +4368,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - operations
       x-codegen-request-body-name: body
@@ -4645,9 +4414,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - operations
       x-codegen-request-body-name: body
@@ -4713,9 +4479,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - operations
       x-codegen-request-body-name: body
@@ -4791,9 +4554,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - operations
       x-codegen-request-body-name: body
@@ -4875,10 +4635,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - guest
-            - trusted
       tags:
         - operations
       x-codegen-request-body-name: body
@@ -4940,9 +4696,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -4984,9 +4737,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5033,9 +4783,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5101,9 +4848,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5154,9 +4898,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5217,9 +4958,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5271,9 +5009,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - profiles
       x-codegen-request-body-name: body
@@ -5336,9 +5071,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5380,9 +5112,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5438,9 +5167,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5506,9 +5232,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5559,9 +5282,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5631,9 +5351,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5685,9 +5402,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - projects
       x-codegen-request-body-name: body
@@ -5750,9 +5464,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -5794,9 +5505,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -5852,9 +5560,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -5920,9 +5625,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -5973,9 +5675,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6027,9 +5726,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6097,9 +5793,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6169,9 +5862,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6218,9 +5908,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6278,9 +5965,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6343,9 +6027,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6429,9 +6110,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6498,9 +6176,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6566,9 +6241,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6632,9 +6304,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6721,9 +6390,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6790,9 +6456,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6855,9 +6518,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -6939,9 +6599,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -7008,9 +6665,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -7075,9 +6729,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - storage-pools
       x-codegen-request-body-name: body
@@ -7137,9 +6788,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - resources
       x-codegen-request-body-name: body
@@ -7198,9 +6846,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -7238,9 +6883,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -7303,9 +6945,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -7359,9 +6998,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -7427,9 +7063,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -7480,9 +7113,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: A standard error response
-      security:
-        - authentication:
-            - trusted
       tags:
         - cluster
       x-codegen-request-body-name: body
@@ -11613,13 +11243,3 @@ components:
           type: integer
         error:
           type: string
-  securitySchemes:
-    authentication:
-      flows:
-        implicit:
-          authorizationUrl: https://example.com/oauth/authorize
-          scopes:
-            guest: access.....
-            untrusted: access.....
-            trusted: access.....
-      type: oauth2

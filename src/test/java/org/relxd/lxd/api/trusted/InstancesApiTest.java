@@ -11,15 +11,15 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
-import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
+import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;

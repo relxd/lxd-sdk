@@ -11,13 +11,13 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.guest;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.RelxdApiClient;
+import org.relxd.lxd.api.SupportedApisApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;

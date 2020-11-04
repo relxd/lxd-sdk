@@ -11,15 +11,15 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
-import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
+import org.relxd.lxd.api.StoragePoolsApi;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
@@ -608,7 +608,7 @@ public class StoragePoolsApiTest {
         diskAndLvmConfig.setVolumeSize("10737418240");
         diskAndLvmConfig.setVolumeBlockFilesystem("xfs");
         diskAndLvmConfig.setVolumeBlockMountOptions("discard");
-        diskAndLvmConfig.setSize("15032385536");
+        //diskAndLvmConfig.setSize("15032385536");
         diskAndLvmConfig.setSource("pool1");
 
         UpdateStoragePoolsByNameRequest request = new UpdateStoragePoolsByNameRequest();

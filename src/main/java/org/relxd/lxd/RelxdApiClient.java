@@ -198,6 +198,7 @@ public class RelxdApiClient {
                     throw new IllegalStateException("Unexpected default trust managers:"
                             + Arrays.toString(trustManagers));
                 }
+
                 X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
 
                 sslContext.init(keyManagers, trustManagerFactory.getTrustManagers(), new SecureRandom());
