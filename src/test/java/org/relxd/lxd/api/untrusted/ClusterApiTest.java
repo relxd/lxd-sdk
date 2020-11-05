@@ -11,70 +11,70 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.untrusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.api.ClusterApi;
+import org.relxd.lxd.api.trusted.InstancesApiTest;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.relxd.lxd.model.UpdateClusterMembersByNameRequest;
+import org.relxd.lxd.model.UpdateClusterRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.math.BigDecimal;
 
 import static junit.framework.TestCase.assertEquals;
 
 /**
- * API tests for EventsApi
+ * API tests for ClusterApi
  */
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class ClusterApiTest {
 
-public class EventsApiTest {
-
-    private EventsApi api;
+    private ClusterApi api;
     private Logger logger;
 
-    @Before
+    @BeforeEach
     public void setup() {
 
-        api = new EventsApi();
+        api = new ClusterApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     
     /**
      * 
      *
-     * Websocket upgrade
+     * Information about a cluster (such as networks and storage pools)
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getEventsTest() throws ApiException {
-        String type = "logging";
+    @Order(2)
+    public void getClusterTest() {
         Integer recursion = null;
         String filter = null;
 
         try {
-            BackgroundOperationResponse response = api.getEvents(type, recursion, filter);
-            logger.info("Get Events Response >>>>>> {}", response);
+            BackgroundOperationResponse response = api.getCluster(recursion, filter);
+            logger.info("Get Cluster Response >>>>>> {}", response);
 
             assertEquals(Integer.valueOf(200), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
+
+
     }
 
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
-        logger.info("ERROR >>>> " + e);
         ErrorResponse errorResponse = new ErrorResponse();
         try {
             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);

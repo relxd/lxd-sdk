@@ -28,7 +28,6 @@ Remove a network
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -36,10 +35,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -69,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -97,7 +92,6 @@ List of networks
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -105,10 +99,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
@@ -140,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -168,7 +158,6 @@ Information about a network
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -176,10 +165,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -213,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -241,7 +226,6 @@ Network state
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -249,10 +233,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -286,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -314,7 +294,6 @@ Update the network information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -322,10 +301,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -357,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -385,7 +360,6 @@ Define a new network
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -393,10 +367,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     CreateNetworksRequest body = new CreateNetworksRequest(); // CreateNetworksRequest | Define a new network
@@ -426,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -454,7 +424,6 @@ Rename a network
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -462,10 +431,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -497,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -526,7 +491,6 @@ Replace the network information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.NetworksApi;
 
@@ -534,10 +498,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     NetworksApi apiInstance = new NetworksApi(defaultClient);
     String name = "name_example"; // String | Name of the network
@@ -569,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

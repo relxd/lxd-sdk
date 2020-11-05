@@ -11,7 +11,7 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
@@ -22,6 +22,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.api.ProjectsApi;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -41,7 +41,6 @@ Remove a storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -49,10 +48,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -82,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -111,7 +106,6 @@ Delete a storage volume of a given type on a given storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -119,10 +113,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -156,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -184,7 +174,6 @@ Remove the volume snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -192,10 +181,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -229,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -257,7 +242,6 @@ List of storage pools
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -265,10 +249,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
@@ -300,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -328,7 +308,6 @@ Information about a storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -336,10 +315,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -373,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -401,7 +376,6 @@ Information about the resources available to the storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -409,10 +383,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Profiles name
@@ -446,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -474,7 +444,6 @@ List of storage volumes
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -482,10 +451,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -519,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -547,7 +512,6 @@ Information about a storage volume of a given type on a storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -555,10 +519,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -596,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -624,7 +584,6 @@ List of volume snapshots
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -632,10 +591,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -673,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -701,7 +656,6 @@ Snapshot information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -709,10 +663,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -750,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -778,7 +728,6 @@ Update the storage pool information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -786,10 +735,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -821,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -849,7 +794,6 @@ Update the storage volume information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -857,10 +801,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -896,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -924,7 +864,6 @@ Define a new storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -932,10 +871,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     CreateStoragePoolsRequest body = new CreateStoragePoolsRequest(); // CreateStoragePoolsRequest | Define a new storage pool
@@ -965,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -993,7 +928,6 @@ Create a new storage volume on a given storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1001,10 +935,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1036,7 +966,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1064,7 +994,6 @@ Create a new storage volume of a particular type on a given storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1072,10 +1001,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1109,7 +1034,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1137,7 +1062,6 @@ Rename a storage volume on a given storage pool
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1145,10 +1069,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1184,7 +1104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1212,7 +1132,6 @@ Create a new volume snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1220,10 +1139,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1259,7 +1174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1287,7 +1202,6 @@ Used to rename the volume snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1295,10 +1209,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1334,7 +1244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1362,7 +1272,6 @@ Replace the storage pool information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1370,10 +1279,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1405,7 +1310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1433,7 +1338,6 @@ Replace the storage volume information or restore from snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1441,10 +1345,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1480,7 +1380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1508,7 +1408,6 @@ Volume snapshot information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.StoragePoolsApi;
 
@@ -1516,10 +1415,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     StoragePoolsApi apiInstance = new StoragePoolsApi(defaultClient);
     String pool = "pool_example"; // String | Storage pool name
@@ -1555,7 +1450,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

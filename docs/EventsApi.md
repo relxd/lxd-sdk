@@ -21,7 +21,6 @@ Websocket upgrade
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.EventsApi;
 
@@ -29,10 +28,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     EventsApi apiInstance = new EventsApi(defaultClient);
     String type = "type_example"; // String | Type
@@ -66,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

@@ -57,7 +57,6 @@ Remove the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -65,10 +64,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -98,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,7 +121,6 @@ Remove the backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -134,10 +128,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -169,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -197,7 +187,6 @@ Empty the instance&#39;s console log
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -205,10 +194,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -237,7 +222,7 @@ null (empty response body)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -265,7 +250,6 @@ Delete a file in the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -273,10 +257,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -308,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -336,7 +316,6 @@ Delete a particular log file.
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -344,10 +323,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -379,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -407,7 +382,6 @@ Delete an instance template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -415,10 +389,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -450,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -478,7 +448,6 @@ Remove the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -486,10 +455,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -521,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -549,7 +514,6 @@ Return a list of URLs for instances this server hosts
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -557,10 +521,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
@@ -592,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -620,7 +580,6 @@ Get Instance information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -628,10 +587,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -665,7 +620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -693,7 +648,6 @@ List of backups for the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -701,10 +655,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -738,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -766,7 +716,6 @@ Backup information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -774,10 +723,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -813,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -841,7 +786,6 @@ Fetch the backup tarball
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -849,10 +793,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -888,7 +828,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -916,7 +856,6 @@ Returns the contents of the instance&#39;s console log
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -924,10 +863,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -961,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -989,7 +924,6 @@ Download a file or directory listing from the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -997,10 +931,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1044,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1072,7 +1002,6 @@ Returns a list of the log files available for this instance. Note that this work
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1080,10 +1009,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1117,7 +1042,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1145,7 +1070,6 @@ Returns the contents of a particular log file.
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1153,10 +1077,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1192,7 +1112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1220,7 +1140,6 @@ Instance metadata
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1228,10 +1147,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1265,7 +1180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1293,7 +1208,6 @@ List instance templates
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1301,10 +1215,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1340,7 +1250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1368,7 +1278,6 @@ List of snapshots
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1376,10 +1285,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1413,7 +1318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1441,7 +1346,6 @@ Snapshot information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1449,10 +1353,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1488,7 +1388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1516,7 +1416,6 @@ Current state
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1524,10 +1423,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1561,7 +1456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1589,7 +1484,6 @@ Update instance configuration
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1597,10 +1491,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1632,7 +1522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1660,7 +1550,6 @@ Create a new instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1668,10 +1557,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String target = "target_example"; // String | ?target=<member>
@@ -1703,7 +1588,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1731,7 +1616,6 @@ Used to rename/migrate the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1739,10 +1623,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1776,7 +1656,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1805,7 +1685,6 @@ Create a new backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1813,10 +1692,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1848,7 +1723,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1876,7 +1751,6 @@ Used to rename the backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1884,10 +1758,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1921,7 +1791,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1949,7 +1819,6 @@ Attach to an instance&#39;s console devices
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -1957,10 +1826,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1992,7 +1857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2020,7 +1885,6 @@ Run a remote command
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2028,10 +1892,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2063,7 +1923,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2091,7 +1951,6 @@ Upload a file to the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2099,10 +1958,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2146,7 +2001,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2174,7 +2029,6 @@ Add a container template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2182,10 +2036,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2219,7 +2069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2247,7 +2097,6 @@ Create a new snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2255,10 +2104,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2290,7 +2135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2318,7 +2163,6 @@ Used to rename/migrate the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2326,10 +2170,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2363,7 +2203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2392,7 +2232,6 @@ Replaces instance configuration or restore snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2400,10 +2239,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2435,7 +2270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2463,7 +2298,6 @@ Replaces instance metadata
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2471,10 +2305,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2506,7 +2336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2534,7 +2364,6 @@ Replace content of a template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2542,10 +2371,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2579,7 +2404,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2607,7 +2432,6 @@ Update the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2615,10 +2439,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2652,7 +2472,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2680,7 +2500,6 @@ Change the instance state
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
@@ -2688,10 +2507,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2723,7 +2538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

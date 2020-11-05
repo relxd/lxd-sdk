@@ -11,13 +11,13 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.RelxdApiClient;
+import org.relxd.lxd.api.ServerConfigApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ServerConfig;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -60,6 +60,7 @@ public class ServerConfigApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+
     @Test
     public void getServerStateTest() throws ApiException {
         Integer recursion = null;

@@ -26,7 +26,6 @@ Remove a trusted certificate
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -34,10 +33,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
@@ -67,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,7 +90,6 @@ Return a list of trusted certificates
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -103,10 +97,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
@@ -138,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -166,7 +156,6 @@ Return a trusted certificate information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -174,10 +163,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
@@ -207,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -235,7 +220,6 @@ Updates the certificate properties
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -243,10 +227,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
@@ -278,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -306,7 +286,6 @@ Add a new trusted certificate
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -314,10 +293,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     CreateCertificatesRequest body = new CreateCertificatesRequest(); // CreateCertificatesRequest | Add a new trusted certificate
@@ -347,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -375,7 +350,6 @@ Replaces the certificate properties
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.CertificatesApi;
 
@@ -383,10 +357,6 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:2375");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     CertificatesApi apiInstance = new CertificatesApi(defaultClient);
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
@@ -418,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

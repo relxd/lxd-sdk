@@ -11,13 +11,14 @@
  */
 
 
-package org.relxd.lxd.api;
+package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.api.NetworksApi;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +57,7 @@ public class NetworksApiTest {
     @Test
     @Order(8)
     public void deleteNetworksByNameTest() {
-        String name = "myNewNetwork";
+        String name = "networkRename";
 
         try {
             BackgroundOperationResponse response = api.deleteNetworksByName(name);
@@ -102,9 +103,9 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    @Order(3)
+    @Order(4)
     public void getNetworksByNameTest() {
-        String name = "myNewNetwork";
+        String name = "networkRename";
         Integer recursion = null;
         String filter = null;
 
@@ -129,7 +130,7 @@ public class NetworksApiTest {
     @Test
     @Order(5)
     public void getNetworksByNameStateTest() {
-        String name = "myNewNetwork";
+        String name = "networkRename";
         Integer recursion = null;
         String filter = null;
 
@@ -154,7 +155,7 @@ public class NetworksApiTest {
     @Test
     @Order(6)
     public void patchNetworksByNameTest() throws ApiException {
-        String name = "myNewNetwork";
+        String name = "networkRename";
 
         DNSModeConfig dnsModeConfig = new DNSModeConfig();
         dnsModeConfig.setDnsMode("dynamic");
@@ -214,11 +215,11 @@ public class NetworksApiTest {
      *          if the Api call fails
      */
     @Test
-    @Order(4)
+    @Order(3)
     public void postNetworksByNameTest() throws ApiException {
         String name = "myNewNetwork";
         CreateNetworksByNameRequest request = new CreateNetworksByNameRequest();
-        request.setName("myNewNetwork");
+        request.setName("networkRename");
 
         try {
             BackgroundOperationResponse response = api.postNetworksByName(name, request);
@@ -241,7 +242,7 @@ public class NetworksApiTest {
     @Order(7)
     public void putNetworksByNameTest() throws ApiException {
 
-        String name = "myNewNetwork";
+        String name = "networkRename";
         UpdateNetworksByNameRequest request = new UpdateNetworksByNameRequest();
         request.setBridgeDriver("openvswitch");
         request.setIpv4Address("10.0.3.1/24");
