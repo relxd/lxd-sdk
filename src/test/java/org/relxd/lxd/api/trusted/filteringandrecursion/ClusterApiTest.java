@@ -58,7 +58,7 @@ public class ClusterApiTest {
     @Test
     @Order(2)
     public void getClusterTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -84,7 +84,7 @@ public class ClusterApiTest {
     @Test
     @Order(4)
     public void getClusterMembersTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -110,7 +110,7 @@ public class ClusterApiTest {
     @Order(5)
     public void getClusterMembersByNameTest() {
         String name = "new-server";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

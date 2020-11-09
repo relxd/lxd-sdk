@@ -52,7 +52,7 @@ public class ProfilesApiTest {
     @Order(2)
     public void getProfilesTest(){
 
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -79,7 +79,7 @@ public class ProfilesApiTest {
     @Order(4)
     public void getProfilesByNameTest() {
         String name = "profile1rename";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

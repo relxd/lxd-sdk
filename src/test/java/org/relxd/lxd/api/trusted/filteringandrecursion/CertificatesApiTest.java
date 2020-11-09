@@ -47,7 +47,7 @@ public class CertificatesApiTest {
      */
     @Test
     public void getCertificatesTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

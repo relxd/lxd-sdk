@@ -142,10 +142,9 @@ public class ImagesApiTest {
 
         Integer recursion = null;
         String filter = null;
-
         try {
-            //final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
-            //logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
+            final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
+            logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
             BackgroundOperationResponse actualGetImagesResponse = api.getImages(recursion, filter);
             logger.info("Actual Get Images Response >>>>> {}", actualGetImagesResponse);
 
@@ -156,9 +155,9 @@ public class ImagesApiTest {
                 logger.info("Metadata >>>>>>> {}", getImageResponseUrls.get(0));
                 }
 
-            //assertEquals(actualGetImagesResponse,expectedGetImagesResponse);
+            assertEquals(actualGetImagesResponse,expectedGetImagesResponse);
 
-        //}catch (IOException | InterruptedException e){
+        }catch (IOException | InterruptedException e){
 
         }
         catch (ApiException ex){
@@ -460,7 +459,7 @@ public class ImagesApiTest {
         properties3.setOs("ubuntu");
 
         CreateImagesRequest request = new CreateImagesRequest();
-        request.setFilename("ubuntu20.4");
+        request.setFilename("another-ubuntu");
         request.setSource(source10);
         request.setProperties(properties3);
         //request.setCompressionAlgorithm("");

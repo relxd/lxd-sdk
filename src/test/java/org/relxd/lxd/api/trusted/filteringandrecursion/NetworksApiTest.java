@@ -53,8 +53,8 @@ public class NetworksApiTest {
     @Order(2)
     public void getNetworksTest() {
 
-        Integer recursion = null;
-        String filter = null;
+        Integer recursion = 1;
+        String filter = "name eq lxdbr0";
 
         try {
             BackgroundOperationResponse response = api.getNetworks(recursion, filter);
@@ -78,7 +78,7 @@ public class NetworksApiTest {
     @Order(4)
     public void getNetworksByNameTest() {
         String name = "networkRename";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -103,7 +103,7 @@ public class NetworksApiTest {
     @Order(5)
     public void getNetworksByNameStateTest() {
         String name = "networkRename";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

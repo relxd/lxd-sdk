@@ -61,7 +61,7 @@ public class SupportedApisApiTest {
     public void getApiListTest() throws ApiException {
 
         final String getApiListCommand = "curl -s --unix-socket " + unixSocketPath + " a/";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try

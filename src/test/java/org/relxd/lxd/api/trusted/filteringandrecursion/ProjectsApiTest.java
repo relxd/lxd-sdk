@@ -51,7 +51,7 @@ public class ProjectsApiTest {
     @Test
     @Order(2)
     public void getProjectsTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

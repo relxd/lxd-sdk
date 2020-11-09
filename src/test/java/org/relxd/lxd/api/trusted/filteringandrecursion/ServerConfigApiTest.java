@@ -63,7 +63,7 @@ public class ServerConfigApiTest {
 
     @Test
     public void getServerStateTest() throws ApiException {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
         final String getServerStateCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0";
 

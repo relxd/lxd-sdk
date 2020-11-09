@@ -53,7 +53,7 @@ public class EventsApiTest {
     @Test
     public void getEventsTest() throws ApiException {
         String type = "logging";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

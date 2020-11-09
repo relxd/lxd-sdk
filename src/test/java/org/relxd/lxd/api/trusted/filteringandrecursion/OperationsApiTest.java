@@ -55,7 +55,7 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -81,7 +81,7 @@ public class OperationsApiTest {
     @Test
     public void getOperationsUUIDTest() throws ApiException {
         String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -105,7 +105,7 @@ public class OperationsApiTest {
     @Test
     public void getOperationsUUIDWaitTest() {
         String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
         BigDecimal timeout = new BigDecimal(10);
 
@@ -132,7 +132,7 @@ public class OperationsApiTest {
     public void getOperationsUUIDWebsocketTest() throws ApiException {
         String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
         String secret = "secret";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

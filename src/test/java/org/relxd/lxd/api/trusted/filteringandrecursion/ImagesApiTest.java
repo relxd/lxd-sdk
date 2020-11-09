@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package org.relxd.lxd.api.trusted.filteringandrecursion;
 
 import com.google.gson.JsonSyntaxException;
@@ -61,6 +60,69 @@ public class ImagesApiTest {
         apiClient = new RelxdApiClient();
         unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
+
+    /**
+     *
+     *
+     * Remove an alias
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+
+    @Test
+    @Order(16)
+    public void deleteImagesAliasesByNameTest(){
+        getImagesAliasesByNameTest();
+        String name = "";
+        if (imagesAliasesByNameResponse != null)
+            name = imagesAliasesByNameResponse.getName();
+
+
+        try {
+            BackgroundOperationResponse response = api.deleteImagesAliasesByName(name);
+            logger.info("DELETE IMAGES ALIASES BY NAME RESPONSE >>>>>  {}", response);
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+
+    /**
+     *
+     *
+     * Remove an image
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    @Order(17)
+    public void deleteImagesFingerprintTest() {
+        getImagesTest();
+        String[] splitUrl;
+        String fingerprint = null;
+
+        if (getImageResponseUrls != null) {
+
+            for (String imageUrl: getImageResponseUrls) {
+                splitUrl = imageUrl.split("/");
+                logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
+                fingerprint = splitUrl[3];
+
+
+                try {
+                    BackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
+                    logger.info("DELETE IMAGES BY FINGERPRINT RESPONSE >>>> {}", response);
+                } catch (ApiException ex) {
+                    catchApiException(ex);
+                }
+
+            }
+        }
+
+    }
     
     /**
      * 
@@ -74,25 +136,34 @@ public class ImagesApiTest {
     @Order(2)
     public void getImagesTest() {
 
-        final String getImagesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images";
-
-        Integer recursion = null;
-        String filter = "?filter=properties.architecture eq amd64";
+        Integer recursion = 1;
+        String filter = "properties.os eq ubuntu";
+        //final String getImagesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images?filter=properties.os eq ubuntu";
 
         try {
-            //final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
-            //logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
+            //final BackgroundOperationResponse expectedGetImagesResponse;
+            //try {
+              //  expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
+                //logger.info("Expected Get Images Response >>>>>>>>>> " + expectedGetImagesResponse);
+            //} catch (IOException e) {
+              //  e.printStackTrace();
+            //} catch (InterruptedException e) {
+             //   e.printStackTrace();
+            //}
+
             BackgroundOperationResponse actualGetImagesResponse = api.getImages(recursion, filter);
             logger.info("Actual Get Images Response >>>>> {}", actualGetImagesResponse);
 
-            if (actualGetImagesResponse != null){
-                getImageResponseUrls = (List<String>) actualGetImagesResponse.getMetadata();
+            if (actualGetImagesResponse != null) {
+                final BackgroundOperationResponse images = api.getImages(0, null);
+                getImageResponseUrls = (List<String>) images.getMetadata();
 
-                if(getImageResponseUrls.size()>0)
-                logger.info("Metadata >>>>>>> {}", getImageResponseUrls.get(0));
-                }
+                if (getImageResponseUrls.size() > 0)
+                    logger.info("Metadata >>>>>>> {}", getImageResponseUrls.get(0));
 
-            //assertEquals(actualGetImagesResponse,expectedGetImagesResponse);
+                assertEquals(Integer.valueOf(200), actualGetImagesResponse.getStatusCode());
+
+            }
 
         //}catch (IOException | InterruptedException e){
 
@@ -113,29 +184,31 @@ public class ImagesApiTest {
     @Test
     @Order(4)
     public void getImagesAliasesTest() {
-        final String getImageAliasesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images/aliases";
+        final String getImageAliasesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images/aliases?recursion=1&filter=name eq my-first-alias";
 
-        Integer recursion = null;
-        String filter = null;
+        Integer recursion = 1;
+        String filter = "name eq my-first-alias";
 
         try {
-            final BackgroundOperationResponse expectedGetImageAliasesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImageAliasesCommand, BackgroundOperationResponse.class);
-            logger.info("Expected Get Image Aliases Response >>>>>>>>>> " + expectedGetImageAliasesResponse);
+            //final BackgroundOperationResponse expectedGetImageAliasesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImageAliasesCommand, BackgroundOperationResponse.class);
+            //logger.info("Expected Get Image Aliases Response >>>>>>>>>> " + expectedGetImageAliasesResponse);
             BackgroundOperationResponse actualGetImageAliasesResponse = api.getImagesAliases(recursion, filter);
             logger.info("Actual Get Image Aliases Response >>>>>> {}", actualGetImageAliasesResponse);
 
-            if (actualGetImageAliasesResponse != null){
-                getImageAliasesResponseUrls = (List<String>) actualGetImageAliasesResponse.getMetadata();
+            if (actualGetImageAliasesResponse != null) {
+                final BackgroundOperationResponse imagesAliases = api.getImagesAliases(0, null);
+                getImageAliasesResponseUrls = (List<String>) imagesAliases.getMetadata();
 
                 logger.info("Metadata >>>>>>> {}", getImageAliasesResponseUrls);
+                // }
+
+                assertEquals(Integer.valueOf(200), actualGetImageAliasesResponse.getStatusCode());
             }
 
-            assertEquals(actualGetImageAliasesResponse, expectedGetImageAliasesResponse);
-
-        }catch(IOException | InterruptedException ex){
+        //}catch(IOException | InterruptedException ex){
 
         }catch(ApiException ex){
-            catchApiException(ex);
+          //  catchApiException(ex);
         }
 
     }
@@ -165,8 +238,8 @@ public class ImagesApiTest {
         }
         final String getImageAliasesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images/aliases/" + name;
 
-        Integer recursion = null;
-        String filter = null;
+        Integer recursion = 1;
+        String filter = "description eq This is my alias";
 
         try {
             final BackgroundOperationResponse expectedGetImageAliasesByNameResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImageAliasesCommand, BackgroundOperationResponse.class);
@@ -212,7 +285,7 @@ public class ImagesApiTest {
             logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
             fingerprint = splitUrl[3];
         }
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
         String secret = null;
 
@@ -247,8 +320,8 @@ public class ImagesApiTest {
             fingerprint = splitUrl[3];
         }
 
-        Integer recursion = null;
-        String filter = null;
+        Integer recursion = 1;
+        String filter = "properties.os eq ubuntu";
         String secret = null;
 
         try {
@@ -281,8 +354,8 @@ public class ImagesApiTest {
             logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
             fingerprint = splitUrl[3];
         }
-        Integer recursion = null;
-        String filter = null;
+        Integer recursion = 1;
+        String filter = "properties.os eq ubuntu";
         try {
             BackgroundOperationResponse response = api.getImagesFingerprintRefresh(fingerprint, recursion, filter);
             logger.info("Get Images Fingerprint Refresh Response >>>>> {}", response);

@@ -57,7 +57,84 @@ public class StoragePoolsApiTest {
         apiClient = new RelxdApiClient();
         unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
-    
+
+    @After
+    public void deleteStoragePools(){
+        deleteStoragePoolsByNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameTest();
+        deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest();
+    }
+
+
+    /**
+     *
+     *
+     * Remove a storage pool
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteStoragePoolsByNameTest() {
+        String pool = "pool1";
+
+        try {
+            BackgroundOperationResponse response = api.deleteStoragePoolsByName(pool);
+            logger.info("RESPONSE >>>>>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+
+    /**
+     *
+     *
+     * Delete a storage volume of a given type on a given storage pool
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteStoragePoolsByNameVolumesByTypeNameTest() {
+        String pool = "pool1";
+        String type = "xfs";
+        String name = "pool2";
+
+        try {
+            BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
+            logger.info("RESPONSE >>>>>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+
+        }
+    }
+
+    /**
+     *
+     *
+     * Remove the volume snapshot
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    @Order(19)
+    public void deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameTest() {
+        String pool = "pool1";
+        String type = "xfs";
+        String name = "pool2";
+
+        try {
+            BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
+            logger.info("RESPONSE >>>>>>>>> {}", response);
+            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+
     /**
      * 
      *
@@ -69,25 +146,25 @@ public class StoragePoolsApiTest {
     @Test
     @Order(2)
     public void getStoragePoolsTest() {
-        final String getStoragePoolsCommand = "curl -s --unix-socket "+ unixSocketPath +" a/1.0/storage-pools";
+        //final String getStoragePoolsCommand = "curl -s --unix-socket "+ unixSocketPath +" a/1.0/storage-pools";
 
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try
         {
 
-            final BackgroundOperationResponse expectedGetStoragePoolsResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getStoragePoolsCommand, BackgroundOperationResponse.class);
-            logger.info("Expected Get Storage Pools Response >>>>>>> {}", expectedGetStoragePoolsResponse);
+            //final BackgroundOperationResponse expectedGetStoragePoolsResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getStoragePoolsCommand, BackgroundOperationResponse.class);
+            //logger.info("Expected Get Storage Pools Response >>>>>>> {}", expectedGetStoragePoolsResponse);
 
             final BackgroundOperationResponse actualGetStoragePoolsResponse = api.getStoragePools(recursion, filter);
             logger.info("Actual Get Storage Pools Response >>>>>> {}", actualGetStoragePoolsResponse);
 
-            assertEquals(actualGetStoragePoolsResponse,expectedGetStoragePoolsResponse);
+            assertEquals(Integer.valueOf(200), actualGetStoragePoolsResponse.getStatusCode());
 
-        }catch (IOException | InterruptedException e)
-        {
-            e.printStackTrace();
+        //}catch (IOException | InterruptedException e)
+        //{
+            //e.printStackTrace();
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -107,7 +184,7 @@ public class StoragePoolsApiTest {
     public void getStoragePoolsByNameTest() {
         final String pool = "pool1";
         final String getStoragePoolsCommand = "curl -s --unix-socket "+ unixSocketPath +" a/1.0/storage-pools/"+pool;
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -140,7 +217,7 @@ public class StoragePoolsApiTest {
     public void getStoragePoolsByNameResourcesTest()  {
         String pool = "pool1";
         final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket " + unixSocketPath +" a/1.0/storage-pools/"+pool+"/resources";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -173,7 +250,7 @@ public class StoragePoolsApiTest {
     public void getStoragePoolsByNameVolumesTest() throws ApiException {
         String pool = "pool1";
         final String getStoragePoolsByNameResourcesCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/storage-pools/"+pool+"/volumes";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -207,7 +284,7 @@ public class StoragePoolsApiTest {
         String pool = "pool1";
         String type = "xfs";
         String name = "default";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -234,7 +311,7 @@ public class StoragePoolsApiTest {
         String pool = "pool1";
         String type = "xfs";
         String name = "default";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
@@ -261,7 +338,7 @@ public class StoragePoolsApiTest {
         String pool = "default";
         String type = "xfs";
         String name = "default";
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {

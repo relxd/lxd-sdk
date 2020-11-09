@@ -53,7 +53,7 @@ public class ResourcesApiTest {
      */
     @Test
     public void getResourcesTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
