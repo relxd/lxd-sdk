@@ -11,7 +11,7 @@
  */
 
 
-package org.relxd.lxd.api.trusted;
+package org.relxd.lxd.api.trusted.filteringandrecursion;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.Test;
@@ -37,30 +37,6 @@ public class CertificatesApiTest {
 
     private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
-
-    /**
-     *
-     *
-     * Remove a trusted certificate
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteFingerprintTest() {
-        String fingerprint = "";
-
-        try {
-            BackgroundOperationResponse response = api.deleteFingerprint(fingerprint);
-            logger.info("Get Certificates Response >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-    }
-
     /**
      *
      *
@@ -77,56 +53,6 @@ public class CertificatesApiTest {
         try {
             BackgroundOperationResponse response = api.getCertificates(recursion, filter);
             logger.info("Get Certificates Response >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-    }
-
-    /**
-     *
-     *
-     * Return a trusted certificate information
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCertificatesByFingerPrintTest() {
-
-        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
-
-        try {
-            BackgroundOperationResponse response = api.getCertificatesByFingerPrint(fingerprint);
-            logger.info("Get Certificates Fingerprint Response >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-    }
-
-    /**
-     *
-     *
-     * Updates the certificate properties
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void patchFingerprintTest() {
-        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
-        UpdateFingerprintRequest request = new UpdateFingerprintRequest();
-        request.setName("new-cert-name");
-        request.setType("client");
-
-        try {
-            BackgroundOperationResponse response = api.patchFingerprint(fingerprint, request);
-            logger.info("Patch Certificates Fingerprint Response >>>>>> {}", response);
 
             assertEquals(response.getStatusCode(), Integer.valueOf(200));
 
@@ -185,32 +111,6 @@ public class CertificatesApiTest {
         try {
             BackgroundOperationResponse response = api.postCertificates(request);
             logger.info("Post Certificates Response >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-    }
-
-    /**
-     *
-     *
-     * Replaces the certificate properties
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void putFingerprintTest() {
-        String fingerprint = "4ed5800011eb95372db2f52b0da18190bc1a49ee7dd38033533cfdcea35b284d";
-        UpdateFingerprintRequest request = new UpdateFingerprintRequest();
-        request.setName("baz");
-        request.setType("client");
-
-        try {
-            BackgroundOperationResponse response = api.putFingerprint(fingerprint, request);
-            logger.info("Put Certificates Fingerprint Response >>>>>> {}", response);
 
             assertEquals(response.getStatusCode(), Integer.valueOf(200));
 

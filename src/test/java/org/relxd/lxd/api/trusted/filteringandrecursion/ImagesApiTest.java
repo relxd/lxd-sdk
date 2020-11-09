@@ -11,7 +11,7 @@
  */
 
 
-package org.relxd.lxd.api.trusted;
+package org.relxd.lxd.api.trusted.filteringandrecursion;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.jupiter.api.*;
@@ -61,70 +61,6 @@ public class ImagesApiTest {
         apiClient = new RelxdApiClient();
         unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
-
-    
-    /**
-     * 
-     *
-     * Remove an alias
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-
-    @Test
-    @Order(16)
-    public void deleteImagesAliasesByNameTest(){
-        getImagesAliasesByNameTest();
-        String name = "";
-        if (imagesAliasesByNameResponse != null)
-            name = imagesAliasesByNameResponse.getName();
-
-
-        try {
-            BackgroundOperationResponse response = api.deleteImagesAliasesByName(name);
-            logger.info("DELETE IMAGES ALIASES BY NAME RESPONSE >>>>>  {}", response);
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-
-    }
-    
-    /**
-     * 
-     *
-     * Remove an image
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    @Order(17)
-    public void deleteImagesFingerprintTest() {
-        getImagesTest();
-        String[] splitUrl;
-        String fingerprint = null;
-
-        if (getImageResponseUrls != null) {
-
-            for (String imageUrl: getImageResponseUrls) {
-                splitUrl = imageUrl.split("/");
-                logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
-                fingerprint = splitUrl[3];
-
-
-                try {
-                    BackgroundOperationResponse response = api.deleteImagesFingerprint(fingerprint);
-                    logger.info("DELETE IMAGES BY FINGERPRINT RESPONSE >>>> {}", response);
-                } catch (ApiException ex) {
-                    catchApiException(ex);
-                }
-
-            }
-        }
-
-    }
     
     /**
      * 
@@ -141,7 +77,7 @@ public class ImagesApiTest {
         final String getImagesCommand = "curl -s --unix-socket " + unixSocketPath + " a/1.0/images";
 
         Integer recursion = null;
-        String filter = null;
+        String filter = "?filter=properties.architecture eq amd64";
 
         try {
             //final BackgroundOperationResponse expectedGetImagesResponse = linuxCmdService.executeLinuxCmdWithResultJsonObject(getImagesCommand, BackgroundOperationResponse.class);
@@ -359,82 +295,6 @@ public class ImagesApiTest {
     /**
      * 
      *
-     * Updates the alias target or description
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    @Order(14)
-    public void patchImagesAliasesByNameTest() throws ApiException {
-        getImagesTest();
-        String[] splitUrl = null;
-        String fingerprint = null;
-
-        if ((getImageResponseUrls != null) && getImageResponseUrls.size() >0) {
-            splitUrl = getImageResponseUrls.get(0).split("/");
-            logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
-            fingerprint = splitUrl[3];
-        }
-
-        String name = "new-alias-name";
-        UpdateImagesAliasesByNameRequest request = new UpdateImagesAliasesByNameRequest();
-        request.setTarget(fingerprint);
-        request.setDescription("My new description after patch");
-
-        try {
-            BackgroundOperationResponse response = api.patchImagesAliasesByName(name, request);
-            logger.info("PATCH IMAGES ALIASES BY NAME >>>>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-
-    }
-    
-    /**
-     * 
-     *
-     * Updates the image properties, update information and visibility
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    @Order(15)
-    public void patchImagesFingerprintTest() throws ApiException {
-        getImagesTest();
-        String[] splitUrl = null;
-        String fingerprint = null;
-
-        if ((getImageResponseUrls != null) && getImageResponseUrls.size() >0) {
-            splitUrl = getImageResponseUrls.get(0).split("/");
-            logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
-            fingerprint = splitUrl[3];
-        }
-
-        Properties5 properties5 = new Properties5();
-        properties5.setOs("ubuntu");
-        properties5.setRelease("20201014");
-        PatchImagesFingerprintRequest request = new PatchImagesFingerprintRequest();
-        request.setProperties(properties5);
-        request.setPublic(true);
-
-        try {
-            BackgroundOperationResponse response = api.patchImagesFingerprint(fingerprint, request);
-            logger.info("Patch Images Fingerprint Response >>>>>> {}", response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-
-    }
-    
-    /**
-     * 
-     *
      * Create and publish a new image
      *
      * @throws ApiException
@@ -632,77 +492,6 @@ public class ImagesApiTest {
             logger.info("POST FINGER PRINT SECRET >>>>> {}", response);
 
             assertEquals(response.getStatusCode(), Integer.valueOf(100));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-
-    }
-    
-    /**
-     * 
-     *
-     * Replaces the alias target or description
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    @Order(9)
-    public void putImagesAliasesByNameTest() throws ApiException {
-        getImagesAliasesByNameTest();
-        UpdateImagesAliasesByNameRequest request = null;
-        String name = null;
-
-        if (imagesAliasesByNameResponse != null) {
-            name = imagesAliasesByNameResponse.getName();
-            request = new UpdateImagesAliasesByNameRequest();
-            request.setTarget(imagesAliasesByNameResponse.getTarget());
-        }
-
-        try {
-            BackgroundOperationResponse response = api.putImagesAliasesByName(name, request);
-            logger.info("PUT IMAGES ALIASES BY NAME RESPONSE >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
-
-    }
-    
-    /**
-     * 
-     *
-     * Replaces the image properties, update information and visibility
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    @Order(10)
-    public void putImagesFingerprintTest() throws ApiException {
-
-        getImagesTest();
-        String[] splitUrl;
-        String fingerprint = null;
-
-        if ((getImageResponseUrls != null) && getImageResponseUrls.size() >0) {
-            splitUrl = getImageResponseUrls.get(0).split("/");
-            logger.info("Image Fingerprint >>>>> {}", splitUrl[3]);
-            fingerprint = splitUrl[3];
-        }
-
-        UpdateImagesFingerprintRequest request = new UpdateImagesFingerprintRequest();
-        request.setAutoUpdate(true);
-        request.setPublic(true);
-
-        try {
-            BackgroundOperationResponse response = api.putImagesFingerprint(fingerprint, request);
-            logger.info("PUT FINGERPRINT RESPONSE >>>>>> {}", response);
-
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
 
         }catch (ApiException ex){
             catchApiException(ex);
