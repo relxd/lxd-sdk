@@ -11,72 +11,70 @@
  */
 
 
-package org.relxd.lxd.api.trusted;
+package org.relxd.lxd.api.trusted.filteringandrecursion;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.Before;
+import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
-import org.relxd.lxd.api.ResourcesApi;
+import org.relxd.lxd.api.EventsApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.mockito.Mockito.spy;
 
 /**
- * API tests for ResourcesApi
+ * API tests for EventsApi
  */
 
-public class ResourcesApiTest {
+public class EventsApiTest {
 
-    private ResourcesApi api;
-
+    private EventsApi api;
     private Logger logger;
 
     @Before
     public void setup() {
 
-        api = new ResourcesApi();
+        api = new EventsApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
-
+    
     /**
      * 
      *
-     * Information about the resources available to the LXD server
+     * Websocket upgrade
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getResourcesTest() {
-        Integer recursion = null;
+    public void getEventsTest() throws ApiException {
+        String type = "logging";
+        Integer recursion = 1;
         String filter = null;
 
         try {
-        BackgroundOperationResponse response = api.getResources(recursion, filter);
-        logger.info("Get Operations Response >>>>>> {}", response);
+            BackgroundOperationResponse response = api.getEvents(type, recursion, filter);
+            logger.info("Get Events Response >>>>>> {}", response);
 
-        assertEquals(response.getStatusCode(), Integer.valueOf(200));
-
-    }catch (ApiException ex){
-        catchApiException(ex);
+            assertEquals(Integer.valueOf(200), response.getStatusCode());
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
-
-}
 
     private ErrorResponse catchApiException(ApiException e) {
         JSON json = new JSON();
+        logger.info("ERROR >>>> " + e);
         ErrorResponse errorResponse = new ErrorResponse();
         try {
             errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
             logger.info("ERROR RESPONSE >>>> " + errorResponse);
         }catch (JsonSyntaxException ex){
-
+            ex.printStackTrace();
         }
         return errorResponse;
     }

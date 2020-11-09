@@ -11,21 +11,20 @@
  */
 
 
-package org.relxd.lxd.api.trusted;
+package org.relxd.lxd.api.trusted.filteringandrecursion;
 
 import com.google.gson.JsonSyntaxException;
 import org.junit.Before;
+import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.api.ResourcesApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.mockito.Mockito.spy;
 
 /**
  * API tests for ResourcesApi
@@ -54,7 +53,7 @@ public class ResourcesApiTest {
      */
     @Test
     public void getResourcesTest() {
-        Integer recursion = null;
+        Integer recursion = 1;
         String filter = null;
 
         try {
