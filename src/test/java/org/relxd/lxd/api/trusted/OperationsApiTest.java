@@ -104,7 +104,7 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsUUIDTest() throws ApiException {
-        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        String uuid = "d50c0034-3fea-444c-9ae3-fd6465ae0d99";
         Integer recursion = null;
         String filter = null;
 

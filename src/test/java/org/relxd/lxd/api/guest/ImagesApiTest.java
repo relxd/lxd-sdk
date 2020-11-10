@@ -177,6 +177,7 @@ public class ImagesApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+
     @Test
     @Order(4)
     public void getImagesAliasesTest() {

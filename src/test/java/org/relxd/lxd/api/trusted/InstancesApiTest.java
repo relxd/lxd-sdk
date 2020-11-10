@@ -278,8 +278,8 @@ public class InstancesApiTest {
     @Test
     @Order(4)
     public void getInstancesByNameTest() {
-        final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/ubuntu-instance";
         String name = "ubuntu-instance";
+        final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/" + name;
         Integer recursion = null;
         String filter = null;
 
@@ -675,8 +675,16 @@ public class InstancesApiTest {
         kvm.setPath("/dev/kvm");
         kvm.setType("unix-char");
 
+        Properties properties = new Properties();
+            properties.setOs("ubuntu");
+            properties.setArchitecture("x86_64");
+            properties.setRelease("18.04");
+
+
         Source source = new Source();
-        source.setType("none");
+        source.setType("image");
+        source.setFingerprint("d1cad2fbac21768f6ab2633a6e55c7fea118aba942dab0ab79c556ac5b1b149e");
+
 
         DevicesKvm devices = new DevicesKvm();
         devices.setKvm(kvm);
@@ -719,10 +727,10 @@ public class InstancesApiTest {
     @Order(3)
     public void postInstancesByNameTest() {
 
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         String target = null;
         CreateInstancesByNameRequest createInstancesByNameRequest = new CreateInstancesByNameRequest();
-        createInstancesByNameRequest.setName("another-ubuntu-instance");
+        createInstancesByNameRequest.setName("ubuntu-instance");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByName(name, target, createInstancesByNameRequest);
@@ -745,7 +753,7 @@ public class InstancesApiTest {
     @Test
     @Order(5)
     public void postInstancesByNameBackupsTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         CreateInstancesByNameBackupsRequest createInstancesByNameBackupsRequest = new CreateInstancesByNameBackupsRequest();
         createInstancesByNameBackupsRequest.setName("ubuntu-instance-backup");
         createInstancesByNameBackupsRequest.setExpiry(new BigDecimal(3600));
@@ -773,7 +781,7 @@ public class InstancesApiTest {
     @Test
     @Order(7)
     public void postInstancesByNameBackupsByNameTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         String backupsName = "ubuntu-instance-backup";
         CreateInstancesByNameBackupsByNameRequest request = new CreateInstancesByNameBackupsByNameRequest();
         request.setName("ubuntu-instance-backup-rename");
@@ -798,7 +806,7 @@ public class InstancesApiTest {
     @Test
     @Order(10)
     public void postInstancesByNameConsoleTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         CreateInstancesByNameConsoleRequest request = new CreateInstancesByNameConsoleRequest();
         request.setWidth(80);
         request.setHeight(25);
@@ -824,7 +832,7 @@ public class InstancesApiTest {
     @Test
     @Order(12)
     public void postInstancesByNameExecTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         List<String> command = new ArrayList<>();
         command.add("/bin/bash");
         Environment environment = new Environment();
@@ -864,7 +872,7 @@ public class InstancesApiTest {
 
         UUID uuid = new UUID(10,00);
 
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         String path = "/data";
         Integer xLXDUid = 0;
         Integer xLXDGid = 0;
@@ -894,7 +902,7 @@ public class InstancesApiTest {
     @Test
     @Order(16)
     public void postInstancesByNameMetadataTemplatesTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu-20-instance";
         String path = "";
         File body = new File("");
 
@@ -1115,9 +1123,9 @@ public class InstancesApiTest {
         String name = "ubuntu-instance";
         UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
         request.setAction("start");
-        request.setForce(true);
+        request.setForce(false);
         request.setTimeout(new BigDecimal(30));
-        request.setStateful(true);
+        request.setStateful(false);
 
         try {
             BackgroundOperationResponse response = api.putInstancesByNameState(name, request);
