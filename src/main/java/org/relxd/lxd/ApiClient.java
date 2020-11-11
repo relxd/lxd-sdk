@@ -88,8 +88,8 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
 
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
-        relxdApiClient.initHttpClient();
 
+        relxdApiClient.initHttpClient();
         basePath = relxdApiClient.getBasePath();
         httpClient = relxdApiClient.getHttpClient();
     }

@@ -77,6 +77,7 @@ public class OperationsApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+
     @Test
     public void getOperationsTest() {
         Integer recursion = null;

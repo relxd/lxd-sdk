@@ -404,7 +404,7 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.getInstancesByNameConsole(name, recursion, filter);
             logger.info("GET INSTANCES BY NAME CONSOLE RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+            assertEquals(Integer.valueOf(200),response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -727,10 +727,10 @@ public class InstancesApiTest {
     @Order(3)
     public void postInstancesByNameTest() {
 
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         String target = null;
         CreateInstancesByNameRequest createInstancesByNameRequest = new CreateInstancesByNameRequest();
-        createInstancesByNameRequest.setName("ubuntu-instance");
+        createInstancesByNameRequest.setName("another-instance");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByName(name, target, createInstancesByNameRequest);
@@ -753,7 +753,7 @@ public class InstancesApiTest {
     @Test
     @Order(5)
     public void postInstancesByNameBackupsTest() {
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         CreateInstancesByNameBackupsRequest createInstancesByNameBackupsRequest = new CreateInstancesByNameBackupsRequest();
         createInstancesByNameBackupsRequest.setName("ubuntu-instance-backup");
         createInstancesByNameBackupsRequest.setExpiry(new BigDecimal(3600));
@@ -781,7 +781,7 @@ public class InstancesApiTest {
     @Test
     @Order(7)
     public void postInstancesByNameBackupsByNameTest() {
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         String backupsName = "ubuntu-instance-backup";
         CreateInstancesByNameBackupsByNameRequest request = new CreateInstancesByNameBackupsByNameRequest();
         request.setName("ubuntu-instance-backup-rename");
@@ -806,7 +806,7 @@ public class InstancesApiTest {
     @Test
     @Order(10)
     public void postInstancesByNameConsoleTest() {
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         CreateInstancesByNameConsoleRequest request = new CreateInstancesByNameConsoleRequest();
         request.setWidth(80);
         request.setHeight(25);
@@ -832,7 +832,7 @@ public class InstancesApiTest {
     @Test
     @Order(12)
     public void postInstancesByNameExecTest() {
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         List<String> command = new ArrayList<>();
         command.add("/bin/bash");
         Environment environment = new Environment();
@@ -872,7 +872,7 @@ public class InstancesApiTest {
 
         UUID uuid = new UUID(10,00);
 
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         String path = "/data";
         Integer xLXDUid = 0;
         Integer xLXDGid = 0;
@@ -902,7 +902,7 @@ public class InstancesApiTest {
     @Test
     @Order(16)
     public void postInstancesByNameMetadataTemplatesTest() {
-        String name = "ubuntu-20-instance";
+        String name = "ubuntu-instance";
         String path = "";
         File body = new File("");
 
@@ -934,7 +934,7 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.postInstancesByNameSnapshot(name, request);
             logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
-            assertEquals(Integer.valueOf(200), response.getStatusCode());
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
