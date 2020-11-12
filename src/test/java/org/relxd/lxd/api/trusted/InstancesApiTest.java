@@ -278,8 +278,8 @@ public class InstancesApiTest {
     @Test
     @Order(4)
     public void getInstancesByNameTest() {
-        final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/ubuntu-instance";
         String name = "ubuntu-instance";
+        final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/" + name;
         Integer recursion = null;
         String filter = null;
 
@@ -404,7 +404,7 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.getInstancesByNameConsole(name, recursion, filter);
             logger.info("GET INSTANCES BY NAME CONSOLE RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(), Integer.valueOf(200));
+            assertEquals(Integer.valueOf(200),response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -675,8 +675,16 @@ public class InstancesApiTest {
         kvm.setPath("/dev/kvm");
         kvm.setType("unix-char");
 
+        Properties properties = new Properties();
+            properties.setOs("ubuntu");
+            properties.setArchitecture("x86_64");
+            properties.setRelease("18.04");
+
+
         Source source = new Source();
-        source.setType("none");
+        source.setType("image");
+        source.setFingerprint("d1cad2fbac21768f6ab2633a6e55c7fea118aba942dab0ab79c556ac5b1b149e");
+
 
         DevicesKvm devices = new DevicesKvm();
         devices.setKvm(kvm);
@@ -722,7 +730,7 @@ public class InstancesApiTest {
         String name = "ubuntu-instance";
         String target = null;
         CreateInstancesByNameRequest createInstancesByNameRequest = new CreateInstancesByNameRequest();
-        createInstancesByNameRequest.setName("another-ubuntu-instance");
+        createInstancesByNameRequest.setName("another-instance");
 
         try {
             BackgroundOperationResponse response = api.postInstancesByName(name, target, createInstancesByNameRequest);
@@ -926,7 +934,7 @@ public class InstancesApiTest {
         try {
             BackgroundOperationResponse response = api.postInstancesByNameSnapshot(name, request);
             logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
-            assertEquals(Integer.valueOf(200), response.getStatusCode());
+            assertEquals(Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
         }
@@ -1115,9 +1123,9 @@ public class InstancesApiTest {
         String name = "ubuntu-instance";
         UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
         request.setAction("start");
-        request.setForce(true);
+        request.setForce(false);
         request.setTimeout(new BigDecimal(30));
-        request.setStateful(true);
+        request.setStateful(false);
 
         try {
             BackgroundOperationResponse response = api.putInstancesByNameState(name, request);

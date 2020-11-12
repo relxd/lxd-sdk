@@ -32,15 +32,9 @@ public class RelxdApiClient {
 
     private String javaKeyStoreFilePath;
 
-    private String guestKeyStoreFilePath;
-
     private String javaKeyStorePassword;
 
-    private String guestKeyStorePassword;
-
     private String authenticationType;
-
-    private static final String GUEST = "Guest";
 
     private static final String TRUSTED = "Trusted";
 
@@ -86,28 +80,12 @@ public class RelxdApiClient {
         this.javaKeyStoreFilePath = javaKeyStoreFilePath;
     }
 
-    public String getGuestKeyStoreFilePath() {
-        return guestKeyStoreFilePath;
-    }
-
-    public void setGuestKeyStoreFilePath(String guestKeyStoreFilePath) {
-        this.guestKeyStoreFilePath = guestKeyStoreFilePath;
-    }
-
     public String getJavaKeyStorePassword() {
         return javaKeyStorePassword;
     }
 
     public void setJavaKeyStorePassword(String javaKeyStorePassword) {
         this.javaKeyStorePassword = javaKeyStorePassword;
-    }
-
-    public String getGuestKeyStorePassword() {
-        return guestKeyStorePassword;
-    }
-
-    public void setGuestKeyStorePassword(String guestKeyStorePassword) {
-        this.guestKeyStorePassword = guestKeyStorePassword;
     }
 
     public String getAuthenticationType() {
@@ -127,8 +105,6 @@ public class RelxdApiClient {
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
         authenticationType = this.getApplicationProperties().getProperty("authentication.type");
-        guestKeyStoreFilePath = this.getApplicationProperties().getProperty("java.guest.keystore.path");
-        guestKeyStorePassword = this.getApplicationProperties().getProperty("java.guest.keystore.password");
 
         initHttpClient();
 
@@ -174,23 +150,18 @@ public class RelxdApiClient {
                 TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
                 trustManagerFactory.init(keyStore);
 
-                KeyManager[] keyManagers = null;
+                KeyManager[] keyManagers;
 
-                if (TRUSTED.equalsIgnoreCase(authenticationType))
-                {
+                if (TRUSTED.equalsIgnoreCase(authenticationType)) {
                     KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
                     keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
 
-                    keyManagers  = keyManagerFactory.getKeyManagers();
+                    keyManagers = keyManagerFactory.getKeyManagers();
 
-                }else if (GUEST.equalsIgnoreCase(authenticationType)){
-
-                    keyStore = javaKeyStoreService.getKeyStore(guestKeyStoreFilePath, guestKeyStorePassword);
-
-                    KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-                    keyManagerFactory.init(keyStore, guestKeyStorePassword.toCharArray());
-
-                    keyManagers  = keyManagerFactory.getKeyManagers();
+                }else if (NOT_TRUSTED.equalsIgnoreCase(authenticationType)){
+                    keyManagers = null;
+                }else {
+                    throw new RuntimeException("Authentication types can only be Trusted or Not Trusted");
                 }
 
                 TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();

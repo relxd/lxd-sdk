@@ -163,9 +163,9 @@ public class ClusterApiTest {
     @Test
     @Order(3)
     public void postClusterMembersByNameTest() {
-        String name = "lxd1";
+        String name = "new-server";
         UpdateClusterMembersByNameRequest request = new UpdateClusterMembersByNameRequest();
-        request.serverName("new-server");
+        request.serverName("default");
 
         try {
             BackgroundOperationResponse response = api.postClusterMembersByName(name, request);
