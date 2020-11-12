@@ -669,52 +669,11 @@ public class InstancesApiTest {
     @Test
     @Order(1)
     public void postInstancesTest() {
-        String target = null;
-
-        Kvm kvm = new Kvm();
-        kvm.setPath("/dev/kvm");
-        kvm.setType("unix-char");
-
-        Properties properties = new Properties();
-            properties.setOs("ubuntu");
-            properties.setArchitecture("x86_64");
-            properties.setRelease("18.04");
-
-
-        Source source = new Source();
-        source.setType("image");
-        source.setFingerprint("d1cad2fbac21768f6ab2633a6e55c7fea118aba942dab0ab79c556ac5b1b149e");
-
-
-        DevicesKvm devices = new DevicesKvm();
-        devices.setKvm(kvm);
-
-        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-        createInstancesRequestConfig.setLimitsCpu("2");
-
-        List<String> profiles = new ArrayList<>();
-        profiles.add("default");
-
-        CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
-        createInstancesRequest.setName("ubuntu-instance");
-        createInstancesRequest.setArchitecture("x86_64");
-        createInstancesRequest.setProfiles(profiles);
-        createInstancesRequest.setEphemeral(true);
-        createInstancesRequest.setConfig(createInstancesRequestConfig);
-        createInstancesRequest.setType("container");
-        createInstancesRequest.setDevices(devices);
-        createInstancesRequest.setSource(source);
-
-        try {
-            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
-            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
-            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
-                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
-        }catch (ApiException ex){
-            catchApiException(ex);
-        }
+        postInstances("d1cad2fbac21768f6ab2633a6e55c7fea118aba942dab0ab79c556ac5b1b149e");
 
     }
+
+
     /**
      *
      *
@@ -1136,6 +1095,51 @@ public class InstancesApiTest {
         }
 
 
+    }
+
+    public BackgroundOperationResponse postInstances(String fingerprint) {
+        String target = null;
+
+        Kvm kvm = new Kvm();
+        kvm.setPath("/dev/kvm");
+        kvm.setType("unix-char");
+
+
+        Source source = new Source();
+        source.setType("image");
+        source.setFingerprint(fingerprint);
+
+
+        DevicesKvm devices = new DevicesKvm();
+        devices.setKvm(kvm);
+
+        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+        createInstancesRequestConfig.setLimitsCpu("2");
+
+        List<String> profiles = new ArrayList<>();
+        profiles.add("default");
+
+        CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
+        createInstancesRequest.setName("ubuntu-instance");
+        createInstancesRequest.setArchitecture("x86_64");
+        createInstancesRequest.setProfiles(profiles);
+        createInstancesRequest.setEphemeral(true);
+        createInstancesRequest.setConfig(createInstancesRequestConfig);
+        createInstancesRequest.setType("container");
+        createInstancesRequest.setDevices(devices);
+        createInstancesRequest.setSource(source);
+
+        try {
+            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
+            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
+            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
+                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
+
+            return actualCreateInstancesResponse;
+        }catch (ApiException ex){
+            catchApiException(ex);
+            return null;
+        }
     }
 
     private ErrorResponse catchApiException(ApiException e) {

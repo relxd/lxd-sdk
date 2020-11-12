@@ -129,10 +129,13 @@ public class ServerConfigApiTest {
      */
     @Test
     public void putServerStateTest() throws ApiException {
-        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \"lxdpassword123\", \"core.https_address\": \"192.168.43.157:8443\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
+
+        String httpAddress =  "172.16.0.10:8443";
+        String trustPassword = "lxdpassword1234";
+        final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \""+trustPassword+"\", \"core.https_address\": \""+httpAddress+"\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();
-        serverConfigRequest.setCoreTrustPassword("lxdpassword1234");
-        serverConfigRequest.setCoreHttpsAddress("192.168.43.157:8443");
+        serverConfigRequest.setCoreTrustPassword(trustPassword);
+        serverConfigRequest.setCoreHttpsAddress(httpAddress);
 
        try {
 
