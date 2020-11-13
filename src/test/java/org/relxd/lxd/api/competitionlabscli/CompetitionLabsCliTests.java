@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.api.ImagesApi;
-import org.relxd.lxd.api.trusted.ImagesApiTest;
-import org.relxd.lxd.api.trusted.InstancesApiTest;
+import org.relxd.lxd.api.OperationsApi;
+import org.relxd.lxd.api.trusted.*;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +17,10 @@ public class CompetitionLabsCliTests {
     private ImagesApiTest imagesApiTest;
     private ImagesApi imagesApi;
     private InstancesApiTest instancesApiTest;
+    private ServerConfigApiTest serverConfigApiTest;
+    private ClusterApiTest clusterApiTest;
+    private OperationsApi operationsApi;
+    private StoragePoolsApiTest storagePoolsApiTest;
 
     private List<String> getImageResponseUrls;
     private Logger logger;
@@ -27,13 +31,26 @@ public class CompetitionLabsCliTests {
         imagesApi = new ImagesApi();
         instancesApiTest =  new InstancesApiTest();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        serverConfigApiTest = new ServerConfigApiTest();
+        clusterApiTest = new ClusterApiTest();
+        operationsApi = new OperationsApi();
+        storagePoolsApiTest = new StoragePoolsApiTest();
     }
 
     @Test
     public void createInstanceFromImage(){
-        imagesApiTest.postImagesTest();
 
         try {
+
+        serverConfigApiTest.putServerStateTest();
+
+        clusterApiTest.putClusterTest();
+
+        storagePoolsApiTest.postStoragePoolsTest();
+
+        imagesApiTest.postImagesTest();
+
+
             final BackgroundOperationResponse images = imagesApi.getImages(0, null);
             if (images != null){
                 getImageResponseUrls = (List<String>) images.getMetadata();
@@ -55,9 +72,24 @@ public class CompetitionLabsCliTests {
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApiTest.postInstances(fingerprint);
 
                 logger.info("Create Instance Response >>>>> {}", backgroundOperationResponse);
+
+                if (backgroundOperationResponse != null){
+                    final String operation = backgroundOperationResponse.getOperation();
+                    String[] splitOperationUrl = operation.split("/");
+                    logger.info("Operation Fingerprint >>>>> {}", splitOperationUrl[3]);
+                    String operationUuid = splitOperationUrl[3];
+
+                    final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0, null);
+
+                    while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
+                        final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
+                        logger.info("Operations by UUID Response >>>>> {}", operationResponse);
+                        Thread.sleep(2000);
+                    }
+                }
             }
 
-        } catch (ApiException e) {
+        } catch (ApiException | InterruptedException e) {
             e.printStackTrace();
         }
     }

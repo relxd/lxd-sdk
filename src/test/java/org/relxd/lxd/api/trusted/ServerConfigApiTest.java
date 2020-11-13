@@ -41,6 +41,14 @@ public class ServerConfigApiTest {
     private RelxdApiClient apiClient;
     private String unixSocketPath;
 
+    public ServerConfigApiTest(){
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
+        api = new ServerConfigApi();
+        apiClient = new RelxdApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
     @Before
     public void setup() {
 
@@ -131,6 +139,7 @@ public class ServerConfigApiTest {
     public void putServerStateTest() throws ApiException {
 
         String httpAddress =  "172.16.0.10:8443";
+        //String httpAddress = "[::]:8443";
         String trustPassword = "lxdpassword1234";
         final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \""+trustPassword+"\", \"core.https_address\": \""+httpAddress+"\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();

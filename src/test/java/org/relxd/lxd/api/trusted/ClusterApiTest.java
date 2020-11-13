@@ -39,6 +39,11 @@ public class ClusterApiTest {
     private ClusterApi api;
     private Logger logger;
 
+    public ClusterApiTest(){
+        api = new ClusterApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    }
+
     @BeforeEach
     public void setup() {
 
@@ -163,7 +168,7 @@ public class ClusterApiTest {
     @Test
     @Order(3)
     public void postClusterMembersByNameTest() {
-        String name = "lxd1";
+        String name = "node1";
         UpdateClusterMembersByNameRequest request = new UpdateClusterMembersByNameRequest();
         request.serverName("new-server");
 
@@ -189,7 +194,7 @@ public class ClusterApiTest {
     @Order(1)
     public void putClusterTest() {
         UpdateClusterRequest request = new UpdateClusterRequest();
-        request.setServerName("lxd1");
+        request.setServerName("node1");
         request.setEnabled(true);
 
         try {

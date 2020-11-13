@@ -52,6 +52,14 @@ public class InstancesApiTest {
     private String unixSocketPath;
     private RelxdApiClient apiClient;
 
+    public InstancesApiTest(){
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+        api = new InstancesApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        apiClient = new RelxdApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
     @BeforeEach
     public void setup() {
 

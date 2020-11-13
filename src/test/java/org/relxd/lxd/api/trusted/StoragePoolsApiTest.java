@@ -48,6 +48,14 @@ public class StoragePoolsApiTest {
 
     private String unixSocketPath;
 
+    public StoragePoolsApiTest(){
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        api = new StoragePoolsApi();
+        apiClient = new RelxdApiClient();
+        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
     @BeforeEach
     public void setup() {
 
@@ -432,12 +440,12 @@ public class StoragePoolsApiTest {
     @Order(1)
     public void postStoragePoolsTest() {
         SizeConfig sizeConfig = new SizeConfig();
-        sizeConfig.setSize("10GB");
+        sizeConfig.setSize("30GB");
 
         CreateStoragePoolsRequest request = new CreateStoragePoolsRequest();
         request.setConfig(sizeConfig);
         request.setDriver("zfs");
-        request.setName("pool1");
+        request.setName("default");
 
         try {
             BackgroundOperationResponse postStoragePoolsResponse = api.postStoragePools(request);
