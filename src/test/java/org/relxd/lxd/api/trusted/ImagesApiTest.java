@@ -52,6 +52,15 @@ public class ImagesApiTest {
     private GetImagesAliasesByNameResponse imagesAliasesByNameResponse;
     private String unixSocketPath;
 
+    public ImagesApiTest(){
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
+        api = new ImagesApi();
+        operationsApi = new OperationsApi();
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        apiClient = new RelxdApiClient();
+        unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+    }
+
     @BeforeEach
     public void setup() {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
