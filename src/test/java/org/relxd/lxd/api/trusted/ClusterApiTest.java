@@ -142,7 +142,7 @@ public class ClusterApiTest {
     @Test
     @Order(5)
     public void getClusterMembersByNameTest() {
-        String name = "new-server";
+        String name = "node1";
         Integer recursion = null;
         String filter = null;
 

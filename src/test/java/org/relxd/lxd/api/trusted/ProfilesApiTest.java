@@ -105,7 +105,7 @@ public class ProfilesApiTest {
     @Test
     @Order(4)
     public void getProfilesByNameTest() {
-        String name = "profile1rename";
+        String name = "default";
         Integer recursion = null;
         String filter = null;
 

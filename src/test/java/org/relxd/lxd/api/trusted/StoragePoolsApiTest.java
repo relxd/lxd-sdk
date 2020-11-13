@@ -84,7 +84,7 @@ public class StoragePoolsApiTest {
      */
     @Test
     public void deleteStoragePoolsByNameTest() {
-        String pool = "pool1";
+        String pool = "default";
 
         try {
             BackgroundOperationResponse response = api.deleteStoragePoolsByName(pool);

@@ -138,8 +138,9 @@ public class ServerConfigApiTest {
     @Test
     public void putServerStateTest() throws ApiException {
 
-        String httpAddress =  "172.16.0.10:8443";
+        //String httpAddress =  "172.16.0.10:8443";
         //String httpAddress = "[::]:8443";
+        String httpAddress = "192.168.43.157:8443";
         String trustPassword = "lxdpassword1234";
         final String patchServerStateCommand = "curl --data '{\"config\": {\"core.trust_password\": \""+trustPassword+"\", \"core.https_address\": \""+httpAddress+"\"}}' -X PATCH --unix-socket " + unixSocketPath + " a/1.0";
         ServerConfig serverConfigRequest = new ServerConfig();

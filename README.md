@@ -429,7 +429,7 @@ Authentication schemes defined for the API:
    
  (ii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
  
- (iii) In your application.properties file use base url as https://192.168.43.157:8442
+ (iii) In your application.properties file use base url as https://192.168.43.157:8443
  
  (iv) At this point you should be able to run the tests. 
    - Run the getServerStateTest in the ServerConfigApiTest.java file and check the 'auth' field, at this point it should be trusted. 
