@@ -104,7 +104,7 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsUUIDTest() throws ApiException {
-        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
+        String uuid = "d3512713-3bb0-4d52-b94d-1ca4e2845704";
         Integer recursion = null;
         String filter = null;
 
@@ -154,8 +154,8 @@ public class OperationsApiTest {
      */
     @Test
     public void getOperationsUUIDWebsocketTest() throws ApiException {
-        String uuid = "f1da0d97-66af-4318-82c9-0ef472cae718";
-        String secret = "secret";
+        String uuid = "1a4f6973-e9b0-46c9-9bdf-68c5c335c9dd";
+        String secret = "815a261e5579167e963bc2ad761c4e0a8290c3a9db74f8caf51ed7d68eaa82c4";
         Integer recursion = null;
         String filter = null;
 
