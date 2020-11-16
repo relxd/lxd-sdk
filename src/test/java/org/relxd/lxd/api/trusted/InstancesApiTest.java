@@ -30,6 +30,7 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -86,7 +87,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu18-1";
 
         try {
             BackgroundOperationResponse response = api.deleteInstancesByName(name);
@@ -286,7 +287,7 @@ public class InstancesApiTest {
     @Test
     @Order(4)
     public void getInstancesByNameTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu18";
         final String getInstancesByNameCommand = "curl -s --unix-socket " +unixSocketPath+ " a/1.0/instances/" + name;
         Integer recursion = null;
         String filter = null;
@@ -405,7 +406,7 @@ public class InstancesApiTest {
     @Test
     @Order(11)
     public void getInstancesByNameConsoleTest() {
-        String name = "ubuntu-instance";
+        String name = "ubuntu18";
         Integer recursion = null;
         String filter = null;
 
@@ -613,7 +614,7 @@ public class InstancesApiTest {
     @Test
     @Order(24)
     public void getInstancesByNameStateTest(){
-        String name = "ubuntu-instance";
+        String name = "ubuntu18";
         Integer recursion = null;
         String filter = null;
 
@@ -799,29 +800,7 @@ public class InstancesApiTest {
     @Test
     @Order(12)
     public void postInstancesByNameExecTest() {
-        String name = "ubuntu-instance";
-        List<String> command = new ArrayList<>();
-        command.add("/bin/bash");
-        Environment environment = new Environment();
-        CreateInstancesByNameExecRequest request = new CreateInstancesByNameExecRequest();
-        request.setCommand(command);
-        request.setEnvironment(environment);
-        request.setWaitForWebsocket(false);
-        request.setRecordOutput(false);
-        request.setInteractive(true);
-        request.setWidth(80);
-        request.setHeight(25);
-        request.setUser(1000);
-        request.setGroup(1000);
-        request.setCwd("/tmp");
-
-        try {
-            BackgroundOperationResponse response = api.postInstancesByNameExec(name, request);
-            logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(),Integer.valueOf(100));
-        }catch (ApiException e){
-            catchApiException(e);
-        }
+        postInstancesByNameExec("ubuntu18", Arrays.asList("bin","bash"));
 
     }
 
@@ -1086,23 +1065,26 @@ public class InstancesApiTest {
     @Test
     @Order(23)
     public void putInstancesByNameStateTest() throws ApiException {
+        putInstancesByNameState("ubuntu18","start");
+    }
 
-        String name = "ubuntu-instance";
+    public BackgroundOperationResponse putInstancesByNameState(String containerName, String action) {
         UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
-        request.setAction("start");
+        request.setAction(action);
         request.setForce(false);
-        request.setTimeout(new BigDecimal(30));
+        request.setTimeout(new BigDecimal(100));
         request.setStateful(false);
 
         try {
-            BackgroundOperationResponse response = api.putInstancesByNameState(name, request);
+            BackgroundOperationResponse response = api.putInstancesByNameState(containerName, request);
             logger.info("PUT INSTANCES BY NAME STATE RESPONSE >>>>> " + response);
             assertEquals(response.getStatusCode(),Integer.valueOf(100));
+
+            return response;
         }catch (ApiException ex){
             catchApiException(ex);
+            throw new RuntimeException(ex);
         }
-
-
     }
 
     public BackgroundOperationResponse postInstances(String fingerprint) {
@@ -1147,6 +1129,78 @@ public class InstancesApiTest {
         }catch (ApiException ex){
             catchApiException(ex);
             return null;
+        }
+    }
+
+
+    public BackgroundOperationResponse postUbuntuInstance(String name) {
+        String target = null;
+
+        Kvm kvm = new Kvm();
+        kvm.setPath("/dev/kvm");
+        kvm.setType("unix-char");
+
+        DevicesKvm devices = new DevicesKvm();
+        devices.setKvm(kvm);
+
+        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+        createInstancesRequestConfig.setLimitsCpu("2");
+
+        List<String> profiles = new ArrayList<>();
+        profiles.add("default");
+
+        Source source = new Source();
+        source.setType("image");
+        source.setProtocol("simplestreams");
+        source.setServer("https://cloud-images.ubuntu.com/releases");
+        source.setAlias("18.04");
+
+        CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
+        createInstancesRequest.setSource(source);
+        createInstancesRequest.setName(name);
+        createInstancesRequest.setArchitecture("x86_64");
+        createInstancesRequest.setEphemeral(true);
+        createInstancesRequest.setConfig(createInstancesRequestConfig);
+        createInstancesRequest.setType("container");
+        createInstancesRequest.setProfiles(profiles);
+
+        try {
+            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
+            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
+            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
+                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
+
+            return actualCreateInstancesResponse;
+        }catch (ApiException ex){
+            catchApiException(ex);
+            return null;
+        }
+    }
+
+    public BackgroundOperationResponse postInstancesByNameExec(String containerName, List<String> command) {
+        String name = containerName;
+        Environment environment = new Environment();
+        CreateInstancesByNameExecRequest request = new CreateInstancesByNameExecRequest();
+        request.setCommand(command);
+        request.setEnvironment(environment);
+        request.setWaitForWebsocket(true);
+        request.setRecordOutput(false);
+        request.setInteractive(true);
+        request.setWidth(80);
+        request.setHeight(25);
+        request.setUser(1000);
+        request.setGroup(1000);
+        request.setCwd("/tmp");
+
+        try {
+            BackgroundOperationResponse response = api.postInstancesByNameExec(name, request);
+            logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
+            assertEquals(response.getStatusCode(),Integer.valueOf(100));
+
+            return response;
+        }catch (ApiException e){
+            catchApiException(e);
+            throw new RuntimeException(e);
         }
     }
 
