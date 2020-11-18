@@ -21,6 +21,7 @@ import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.model.*;
+import org.relxd.lxd.model.Properties;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 import org.slf4j.Logger;
@@ -29,10 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
@@ -678,8 +676,41 @@ public class InstancesApiTest {
     @Test
     @Order(1)
     public void postInstancesTest() {
-        postInstances("1503148c44359a349c17ce7cd4e0e36dae9ff3a44a7777cc1cee993491a73adf");
 
+        String target = null;
+        final String architecture = "x86_64";
+        final String type = "container";
+        final String fingerprint = "1503148c44359a349c17ce7cd4e0e36dae9ff3a44a7777cc1cee993491a73adf";
+        final String nameOfContainer = "ubuntu-instance";
+
+        Kvm kvm = new Kvm();
+        kvm.setPath("/dev/kvm");
+        kvm.setType("unix-char");
+
+        Source source = new Source();
+        source.setType("image");
+        source.setFingerprint(fingerprint);
+
+        DevicesKvm devices = new DevicesKvm();
+        devices.setKvm(kvm);
+
+        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+        createInstancesRequestConfig.setLimitsCpu("2");
+
+        List<String> profiles = new ArrayList<>();
+        profiles.add("default");
+
+        CreateInstancesRequest createInstancesRequest = populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
+
+        try {
+            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
+            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
+            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
+                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
     }
 
 
@@ -1087,49 +1118,17 @@ public class InstancesApiTest {
         }
     }
 
-    public BackgroundOperationResponse postInstances(String fingerprint) {
-        String target = null;
-
-        Kvm kvm = new Kvm();
-        kvm.setPath("/dev/kvm");
-        kvm.setType("unix-char");
-
-
-        Source source = new Source();
-        source.setType("image");
-        source.setFingerprint(fingerprint);
-
-
-        DevicesKvm devices = new DevicesKvm();
-        devices.setKvm(kvm);
-
-        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-        createInstancesRequestConfig.setLimitsCpu("2");
-
-        List<String> profiles = new ArrayList<>();
-        profiles.add("default");
-
+    public CreateInstancesRequest populateCreateInstancesRequest(DevicesKvm devices, Source source, String type, List<String> profiles, String architecture, String name, CreateInstancesRequestConfig createInstancesRequestConfig, Boolean setEphemerial) {
         CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
-        createInstancesRequest.setName("ubuntu-instance");
-        createInstancesRequest.setArchitecture("x86_64");
+        createInstancesRequest.setName(name);
+        createInstancesRequest.setArchitecture(architecture);
         createInstancesRequest.setProfiles(profiles);
-        createInstancesRequest.setEphemeral(true);
+        createInstancesRequest.setEphemeral(setEphemerial);
         createInstancesRequest.setConfig(createInstancesRequestConfig);
-        createInstancesRequest.setType("container");
+        createInstancesRequest.setType(type);
         createInstancesRequest.setDevices(devices);
         createInstancesRequest.setSource(source);
-
-        try {
-            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
-            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
-            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
-                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
-
-            return actualCreateInstancesResponse;
-        }catch (ApiException ex){
-            catchApiException(ex);
-            return null;
-        }
+        return createInstancesRequest;
     }
 
 
@@ -1187,14 +1186,14 @@ public class InstancesApiTest {
         request.setRecordOutput(false);
         request.setInteractive(true);
         request.setWidth(80);
-        request.setHeight(25);
+        request.setHeight(25);/*
         request.setUser(1000);
         request.setGroup(1000);
-        request.setCwd("/tmp");
+        request.setCwd("/tmp");*/
 
         try {
             BackgroundOperationResponse response = api.postInstancesByNameExec(name, request);
-            logger.info("POST INSTANCES BY NAME RESPONSE >>>>> " + response);
+            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + response);
             assertEquals(response.getStatusCode(),Integer.valueOf(100));
 
             return response;

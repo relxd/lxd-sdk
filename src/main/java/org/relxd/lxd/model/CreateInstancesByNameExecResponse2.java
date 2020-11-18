@@ -14,16 +14,10 @@
 package org.relxd.lxd.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.relxd.lxd.model.Fds2;
 
 /**
  * Return (with wait-for-websocket&#x3D;true and interactive&#x3D;true)
@@ -33,10 +27,10 @@ import org.relxd.lxd.model.Fds2;
 public class CreateInstancesByNameExecResponse2 {
   public static final String SERIALIZED_NAME_FDS = "fds";
   @SerializedName(SERIALIZED_NAME_FDS)
-  private Fds2 fds;
+  private Fds fds;
 
 
-  public CreateInstancesByNameExecResponse2 fds(Fds2 fds) {
+  public CreateInstancesByNameExecResponse2 fds(Fds fds) {
     
     this.fds = fds;
     return this;
@@ -49,12 +43,12 @@ public class CreateInstancesByNameExecResponse2 {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Fds2 getFds() {
+  public Fds getFds() {
     return fds;
   }
 
 
-  public void setFds(Fds2 fds) {
+  public void setFds(Fds fds) {
     this.fds = fds;
   }
 

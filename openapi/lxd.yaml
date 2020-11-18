@@ -9118,7 +9118,7 @@ components:
       description: Return (with wait-for-websocket=true and interactive=true)
       properties:
         fds:
-          $ref: '#/components/schemas/Fds2'
+          $ref: '#/components/schemas/Fds'
       type: object
     Fds2:
       properties:
