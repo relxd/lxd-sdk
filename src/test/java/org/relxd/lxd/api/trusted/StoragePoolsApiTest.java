@@ -16,7 +16,9 @@ package org.relxd.lxd.api.trusted;
 import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
+import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.Configuration;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.StoragePoolsApi;
@@ -48,22 +50,21 @@ public class StoragePoolsApiTest {
 
     private String unixSocketPath;
 
+    // Why do you need a constructor inside a test?
+    // Why is the code being duplicated from set up method?
+    // Why are you initialising all these classes before each test? Should be initialised once and used throughout the test; only the fields which need to be reset before a test should be put inside before each annotation
+    // Wny can you not get unixSocket path from the RelxdApiClient?
     public StoragePoolsApiTest(){
-        linuxCmdService = spy(new LinuxCmdServiceImpl());
-        logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        api = new StoragePoolsApi();
-        apiClient = new RelxdApiClient();
-        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        this.setup();
     }
 
     @BeforeEach
     public void setup() {
-
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         api = new StoragePoolsApi();
         apiClient = new RelxdApiClient();
-        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath = apiClient.getUnixSocketPath();
     }
 
     @After

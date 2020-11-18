@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
-public class RelxdApiClient {
+public class RelxdApiClient extends ApiClient {
 
     private String basePath;
 
@@ -36,6 +36,8 @@ public class RelxdApiClient {
 
     private String authenticationType;
 
+    private String unixSocketPath;
+
     private static final String TRUSTED = "Trusted";
 
     private static final String NOT_TRUSTED = "Not Trusted";
@@ -44,16 +46,9 @@ public class RelxdApiClient {
         return basePath;
     }
 
-    public void setBasePath(String basePath) {
-        this.basePath = basePath;
-    }
 
     public OkHttpClient getHttpClient() {
         return httpClient;
-    }
-
-    public void setHttpClient(OkHttpClient httpClient) {
-        this.httpClient = httpClient;
     }
 
     public Logger getLogger() {
@@ -96,9 +91,17 @@ public class RelxdApiClient {
         this.authenticationType = authenticationType;
     }
 
+    public String getUnixSocketPath() {
+        return unixSocketPath;
+    }
+
+    public void setUnixSocketPath(String unixSocketPath) {
+        this.unixSocketPath = unixSocketPath;
+    }
+
     public RelxdApiClient(){
 
-        logger = LoggerFactory.getLogger(ApiClient.class);
+        logger = LoggerFactory.getLogger(RelxdApiClient.class);
 
         basePath = this.getApplicationProperties().getProperty("base.url");
         javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
@@ -108,8 +111,8 @@ public class RelxdApiClient {
 
         initHttpClient();
 
+        Configuration.setDefaultApiClient(this);
     }
-
 
     public Properties getApplicationProperties() {
 

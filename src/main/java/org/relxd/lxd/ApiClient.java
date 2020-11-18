@@ -86,12 +86,6 @@ public class ApiClient {
         // Setup authentications (key: authentication name, value: authentication).
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
-
-        final RelxdApiClient relxdApiClient = new RelxdApiClient();
-
-        relxdApiClient.initHttpClient();
-        basePath = relxdApiClient.getBasePath();
-        httpClient = relxdApiClient.getHttpClient();
     }
 
     private void initHttpClient() {
@@ -1249,8 +1243,8 @@ public class ApiClient {
                 if (request.tag() instanceof ApiCallback) {
                     final ApiCallback callback = (ApiCallback) request.tag();
                     return originalResponse.newBuilder()
-                        .body(new ProgressResponseBody(originalResponse.body(), callback))
-                        .build();
+                            .body(new ProgressResponseBody(originalResponse.body(), callback))
+                            .build();
                 }
                 return originalResponse;
             }
@@ -1315,9 +1309,9 @@ public class ApiClient {
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(keyManagers, trustManagers, new SecureRandom());
             httpClient = httpClient.newBuilder()
-                            .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustManagers[0])
-                            .hostnameVerifier(hostnameVerifier)
-                            .build();
+                    .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustManagers[0])
+                    .hostnameVerifier(hostnameVerifier)
+                    .build();
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
