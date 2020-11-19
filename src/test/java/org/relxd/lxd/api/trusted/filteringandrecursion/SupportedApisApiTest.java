@@ -24,8 +24,8 @@ import static org.mockito.Mockito.spy;
 
 public class SupportedApisApiTest {
 
-    private final SupportedApisApi api = new SupportedApisApi();
-    private final RelxdApiClient apiClient = new RelxdApiClient();
+    private SupportedApisApi api;
+
     private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
     private LinuxCmdService linuxCmdService;
     private String unixSocketPath;
@@ -33,8 +33,10 @@ public class SupportedApisApiTest {
     @Before
     public void setup() {
 
+        RelxdApiClient relxdApiClient = new RelxdApiClient();
+        api = new SupportedApisApi();
         linuxCmdService = spy(new LinuxCmdServiceImpl());
-        unixSocketPath =apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
     }
 
     /**

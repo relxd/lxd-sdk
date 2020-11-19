@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ResourcesApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
@@ -28,6 +29,7 @@ public class ResourcesApiTest {
     public void setup() {
 
         api = new ResourcesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

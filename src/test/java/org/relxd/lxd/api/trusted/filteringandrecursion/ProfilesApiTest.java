@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ProfilesApi;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for ProfilesApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ProfilesApiTest {
 
     private ProfilesApi api;
@@ -25,6 +27,7 @@ public class ProfilesApiTest {
     @BeforeAll
     public void setup() {
         api  = new ProfilesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     

@@ -2,11 +2,11 @@
 package org.relxd.lxd.api.trusted;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.TestInstance;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.EventsApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.ErrorResponse;
@@ -19,16 +19,15 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for EventsApi
  */
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class EventsApiTest {
 
     private EventsApi api;
     private Logger logger;
 
-    @BeforeAll
+    @Before
     public void setup() {
-
         api = new EventsApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     
@@ -45,6 +44,7 @@ public class EventsApiTest {
         String filter = null;
 
         try {
+            logger.info("Events Api >>>>>> {}", api);
             BackgroundOperationResponse response = api.getEvents(type, recursion, filter);
             logger.info("Get Events Response >>>>>> {}", response);
 

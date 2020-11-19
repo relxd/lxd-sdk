@@ -22,13 +22,7 @@ import java.util.Properties;
 
 public class RelxdApiClient extends ApiClient{
 
-    //Base url
-    private String basePath;
-
     private String unixSocketPath;
-
-    //HttpClient
-    private OkHttpClient httpClient;
 
     private Logger logger;
 
@@ -41,14 +35,6 @@ public class RelxdApiClient extends ApiClient{
     private String authenticationType;
     private static final String TRUSTED = "Trusted";
     private static final String NOT_TRUSTED = "Not Trusted";
-
-    public String getBasePath() {
-        return basePath;
-    }
-
-    public OkHttpClient getHttpClient() {
-        return httpClient;
-    }
 
     public Logger getLogger() {
         return logger;
@@ -103,7 +89,8 @@ public class RelxdApiClient extends ApiClient{
         //initialise logger
         logger = LoggerFactory.getLogger(ApiClient.class);
         //Initialise fields from properties file
-        basePath = this.getApplicationProperties().getProperty("base.url");
+        final String basePath = this.getApplicationProperties().getProperty("base.url");
+        super.setBasePath(basePath);
         javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
@@ -152,7 +139,7 @@ public class RelxdApiClient extends ApiClient{
         //Build HttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
-        if ((basePath != null) && (basePath.contains("https"))) {
+        if ((super.getBasePath() != null) && (super.getBasePath().contains("https"))) {
 
             try {
                 //Connect to the keystore to get certificate
@@ -211,7 +198,7 @@ public class RelxdApiClient extends ApiClient{
         }
 
 
-        httpClient = builder.build();
+        super.setHttpClient(builder.build());
 
     }
 

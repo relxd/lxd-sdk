@@ -43,6 +43,7 @@ public class InstancesApiTest {
     public void setup() {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new InstancesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
         unixSocketPath = relxdApiClient.getUnixSocketPath();
@@ -754,7 +755,20 @@ public class InstancesApiTest {
     @Test
     @Order(12)
     public void postInstancesByNameExecTest() {
-        postInstancesByNameExec("ubuntu18", Arrays.asList("bin","bash"));
+
+        final CreateInstancesByNameExecRequest request = populatePostInstancesByNameExecRequest(Arrays.asList("bin", "bash"),new Environment(),true,false,true,80,25);
+
+        try {
+            BackgroundOperationResponse response = api.postInstancesByNameExec("ubuntu18", request);
+
+            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + response);
+            assertEquals(response.getStatusCode(),Integer.valueOf(100));
+        }catch (ApiException e){
+            catchApiException(e);
+            throw new RuntimeException(e);
+        }
+
+
 
     }
 
@@ -1081,9 +1095,8 @@ public class InstancesApiTest {
         }
     }
 
-    public BackgroundOperationResponse postInstancesByNameExec(String containerName, List<String> command) {
-        String name = containerName;
-        Environment environment = new Environment();
+    public CreateInstancesByNameExecRequest populatePostInstancesByNameExecRequest(List<String> command, Environment environment, Boolean waitForWebsocket, Boolean setRecordOutput, Boolean setInteractive, Integer width, Integer height) {
+        //Environment environment = new Environment();
         CreateInstancesByNameExecRequest request = new CreateInstancesByNameExecRequest();
         request.setCommand(command);
         request.setEnvironment(environment);
@@ -1096,16 +1109,8 @@ public class InstancesApiTest {
         request.setGroup(1000);
         request.setCwd("/tmp");*/
 
-        try {
-            BackgroundOperationResponse response = api.postInstancesByNameExec(name, request);
-            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + response);
-            assertEquals(response.getStatusCode(),Integer.valueOf(100));
+        return request;
 
-            return response;
-        }catch (ApiException e){
-            catchApiException(e);
-            throw new RuntimeException(e);
-        }
     }
 
     private ErrorResponse catchApiException(ApiException e) {

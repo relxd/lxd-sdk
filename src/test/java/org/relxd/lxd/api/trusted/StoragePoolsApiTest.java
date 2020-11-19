@@ -42,6 +42,7 @@ public class StoragePoolsApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         api = new StoragePoolsApi();
+        api.setApiClient(new RelxdApiClient());
         unixSocketPath = relxdApiClient.getUnixSocketPath();
     }
 

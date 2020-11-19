@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ProfilesApi;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
@@ -26,6 +27,7 @@ public class ProfilesApiTest {
     @BeforeAll
     public void setup() {
         api  = new ProfilesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 
