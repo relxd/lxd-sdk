@@ -113,6 +113,8 @@ public class RelxdApiClient extends ApiClient{
         //Initialise Http Client
         initHttpClient();
 
+        //Set RelxdApiClient as default ApiClient
+        Configuration.setDefaultApiClient(this);
     }
 
 
