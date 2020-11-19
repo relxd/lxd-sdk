@@ -44,7 +44,7 @@ public class InstancesApiTest {
         api = new InstancesApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
-        unixSocketPath = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath = relxdApiClient.getUnixSocketPath();
     }
 
     @After

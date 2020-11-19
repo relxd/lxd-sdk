@@ -35,7 +35,7 @@ public class ServerConfigApiTest {
         logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
         api = new ServerConfigApi();
         apiClient = new RelxdApiClient();
-        unixSocketPath = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath = apiClient.getUnixSocketPath();
     }
 
 

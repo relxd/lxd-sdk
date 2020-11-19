@@ -25,6 +25,8 @@ public class RelxdApiClient extends ApiClient{
     //Base url
     private String basePath;
 
+    private String unixSocketPath;
+
     //HttpClient
     private OkHttpClient httpClient;
 
@@ -88,6 +90,14 @@ public class RelxdApiClient extends ApiClient{
         this.authenticationType = authenticationType;
     }
 
+    public String getUnixSocketPath() {
+        return unixSocketPath;
+    }
+
+    public void setUnixSocketPath(String unixSocketPath) {
+        this.unixSocketPath = unixSocketPath;
+    }
+
     public RelxdApiClient(){
 
         //initialise logger
@@ -98,6 +108,7 @@ public class RelxdApiClient extends ApiClient{
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
         authenticationType = this.getApplicationProperties().getProperty("authentication.type");
+        unixSocketPath = this.getApplicationProperties().getProperty("unix.socket.base.path");
 
         //Initialise Http Client
         initHttpClient();

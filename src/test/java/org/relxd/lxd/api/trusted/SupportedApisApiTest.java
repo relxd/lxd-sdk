@@ -33,7 +33,7 @@ public class SupportedApisApiTest {
     public void setup() {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
-        unixSocketPath =relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath =relxdApiClient.getUnixSocketPath();
     }
 
     /**

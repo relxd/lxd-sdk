@@ -46,7 +46,7 @@ public class ImagesApiTest {
         api = new ImagesApi();
         operationsApi = new OperationsApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        unixSocketPath  = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }
 
     

@@ -31,18 +31,17 @@ public class ImagesApiTest {
 
     private ImagesApi api;
     private Logger logger;
-    private RelxdApiClient apiClient;
     private LinuxCmdService linuxCmdService;
     private List<String> getImageResponseUrls;
     private String unixSocketPath;
 
     @BeforeAll
     public void setup() {
+        RelxdApiClient relxdApiClient =  new RelxdApiClient();
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new ImagesApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        apiClient = new RelxdApiClient();
-        unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }
     
     /**
