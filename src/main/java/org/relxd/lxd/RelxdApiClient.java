@@ -22,22 +22,22 @@ import java.util.Properties;
 
 public class RelxdApiClient {
 
+    //Base url
     private String basePath;
 
+    //HttpClient
     private OkHttpClient httpClient;
 
     private Logger logger;
 
+    //Java Keystore fields
     private JavaKeyStoreService javaKeyStoreService;
-
     private String javaKeyStoreFilePath;
-
     private String javaKeyStorePassword;
 
+    //Authentication type which is either Trusted or Not Trusted
     private String authenticationType;
-
     private static final String TRUSTED = "Trusted";
-
     private static final String NOT_TRUSTED = "Not Trusted";
 
     public String getBasePath() {
@@ -98,19 +98,22 @@ public class RelxdApiClient {
 
     public RelxdApiClient(){
 
+        //initialise logger
         logger = LoggerFactory.getLogger(ApiClient.class);
-
+        //Initialise fields from properties file
         basePath = this.getApplicationProperties().getProperty("base.url");
         javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
         authenticationType = this.getApplicationProperties().getProperty("authentication.type");
 
+        //Initialise Http Client
         initHttpClient();
 
     }
 
 
+    //Method to get Application Properties from the properties file
     public Properties getApplicationProperties() {
 
         final String PROPERTIES_FILE_LOCATION = "application.properties";
@@ -134,36 +137,44 @@ public class RelxdApiClient {
 
     }
 
+    //Initialise an HttpClient
     void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
     }
 
     private void initHttpClient(List<Interceptor> interceptors) {
+
+        //Build HttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
         if ((basePath != null) && (basePath.contains("https"))) {
 
             try {
+                //Connect to the keystore to get certificate
                 KeyStore keyStore = javaKeyStoreService.getKeyStore(javaKeyStoreFilePath, javaKeyStorePassword);
 
+                //Initialise an SSL Context
                 SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
                 TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
                 trustManagerFactory.init(keyStore);
 
                 KeyManager[] keyManagers;
 
+                //If authentication type is trusted add key manager
                 if (TRUSTED.equalsIgnoreCase(authenticationType)) {
                     KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
                     keyManagerFactory.init(keyStore, javaKeyStorePassword.toCharArray());
 
                     keyManagers = keyManagerFactory.getKeyManagers();
 
+                //If authentication type is not trusted do not add key manager
                 }else if (NOT_TRUSTED.equalsIgnoreCase(authenticationType)){
                     keyManagers = null;
                 }else {
                     throw new RuntimeException("Authentication types can only be Trusted or Not Trusted");
                 }
 
+                //Add trust manager
                 TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
                 if (trustManagers.length != 1 || !(trustManagers[0] instanceof X509TrustManager)) {
                     throw new IllegalStateException("Unexpected default trust managers:"
@@ -188,6 +199,7 @@ public class RelxdApiClient {
 
         }
 
+        //Add a network Interceptor
         builder.addNetworkInterceptor(getProgressInterceptor());
         for (Interceptor interceptor: interceptors) {
             builder.addInterceptor(interceptor);

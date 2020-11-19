@@ -1,13 +1,13 @@
 package org.relxd.lxd.api.competitionlabscli;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.api.ImagesApi;
 import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.api.OperationsApi;
-import org.relxd.lxd.api.trusted.*;
+import org.relxd.lxd.api.trusted.InstancesApiTest;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,28 +19,20 @@ import java.util.List;
 
 public class CompetitionLabsCliTests {
 
-    private ImagesApiTest imagesApiTest;
     private ImagesApi imagesApi;
     private InstancesApiTest instancesApiTest;
-    private ServerConfigApiTest serverConfigApiTest;
-    private ClusterApiTest clusterApiTest;
     private OperationsApi operationsApi;
-    private StoragePoolsApiTest storagePoolsApiTest;
     private InstancesApi instancesApi;
 
     private List<String> getImageResponseUrls;
     private Logger logger;
 
-    @BeforeEach
+    @BeforeAll
     public void init(){
-        imagesApiTest = new ImagesApiTest();
         imagesApi = new ImagesApi();
         instancesApiTest =  new InstancesApiTest();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        serverConfigApiTest = new ServerConfigApiTest();
-        clusterApiTest = new ClusterApiTest();
         operationsApi = new OperationsApi();
-        storagePoolsApiTest = new StoragePoolsApiTest();
         instancesApi = new InstancesApi();
     }
 
