@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
-public class RelxdApiClient {
+public class RelxdApiClient extends ApiClient{
 
     //Base url
     private String basePath;
@@ -44,16 +44,8 @@ public class RelxdApiClient {
         return basePath;
     }
 
-    public void setBasePath(String basePath) {
-        this.basePath = basePath;
-    }
-
     public OkHttpClient getHttpClient() {
         return httpClient;
-    }
-
-    public void setHttpClient(OkHttpClient httpClient) {
-        this.httpClient = httpClient;
     }
 
     public Logger getLogger() {
