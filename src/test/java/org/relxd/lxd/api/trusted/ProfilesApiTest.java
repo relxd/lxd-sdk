@@ -17,6 +17,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for ProfilesApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ProfilesApiTest {
 
     private ProfilesApi api;

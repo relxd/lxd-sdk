@@ -24,6 +24,7 @@ import static org.mockito.Mockito.spy;
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class StoragePoolsApiTest {
 
     private StoragePoolsApi api;

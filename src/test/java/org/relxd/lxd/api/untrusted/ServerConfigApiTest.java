@@ -7,7 +7,6 @@ import org.relxd.lxd.ApiException;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ServerConfigApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
-import org.relxd.lxd.model.ServerConfig;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdServiceImpl;
 import org.slf4j.Logger;
@@ -37,7 +36,6 @@ public class ServerConfigApiTest {
         api = new ServerConfigApi();
         unixSocketPath = relxdApiClient.getUnixSocketPath();
     }
-
 
     /**
      *

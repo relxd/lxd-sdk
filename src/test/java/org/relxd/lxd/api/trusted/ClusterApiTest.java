@@ -22,6 +22,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for ClusterApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ClusterApiTest {
 
     private ClusterApi api;

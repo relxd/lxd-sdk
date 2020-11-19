@@ -4,6 +4,7 @@ package org.relxd.lxd.api.trusted;
 import com.google.gson.JsonSyntaxException;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.api.EventsApi;
@@ -18,6 +19,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for EventsApi
  */
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class EventsApiTest {
 
     private EventsApi api;

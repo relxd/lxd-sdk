@@ -17,6 +17,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for NetworksApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class NetworksApiTest {
 
     private NetworksApi api;

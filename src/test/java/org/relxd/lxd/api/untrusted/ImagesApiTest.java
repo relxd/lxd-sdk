@@ -27,6 +27,7 @@ import static org.mockito.Mockito.spy;
  * API tests for ImagesApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ImagesApiTest {
 
     private ImagesApi api;
