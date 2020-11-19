@@ -36,6 +36,17 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" name="Maven: javax.websocket:javax.websocket-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-server:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-spi:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-websocket-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-client:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.tyrus:tyrus-container-grizzly:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http-server:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-http:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-rcm:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-jdk14:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />

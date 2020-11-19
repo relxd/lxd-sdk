@@ -14,21 +14,15 @@
 package org.relxd.lxd.model;
 
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * Fds2
+ * Fds
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
-public class Fds2 {
+public class Fds {
   public static final String SERIALIZED_NAME_0 = "0";
   @SerializedName(SERIALIZED_NAME_0)
   private String _0;
@@ -38,7 +32,7 @@ public class Fds2 {
   private String control;
 
 
-  public Fds2 _0(String _0) {
+  public Fds _0(String _0) {
     
     this._0 = _0;
     return this;
@@ -61,7 +55,7 @@ public class Fds2 {
   }
 
 
-  public Fds2 control(String control) {
+  public Fds control(String control) {
     
     this.control = control;
     return this;
@@ -92,7 +86,7 @@ public class Fds2 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Fds2 fds2 = (Fds2) o;
+    Fds fds2 = (Fds) o;
     return Objects.equals(this._0, fds2._0) &&
         Objects.equals(this.control, fds2.control);
   }
@@ -106,7 +100,7 @@ public class Fds2 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Fds2 {\n");
+    sb.append("class Fds {\n");
     sb.append("    _0: ").append(toIndentedString(_0)).append("\n");
     sb.append("    control: ").append(toIndentedString(control)).append("\n");
     sb.append("}");
