@@ -36,8 +36,8 @@ public class JavaKeyStoreServiceTest {
         certificateChainGenerationService = spy(new CertificateChainGenerationServiceImpl());
         logger = LoggerFactory.getLogger(JavaKeyStoreServiceTest.class);
         apiClient = new RelxdApiClient();
-        javaKeyStoreFilePath = apiClient.getApplicationProperties().getProperty("java.guest.keystore.path");
-        javaKeyStorePassword = apiClient.getApplicationProperties().getProperty("java.keystore.password");
+        javaKeyStoreFilePath = apiClient.getJavaKeyStoreFilePath();
+        javaKeyStorePassword = apiClient.getJavaKeyStorePassword();
     }
 
 

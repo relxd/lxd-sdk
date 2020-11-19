@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ClusterApi;
 import org.relxd.lxd.api.trusted.InstancesApiTest;
 import org.relxd.lxd.model.BackgroundOperationResponse;
@@ -33,6 +34,7 @@ public class ClusterApiTest {
     public void setup() {
 
         api = new ClusterApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     
