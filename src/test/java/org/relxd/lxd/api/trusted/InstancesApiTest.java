@@ -5,6 +5,7 @@ import com.google.gson.JsonSyntaxException;
 import org.junit.After;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
+import org.relxd.lxd.Configuration;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.InstancesApi;
@@ -42,11 +43,20 @@ public class InstancesApiTest {
     @BeforeAll
     public void setup() {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
-        api = new InstancesApi();
-        api.setApiClient(new RelxdApiClient());
-        logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        final RelxdApiClient relxdApiClient = new RelxdApiClient();
+        // Notice the order in which I have initialised the variables - it is important
+        RelxdApiClient relxdApiClient = new RelxdApiClient();
         unixSocketPath = relxdApiClient.getUnixSocketPath();
+        api = new InstancesApi();
+        /**
+         * You do not need to set api client explicitly.
+         * When you insitiliase RelxdApiClient -> inside your constructor - line 104 - you have already set it as default
+         *         //Set RelxdApiClient as default ApiClient
+         *         Configuration.setDefaultApiClient(this);
+         */
+        //api.setApiClient(new RelxdApiClient());
+
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+
     }
 
     @After
@@ -1052,7 +1062,7 @@ public class InstancesApiTest {
 
 
     public BackgroundOperationResponse postUbuntuInstance(String name) {
-        String target = null;
+        String target = null; //this target should come from the base path of the config in the context of this test or pass it as a parameter to the method
 
         Kvm kvm = new Kvm();
         kvm.setPath("/dev/kvm");

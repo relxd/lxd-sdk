@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
-public class RelxdApiClient extends ApiClient{
+public class RelxdApiClient extends ApiClient {
 
     private String unixSocketPath;
 
@@ -87,7 +87,7 @@ public class RelxdApiClient extends ApiClient{
     public RelxdApiClient(){
 
         //initialise logger
-        logger = LoggerFactory.getLogger(ApiClient.class);
+        logger = LoggerFactory.getLogger(RelxdApiClient.class);
         //Initialise fields from properties file
         final String basePath = this.getApplicationProperties().getProperty("base.url");
         super.setBasePath(basePath);

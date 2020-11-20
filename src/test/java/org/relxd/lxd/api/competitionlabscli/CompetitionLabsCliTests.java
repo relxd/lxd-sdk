@@ -10,6 +10,7 @@ import org.relxd.lxd.api.ImagesApi;
 import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.api.OperationsApi;
 import org.relxd.lxd.api.trusted.InstancesApiTest;
+import org.relxd.lxd.builders.InstanceConfigBuilder;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,6 +73,11 @@ public class CompetitionLabsCliTests {
             CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
             createInstancesRequestConfig.setLimitsCpu("2");
 
+            // Usgae of config builder
+            InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
+            configBuilder.setBootAutoStart(true);
+
+
             //Instance Profiles
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
@@ -101,6 +107,7 @@ public class CompetitionLabsCliTests {
                 source.setFingerprint(fingerprint);
 
                 //Populate the CreateInstancesRequest and get a Response
+                //todo - clean up the create instance request - extend it to support other parameters
                 CreateInstancesRequest createInstancesRequest = instancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
 
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(target, createInstancesRequest);
