@@ -8655,7 +8655,7 @@ components:
           example: true
           type: boolean
         config:
-          $ref: '#/components/schemas/CreateInstancesRequest_config'
+          $ref: '#/components/schemas/CreateInstancesRequestConfig'
         type:
           description: Optional. Can be "virtual-machine", "container" - by default
             it set to "container"
@@ -9118,7 +9118,7 @@ components:
       description: Return (with wait-for-websocket=true and interactive=true)
       properties:
         fds:
-          $ref: '#/components/schemas/Fds'
+          $ref: '#/components/schemas/Fds1'
       type: object
     Fds2:
       properties:
@@ -11093,14 +11093,34 @@ components:
           description: dict representing a trusted certificate
           example: SHA256 Hash of the raw certificate
           type: string
-    CreateInstancesRequest_config:
+    CreateInstancesRequestConfig:
+      description: This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.
+      type: object
+      properties:
+        createInstancesRequestConfigEntry:
+          $ref: '#/components/schemas/CreateInstancesRequestConfigEntry'
+    CreateInstancesRequestConfigEntry:
+      description: This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/CreateInstancesRequestConfigValue'
+        type: object
       example:
         limits.cpu: "2"
+        limits.memory: "512MB"
+    CreateInstancesRequestConfigValue:
+      description: ""
+      required:
+          - configValueToSet
+      type: object
       properties:
-        limits.cpu:
-          description: Config override.
-          example: "2"
-          type: string
+        configValueToSet:
+          description: The config value to set
+          oneOf:
+            - type: string
+            - type: integer
+            - type: boolean
+          example: 2
     UpdateInstancesByNameRequest_oneOf:
       description: Input (update instance configuration)
       properties:
