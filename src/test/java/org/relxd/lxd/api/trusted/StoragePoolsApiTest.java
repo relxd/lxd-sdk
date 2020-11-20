@@ -24,6 +24,7 @@ import static org.mockito.Mockito.spy;
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class StoragePoolsApiTest {
 
     private StoragePoolsApi api;
@@ -41,7 +42,8 @@ public class StoragePoolsApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         api = new StoragePoolsApi();
-        unixSocketPath = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        api.setApiClient(new RelxdApiClient());
+        unixSocketPath = relxdApiClient.getUnixSocketPath();
     }
 
     @After

@@ -30,6 +30,7 @@ import static org.mockito.Mockito.spy;
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class InstancesApiTest {
 
     private InstancesApi api;
@@ -43,6 +44,7 @@ public class InstancesApiTest {
 
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new InstancesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
         unixSocketPath = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");

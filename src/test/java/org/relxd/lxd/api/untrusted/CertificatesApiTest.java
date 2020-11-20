@@ -2,9 +2,11 @@
 package org.relxd.lxd.api.untrusted;
 
 import com.google.gson.JsonSyntaxException;
+import org.junit.Before;
 import org.junit.Test;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.CertificatesApi;
 import org.relxd.lxd.api.trusted.InstancesApiTest;
 import org.relxd.lxd.model.BackgroundOperationResponse;
@@ -22,9 +24,17 @@ import static junit.framework.TestCase.assertEquals;
 
 public class CertificatesApiTest {
 
-    private final CertificatesApi api = new CertificatesApi();
+    private CertificatesApi api;
 
-    private final Logger logger = LoggerFactory.getLogger(InstancesApiTest.class);
+    private Logger logger;
+
+    @Before
+    public void setup() {
+        api = new CertificatesApi();
+        api.setApiClient(new RelxdApiClient());
+        logger = LoggerFactory.getLogger(InstancesApiTest.class);
+        api.setApiClient(new RelxdApiClient());
+    }
 
     /**
      *

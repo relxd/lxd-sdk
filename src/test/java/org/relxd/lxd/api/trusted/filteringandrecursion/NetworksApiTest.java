@@ -5,6 +5,7 @@ import com.google.gson.JsonSyntaxException;
 import org.junit.jupiter.api.*;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.NetworksApi;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import static junit.framework.TestCase.assertEquals;
  * API tests for NetworksApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class NetworksApiTest {
 
     private NetworksApi api;
@@ -25,6 +27,7 @@ public class NetworksApiTest {
     @BeforeAll
     public void setup() {
         api  = new NetworksApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

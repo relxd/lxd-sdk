@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.OperationsApi;
 import org.relxd.lxd.model.BackgroundOperationResponse;
 import java.math.BigDecimal;
@@ -29,6 +30,7 @@ public class OperationsApiTest {
     @Before
     public void setup() {
         api  = new OperationsApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

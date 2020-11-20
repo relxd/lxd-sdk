@@ -26,6 +26,7 @@ import static org.mockito.Mockito.spy;
  * API tests for ImagesApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ImagesApiTest {
 
     private ImagesApi api;
@@ -40,8 +41,9 @@ public class ImagesApiTest {
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new ImagesApi();
+        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        unixSocketPath  = relxdApiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }
     
     /**

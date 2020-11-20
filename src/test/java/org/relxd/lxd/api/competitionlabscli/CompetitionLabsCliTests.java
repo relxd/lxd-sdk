@@ -2,8 +2,10 @@ package org.relxd.lxd.api.competitionlabscli;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.JSON;
+import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.ImagesApi;
 import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.api.OperationsApi;
@@ -17,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static junit.framework.TestCase.assertEquals;
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CompetitionLabsCliTests {
 
     private ImagesApi imagesApi;
@@ -29,6 +34,7 @@ public class CompetitionLabsCliTests {
 
     @BeforeAll
     public void init(){
+        new RelxdApiClient();
         imagesApi = new ImagesApi();
         instancesApiTest =  new InstancesApiTest();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
@@ -203,7 +209,12 @@ public class CompetitionLabsCliTests {
 
         try{
 
-        final BackgroundOperationResponse backgroundOperationResponse = instancesApiTest.postInstancesByNameExec("ubuntu18", Arrays.asList("sudo","apt","install", "rabbitmq-server"));
+        final CreateInstancesByNameExecRequest request = instancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("sudo","apt","install", "rabbitmq-server"),new Environment(),true,false,true,80,25);
+
+            BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec("ubuntu18", request);
+
+            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
+            assertEquals(backgroundOperationResponse.getStatusCode(),Integer.valueOf(100));
 
         if (backgroundOperationResponse != null) {
             final String operation = backgroundOperationResponse.getOperation();

@@ -20,13 +20,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
-public class RelxdApiClient {
+public class RelxdApiClient extends ApiClient{
 
-    //Base url
-    private String basePath;
-
-    //HttpClient
-    private OkHttpClient httpClient;
+    private String unixSocketPath;
 
     private Logger logger;
 
@@ -39,22 +35,6 @@ public class RelxdApiClient {
     private String authenticationType;
     private static final String TRUSTED = "Trusted";
     private static final String NOT_TRUSTED = "Not Trusted";
-
-    public String getBasePath() {
-        return basePath;
-    }
-
-    public void setBasePath(String basePath) {
-        this.basePath = basePath;
-    }
-
-    public OkHttpClient getHttpClient() {
-        return httpClient;
-    }
-
-    public void setHttpClient(OkHttpClient httpClient) {
-        this.httpClient = httpClient;
-    }
 
     public Logger getLogger() {
         return logger;
@@ -96,20 +76,32 @@ public class RelxdApiClient {
         this.authenticationType = authenticationType;
     }
 
+    public String getUnixSocketPath() {
+        return unixSocketPath;
+    }
+
+    public void setUnixSocketPath(String unixSocketPath) {
+        this.unixSocketPath = unixSocketPath;
+    }
+
     public RelxdApiClient(){
 
         //initialise logger
         logger = LoggerFactory.getLogger(ApiClient.class);
         //Initialise fields from properties file
-        basePath = this.getApplicationProperties().getProperty("base.url");
+        final String basePath = this.getApplicationProperties().getProperty("base.url");
+        super.setBasePath(basePath);
         javaKeyStoreFilePath = this.getApplicationProperties().getProperty("java.keystore.path");
         javaKeyStorePassword = this.getApplicationProperties().getProperty("java.keystore.password");
         javaKeyStoreService = new JavaKeyStoreServiceImpl();
         authenticationType = this.getApplicationProperties().getProperty("authentication.type");
+        unixSocketPath = this.getApplicationProperties().getProperty("unix.socket.base.path");
 
         //Initialise Http Client
         initHttpClient();
 
+        //Set RelxdApiClient as default ApiClient
+        Configuration.setDefaultApiClient(this);
     }
 
 
@@ -147,7 +139,7 @@ public class RelxdApiClient {
         //Build HttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
 
-        if ((basePath != null) && (basePath.contains("https"))) {
+        if ((super.getBasePath() != null) && (super.getBasePath().contains("https"))) {
 
             try {
                 //Connect to the keystore to get certificate
@@ -206,7 +198,7 @@ public class RelxdApiClient {
         }
 
 
-        httpClient = builder.build();
+        super.setHttpClient(builder.build());
 
     }
 

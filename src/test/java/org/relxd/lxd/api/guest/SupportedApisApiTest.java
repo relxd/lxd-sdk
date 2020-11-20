@@ -23,17 +23,20 @@ import static org.mockito.Mockito.spy;
 
 public class SupportedApisApiTest {
 
-    private final SupportedApisApi api = new SupportedApisApi();
-    private final RelxdApiClient apiClient = new RelxdApiClient();
-    private final Logger logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
+    private SupportedApisApi api;
+    private Logger logger;
     private LinuxCmdService linuxCmdService;
     private String unixSocketPath;
 
     @Before
     public void setup() {
 
+        api = new SupportedApisApi();
+        api.setApiClient(new RelxdApiClient());
+        RelxdApiClient apiClient = new RelxdApiClient();
+        logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
         linuxCmdService = spy(new LinuxCmdServiceImpl());
-        unixSocketPath =apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+        unixSocketPath =apiClient.getUnixSocketPath();
     }
 
     /**

@@ -27,22 +27,24 @@ import static org.mockito.Mockito.spy;
  * API tests for ImagesApi
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ImagesApiTest {
 
     private ImagesApi api;
     private Logger logger;
-    private RelxdApiClient apiClient;
     private LinuxCmdService linuxCmdService;
     private List<String> getImageResponseUrls;
     private String unixSocketPath;
 
     @BeforeAll
     public void setup() {
-        linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new ImagesApi();
+        api.setApiClient(new RelxdApiClient());
+        linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        apiClient = new RelxdApiClient();
-        unixSocketPath  = apiClient.getApplicationProperties().getProperty("unix.socket.base.path");
+
+        RelxdApiClient relxdApiClient =  new RelxdApiClient();
+        unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }
     
     /**
