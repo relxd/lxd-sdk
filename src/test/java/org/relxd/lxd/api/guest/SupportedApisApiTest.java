@@ -30,10 +30,8 @@ public class SupportedApisApiTest {
 
     @Before
     public void setup() {
-
-        api = new SupportedApisApi();
-        api.setApiClient(new RelxdApiClient());
         RelxdApiClient apiClient = new RelxdApiClient();
+        api = new SupportedApisApi();
         logger = LoggerFactory.getLogger(SupportedApisApiTest.class);
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         unixSocketPath =apiClient.getUnixSocketPath();

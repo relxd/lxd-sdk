@@ -27,8 +27,8 @@ public class NetworksApiTest {
 
     @BeforeAll
     public void setup() {
+        new RelxdApiClient();
         api  = new NetworksApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

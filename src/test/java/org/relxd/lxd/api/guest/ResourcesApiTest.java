@@ -28,8 +28,8 @@ public class ResourcesApiTest {
     @Before
     public void setup() {
 
+        new RelxdApiClient();
         api = new ResourcesApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

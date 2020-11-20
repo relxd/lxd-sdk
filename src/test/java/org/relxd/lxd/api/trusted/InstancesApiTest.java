@@ -43,18 +43,9 @@ public class InstancesApiTest {
     @BeforeAll
     public void setup() {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
-        // Notice the order in which I have initialised the variables - it is important
         RelxdApiClient relxdApiClient = new RelxdApiClient();
         unixSocketPath = relxdApiClient.getUnixSocketPath();
         api = new InstancesApi();
-        /**
-         * You do not need to set api client explicitly.
-         * When you insitiliase RelxdApiClient -> inside your constructor - line 104 - you have already set it as default
-         *         //Set RelxdApiClient as default ApiClient
-         *         Configuration.setDefaultApiClient(this);
-         */
-        //api.setApiClient(new RelxdApiClient());
-
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
 
     }
@@ -1047,7 +1038,7 @@ public class InstancesApiTest {
         }
     }
 
-    public CreateInstancesRequest populateCreateInstancesRequest(DevicesKvm devices, Source source, String type, List<String> profiles, String architecture, String name, CreateInstancesRequestConfig createInstancesRequestConfig, Boolean setEphemerial) {
+    public static CreateInstancesRequest populateCreateInstancesRequest(DevicesKvm devices, Source source, String type, List<String> profiles, String architecture, String name, CreateInstancesRequestConfig createInstancesRequestConfig, Boolean setEphemerial) {
         CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
         createInstancesRequest.setName(name);
         createInstancesRequest.setArchitecture(architecture);
@@ -1060,52 +1051,7 @@ public class InstancesApiTest {
         return createInstancesRequest;
     }
 
-
-    public BackgroundOperationResponse postUbuntuInstance(String name) {
-        String target = null; //this target should come from the base path of the config in the context of this test or pass it as a parameter to the method
-
-        Kvm kvm = new Kvm();
-        kvm.setPath("/dev/kvm");
-        kvm.setType("unix-char");
-
-        DevicesKvm devices = new DevicesKvm();
-        devices.setKvm(kvm);
-
-        CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-        createInstancesRequestConfig.setLimitsCpu("2");
-
-        List<String> profiles = new ArrayList<>();
-        profiles.add("default");
-
-        Source source = new Source();
-        source.setType("image");
-        source.setProtocol("simplestreams");
-        source.setServer("https://cloud-images.ubuntu.com/releases");
-        source.setAlias("18.04");
-
-        CreateInstancesRequest createInstancesRequest = new CreateInstancesRequest();
-        createInstancesRequest.setSource(source);
-        createInstancesRequest.setName(name);
-        createInstancesRequest.setArchitecture("x86_64");
-        createInstancesRequest.setEphemeral(true);
-        createInstancesRequest.setConfig(createInstancesRequestConfig);
-        createInstancesRequest.setType("container");
-        createInstancesRequest.setProfiles(profiles);
-
-        try {
-            BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
-            logger.info("Create Instance Response >>>>>>>>>> " + actualCreateInstancesResponse);
-            assertTrue((actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(200)) ||
-                    actualCreateInstancesResponse.getStatusCode() == Integer.valueOf(100));
-
-            return actualCreateInstancesResponse;
-        }catch (ApiException ex){
-            catchApiException(ex);
-            return null;
-        }
-    }
-
-    public CreateInstancesByNameExecRequest populatePostInstancesByNameExecRequest(List<String> command, Environment environment, Boolean waitForWebsocket, Boolean setRecordOutput, Boolean setInteractive, Integer width, Integer height) {
+    public static CreateInstancesByNameExecRequest populatePostInstancesByNameExecRequest(List<String> command, Environment environment, Boolean waitForWebsocket, Boolean setRecordOutput, Boolean setInteractive, Integer width, Integer height) {
         //Environment environment = new Environment();
         CreateInstancesByNameExecRequest request = new CreateInstancesByNameExecRequest();
         request.setCommand(command);

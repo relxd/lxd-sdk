@@ -29,8 +29,8 @@ public class OperationsApiTest {
 
     @Before
     public void setup() {
+        new RelxdApiClient();
         api  = new OperationsApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

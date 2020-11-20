@@ -35,7 +35,6 @@ public class ServerConfigApiTest {
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
         api = new ServerConfigApi();
-        api.setApiClient(new RelxdApiClient());
         unixSocketPath = relxdApiClient.getUnixSocketPath();
     }
 
