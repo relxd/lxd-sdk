@@ -70,12 +70,13 @@ public class CompetitionLabsCliTests {
             devices.setKvm(kvm);
 
             //Instance Config
-            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setLimitsCpu("2");
-
             // Usgae of config builder
             InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
+            configBuilder.setLimitsCpu("2");
             configBuilder.setBootAutoStart(true);
+
+            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+            createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(configBuilder.asMap());
 
             //Instance Profiles
             List<String> profiles = new ArrayList<>();
@@ -152,8 +153,12 @@ public class CompetitionLabsCliTests {
             DevicesKvm devices = new DevicesKvm();
             devices.setKvm(kvm);
 
+            InstanceConfigBuilder instanceConfigBuilder = new InstanceConfigBuilder();
+            instanceConfigBuilder.setLimitsCpu("3");
+            instanceConfigBuilder.setBootAutoStart(true);
+
             CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setLimitsCpu("2");
+            createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(instanceConfigBuilder.asMap());
 
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
@@ -164,7 +169,9 @@ public class CompetitionLabsCliTests {
             source.setServer("https://cloud-images.ubuntu.com/releases");
             source.setAlias("18.04");
 
-            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, "container", profiles, "x86_64", "ubuntu18", createInstancesRequestConfig, true);
+            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, "container", profiles, "x86_64", "ubuntu18_1", createInstancesRequestConfig, true);
+
+            logger.info("REQUEST >>>>>>>>>> {}", createInstancesRequest);
 
             BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(null, createInstancesRequest);
 
@@ -186,8 +193,10 @@ public class CompetitionLabsCliTests {
             } else {
                 throw new RuntimeException("The request returned a null response!");
             }
-        }catch (ApiException | InterruptedException ex){
+        }catch (ApiException ex){
             ex.printStackTrace();
+        }catch (InterruptedException ex){
+            ex.getCause();
         }
     }
 

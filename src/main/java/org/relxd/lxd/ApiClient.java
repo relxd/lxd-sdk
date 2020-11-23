@@ -20,9 +20,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
-import org.relxd.lxd.auth.ApiKeyAuth;
-import org.relxd.lxd.auth.Authentication;
-import org.relxd.lxd.auth.HttpBasicAuth;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
@@ -33,6 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URI;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
@@ -41,12 +39,18 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.relxd.lxd.auth.Authentication;
+import org.relxd.lxd.auth.HttpBasicAuth;
+import org.relxd.lxd.auth.HttpBearerAuth;
+import org.relxd.lxd.auth.ApiKeyAuth;
 
 public class ApiClient {
 
@@ -1239,8 +1243,8 @@ public class ApiClient {
                 if (request.tag() instanceof ApiCallback) {
                     final ApiCallback callback = (ApiCallback) request.tag();
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), callback))
-                            .build();
+                        .body(new ProgressResponseBody(originalResponse.body(), callback))
+                        .build();
                 }
                 return originalResponse;
             }
@@ -1305,9 +1309,9 @@ public class ApiClient {
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(keyManagers, trustManagers, new SecureRandom());
             httpClient = httpClient.newBuilder()
-                    .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustManagers[0])
-                    .hostnameVerifier(hostnameVerifier)
-                    .build();
+                            .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustManagers[0])
+                            .hostnameVerifier(hostnameVerifier)
+                            .build();
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }

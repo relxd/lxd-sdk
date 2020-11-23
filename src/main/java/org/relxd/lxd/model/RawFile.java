@@ -28,7 +28,7 @@ import org.relxd.lxd.model.StandardReturnValueResponse;
 /**
  * RawFile
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
 public class RawFile extends StandardReturnValueResponse {
 
   @Override

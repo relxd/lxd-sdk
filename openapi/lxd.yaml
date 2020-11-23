@@ -11116,10 +11116,7 @@ components:
       properties:
         configValueToSet:
           description: The config value to set
-          oneOf:
-            - type: string
-            - type: integer
-            - type: boolean
+          type: object
           example: 2
     UpdateInstancesByNameRequest_oneOf:
       description: Input (update instance configuration)

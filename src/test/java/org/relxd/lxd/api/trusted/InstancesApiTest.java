@@ -9,6 +9,7 @@ import org.relxd.lxd.Configuration;
 import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.InstancesApi;
+import org.relxd.lxd.builders.InstanceConfigBuilder;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.model.Properties;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -629,8 +630,12 @@ public class InstancesApiTest {
         DevicesKvm devices = new DevicesKvm();
         devices.setKvm(kvm);
 
+        InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
+        configBuilder.setLimitsCpu("2");
+        configBuilder.setBootAutoStart(true);
+
         CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-        createInstancesRequestConfig.setLimitsCpu("2");
+        createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(configBuilder.asMap());
 
         List<String> profiles = new ArrayList<>();
         profiles.add("default");
