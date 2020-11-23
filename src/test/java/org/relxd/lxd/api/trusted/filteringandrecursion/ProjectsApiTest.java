@@ -26,8 +26,8 @@ public class ProjectsApiTest {
 
     @BeforeAll
     public void setup() {
+        new RelxdApiClient();
         api = new ProjectsApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     

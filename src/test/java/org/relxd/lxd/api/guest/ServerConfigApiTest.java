@@ -25,17 +25,16 @@ public class ServerConfigApiTest {
     private ServerConfigApi api;
     private LinuxCmdService linuxCmdService;
     private Logger logger;
-    private RelxdApiClient apiClient;
     private String unixSocketPath;
 
     @Before
     public void setup() {
 
+        RelxdApiClient apiClient = new RelxdApiClient();
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger =  LoggerFactory.getLogger(ServerConfigApiTest.class);
         api = new ServerConfigApi();
-        api.setApiClient(new RelxdApiClient());
-        apiClient = new RelxdApiClient();
+
         unixSocketPath = apiClient.getUnixSocketPath();
     }
 

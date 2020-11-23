@@ -29,8 +29,8 @@ public class CertificatesApiTest {
 
     @Before
     public void setup() {
+        new RelxdApiClient();
         api = new CertificatesApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(org.relxd.lxd.api.trusted.InstancesApiTest.class);
     }
 

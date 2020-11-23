@@ -32,8 +32,8 @@ public class ClusterApiTest {
     @BeforeAll
     public void setup() {
 
+        new RelxdApiClient();
         api = new ClusterApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
 

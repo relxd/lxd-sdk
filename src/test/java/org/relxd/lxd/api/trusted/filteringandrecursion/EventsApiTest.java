@@ -27,8 +27,8 @@ public class EventsApiTest {
     @Before
     public void setup() {
 
+        new RelxdApiClient();
         api = new EventsApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
     }
     

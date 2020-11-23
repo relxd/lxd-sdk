@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CompetitionLabsCliTests {
@@ -37,7 +38,6 @@ public class CompetitionLabsCliTests {
     public void init(){
         new RelxdApiClient();
         imagesApi = new ImagesApi();
-        instancesApiTest =  new InstancesApiTest();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         operationsApi = new OperationsApi();
         instancesApi = new InstancesApi();
@@ -77,7 +77,6 @@ public class CompetitionLabsCliTests {
             InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
             configBuilder.setBootAutoStart(true);
 
-
             //Instance Profiles
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
@@ -108,7 +107,7 @@ public class CompetitionLabsCliTests {
 
                 //Populate the CreateInstancesRequest and get a Response
                 //todo - clean up the create instance request - extend it to support other parameters
-                CreateInstancesRequest createInstancesRequest = instancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
+                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
 
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(target, createInstancesRequest);
 
@@ -146,7 +145,28 @@ public class CompetitionLabsCliTests {
 
         try {
 
-            final BackgroundOperationResponse backgroundOperationResponse = instancesApiTest.postUbuntuInstance("ubuntu18");
+            Kvm kvm = new Kvm();
+            kvm.setPath("/dev/kvm");
+            kvm.setType("unix-char");
+
+            DevicesKvm devices = new DevicesKvm();
+            devices.setKvm(kvm);
+
+            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+            createInstancesRequestConfig.setLimitsCpu("2");
+
+            List<String> profiles = new ArrayList<>();
+            profiles.add("default");
+
+            Source source = new Source();
+            source.setType("image");
+            source.setProtocol("simplestreams");
+            source.setServer("https://cloud-images.ubuntu.com/releases");
+            source.setAlias("18.04");
+
+            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, "container", profiles, "x86_64", "ubuntu18", createInstancesRequestConfig, true);
+
+            BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(null, createInstancesRequest);
 
             logger.info("Create Instance Response >>>>> {}", backgroundOperationResponse);
 
@@ -163,6 +183,8 @@ public class CompetitionLabsCliTests {
                     logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
                     Thread.sleep(2000);
                 }
+            } else {
+                throw new RuntimeException("The request returned a null response!");
             }
         }catch (ApiException | InterruptedException ex){
             ex.printStackTrace();

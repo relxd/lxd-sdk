@@ -41,7 +41,6 @@ public class ImagesApiTest {
         final RelxdApiClient relxdApiClient = new RelxdApiClient();
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         api = new ImagesApi();
-        api.setApiClient(new RelxdApiClient());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
         unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }

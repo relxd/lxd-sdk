@@ -38,12 +38,10 @@ public class ImagesApiTest {
 
     @BeforeAll
     public void setup() {
+        RelxdApiClient relxdApiClient =  new RelxdApiClient();
         api = new ImagesApi();
-        api.setApiClient(new RelxdApiClient());
         linuxCmdService = spy(new LinuxCmdServiceImpl());
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-
-        RelxdApiClient relxdApiClient =  new RelxdApiClient();
         unixSocketPath  = relxdApiClient.getUnixSocketPath();
     }
     
