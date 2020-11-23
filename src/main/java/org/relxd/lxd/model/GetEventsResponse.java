@@ -28,7 +28,7 @@ import org.relxd.lxd.model.Metadata2;
 /**
  * GetEventsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class GetEventsResponse {
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -103,7 +103,7 @@ public class GetEventsResponse {
    * @return timestamp
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2015-06-09T19:07:24.379615253-06:00", value = "Current timestamp")
+  @ApiModelProperty(example = "2015-06-10T01:07:24.379Z", value = "Current timestamp")
 
   public String getTimestamp() {
     return timestamp;

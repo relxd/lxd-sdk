@@ -28,7 +28,7 @@ import java.io.IOException;
  * Input (migration across lxd instances)
  */
 @ApiModel(description = "Input (migration across lxd instances)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class CreateStoragePoolsByNameVolumesByTypeNameRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

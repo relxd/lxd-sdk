@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * UpdateInstancesByNameSnapshotsInformationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class UpdateInstancesByNameSnapshotsInformationRequest {
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
@@ -45,7 +45,7 @@ public class UpdateInstancesByNameSnapshotsInformationRequest {
    * @return expiresAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2019-01-16T12:34:56+02:00", value = "")
+  @ApiModelProperty(example = "2019-01-16T10:34:56.000Z", value = "")
 
   public String getExpiresAt() {
     return expiresAt;

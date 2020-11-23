@@ -32,7 +32,7 @@ import org.relxd.lxd.model.HardwareSpecsConfig;
  * Input (update instance configuration)
  */
 @ApiModel(description = "Input (update instance configuration)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class UpdateInstancesByNameRequestOneOf {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)

@@ -30,64 +30,123 @@ import org.relxd.lxd.model.GetStoragePoolsByNameResponseMetadata;
 /**
  * GetStoragePoolsByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
-public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  private GetStoragePoolsByNameResponseMetadata metadata;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
+public class GetStoragePoolsByNameResponse {
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type;
 
-  public static final String SERIALIZED_NAME_ERROR_CODE = "error_code";
-  @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  private Integer errorCode;
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private String status;
+
+  public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
+  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
+  private Integer statusCode;
+
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
+  private String operation;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
   private String error;
 
+  public static final String SERIALIZED_NAME_ERROR_CODE = "error_code";
+  @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  private Integer errorCode;
 
-  public GetStoragePoolsByNameResponse metadata(GetStoragePoolsByNameResponseMetadata metadata) {
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  private GetStoragePoolsByNameResponseMetadata metadata;
+
+
+  public GetStoragePoolsByNameResponse type(String type) {
     
-    this.metadata = metadata;
+    this.type = type;
     return this;
   }
 
    /**
-   * Get metadata
-   * @return metadata
+   * Get type
+   * @return type
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "async", required = true, value = "")
 
-  public GetStoragePoolsByNameResponseMetadata getMetadata() {
-    return metadata;
+  public String getType() {
+    return type;
   }
 
 
-  public void setMetadata(GetStoragePoolsByNameResponseMetadata metadata) {
-    this.metadata = metadata;
+  public void setType(String type) {
+    this.type = type;
   }
 
 
-  public GetStoragePoolsByNameResponse errorCode(Integer errorCode) {
+  public GetStoragePoolsByNameResponse status(String status) {
     
-    this.errorCode = errorCode;
+    this.status = status;
     return this;
   }
 
    /**
-   * Get errorCode
-   * @return errorCode
+   * String version of the operation&#39;s status
+   * @return status
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "0", value = "")
+  @ApiModelProperty(example = "OK", required = true, value = "String version of the operation's status")
 
-  public Integer getErrorCode() {
-    return errorCode;
+  public String getStatus() {
+    return status;
   }
 
 
-  public void setErrorCode(Integer errorCode) {
-    this.errorCode = errorCode;
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+
+  public GetStoragePoolsByNameResponse statusCode(Integer statusCode) {
+    
+    this.statusCode = statusCode;
+    return this;
+  }
+
+   /**
+   * Integer version of the operation&#39;s status (use this rather than status)
+   * @return statusCode
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "100", value = "Integer version of the operation's status (use this rather than status)")
+
+  public Integer getStatusCode() {
+    return statusCode;
+  }
+
+
+  public void setStatusCode(Integer statusCode) {
+    this.statusCode = statusCode;
+  }
+
+
+  public GetStoragePoolsByNameResponse operation(String operation) {
+    
+    this.operation = operation;
+    return this;
+  }
+
+   /**
+   * URL to the background operation
+   * @return operation
+  **/
+  @ApiModelProperty(example = "/1.0/instances/<id>", required = true, value = "URL to the background operation")
+
+  public String getOperation() {
+    return operation;
+  }
+
+
+  public void setOperation(String operation) {
+    this.operation = operation;
   }
 
 
@@ -114,6 +173,51 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
   }
 
 
+  public GetStoragePoolsByNameResponse errorCode(Integer errorCode) {
+    
+    this.errorCode = errorCode;
+    return this;
+  }
+
+   /**
+   * Get errorCode
+   * @return errorCode
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "0", value = "")
+
+  public Integer getErrorCode() {
+    return errorCode;
+  }
+
+
+  public void setErrorCode(Integer errorCode) {
+    this.errorCode = errorCode;
+  }
+
+
+  public GetStoragePoolsByNameResponse metadata(GetStoragePoolsByNameResponseMetadata metadata) {
+    
+    this.metadata = metadata;
+    return this;
+  }
+
+   /**
+   * Get metadata
+   * @return metadata
+  **/
+  @ApiModelProperty(required = true, value = "")
+
+  public GetStoragePoolsByNameResponseMetadata getMetadata() {
+    return metadata;
+  }
+
+
+  public void setMetadata(GetStoragePoolsByNameResponseMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,15 +227,18 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
       return false;
     }
     GetStoragePoolsByNameResponse getStoragePoolsByNameResponse = (GetStoragePoolsByNameResponse) o;
-    return Objects.equals(this.metadata, getStoragePoolsByNameResponse.metadata) &&
-        Objects.equals(this.errorCode, getStoragePoolsByNameResponse.errorCode) &&
+    return Objects.equals(this.type, getStoragePoolsByNameResponse.type) &&
+        Objects.equals(this.status, getStoragePoolsByNameResponse.status) &&
+        Objects.equals(this.statusCode, getStoragePoolsByNameResponse.statusCode) &&
+        Objects.equals(this.operation, getStoragePoolsByNameResponse.operation) &&
         Objects.equals(this.error, getStoragePoolsByNameResponse.error) &&
-        super.equals(o);
+        Objects.equals(this.errorCode, getStoragePoolsByNameResponse.errorCode) &&
+        Objects.equals(this.metadata, getStoragePoolsByNameResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metadata, errorCode, error, super.hashCode());
+    return Objects.hash(type, status, statusCode, operation, error, errorCode, metadata);
   }
 
 
@@ -139,10 +246,13 @@ public class GetStoragePoolsByNameResponse extends BackgroundOperationResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetStoragePoolsByNameResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+    sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

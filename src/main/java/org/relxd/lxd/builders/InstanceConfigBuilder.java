@@ -21,7 +21,7 @@ public class InstanceConfigBuilder {
      * @return
      */
     public InstanceConfigBuilder setBootAutoStart(boolean bootAutoStart) {
-        configs.put("boot.autostart", bootAutoStart);
+        configs.put("boot.autostart", String.valueOf(bootAutoStart));
         return this;
     }
 

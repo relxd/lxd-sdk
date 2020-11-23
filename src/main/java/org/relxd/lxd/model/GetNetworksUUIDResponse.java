@@ -30,7 +30,7 @@ import org.relxd.lxd.model.Resources;
 /**
  * GetNetworksUUIDResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class GetNetworksUUIDResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -130,7 +130,7 @@ public class GetNetworksUUIDResponse {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-17T16:59:27.237628195-05:00", value = "")
+  @ApiModelProperty(example = "2016-02-17T21:59:27.237Z", value = "")
 
   public String getCreatedAt() {
     return createdAt;
@@ -153,7 +153,7 @@ public class GetNetworksUUIDResponse {
    * @return updatedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-17T16:59:27.237628195-05:00", value = "")
+  @ApiModelProperty(example = "2016-02-17T21:59:27.237Z", value = "")
 
   public String getUpdatedAt() {
     return updatedAt;

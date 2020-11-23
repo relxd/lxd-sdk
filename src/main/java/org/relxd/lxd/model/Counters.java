@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Counters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class Counters {
   public static final String SERIALIZED_NAME_BYTES_RECEIVED = "bytes_received";
   @SerializedName(SERIALIZED_NAME_BYTES_RECEIVED)

@@ -28,8 +28,8 @@ import org.relxd.lxd.model.StandardReturnValueResponse;
 /**
  * RawFile
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
-public class RawFile extends StandardReturnValueResponse {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
+public class RawFile {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -39,12 +39,12 @@ public class RawFile extends StandardReturnValueResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
@@ -52,7 +52,6 @@ public class RawFile extends StandardReturnValueResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RawFile {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

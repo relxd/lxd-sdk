@@ -18,7 +18,9 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
@@ -60,23 +62,14 @@ public class CompetitionLabsCliTests {
             //Name of Instance
             final String nameOfContainer = "ubuntu-instance";
 
-            //Instance Kvm
-            Kvm kvm = new Kvm();
-            kvm.setPath("/dev/kvm");
-            kvm.setType("unix-char");
-
             //Instance Devices
-            DevicesKvm devices = new DevicesKvm();
-            devices.setKvm(kvm);
+            DevicesKvm devices = null;
 
             //Instance Config
             // Usgae of config builder
             InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
             configBuilder.setLimitsCpu("2");
             configBuilder.setBootAutoStart(true);
-
-            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.createInstancesRequestConfig(configBuilder.asMap());
 
             //Instance Profiles
             List<String> profiles = new ArrayList<>();
@@ -101,14 +94,15 @@ public class CompetitionLabsCliTests {
                     fingerprint = splitUrl[3];
                 }
 
+                //TODO - move to InstanceSourceBuilder - new class to create
                 //Source for the Instance we want to create
-                Source source = new Source();
-                source.setType("image");
-                source.setFingerprint(fingerprint);
+                Map<String, Object> source = new HashMap<>();
+                source.put("type", "image");
+                source.put("fingerprint", fingerprint);
 
                 //Populate the CreateInstancesRequest and get a Response
                 //todo - clean up the create instance request - extend it to support other parameters
-                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
+                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, configBuilder.asMap(),true);
 
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(target, createInstancesRequest);
 
@@ -157,19 +151,19 @@ public class CompetitionLabsCliTests {
             instanceConfigBuilder.setLimitsCpu("3");
             instanceConfigBuilder.setBootAutoStart(true);
 
-            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setCreateInstancesRequestConfig(instanceConfigBuilder.asMap());
+//            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
+//            createInstancesRequestConfig.setCreateInstancesRequestConfig(instanceConfigBuilder.asMap());
 
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
 
-            Source source = new Source();
-            source.setType("image");
-            source.setProtocol("simplestreams");
-            source.setServer("https://cloud-images.ubuntu.com/releases");
-            source.setAlias("18.04");
+//            Source source = new Source();
+//            source.setType("image");
+//            source.setProtocol("simplestreams");
+//            source.setServer("https://cloud-images.ubuntu.com/releases");
+//            source.setAlias("18.04");
 
-            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, "container", profiles, "x86_64", "ubuntu18_1", createInstancesRequestConfig, true);
+            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, null, "container", profiles, "x86_64", "ubuntu18_1", null, true);
 
             logger.info("REQUEST >>>>>>>>>> {}", createInstancesRequest);
 
@@ -262,17 +256,17 @@ public class CompetitionLabsCliTests {
 
             logger.info("\n\n\n METADATA >>>>>> {}", backgroundOperationResponse.getMetadata());
 
-            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
-
-            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
-
-            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
+//            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
+//
+//            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
+//
+//            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
             String secret = null;
 
-            if (operationMetadata != null) {
-                 secret = operationMetadata.getFds().get0();
-                 logger.info("\n\n\n SECRET >>>>> {}", secret);
-            }
+//            if (operationMetadata != null) {
+//                 secret = operationMetadata.getFds().get0();
+//                 logger.info("\n\n\n SECRET >>>>> {}", secret);
+//            }
 
             final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0,null);
 

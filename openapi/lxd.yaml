@@ -7678,84 +7678,6 @@ components:
       example:
         name: foo
         type: client
-    CreateInstancesRequest:
-      required:
-        - architecture
-        - config
-        - ephemeral
-        - name
-        - profiles
-        - source
-      type: object
-      properties:
-        name:
-          description: '64 chars max, ASCII, no slash, no colon and no comma'
-          type: string
-          example: my-new-instance
-        architecture:
-          type: string
-          example: x86_64
-        profiles:
-          description: List of profiles
-          type: array
-          items:
-            type: string
-          example:
-            - default
-        ephemeral:
-          description: Whether to destroy the instance on shutdown
-          type: boolean
-          example: true
-        config:
-          $ref: '#/components/schemas/CreateInstancesRequestConfig'
-        type:
-          description: 'Optional. Can be "virtual-machine", "container" - by default it set to "container"'
-          type: string
-          example: container
-        devices:
-          $ref: '#/components/schemas/DevicesKvm'
-        instance_type:
-          description: An optional instance type to use as basis for limits
-          type: string
-          example: c2.micro
-        source:
-          $ref: '#/components/schemas/Source'
-      example:
-        devices:
-          kvm:
-            path: /dev/kvm
-            type: unix-char
-        name: my-new-instance
-        profiles:
-          - default
-        ephemeral: true
-        source:
-          instance_only: true
-          server: 'https://10.0.2.3:8443'
-          certificate: PEM certificate
-          secret: my-secret-string
-          source: my-old-instance
-          type: image
-          secrets:
-            criu: my-other-secret
-            control: my-secret-string
-            fs: my third secret
-          mode: pull
-          protocol: lxd
-          base-image: <fingerprint>
-          fingerprint: SHA-256
-          alias: ubuntu/devel
-          operation: 'https://10.0.2.3:8443/1.0/operations/<UUID>'
-          properties:
-            os: ubuntu
-            release: '18.04'
-            architecture: x86_64
-          live: true
-        type: container
-        config:
-          limits.cpu: '2'
-        instance_type: c2.micro
-        architecture: x86_64
     Source:
       required:
         - type
@@ -10209,16 +10131,6 @@ components:
         name: foo
         fingerprint: SHA256 Hash of the raw certificate
         type: client
-    CreateInstancesRequestConfig:
-      description: >-
-        This is a map of config parameters to be used during instance creation. The keys for this map
-        are the keys from instance.md file
-        (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values
-        are the fields to set.
-      type: object
-      properties:
-        createInstancesRequestConfig:
-          $ref: '#/components/schemas/CreateInstancesRequestConfigMap'
     UpdateInstancesByNameRequest_oneOf:
       description: Input (update instance configuration)
       properties:
@@ -10362,18 +10274,100 @@ components:
           example: 0
         error:
           type: string
-    CreateInstancesRequestConfigMap:
-      description: >-
-        This is a map of config parameters to be used during instance creation. The keys for this map
-        are the keys from instance.md file
-        (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values
-        are the fields to set.
+    CreateInstancesRequest:
+      required:
+        - architecture
+        - config
+        - ephemeral
+        - name
+        - profiles
+        - source
       type: object
-      additionalProperties:
-        type: object
+      properties:
+        name:
+          description: '64 chars max, ASCII, no slash, no colon and no comma'
+          type: string
+          example: my-new-instance
+        architecture:
+          type: string
+          example: x86_64
+        profiles:
+          description: List of profiles
+          type: array
+          items:
+            type: string
+          example:
+            - default
+        ephemeral:
+          description: Whether to destroy the instance on shutdown
+          type: boolean
+          example: true
+        config:
+          description: >-
+            This is a map of config parameters to be used during instance creation. The keys for
+            this map are the keys from instance.md file
+            (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and
+            values are the fields to set.
+          additionalProperties:
+            type: object
+          example:
+            limits.cpu: '2'
+            limits.memory: 512MB
+        type:
+          description: 'Optional. Can be "virtual-machine", "container" - by default it set to "container"'
+          type: string
+          example: container
+        devices:
+          $ref: '#/components/schemas/DevicesKvm'
+        instance_type:
+          description: An optional instance type to use as basis for limits
+          type: string
+          example: c2.micro
+        source:
+          description: |-
+            Source to be used to create this container.
+            Can be: "image", "migration", "copy" or "none"
+          additionalProperties:
+            type: object
+          example:
+            type: image
+            fingerprint: 6d825770a54383a01cdb78ae1c66260024629bb3b362f0ecd7b74dfcc8aa435f
       example:
-        limits.cpu: '2'
-        limits.memory: 512MB
+        devices:
+          kvm:
+            path: /dev/kvm
+            type: unix-char
+        name: my-new-instance
+        profiles:
+          - default
+        ephemeral: true
+        source:
+          instance_only: true
+          server: 'https://10.0.2.3:8443'
+          certificate: PEM certificate
+          secret: my-secret-string
+          source: my-old-instance
+          type: image
+          secrets:
+            criu: my-other-secret
+            control: my-secret-string
+            fs: my third secret
+          mode: pull
+          protocol: lxd
+          base-image: <fingerprint>
+          fingerprint: SHA-256
+          alias: ubuntu/devel
+          operation: 'https://10.0.2.3:8443/1.0/operations/<UUID>'
+          properties:
+            os: ubuntu
+            release: '18.04'
+            architecture: x86_64
+          live: true
+        type: container
+        config:
+          limits.cpu: '2'
+        instance_type: c2.micro
+        architecture: x86_64
   responses:
     BasicStandardReturnValueResponse:
       content:

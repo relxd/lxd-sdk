@@ -33,7 +33,7 @@ import org.relxd.lxd.model.HardwareSpecsConfig;
 /**
  * GetInstancesByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
 public class GetInstancesByNameResponse {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)
@@ -145,7 +145,7 @@ public class GetInstancesByNameResponse {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-16T01:05:05Z", value = "")
+  @ApiModelProperty(example = "2016-02-16T01:05:05.000Z", value = "")
 
   public String getCreatedAt() {
     return createdAt;
@@ -260,7 +260,7 @@ public class GetInstancesByNameResponse {
    * @return lastUsedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-16T01:05:05Z", value = "")
+  @ApiModelProperty(example = "2016-02-16T01:05:05.000Z", value = "")
 
   public String getLastUsedAt() {
     return lastUsedAt;
