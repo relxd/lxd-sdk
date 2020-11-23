@@ -26,47 +26,46 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.relxd.lxd.model.CreateInstancesRequestConfigValue;
 
 /**
  * This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.
  */
 @ApiModel(description = "This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T13:37:46.576+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T15:31:41.267118Z[Europe/London]")
 public class CreateInstancesRequestConfig {
-  public static final String SERIALIZED_NAME_CREATE_INSTANCES_REQUEST_CONFIG_ENTRY = "createInstancesRequestConfigEntry";
-  @SerializedName(SERIALIZED_NAME_CREATE_INSTANCES_REQUEST_CONFIG_ENTRY)
-  private Map<String, CreateInstancesRequestConfigValue> createInstancesRequestConfigEntry = null;
+  public static final String SERIALIZED_NAME_CREATE_INSTANCES_REQUEST_CONFIG = "createInstancesRequestConfig";
+  @SerializedName(SERIALIZED_NAME_CREATE_INSTANCES_REQUEST_CONFIG)
+  private Map<String, Object> createInstancesRequestConfig = null;
 
 
-  public CreateInstancesRequestConfig createInstancesRequestConfigEntry(Map<String, CreateInstancesRequestConfigValue> createInstancesRequestConfigEntry) {
-    
-    this.createInstancesRequestConfigEntry = createInstancesRequestConfigEntry;
+  public CreateInstancesRequestConfig createInstancesRequestConfig(Map<String, Object> createInstancesRequestConfig) {
+
+    this.createInstancesRequestConfig = createInstancesRequestConfig;
     return this;
   }
 
-  public CreateInstancesRequestConfig putCreateInstancesRequestConfigEntryItem(String key, CreateInstancesRequestConfigValue createInstancesRequestConfigEntryItem) {
-    if (this.createInstancesRequestConfigEntry == null) {
-      this.createInstancesRequestConfigEntry = new HashMap<String, CreateInstancesRequestConfigValue>();
+  public CreateInstancesRequestConfig putCreateInstancesRequestConfigItem(String key, Object createInstancesRequestConfigItem) {
+    if (this.createInstancesRequestConfig == null) {
+      this.createInstancesRequestConfig = new HashMap<String, Object>();
     }
-    this.createInstancesRequestConfigEntry.put(key, createInstancesRequestConfigEntryItem);
+    this.createInstancesRequestConfig.put(key, createInstancesRequestConfigItem);
     return this;
   }
 
-   /**
+  /**
    * This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.
-   * @return createInstancesRequestConfigEntry
-  **/
+   * @return createInstancesRequestConfig
+   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "{\"limits.cpu\":\"2\",\"limits.memory\":\"512MB\"}", value = "This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.")
 
-  public Map<String, CreateInstancesRequestConfigValue> getCreateInstancesRequestConfigEntry() {
-    return createInstancesRequestConfigEntry;
+  public Map<String, Object> getCreateInstancesRequestConfig() {
+    return createInstancesRequestConfig;
   }
 
 
-  public void setCreateInstancesRequestConfigEntry(Map<String, CreateInstancesRequestConfigValue> createInstancesRequestConfigEntry) {
-    this.createInstancesRequestConfigEntry = createInstancesRequestConfigEntry;
+  public void setCreateInstancesRequestConfig(Map<String, Object> createInstancesRequestConfig) {
+    this.createInstancesRequestConfig = createInstancesRequestConfig;
   }
 
 
@@ -79,12 +78,12 @@ public class CreateInstancesRequestConfig {
       return false;
     }
     CreateInstancesRequestConfig createInstancesRequestConfig = (CreateInstancesRequestConfig) o;
-    return Objects.equals(this.createInstancesRequestConfigEntry, createInstancesRequestConfig.createInstancesRequestConfigEntry);
+    return Objects.equals(this.createInstancesRequestConfig, createInstancesRequestConfig.createInstancesRequestConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createInstancesRequestConfigEntry);
+    return Objects.hash(createInstancesRequestConfig);
   }
 
 
@@ -92,7 +91,7 @@ public class CreateInstancesRequestConfig {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInstancesRequestConfig {\n");
-    sb.append("    createInstancesRequestConfigEntry: ").append(toIndentedString(createInstancesRequestConfigEntry)).append("\n");
+    sb.append("    createInstancesRequestConfig: ").append(toIndentedString(createInstancesRequestConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

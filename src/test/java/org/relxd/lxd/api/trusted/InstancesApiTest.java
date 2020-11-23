@@ -635,7 +635,7 @@ public class InstancesApiTest {
         configBuilder.setBootAutoStart(true);
 
         CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-        createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(configBuilder.asMap());
+        createInstancesRequestConfig.setCreateInstancesRequestConfig(configBuilder.asMap());
 
         List<String> profiles = new ArrayList<>();
         profiles.add("default");

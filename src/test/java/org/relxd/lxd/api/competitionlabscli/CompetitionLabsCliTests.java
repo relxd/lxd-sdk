@@ -76,7 +76,7 @@ public class CompetitionLabsCliTests {
             configBuilder.setBootAutoStart(true);
 
             CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(configBuilder.asMap());
+            createInstancesRequestConfig.createInstancesRequestConfig(configBuilder.asMap());
 
             //Instance Profiles
             List<String> profiles = new ArrayList<>();
@@ -158,7 +158,7 @@ public class CompetitionLabsCliTests {
             instanceConfigBuilder.setBootAutoStart(true);
 
             CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setCreateInstancesRequestConfigEntry(instanceConfigBuilder.asMap());
+            createInstancesRequestConfig.setCreateInstancesRequestConfig(instanceConfigBuilder.asMap());
 
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
