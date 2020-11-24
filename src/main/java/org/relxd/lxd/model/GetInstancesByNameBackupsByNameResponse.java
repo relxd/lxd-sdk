@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetInstancesByNameBackupsByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class GetInstancesByNameBackupsByNameResponse {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -84,7 +84,7 @@ public class GetInstancesByNameBackupsByNameResponse {
    * @return creationDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2018-04-23T12:16:09+02:00", value = "")
+  @ApiModelProperty(example = "2018-04-23T10:16:09.000Z", value = "")
 
   public String getCreationDate() {
     return creationDate;
@@ -107,7 +107,7 @@ public class GetInstancesByNameBackupsByNameResponse {
    * @return expiryDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2018-04-23T12:16:09+02:00", value = "")
+  @ApiModelProperty(example = "2018-04-23T10:16:09.000Z", value = "")
 
   public String getExpiryDate() {
     return expiryDate;

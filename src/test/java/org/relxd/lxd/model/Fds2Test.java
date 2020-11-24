@@ -20,7 +20,7 @@ import org.junit.Test;
  * Model tests for Fds
  */
 public class Fds2Test {
-    private final Fds model = new Fds();
+    private final Fds1 model = new Fds1();
 
     /**
      * Model tests for Fds

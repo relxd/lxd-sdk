@@ -11,14 +11,18 @@ import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.api.OperationsApi;
 import org.relxd.lxd.api.trusted.InstancesApiTest;
 import org.relxd.lxd.builders.InstanceConfigBuilder;
+import org.relxd.lxd.builders.SourceConfigBuilder;
 import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
@@ -58,23 +62,15 @@ public class CompetitionLabsCliTests {
             //Type of Instance
             final String type = "container";
             //Name of Instance
-            final String nameOfContainer = "ubuntu-instance";
-
-            //Instance Kvm
-            Kvm kvm = new Kvm();
-            kvm.setPath("/dev/kvm");
-            kvm.setType("unix-char");
+            final String nameOfContainer = "another-ubuntu-instance";
 
             //Instance Devices
-            DevicesKvm devices = new DevicesKvm();
-            devices.setKvm(kvm);
+            DevicesKvm devices = null;
 
             //Instance Config
-            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setLimitsCpu("2");
-
             // Usgae of config builder
             InstanceConfigBuilder configBuilder = new InstanceConfigBuilder();
+            configBuilder.setLimitsCpu("2");
             configBuilder.setBootAutoStart(true);
 
             //Instance Profiles
@@ -101,13 +97,13 @@ public class CompetitionLabsCliTests {
                 }
 
                 //Source for the Instance we want to create
-                Source source = new Source();
-                source.setType("image");
-                source.setFingerprint(fingerprint);
+                SourceConfigBuilder sourceConfigBuilder = new SourceConfigBuilder();
+                sourceConfigBuilder.setType("image");
+                sourceConfigBuilder.setFingerprint(fingerprint);
 
                 //Populate the CreateInstancesRequest and get a Response
                 //todo - clean up the create instance request - extend it to support other parameters
-                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, type, profiles, architecture, nameOfContainer, createInstancesRequestConfig,true);
+                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), type, profiles, architecture, nameOfContainer, configBuilder.asMap(),true);
 
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(target, createInstancesRequest);
 
@@ -152,19 +148,22 @@ public class CompetitionLabsCliTests {
             DevicesKvm devices = new DevicesKvm();
             devices.setKvm(kvm);
 
-            CreateInstancesRequestConfig createInstancesRequestConfig = new CreateInstancesRequestConfig();
-            createInstancesRequestConfig.setLimitsCpu("2");
+            InstanceConfigBuilder instanceConfigBuilder = new InstanceConfigBuilder();
+            instanceConfigBuilder.setLimitsCpu("3");
+            instanceConfigBuilder.setBootAutoStart(true);
 
             List<String> profiles = new ArrayList<>();
             profiles.add("default");
 
-            Source source = new Source();
-            source.setType("image");
-            source.setProtocol("simplestreams");
-            source.setServer("https://cloud-images.ubuntu.com/releases");
-            source.setAlias("18.04");
+            SourceConfigBuilder sourceConfigBuilder = new SourceConfigBuilder();
+            sourceConfigBuilder.setType("image");
+            sourceConfigBuilder.setProtocol("simplestreams");
+            sourceConfigBuilder.setServer("https://cloud-images.ubuntu.com/releases");
+            sourceConfigBuilder.setAlias("18.04");
 
-            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, source, "container", profiles, "x86_64", "ubuntu18", createInstancesRequestConfig, true);
+            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), "container", profiles, "x86_64", "ubuntu18", instanceConfigBuilder.asMap(), true);
+
+            logger.info("REQUEST >>>>>>>>>> {}", createInstancesRequest);
 
             BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(null, createInstancesRequest);
 
@@ -186,18 +185,28 @@ public class CompetitionLabsCliTests {
             } else {
                 throw new RuntimeException("The request returned a null response!");
             }
-        }catch (ApiException | InterruptedException ex){
+        }catch (ApiException ex){
             ex.printStackTrace();
+        }catch (InterruptedException ex){
+            ex.getCause();
         }
     }
 
     @Test
     public void manageContainer(){
-        String containerName = "ubuntu18";
+
+        String containerName = "another-ubuntu-instance";
         String action = "start";
+        boolean force = false;
+        BigDecimal timeout = new BigDecimal(100);
+        boolean stateful = false;
 
         try {
-            final BackgroundOperationResponse backgroundOperationResponse = instancesApiTest.putInstancesByNameState(containerName, action);
+            final UpdateInstancesByNameStateRequest request = InstancesApiTest.populatePutInstancesByNameState(action,force,timeout,stateful);
+
+                BackgroundOperationResponse backgroundOperationResponse = instancesApi.putInstancesByNameState(containerName, request);
+
+                logger.info("PUT INSTANCES BY NAME STATE RESPONSE >>>>> " + backgroundOperationResponse);
 
             if (backgroundOperationResponse != null) {
                 final String operation = backgroundOperationResponse.getOperation();
@@ -223,7 +232,7 @@ public class CompetitionLabsCliTests {
 
         try {
 
-            final String ubuntu18 = "ubuntu18";
+            final String ubuntu18 = "another-ubuntu-instance";
 
             final BackgroundOperationResponse instancesByNameState = instancesApi.getInstancesByNameState(ubuntu18, 0, null);
             logger.info("Instance State >>> {}", instancesByNameState);
@@ -253,17 +262,17 @@ public class CompetitionLabsCliTests {
 
             logger.info("\n\n\n METADATA >>>>>> {}", backgroundOperationResponse.getMetadata());
 
-            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
-
-            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
-
-            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
+//            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
+//
+//            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
+//
+//            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
             String secret = null;
 
-            if (operationMetadata != null) {
-                 secret = operationMetadata.getFds().get0();
-                 logger.info("\n\n\n SECRET >>>>> {}", secret);
-            }
+//            if (operationMetadata != null) {
+//                 secret = operationMetadata.getFds().get0();
+//                 logger.info("\n\n\n SECRET >>>>> {}", secret);
+//            }
 
             final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0,null);
 

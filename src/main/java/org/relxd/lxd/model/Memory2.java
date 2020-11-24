@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Memory2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class Memory2 {
   public static final String SERIALIZED_NAME_USED = "used";
   @SerializedName(SERIALIZED_NAME_USED)

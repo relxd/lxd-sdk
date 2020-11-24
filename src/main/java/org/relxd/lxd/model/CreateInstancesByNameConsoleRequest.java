@@ -30,7 +30,7 @@ import org.relxd.lxd.model.WindowSizeChangeRequest;
 /**
  * CreateInstancesByNameConsoleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class CreateInstancesByNameConsoleRequest {
   public static final String SERIALIZED_NAME_COMMAND = "command";
   @SerializedName(SERIALIZED_NAME_COMMAND)

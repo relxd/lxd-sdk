@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MigrateInstancesByNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class MigrateInstancesByNameRequest {
   public static final String SERIALIZED_NAME_CONTROL = "control";
   @SerializedName(SERIALIZED_NAME_CONTROL)

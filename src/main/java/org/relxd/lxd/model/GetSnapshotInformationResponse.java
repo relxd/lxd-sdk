@@ -32,7 +32,7 @@ import org.relxd.lxd.model.SecurityNestingConfig;
 /**
  * GetSnapshotInformationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-04T14:50:02.272+02:00[Africa/Harare]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class GetSnapshotInformationResponse {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)
@@ -136,7 +136,7 @@ public class GetSnapshotInformationResponse {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-03-08T23:55:08Z", value = "")
+  @ApiModelProperty(example = "2016-03-08T23:55:08.000Z", value = "")
 
   public String getCreatedAt() {
     return createdAt;
