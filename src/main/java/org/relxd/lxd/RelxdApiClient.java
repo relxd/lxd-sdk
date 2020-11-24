@@ -108,7 +108,7 @@ public class RelxdApiClient extends ApiClient {
     //Method to get Application Properties from the properties file
     public Properties getApplicationProperties() {
 
-        final String PROPERTIES_FILE_LOCATION = "rp-application.properties";
+        final String PROPERTIES_FILE_LOCATION = "application.properties";
 
         Properties props = new Properties();
 

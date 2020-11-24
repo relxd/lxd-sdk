@@ -28,7 +28,7 @@ import java.io.IOException;
  * Input (attach to /dev/console)
  */
 @ApiModel(description = "Input (attach to /dev/console)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class CreateInstancesByNameConsoleRequestOneOf {
   public static final String SERIALIZED_NAME_WIDTH = "width";
   @SerializedName(SERIALIZED_NAME_WIDTH)

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NetworkIPConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class NetworkIPConfig {
   public static final String SERIALIZED_NAME_IPV4_ADDRESS = "ipv4.address";
   @SerializedName(SERIALIZED_NAME_IPV4_ADDRESS)

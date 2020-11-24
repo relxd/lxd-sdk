@@ -10,6 +10,7 @@ import org.relxd.lxd.JSON;
 import org.relxd.lxd.RelxdApiClient;
 import org.relxd.lxd.api.InstancesApi;
 import org.relxd.lxd.builders.InstanceConfigBuilder;
+import org.relxd.lxd.builders.SourceConfigBuilder;
 import org.relxd.lxd.model.*;
 import org.relxd.lxd.model.Properties;
 import org.relxd.lxd.service.linuxCmd.LinuxCmdService;
@@ -624,9 +625,9 @@ public class InstancesApiTest {
         kvm.setPath("/dev/kvm");
         kvm.setType("unix-char");
 
-//        Source source = new Source();
-//        source.setType("image");
-//        source.setFingerprint(fingerprint);
+        SourceConfigBuilder sourceConfigBuilder = new SourceConfigBuilder();
+        sourceConfigBuilder.setType("image");
+        sourceConfigBuilder.setFingerprint(fingerprint);
 
         DevicesKvm devices = new DevicesKvm();
         devices.setKvm(kvm);
@@ -638,7 +639,7 @@ public class InstancesApiTest {
         List<String> profiles = new ArrayList<>();
         profiles.add("default");
 
-        CreateInstancesRequest createInstancesRequest = populateCreateInstancesRequest(devices, null, type, profiles, architecture, nameOfContainer, configBuilder.asMap() ,true);
+        CreateInstancesRequest createInstancesRequest = populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), type, profiles, architecture, nameOfContainer, configBuilder.asMap() ,true);
 
         try {
             BackgroundOperationResponse actualCreateInstancesResponse = api.postInstances(target, createInstancesRequest);
@@ -1019,26 +1020,27 @@ public class InstancesApiTest {
     @Test
     @Order(23)
     public void putInstancesByNameStateTest() {
-        putInstancesByNameState("ubuntu18","start");
-    }
-
-    public BackgroundOperationResponse putInstancesByNameState(String containerName, String action) {
-        UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
-        request.setAction(action);
-        request.setForce(false);
-        request.setTimeout(new BigDecimal(100));
-        request.setStateful(false);
+        final UpdateInstancesByNameStateRequest request = populatePutInstancesByNameState( "start",false,new BigDecimal(100),false);
 
         try {
-            BackgroundOperationResponse response = api.putInstancesByNameState(containerName, request);
+            BackgroundOperationResponse response = api.putInstancesByNameState("ubuntu18", request);
             logger.info("PUT INSTANCES BY NAME STATE RESPONSE >>>>> " + response);
             assertEquals(response.getStatusCode(),Integer.valueOf(100));
 
-            return response;
         }catch (ApiException ex){
             catchApiException(ex);
             throw new RuntimeException(ex);
         }
+    }
+
+    public static UpdateInstancesByNameStateRequest populatePutInstancesByNameState(String action, boolean force, BigDecimal timeout, boolean stateful) {
+        UpdateInstancesByNameStateRequest request = new UpdateInstancesByNameStateRequest();
+        request.setAction(action);
+        request.setForce(force);
+        request.setTimeout(timeout);
+        request.setStateful(stateful);
+
+        return request;
     }
 
     public static CreateInstancesRequest populateCreateInstancesRequest(DevicesKvm devices, Map<String, Object> source, String type, List<String> profiles, String architecture, String name, Map<String, Object> createInstancesRequestConfig, Boolean setEphemerial) {

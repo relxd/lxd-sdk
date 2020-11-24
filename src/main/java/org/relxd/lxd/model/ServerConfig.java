@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ServerConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class ServerConfig {
   public static final String SERIALIZED_NAME_CORE_TRUST_PASSWORD = "core.trust_password";
   @SerializedName(SERIALIZED_NAME_CORE_TRUST_PASSWORD)

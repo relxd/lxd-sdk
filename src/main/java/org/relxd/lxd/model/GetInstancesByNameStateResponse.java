@@ -30,144 +30,11 @@ import org.relxd.lxd.model.StandardReturnValueResponse;
 /**
  * GetInstancesByNameStateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-23T19:42:20.041212Z[Europe/London]")
-public class GetInstancesByNameStateResponse {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
-
-  public static final String SERIALIZED_NAME_STATUS_CODE = "status_code";
-  @SerializedName(SERIALIZED_NAME_STATUS_CODE)
-  private Integer statusCode;
-
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
-  private String error;
-
-  public static final String SERIALIZED_NAME_ERROR_CODE = "error_code";
-  @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  private Integer errorCode;
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
+public class GetInstancesByNameStateResponse extends StandardReturnValueResponse {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private GetInstancesByNameStateMetadataResponse metadata;
-
-
-  public GetInstancesByNameStateResponse type(String type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(example = "sync", required = true, value = "")
-
-  public String getType() {
-    return type;
-  }
-
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
-  public GetInstancesByNameStateResponse status(String status) {
-    
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * String version of the operation&#39;s status
-   * @return status
-  **/
-  @ApiModelProperty(example = "Success", required = true, value = "String version of the operation's status")
-
-  public String getStatus() {
-    return status;
-  }
-
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-
-  public GetInstancesByNameStateResponse statusCode(Integer statusCode) {
-    
-    this.statusCode = statusCode;
-    return this;
-  }
-
-   /**
-   * Integer version of the operation&#39;s status (use this rather than status)
-   * @return statusCode
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "200", value = "Integer version of the operation's status (use this rather than status)")
-
-  public Integer getStatusCode() {
-    return statusCode;
-  }
-
-
-  public void setStatusCode(Integer statusCode) {
-    this.statusCode = statusCode;
-  }
-
-
-  public GetInstancesByNameStateResponse error(String error) {
-    
-    this.error = error;
-    return this;
-  }
-
-   /**
-   * Get error
-   * @return error
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "Failure", value = "")
-
-  public String getError() {
-    return error;
-  }
-
-
-  public void setError(String error) {
-    this.error = error;
-  }
-
-
-  public GetInstancesByNameStateResponse errorCode(Integer errorCode) {
-    
-    this.errorCode = errorCode;
-    return this;
-  }
-
-   /**
-   * Get errorCode
-   * @return errorCode
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "400", value = "")
-
-  public Integer getErrorCode() {
-    return errorCode;
-  }
-
-
-  public void setErrorCode(Integer errorCode) {
-    this.errorCode = errorCode;
-  }
 
 
   public GetInstancesByNameStateResponse metadata(GetInstancesByNameStateMetadataResponse metadata) {
@@ -180,7 +47,8 @@ public class GetInstancesByNameStateResponse {
    * Get metadata
    * @return metadata
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public GetInstancesByNameStateMetadataResponse getMetadata() {
     return metadata;
@@ -201,17 +69,13 @@ public class GetInstancesByNameStateResponse {
       return false;
     }
     GetInstancesByNameStateResponse getInstancesByNameStateResponse = (GetInstancesByNameStateResponse) o;
-    return Objects.equals(this.type, getInstancesByNameStateResponse.type) &&
-        Objects.equals(this.status, getInstancesByNameStateResponse.status) &&
-        Objects.equals(this.statusCode, getInstancesByNameStateResponse.statusCode) &&
-        Objects.equals(this.error, getInstancesByNameStateResponse.error) &&
-        Objects.equals(this.errorCode, getInstancesByNameStateResponse.errorCode) &&
-        Objects.equals(this.metadata, getInstancesByNameStateResponse.metadata);
+    return Objects.equals(this.metadata, getInstancesByNameStateResponse.metadata) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, statusCode, error, errorCode, metadata);
+    return Objects.hash(metadata, super.hashCode());
   }
 
 
@@ -219,11 +83,7 @@ public class GetInstancesByNameStateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetInstancesByNameStateResponse {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
