@@ -303,17 +303,17 @@ public class CompetitionLabsCliTests {
 
             logger.info("\n\n\n METADATA >>>>>> {}", backgroundOperationResponse.getMetadata());
 
-//            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
-//
-//            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
-//
-//            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
+            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
+
+            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
+
+            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
             String secret = null;
 
-//            if (operationMetadata != null) {
-//                 secret = operationMetadata.getFds().get0();
-//                 logger.info("\n\n\n SECRET >>>>> {}", secret);
-//            }
+            if (operationMetadata != null) {
+                 secret = operationMetadata.getFds().get0();
+                 logger.info("\n\n\n SECRET >>>>> {}", secret);
+            }
 
             Socket s = new Socket();
             String host = "wss://192.168.43.157:8443/1.0/operations/f7f3fb1b-4f8b-4968-ad22-f592ba640693/websocket?secret=171e6787d9c92852d445f5fa5b938dd5faf561fa5caf99746a86256a8e4f5237";
