@@ -17,8 +17,12 @@ import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -260,7 +264,6 @@ public class CompetitionLabsCliTests {
     }
 
 
-
     @Test
     public void viewContainerState(){
 
@@ -279,10 +282,14 @@ public class CompetitionLabsCliTests {
     @Test
     public void installRabbitMQInContainer(){
 
+        final String containerName = "ubuntu18";
+
         try{
 
-        final CreateInstancesByNameExecRequest request = instancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("sudo","apt","install", "rabbitmq-server"),new Environment(),true,false,true,80,25);
-
+        //final CreateInstancesByNameExecRequest request = InstancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("bash", "-c", "lxc exec "+containerName+" -- /bin/bash"),new Environment(),true,false,true,80,25);
+            final Environment environment = new Environment();
+            //environment.set
+            final CreateInstancesByNameExecRequest request = InstancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("/bin/bash"), environment,true,false,true,80,25);
             BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec("ubuntu18", request);
 
             logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
@@ -308,6 +315,23 @@ public class CompetitionLabsCliTests {
 //                 logger.info("\n\n\n SECRET >>>>> {}", secret);
 //            }
 
+            Socket s = new Socket();
+            String host = "wss://192.168.43.157:8443/1.0/operations/f7f3fb1b-4f8b-4968-ad22-f592ba640693/websocket?secret=171e6787d9c92852d445f5fa5b938dd5faf561fa5caf99746a86256a8e4f5237";
+            try
+            {
+                s.connect(new InetSocketAddress(host , 80));
+            }
+            //Host not found
+            catch (UnknownHostException e)
+            {
+                System.err.println("Don't know about host : " + host);
+                System.exit(1);
+            }catch (IOException ex){
+                ex.printStackTrace();
+            }
+            System.out.println("Connected");
+
+
             final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0,null);
 
             while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
@@ -316,10 +340,11 @@ public class CompetitionLabsCliTests {
                 Thread.sleep(2000);
             }
         }
-    }catch (ApiException | InterruptedException ex){
-        ex.printStackTrace();
-        logger.info("ERROR >>>> {}", ex);
-    }
+    }catch (ApiException ex){
+            catchApiException(ex);
+    }catch (InterruptedException ex){
+            ex.printStackTrace();
+        }
     }
 
     private void manageContainer(String constainerName, String action, boolean force, BigDecimal timeout, boolean stateful) {
