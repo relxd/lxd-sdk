@@ -1,5 +1,6 @@
 package org.relxd.lxd.api.competitionlabscli;
 
+import com.google.gson.JsonSyntaxException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -20,12 +21,9 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CompetitionLabsCliTests {
@@ -193,39 +191,75 @@ public class CompetitionLabsCliTests {
     }
 
     @Test
-    public void manageContainer(){
-
+    public void startContainer(){
         String containerName = "another-ubuntu-instance";
         String action = "start";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
         boolean stateful = false;
 
-        try {
-            final UpdateInstancesByNameStateRequest request = InstancesApiTest.populatePutInstancesByNameState(action,force,timeout,stateful);
-
-                BackgroundOperationResponse backgroundOperationResponse = instancesApi.putInstancesByNameState(containerName, request);
-
-                logger.info("PUT INSTANCES BY NAME STATE RESPONSE >>>>> " + backgroundOperationResponse);
-
-            if (backgroundOperationResponse != null) {
-                final String operation = backgroundOperationResponse.getOperation();
-                String[] splitOperationUrl = operation.split("/");
-                logger.info("Operation Fingerprint >>>>> {}", splitOperationUrl[3]);
-                String operationUuid = splitOperationUrl[3];
-
-                final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0, null);
-
-                while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
-                    final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
-                    logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
-                    Thread.sleep(2000);
-                }
-            }
-        }catch (ApiException | InterruptedException ex){
-            ex.printStackTrace();
-        }
+        manageContainer(containerName,action,force,timeout,stateful);
     }
+
+    @Test
+    public void stopContainer(){
+        String containerName = "another-ubuntu-instance";
+        String action = "stop";
+        boolean force = false;
+        BigDecimal timeout = new BigDecimal(100);
+        boolean stateful = false;
+
+        manageContainer(containerName,action,force,timeout,stateful);
+    }
+
+    @Test
+    public void restartContainer(){
+        String containerName = "another-ubuntu-instance";
+        String action = "restart";
+        boolean force = false;
+        BigDecimal timeout = new BigDecimal(100);
+        boolean stateful = false;
+
+        manageContainer(containerName,action,force,timeout,stateful);
+    }
+
+    @Test
+    public void freezeContainer(){
+        String containerName = "another-ubuntu-instance";
+        String action = "freeze";
+        boolean force = false;
+        BigDecimal timeout = new BigDecimal(100);
+        boolean stateful = false;
+
+        manageContainer(containerName,action,force,timeout,stateful);
+    }
+
+    @Test
+    public void unfreezeContainer(){
+        String containerName = "another-ubuntu-instance";
+        String action = "unfreeze";
+        boolean force = false;
+        BigDecimal timeout = new BigDecimal(100);
+        boolean stateful = false;
+
+        manageContainer(containerName,action,force,timeout,stateful);
+    }
+
+    @Test
+    public void deleteContainer(){
+        String containerName = "another-ubuntu-instance";
+
+        try {
+            BackgroundOperationResponse response = instancesApi.deleteInstancesByName(containerName);
+            logger.info("DELETE INSTANCE BY NAME RESPONSE >>>>>> {}", response);
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+
+    }
+
+
 
     @Test
     public void viewContainerState(){
@@ -288,10 +322,51 @@ public class CompetitionLabsCliTests {
     }
     }
 
+    private void manageContainer(String constainerName, String action, boolean force, BigDecimal timeout, boolean stateful) {
+
+        try {
+            final UpdateInstancesByNameStateRequest request = InstancesApiTest.populatePutInstancesByNameState(action,force,timeout,stateful);
+
+            BackgroundOperationResponse backgroundOperationResponse = instancesApi.putInstancesByNameState(constainerName, request);
+
+            logger.info("PUT INSTANCES BY NAME STATE RESPONSE >>>>> " + backgroundOperationResponse);
+
+            if (backgroundOperationResponse != null) {
+                final String operation = backgroundOperationResponse.getOperation();
+                String[] splitOperationUrl = operation.split("/");
+                logger.info("Operation Fingerprint >>>>> {}", splitOperationUrl[3]);
+                String operationUuid = splitOperationUrl[3];
+
+                final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0, null);
+
+                while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
+                    final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
+                    logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
+                    Thread.sleep(2000);
+                }
+            }
+        }catch (ApiException | InterruptedException ex){
+            ex.printStackTrace();
+        }
+    }
+
     private <T> T serialiseAndDeserialiseObject(T objectToSerialise, Type type) {
         JSON json = new JSON();
         String serializedString = json.serialize(objectToSerialise);
         return json.deserialize(serializedString, type);
+    }
+
+    private ErrorResponse catchApiException(ApiException e) {
+        logger.info("Exception >>>> " + e);
+        JSON json = new JSON();
+        ErrorResponse errorResponse = new ErrorResponse();
+        try {
+            errorResponse = json.deserialize(e.getResponseBody(), ErrorResponse.class);
+            logger.info("ERROR RESPONSE >>>> " + errorResponse);
+        }catch (JsonSyntaxException ex){
+
+        }
+        return errorResponse;
     }
 
 }
