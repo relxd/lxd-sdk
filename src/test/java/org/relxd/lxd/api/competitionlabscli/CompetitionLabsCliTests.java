@@ -286,14 +286,25 @@ public class CompetitionLabsCliTests {
 
         try{
 
-        //final CreateInstancesByNameExecRequest request = InstancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("bash", "-c", "lxc exec "+containerName+" -- /bin/bash"),new Environment(),true,false,true,80,25);
             final Environment environment = new Environment();
-            //environment.set
             final CreateInstancesByNameExecRequest request = InstancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("/bin/bash"), environment,true,false,true,80,25);
-            BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec("ubuntu18", request);
 
-            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
-            assertEquals(backgroundOperationResponse.getStatusCode(),Integer.valueOf(100));
+            final OperationUUidAndSocketSecret operationUUidAndSocketSecret = postInstancesByNameExecAndReturnOperationUUidAndSocketSecret(containerName, request);
+
+            if (operationUUidAndSocketSecret != null)
+            logger.info("OperationUUid: {},  SocketSecret: {}", operationUUidAndSocketSecret.getOperationUuid(), operationUUidAndSocketSecret.getSocketSecret());
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+
+    private OperationUUidAndSocketSecret postInstancesByNameExecAndReturnOperationUUidAndSocketSecret(String containerName, CreateInstancesByNameExecRequest request) throws ApiException {
+
+        BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec(containerName, request);
+
+        logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
+        assertEquals(backgroundOperationResponse.getStatusCode(),Integer.valueOf(100));
 
         if (backgroundOperationResponse != null) {
             final String operation = backgroundOperationResponse.getOperation();
@@ -315,35 +326,14 @@ public class CompetitionLabsCliTests {
                  logger.info("\n\n\n SECRET >>>>> {}", secret);
             }
 
-            Socket s = new Socket();
-            String host = "wss://192.168.43.157:8443/1.0/operations/f7f3fb1b-4f8b-4968-ad22-f592ba640693/websocket?secret=171e6787d9c92852d445f5fa5b938dd5faf561fa5caf99746a86256a8e4f5237";
-            try
-            {
-                s.connect(new InetSocketAddress(host , 80));
-            }
-            //Host not found
-            catch (UnknownHostException e)
-            {
-                System.err.println("Don't know about host : " + host);
-                System.exit(1);
-            }catch (IOException ex){
-                ex.printStackTrace();
-            }
-            System.out.println("Connected");
+            OperationUUidAndSocketSecret operationUUidAndSocketSecret = new OperationUUidAndSocketSecret();
+            operationUUidAndSocketSecret.setOperationUuid(operationUuid);
+            operationUUidAndSocketSecret.setSocketSecret(secret);
 
+            return operationUUidAndSocketSecret;
 
-            final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0,null);
-
-            while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
-                final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
-                logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
-                Thread.sleep(2000);
-            }
-        }
-    }catch (ApiException ex){
-            catchApiException(ex);
-    }catch (InterruptedException ex){
-            ex.printStackTrace();
+        }else {
+            throw new RuntimeException("The postInstancesByNameExec request returned a null response");
         }
     }
 
