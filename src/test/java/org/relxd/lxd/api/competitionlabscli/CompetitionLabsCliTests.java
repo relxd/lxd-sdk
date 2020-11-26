@@ -17,12 +17,8 @@ import org.relxd.lxd.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -269,18 +265,18 @@ public class CompetitionLabsCliTests {
 
         try {
 
-            final String ubuntu18 = "another-ubuntu-instance";
+            final String ubuntu18 = "ubuntu18";
 
             final BackgroundOperationResponse instancesByNameState = instancesApi.getInstancesByNameState(ubuntu18, 0, null);
             logger.info("Instance State >>> {}", instancesByNameState);
 
         }catch (ApiException ex){
-            ex.printStackTrace();
+            catchApiException(ex);
         }
     }
 
     @Test
-    public void installRabbitMQInContainer(){
+    public void runExecCommandToOpenContainerSocketConnection(){
 
         final String containerName = "ubuntu18";
 
@@ -292,7 +288,7 @@ public class CompetitionLabsCliTests {
             final OperationUUidAndSocketSecret operationUUidAndSocketSecret = postInstancesByNameExecAndReturnOperationUUidAndSocketSecret(containerName, request);
 
             if (operationUUidAndSocketSecret != null)
-            logger.info("OperationUUid: {},  SocketSecret: {}", operationUUidAndSocketSecret.getOperationUuid(), operationUUidAndSocketSecret.getSocketSecret());
+            logger.info("\n\nOperationUUid::{}\nSocketSecret::{}", operationUUidAndSocketSecret.getOperationUuid(), operationUUidAndSocketSecret.getSocketSecret());
 
         }catch (ApiException ex){
             catchApiException(ex);
