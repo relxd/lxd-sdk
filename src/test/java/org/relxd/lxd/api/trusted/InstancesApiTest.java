@@ -66,7 +66,7 @@ public class InstancesApiTest {
      */
     @Test
     public void deleteInstancesByNameTest() {
-        String name = "ubuntu18-1";
+        String name = "ubuntu18";
 
         try {
             BackgroundOperationResponse response = api.deleteInstancesByName(name);

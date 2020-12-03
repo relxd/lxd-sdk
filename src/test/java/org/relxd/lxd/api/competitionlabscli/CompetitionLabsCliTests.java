@@ -192,7 +192,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void startContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
         String action = "start";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -203,7 +203,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void stopContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
         String action = "stop";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -247,7 +247,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void deleteContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
 
         try {
             BackgroundOperationResponse response = instancesApi.deleteInstancesByName(containerName);
@@ -260,33 +260,47 @@ public class CompetitionLabsCliTests {
     }
 
 
-
     @Test
     public void viewContainerState(){
 
         try {
 
-            final String ubuntu18 = "another-ubuntu-instance";
+            final String ubuntu18 = "ubuntu18";
 
             final BackgroundOperationResponse instancesByNameState = instancesApi.getInstancesByNameState(ubuntu18, 0, null);
             logger.info("Instance State >>> {}", instancesByNameState);
 
         }catch (ApiException ex){
-            ex.printStackTrace();
+            catchApiException(ex);
         }
     }
 
     @Test
-    public void installRabbitMQInContainer(){
+    public void runExecCommandToOpenContainerSocketConnection(){
+
+        final String containerName = "ubuntu18";
 
         try{
 
-        final CreateInstancesByNameExecRequest request = instancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("sudo","apt","install", "rabbitmq-server"),new Environment(),true,false,true,80,25);
+            final Environment environment = new Environment();
+            final CreateInstancesByNameExecRequest request = InstancesApiTest.populatePostInstancesByNameExecRequest(Arrays.asList("/bin/bash"), environment,true,false,true,80,25);
 
-            BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec("ubuntu18", request);
+            final OperationUUidAndSocketSecret operationUUidAndSocketSecret = postInstancesByNameExecAndReturnOperationUUidAndSocketSecret(containerName, request);
 
-            logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
-            assertEquals(backgroundOperationResponse.getStatusCode(),Integer.valueOf(100));
+            if (operationUUidAndSocketSecret != null)
+            logger.info("\n\nOperationUUid::{}\nSocketSecret::{}", operationUUidAndSocketSecret.getOperationUuid(), operationUUidAndSocketSecret.getSocketSecret());
+
+        }catch (ApiException ex){
+            catchApiException(ex);
+        }
+    }
+
+    private OperationUUidAndSocketSecret postInstancesByNameExecAndReturnOperationUUidAndSocketSecret(String containerName, CreateInstancesByNameExecRequest request) throws ApiException {
+
+        BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstancesByNameExec(containerName, request);
+
+        logger.info("POST INSTANCES BY NAME EXEC RESPONSE >>>>> " + backgroundOperationResponse);
+        assertEquals(backgroundOperationResponse.getStatusCode(),Integer.valueOf(100));
 
         if (backgroundOperationResponse != null) {
             final String operation = backgroundOperationResponse.getOperation();
@@ -296,30 +310,27 @@ public class CompetitionLabsCliTests {
 
             logger.info("\n\n\n METADATA >>>>>> {}", backgroundOperationResponse.getMetadata());
 
-//            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
-//
-//            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
-//
-//            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
+            InstanceByNameResponseMetadata responseMetadata = (InstanceByNameResponseMetadata) serialiseAndDeserialiseObject(backgroundOperationResponse.getMetadata(), InstanceByNameResponseMetadata.class);
+
+            logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
+
+            final Metadata4 operationMetadata = responseMetadata.getMetadata4();
             String secret = null;
 
-//            if (operationMetadata != null) {
-//                 secret = operationMetadata.getFds().get0();
-//                 logger.info("\n\n\n SECRET >>>>> {}", secret);
-//            }
-
-            final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0,null);
-
-            while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
-                final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
-                logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
-                Thread.sleep(2000);
+            if (operationMetadata != null) {
+                 secret = operationMetadata.getFds().get0();
+                 logger.info("\n\n\n SECRET >>>>> {}", secret);
             }
+
+            OperationUUidAndSocketSecret operationUUidAndSocketSecret = new OperationUUidAndSocketSecret();
+            operationUUidAndSocketSecret.setOperationUuid(operationUuid);
+            operationUUidAndSocketSecret.setSocketSecret(secret);
+
+            return operationUUidAndSocketSecret;
+
+        }else {
+            throw new RuntimeException("The postInstancesByNameExec request returned a null response");
         }
-    }catch (ApiException | InterruptedException ex){
-        ex.printStackTrace();
-        logger.info("ERROR >>>> {}", ex);
-    }
     }
 
     private void manageContainer(String constainerName, String action, boolean force, BigDecimal timeout, boolean stateful) {

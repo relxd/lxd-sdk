@@ -8,7 +8,7 @@ import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreService;
 import org.relxd.lxd.auth.javakeystore.service.JavaKeyStoreServiceImpl;
 import org.relxd.lxd.auth.javakeystore.x509certificate.X509CertificateAndKeyPair;
 import org.relxd.lxd.auth.javakeystore.x509certificate.service.CertificateChainGenerationService;
-import org.relxd.lxd.auth.javakeystore.x509certificate.service.CertificateChainGenerationServiceImpl;
+//import org.relxd.lxd.auth.javakeystore.x509certificate.service.CertificateChainGenerationServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +33,7 @@ public class JavaKeyStoreServiceTest {
     @BeforeEach
     public void init(){
         javaKeyStoreService = spy(new JavaKeyStoreServiceImpl());
-        certificateChainGenerationService = spy(new CertificateChainGenerationServiceImpl());
+        //certificateChainGenerationService = spy(new CertificateChainGenerationServiceImpl());
         logger = LoggerFactory.getLogger(JavaKeyStoreServiceTest.class);
         apiClient = new RelxdApiClient();
         javaKeyStoreFilePath = apiClient.getJavaKeyStoreFilePath();
