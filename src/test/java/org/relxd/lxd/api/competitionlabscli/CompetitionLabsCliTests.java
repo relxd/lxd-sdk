@@ -192,7 +192,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void startContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
         String action = "start";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -203,7 +203,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void stopContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
         String action = "stop";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -247,7 +247,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void deleteContainer(){
-        String containerName = "another-ubuntu-instance";
+        String containerName = "ubuntu18";
 
         try {
             BackgroundOperationResponse response = instancesApi.deleteInstancesByName(containerName);

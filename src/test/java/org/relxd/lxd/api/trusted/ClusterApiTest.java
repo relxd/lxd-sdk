@@ -53,7 +53,7 @@ public class ClusterApiTest {
     @Test
     @Order(6)
     public void deleteClusterMembersByNameTest() {
-        String name = "new-server";
+        String name = "ubuntuserver1";
         BigDecimal force = null;
 
         try {
@@ -122,7 +122,7 @@ public class ClusterApiTest {
     @Test
     @Order(5)
     public void getClusterMembersByNameTest() {
-        String name = "node1";
+        String name = "ubuntuserver1";
         Integer recursion = null;
         String filter = null;
 
@@ -172,11 +172,11 @@ public class ClusterApiTest {
         UpdateClusterRequest request = new UpdateClusterRequest();
         request.setServerName("node1");
         request.setEnabled(true);
+        request.setClusterPassword("#pass123");
 
         try {
             BackgroundOperationResponse response = api.putCluster(request);
             logger.info("Put Cluster By Name Response >>>>>> {}", response);
-
             assertEquals(Integer.valueOf(100), response.getStatusCode());
         }catch (ApiException ex){
             catchApiException(ex);
