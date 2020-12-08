@@ -14,7 +14,7 @@ The services listed below are referred as .....
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven/Gradle
 
 ## Installation
@@ -83,14 +83,14 @@ import org.relxd.lxd.api.CertificatesApi;
 
 public class Example {
   public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
     
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
-
-    CertificatesApi apiInstance = new CertificatesApi(defaultClient);
+    //First Set the fields baseUrl, javaKeyStoreFilePath,javaKeyStorePassword, authenticationType, unixSocketPath in your application.properties file. (See section `Running tests on locally installed lxd` for more information)
+     
+    //Create an instance of RelxdApiClient, which automaticatically sets it as the default ApiClient in the constructor.  
+    new RelxdApiClient();
+    
+    //Access and use your lxd Apis
+    CertificatesApi apiInstance = new CertificatesApi();
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
       BasicStandardReturnValueResponse result = apiInstance.deleteFingerprint(fingerprint);
@@ -405,17 +405,19 @@ Class | Method | HTTP request | Description
 Authentication schemes defined for the API:
 ### authentication
 
-- **Type**: OAuth
+- **Type**: Mutual TLS
 - **Flow**: implicit
-- **Authorization URL**: https://example.com/oauth/authorize
 - **Scopes**: 
   - untrusted: access.....
   - trusted: access.....
 
 ##Default Api Client
 
-The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of `RelxdApiClient` instead of using `ApiClient`.
-In RelxdApiClient there is an implementation of mutual TLS Authentication which enables us to communicate with lxd using https.
+- The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of `RelxdApiClient` instead of using `ApiClient`.
+- In RelxdApiClient there is an implementation of mutual TLS Authentication which enables us to communicate with lxd using https.
+- An SSL certificate which should be stored in the keystore will used for Mutual TLS Authentication.
+- You can either use the lxd server certificate and key, or you can add a valid certificate to lxd first before you use it for Mutual TLS Authentication.
+- The java keystore file is stored in the certificates folder.
 
 ## Running tests on locally installed lxd
 
