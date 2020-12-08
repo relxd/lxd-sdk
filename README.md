@@ -414,7 +414,7 @@ Authentication schemes defined for the API:
 
 ##Default Api Client
 
-The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of 'RelxdApiClient' instead of using 'ApiClient'.
+The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of `RelxdApiClient` instead of using `ApiClient`.
 In RelxdApiClient there is an implementation of mutual TLS Authentication which enables us to communicate with lxd using https.
 
 ## Running tests on locally installed lxd
@@ -441,7 +441,7 @@ In RelxdApiClient there is an implementation of mutual TLS Authentication which 
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
+It's recommended to create an instance of `RelxdApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 
