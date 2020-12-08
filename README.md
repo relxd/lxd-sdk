@@ -409,9 +409,13 @@ Authentication schemes defined for the API:
 - **Flow**: implicit
 - **Authorization URL**: https://example.com/oauth/authorize
 - **Scopes**: 
-  - guest: access.....
   - untrusted: access.....
   - trusted: access.....
+
+##Default Api Client
+
+The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of 'RelxdApiClient' instead of using 'ApiClient'.
+In RelxdApiClient there is an implementation of mutual TLS Authentication which enables us to communicate with lxd using https.
 
 ## Running tests on locally installed lxd
 
@@ -429,12 +433,11 @@ Authentication schemes defined for the API:
    
  (ii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
  
- (iii) In your application.properties file use base url as https://192.168.43.157:8443
+ (iii) In your application.properties file use an https base url. e.g https://192.168.43.157:8443
  
  (iv) At this point you should be able to run the tests. 
    - Run the getServerStateTest in the ServerConfigApiTest.java file and check the 'auth' field, at this point it should be trusted. 
-   
-
+  
 
 ## Recommendation
 

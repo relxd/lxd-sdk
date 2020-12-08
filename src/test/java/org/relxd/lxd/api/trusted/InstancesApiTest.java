@@ -361,7 +361,7 @@ public class InstancesApiTest {
     @Test
     @Order(11)
     public void getInstancesByNameConsoleTest() {
-        String name = "ubuntu18";
+        String name = "ubuntu20";
         Integer recursion = null;
         String filter = null;
 
@@ -1061,11 +1061,11 @@ public class InstancesApiTest {
         CreateInstancesByNameExecRequest request = new CreateInstancesByNameExecRequest();
         request.setCommand(command);
         request.setEnvironment(environment);
-        request.setWaitForWebsocket(true);
-        request.setRecordOutput(false);
-        request.setInteractive(true);
-        request.setWidth(80);
-        request.setHeight(25);/*
+        request.setWaitForWebsocket(waitForWebsocket);
+        request.setRecordOutput(setRecordOutput);
+        request.setInteractive(setInteractive);
+        request.setWidth(width);
+        request.setHeight(height);/*
         request.setUser(1000);
         request.setGroup(1000);
         request.setCwd("/tmp");*/
