@@ -101,7 +101,7 @@ public class CompetitionLabsCliTests {
 
                 //Populate the CreateInstancesRequest and get a Response
                 //todo - clean up the create instance request - extend it to support other parameters
-                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), type, profiles, architecture, nameOfContainer, configBuilder.asMap(),true);
+                CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), type, profiles, architecture, nameOfContainer, configBuilder.asMap(),false);
 
                 final BackgroundOperationResponse backgroundOperationResponse = instancesApi.postInstances(target, createInstancesRequest);
 
@@ -159,7 +159,7 @@ public class CompetitionLabsCliTests {
             sourceConfigBuilder.setServer("https://cloud-images.ubuntu.com/releases");
             sourceConfigBuilder.setAlias("18.04");
 
-            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), "container", profiles, "x86_64", "ubuntu18", instanceConfigBuilder.asMap(), true);
+            final CreateInstancesRequest createInstancesRequest = InstancesApiTest.populateCreateInstancesRequest(devices, sourceConfigBuilder.asMap(), "container", profiles, "x86_64", "ubuntu18", instanceConfigBuilder.asMap(), false);
 
             logger.info("REQUEST >>>>>>>>>> {}", createInstancesRequest);
 
@@ -192,7 +192,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void startContainer(){
-        String containerName = "ubuntu18";
+        String containerName = "another-ubuntu-instance";
         String action = "start";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -203,7 +203,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void stopContainer(){
-        String containerName = "ubuntu18";
+        String containerName = "another-ubuntu-instance";
         String action = "stop";
         boolean force = false;
         BigDecimal timeout = new BigDecimal(100);
@@ -247,7 +247,7 @@ public class CompetitionLabsCliTests {
 
     @Test
     public void deleteContainer(){
-        String containerName = "ubuntu18";
+        String containerName = "another-ubuntu-instance";
 
         try {
             BackgroundOperationResponse response = instancesApi.deleteInstancesByName(containerName);
@@ -265,7 +265,7 @@ public class CompetitionLabsCliTests {
 
         try {
 
-            final String ubuntu18 = "ubuntu18";
+            final String ubuntu18 = "another-ubuntu-instance";
 
             final BackgroundOperationResponse instancesByNameState = instancesApi.getInstancesByNameState(ubuntu18, 0, null);
             logger.info("Instance State >>> {}", instancesByNameState);
@@ -278,7 +278,7 @@ public class CompetitionLabsCliTests {
     @Test
     public void runExecCommandToOpenContainerSocketConnection(){
 
-        final String containerName = "ubuntu18";
+        final String containerName = "c1";
 
         try{
 
@@ -314,6 +314,8 @@ public class CompetitionLabsCliTests {
 
             logger.info("\n\n\n CREATE INSTANCE METADATA >>>>>> {}", responseMetadata);
 
+            operationUuid =  responseMetadata.getId();
+
             final Metadata4 operationMetadata = responseMetadata.getMetadata4();
             String secret = null;
 
@@ -325,6 +327,20 @@ public class CompetitionLabsCliTests {
             OperationUUidAndSocketSecret operationUUidAndSocketSecret = new OperationUUidAndSocketSecret();
             operationUUidAndSocketSecret.setOperationUuid(operationUuid);
             operationUUidAndSocketSecret.setSocketSecret(secret);
+
+
+            /*final BackgroundOperationResponse operationsUUIDResponse = operationsApi.getOperationsUUID(operationUuid, 0, null);
+
+            while ((operationsUUIDResponse != null) && (operationsUUIDResponse.getStatusCode()) == 200) {
+                final BackgroundOperationResponse operationResponse = operationsApi.getOperationsUUID(operationUuid, null, null);
+                logger.info("Operations by UUID Response >>>>> {}", operationsUUIDResponse);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }*/
+
 
             return operationUUidAndSocketSecret;
 
