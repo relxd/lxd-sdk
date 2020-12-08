@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **apiStatus** | **String** | API implementation status (one of, development, stable or deprecated) |  [optional]
 **apiVersion** | **String** | The API version as a string |  [optional]
 **auth** | **String** | Authentication state. |  [optional]
-**config** | [**Config1**](Config1.md) |  |  [optional]
+**config** | [**ServerConfig**](ServerConfig.md) |  |  [optional]
 **environment** | [**Environment**](Environment.md) |  |  [optional]
 **_public** | **Boolean** | Whether the server should be treated as a public (read-only) remote by the client |  [optional]
 

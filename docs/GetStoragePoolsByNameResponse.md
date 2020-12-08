@@ -6,12 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  | 
-**status** | **String** | String version of the operation&#39;s status | 
-**statusCode** | **Integer** | Integer version of the operation&#39;s status (use this rather than status) |  [optional]
-**operation** | **String** | URL to the background operation | 
 **metadata** | [**GetStoragePoolsByNameResponseMetadata**](GetStoragePoolsByNameResponseMetadata.md) |  |  [optional]
-**errorCode** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**errorCode** | **Integer** |  |  [optional]
 **error** | **String** |  |  [optional]
 
 

@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config13;
+import org.relxd.lxd.model.FileSystemMountOptionsAndThinPoolConfig;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest2;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequestOneOf;
 import org.junit.Assert;

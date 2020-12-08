@@ -19,11 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-
-*.idea
-.idea**
-.gradle*
-*.iml
-*.log
-.DS_Store
-

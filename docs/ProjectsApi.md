@@ -1,6 +1,6 @@
 # ProjectsApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="deleteProjectsByName"></a>
 # **deleteProjectsByName**
-> BasicStandardReturnValueResponse deleteProjectsByName(name)
+> BackgroundOperationResponse deleteProjectsByName(name)
 
 
 
@@ -27,23 +27,18 @@ Remove a project
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteProjectsByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteProjectsByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#deleteProjectsByName");
@@ -64,11 +59,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -85,7 +80,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjects"></a>
 # **getProjects**
-> List&lt;String&gt; getProjects(recursion, filter)
+> BackgroundOperationResponse getProjects(recursion, filter)
 
 
 
@@ -97,24 +92,19 @@ List of projects
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getProjects(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProjects(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#getProjects");
@@ -136,11 +126,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -156,7 +146,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectsByName"></a>
 # **getProjectsByName**
-> GetProjectsByNameResponse getProjectsByName(name, recursion, filter)
+> BackgroundOperationResponse getProjectsByName(name, recursion, filter)
 
 
 
@@ -168,25 +158,20 @@ Project configuration
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetProjectsByNameResponse result = apiInstance.getProjectsByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getProjectsByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#getProjectsByName");
@@ -209,11 +194,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetProjectsByNameResponse**](GetProjectsByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -229,7 +214,7 @@ Name | Type | Description  | Notes
 
 <a name="patchProjectsByName"></a>
 # **patchProjectsByName**
-> BasicStandardReturnValueResponse patchProjectsByName(name, body)
+> BackgroundOperationResponse patchProjectsByName(name, body)
 
 
 
@@ -241,24 +226,19 @@ Update the project information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Update the project information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#patchProjectsByName");
@@ -280,11 +260,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -300,7 +280,7 @@ Name | Type | Description  | Notes
 
 <a name="postProjects"></a>
 # **postProjects**
-> BasicStandardReturnValueResponse postProjects(body)
+> BackgroundOperationResponse postProjects(body)
 
 
 
@@ -312,23 +292,18 @@ Define a new project
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     CreateProjectsRequest body = new CreateProjectsRequest(); // CreateProjectsRequest | Define a new project
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postProjects(body);
+      BackgroundOperationResponse result = apiInstance.postProjects(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#postProjects");
@@ -349,11 +324,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -369,7 +344,7 @@ Name | Type | Description  | Notes
 
 <a name="postProjectsByName"></a>
 # **postProjectsByName**
-> Object postProjectsByName(name, body)
+> BackgroundOperationResponse postProjectsByName(name, body)
 
 
 
@@ -381,24 +356,19 @@ Rename a project
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     CreateProjectsByNameRequest body = new CreateProjectsByNameRequest(); // CreateProjectsByNameRequest | Rename a project
     try {
-      Object result = apiInstance.postProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#postProjectsByName");
@@ -420,11 +390,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -434,7 +404,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response |  -  |
+**204** | A standard return value response |  -  |
 **400** | A standard error response |  -  |
 **401** | A standard error response |  -  |
 **403** | A standard error response |  -  |
@@ -442,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="putProjectsByName"></a>
 # **putProjectsByName**
-> BasicStandardReturnValueResponse putProjectsByName(name, body)
+> BackgroundOperationResponse putProjectsByName(name, body)
 
 
 
@@ -454,24 +424,19 @@ Replace the project information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ProjectsApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ProjectsApi apiInstance = new ProjectsApi(defaultClient);
     String name = "name_example"; // String | Projects name
     UpdateProjectsByNameRequest body = new UpdateProjectsByNameRequest(); // UpdateProjectsByNameRequest | Replace the project information
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putProjectsByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putProjectsByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectsApi#putProjectsByName");
@@ -493,11 +458,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

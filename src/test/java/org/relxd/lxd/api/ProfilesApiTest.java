@@ -14,11 +14,10 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateProfilesByNameRequest;
 import org.relxd.lxd.model.CreateProfilesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetProfilesByNameResponse;
 import org.relxd.lxd.model.UpdateProfilesByNameRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -48,7 +47,7 @@ public class ProfilesApiTest {
     @Test
     public void deleteProfilesByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteProfilesByName(name);
+        BackgroundOperationResponse response = api.deleteProfilesByName(name);
 
         // TODO: test validations
     }
@@ -65,7 +64,7 @@ public class ProfilesApiTest {
     public void getProfilesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getProfiles(recursion, filter);
+        BackgroundOperationResponse response = api.getProfiles(recursion, filter);
 
         // TODO: test validations
     }
@@ -83,7 +82,7 @@ public class ProfilesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetProfilesByNameResponse response = api.getProfilesByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getProfilesByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -100,7 +99,7 @@ public class ProfilesApiTest {
     public void patchProfilesByNameTest() throws ApiException {
         String name = null;
         UpdateProfilesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchProfilesByName(name, body);
+        BackgroundOperationResponse response = api.patchProfilesByName(name, body);
 
         // TODO: test validations
     }
@@ -116,7 +115,7 @@ public class ProfilesApiTest {
     @Test
     public void postProfilesTest() throws ApiException {
         CreateProfilesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postProfiles(body);
+        BackgroundOperationResponse response = api.postProfiles(body);
 
         // TODO: test validations
     }
@@ -133,7 +132,7 @@ public class ProfilesApiTest {
     public void postProfilesByNameTest() throws ApiException {
         String name = null;
         CreateProfilesByNameRequest body = null;
-        Object response = api.postProfilesByName(name, body);
+        BackgroundOperationResponse response = api.postProfilesByName(name, body);
 
         // TODO: test validations
     }
@@ -150,7 +149,7 @@ public class ProfilesApiTest {
     public void putProfilesByNameTest() throws ApiException {
         String name = null;
         UpdateProfilesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putProfilesByName(name, body);
+        BackgroundOperationResponse response = api.putProfilesByName(name, body);
 
         // TODO: test validations
     }

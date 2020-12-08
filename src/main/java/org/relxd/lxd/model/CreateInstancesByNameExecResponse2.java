@@ -23,20 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Fds2;
+import org.relxd.lxd.model.Fds1;
 
 /**
  * Return (with wait-for-websocket&#x3D;true and interactive&#x3D;true)
  */
 @ApiModel(description = "Return (with wait-for-websocket=true and interactive=true)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class CreateInstancesByNameExecResponse2 {
   public static final String SERIALIZED_NAME_FDS = "fds";
   @SerializedName(SERIALIZED_NAME_FDS)
-  private Fds2 fds;
+  private Fds1 fds;
 
 
-  public CreateInstancesByNameExecResponse2 fds(Fds2 fds) {
+  public CreateInstancesByNameExecResponse2 fds(Fds1 fds) {
     
     this.fds = fds;
     return this;
@@ -49,12 +49,12 @@ public class CreateInstancesByNameExecResponse2 {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Fds2 getFds() {
+  public Fds1 getFds() {
     return fds;
   }
 
 
-  public void setFds(Fds2 fds) {
+  public void setFds(Fds1 fds) {
     this.fds = fds;
   }
 

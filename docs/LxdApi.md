@@ -1,18 +1,18 @@
 # LxdApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getApiList**](LxdApi.md#getApiList) | **GET** / | 
-[**getServerState**](LxdApi.md#getServerState) | **GET** /1.0/ | 
-[**patchServerState**](LxdApi.md#patchServerState) | **PATCH** /1.0/ | 
-[**putServerState**](LxdApi.md#putServerState) | **PUT** /1.0/ | 
+[**getServerState**](LxdApi.md#getServerState) | **GET** /1.0 | 
+[**patchServerState**](LxdApi.md#patchServerState) | **PATCH** /1.0 | 
+[**putServerState**](LxdApi.md#putServerState) | **PUT** /1.0 | 
 
 
 <a name="getApiList"></a>
 # **getApiList**
-> List&lt;String&gt; getApiList(recursion, filter)
+> StandardServerResponse getApiList(recursion, filter)
 
 
 
@@ -31,7 +31,7 @@ import org.relxd.lxd.api.LxdApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -41,7 +41,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getApiList(recursion, filter);
+      StandardServerResponse result = apiInstance.getApiList(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LxdApi#getApiList");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="getServerState"></a>
 # **getServerState**
-> GetServerStateResponse getServerState(recursion, filter)
+> StandardServerResponse getServerState(recursion, filter)
 
 
 
@@ -102,7 +102,7 @@ import org.relxd.lxd.api.LxdApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
@@ -112,7 +112,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetServerStateResponse result = apiInstance.getServerState(recursion, filter);
+      StandardServerResponse result = apiInstance.getServerState(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LxdApi#getServerState");
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetServerStateResponse**](GetServerStateResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 <a name="patchServerState"></a>
 # **patchServerState**
-> BasicStandardReturnValueResponse patchServerState(body)
+> StandardServerResponse patchServerState(body)
 
 
 
@@ -173,16 +173,16 @@ import org.relxd.lxd.api.LxdApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
     authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     LxdApi apiInstance = new LxdApi(defaultClient);
-    Config1 body = new Config1(); // Config1 | Updates only the listed keys, rest remains intact
+    ServerConfig body = new ServerConfig(); // ServerConfig | Updates only the listed keys, rest remains intact
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchServerState(body);
+      StandardServerResponse result = apiInstance.patchServerState(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LxdApi#patchServerState");
@@ -199,11 +199,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Config1**| Updates only the listed keys, rest remains intact | [optional]
+ **body** | **ServerConfig**| Updates only the listed keys, rest remains intact | [optional]
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="putServerState"></a>
 # **putServerState**
-> BasicStandardReturnValueResponse putServerState(body)
+> StandardServerResponse putServerState(body)
 
 
 
@@ -242,16 +242,16 @@ import org.relxd.lxd.api.LxdApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
+    defaultClient.setBasePath("http://localhost:2375");
     
     // Configure OAuth2 access token for authorization: authentication
     OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
     authentication.setAccessToken("YOUR ACCESS TOKEN");
 
     LxdApi apiInstance = new LxdApi(defaultClient);
-    Config1 body = new Config1(); // Config1 | Replaces any existing config with the provided one
+    ServerConfig body = new ServerConfig(); // ServerConfig | Replaces any existing config with the provided one
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putServerState(body);
+      StandardServerResponse result = apiInstance.putServerState(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling LxdApi#putServerState");
@@ -268,11 +268,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Config1**| Replaces any existing config with the provided one | [optional]
+ **body** | **ServerConfig**| Replaces any existing config with the provided one | [optional]
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**StandardServerResponse**](StandardServerResponse.md)
 
 ### Authorization
 

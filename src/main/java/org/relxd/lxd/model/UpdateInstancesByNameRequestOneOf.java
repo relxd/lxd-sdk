@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config2;
-import org.relxd.lxd.model.Devices2;
+import org.relxd.lxd.model.DevicesRoot;
+import org.relxd.lxd.model.HardwareSpecsConfig;
 
 /**
  * Input (update instance configuration)
  */
 @ApiModel(description = "Input (update instance configuration)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class UpdateInstancesByNameRequestOneOf {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
   @SerializedName(SERIALIZED_NAME_ARCHITECTURE)
@@ -40,11 +40,11 @@ public class UpdateInstancesByNameRequestOneOf {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config2 config;
+  private HardwareSpecsConfig config;
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices2 devices;
+  private DevicesRoot devices;
 
   public static final String SERIALIZED_NAME_EPHEMERAL = "ephemeral";
   @SerializedName(SERIALIZED_NAME_EPHEMERAL)
@@ -78,7 +78,7 @@ public class UpdateInstancesByNameRequestOneOf {
   }
 
 
-  public UpdateInstancesByNameRequestOneOf config(Config2 config) {
+  public UpdateInstancesByNameRequestOneOf config(HardwareSpecsConfig config) {
     
     this.config = config;
     return this;
@@ -91,17 +91,17 @@ public class UpdateInstancesByNameRequestOneOf {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config2 getConfig() {
+  public HardwareSpecsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config2 config) {
+  public void setConfig(HardwareSpecsConfig config) {
     this.config = config;
   }
 
 
-  public UpdateInstancesByNameRequestOneOf devices(Devices2 devices) {
+  public UpdateInstancesByNameRequestOneOf devices(DevicesRoot devices) {
     
     this.devices = devices;
     return this;
@@ -114,12 +114,12 @@ public class UpdateInstancesByNameRequestOneOf {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices2 getDevices() {
+  public DevicesRoot getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices2 devices) {
+  public void setDevices(DevicesRoot devices) {
     this.devices = devices;
   }
 

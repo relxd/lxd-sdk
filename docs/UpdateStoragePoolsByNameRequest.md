@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**Config10**](Config10.md) |  |  [optional]
+**config** | [**DiskAndLvmConfig**](DiskAndLvmConfig.md) |  |  [optional]
 
 
 

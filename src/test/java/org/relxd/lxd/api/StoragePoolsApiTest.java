@@ -14,8 +14,7 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest;
@@ -23,10 +22,6 @@ import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesByTypeRequest;
 import org.relxd.lxd.model.CreateStoragePoolsByNameVolumesRequest;
 import org.relxd.lxd.model.CreateStoragePoolsRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameResourcesResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameResponse;
-import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse;
 import org.relxd.lxd.model.PatchStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameRequest;
 import org.relxd.lxd.model.UpdateStoragePoolsByNameVolumesByTypeNameRequest;
@@ -60,7 +55,7 @@ public class StoragePoolsApiTest {
     @Test
     public void deleteStoragePoolsByNameTest() throws ApiException {
         String pool = null;
-        BasicStandardReturnValueResponse response = api.deleteStoragePoolsByName(pool);
+        BackgroundOperationResponse response = api.deleteStoragePoolsByName(pool);
 
         // TODO: test validations
     }
@@ -78,7 +73,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         String type = null;
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
+        BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeName(pool, type, name);
 
         // TODO: test validations
     }
@@ -96,7 +91,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         String type = null;
         String name = null;
-        BasicBackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
+        BackgroundOperationResponse response = api.deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name);
 
         // TODO: test validations
     }
@@ -113,7 +108,7 @@ public class StoragePoolsApiTest {
     public void getStoragePoolsTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getStoragePools(recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePools(recursion, filter);
 
         // TODO: test validations
     }
@@ -131,7 +126,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         Integer recursion = null;
         String filter = null;
-        GetStoragePoolsByNameResponse response = api.getStoragePoolsByName(pool, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByName(pool, recursion, filter);
 
         // TODO: test validations
     }
@@ -149,7 +144,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         Integer recursion = null;
         String filter = null;
-        GetStoragePoolsByNameResourcesResponse response = api.getStoragePoolsByNameResources(pool, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameResources(pool, recursion, filter);
 
         // TODO: test validations
     }
@@ -167,7 +162,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getStoragePoolsByNameVolumes(pool, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumes(pool, recursion, filter);
 
         // TODO: test validations
     }
@@ -187,7 +182,7 @@ public class StoragePoolsApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetStoragePoolsByNameVolumesByTypeNameResponse response = api.getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumesByTypeName(pool, type, name, recursion, filter);
 
         // TODO: test validations
     }
@@ -207,7 +202,7 @@ public class StoragePoolsApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, recursion, filter);
 
         // TODO: test validations
     }
@@ -227,7 +222,7 @@ public class StoragePoolsApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse response = api.getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter);
+        BackgroundOperationResponse response = api.getStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, recursion, filter);
 
         // TODO: test validations
     }
@@ -244,7 +239,7 @@ public class StoragePoolsApiTest {
     public void patchStoragePoolsByNameTest() throws ApiException {
         String pool = null;
         PatchStoragePoolsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchStoragePoolsByName(pool, body);
+        BackgroundOperationResponse response = api.patchStoragePoolsByName(pool, body);
 
         // TODO: test validations
     }
@@ -263,7 +258,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         UpdateStoragePoolsByNameVolumesByTypeNameRequest2 body = null;
-        BasicStandardReturnValueResponse response = api.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+        BackgroundOperationResponse response = api.patchStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -279,7 +274,7 @@ public class StoragePoolsApiTest {
     @Test
     public void postStoragePoolsTest() throws ApiException {
         CreateStoragePoolsRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePools(body);
+        BackgroundOperationResponse response = api.postStoragePools(body);
 
         // TODO: test validations
     }
@@ -296,7 +291,7 @@ public class StoragePoolsApiTest {
     public void postStoragePoolsByNameVolumesTest() throws ApiException {
         String pool = null;
         CreateStoragePoolsByNameVolumesRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePoolsByNameVolumes(pool, body);
+        BackgroundOperationResponse response = api.postStoragePoolsByNameVolumes(pool, body);
 
         // TODO: test validations
     }
@@ -314,7 +309,7 @@ public class StoragePoolsApiTest {
         String pool = null;
         String type = null;
         CreateStoragePoolsByNameVolumesByTypeRequest body = null;
-        BasicStandardReturnValueResponse response = api.postStoragePoolsByNameVolumesByType(pool, type, body);
+        BackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByType(pool, type, body);
 
         // TODO: test validations
     }
@@ -333,7 +328,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         CreateStoragePoolsByNameVolumesByTypeNameRequest body = null;
-        BasicBackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+        BackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -352,7 +347,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest body = null;
-        BasicBackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body);
+        BackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeNameSnapshots(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -371,7 +366,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body = null;
-        BasicBackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
+        BackgroundOperationResponse response = api.postStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -388,7 +383,7 @@ public class StoragePoolsApiTest {
     public void putStoragePoolsByNameTest() throws ApiException {
         String pool = null;
         UpdateStoragePoolsByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putStoragePoolsByName(pool, body);
+        BackgroundOperationResponse response = api.putStoragePoolsByName(pool, body);
 
         // TODO: test validations
     }
@@ -407,7 +402,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         UpdateStoragePoolsByNameVolumesByTypeNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
+        BackgroundOperationResponse response = api.putStoragePoolsByNameVolumesByTypeName(pool, type, name, body);
 
         // TODO: test validations
     }
@@ -426,7 +421,7 @@ public class StoragePoolsApiTest {
         String type = null;
         String name = null;
         UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest body = null;
-        GetStoragePoolsByNameVolumesByTypeNameSnapshotsNameResponse response = api.putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
+        BackgroundOperationResponse response = api.putStoragePoolsByNameVolumesByTypeNameSnapshotsName(pool, type, name, body);
 
         // TODO: test validations
     }

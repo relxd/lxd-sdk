@@ -7,7 +7,7 @@ Return (with wait-for-websocket=true and interactive=true)
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fds** | [**Fds2**](Fds2.md) |  |  [optional]
+**fds** | [**Fds1**](Fds1.md) |  |  [optional]
 
 
 

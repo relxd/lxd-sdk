@@ -14,8 +14,7 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsByNameRequest;
 import org.relxd.lxd.model.CreateInstancesByNameBackupsRequest;
 import org.relxd.lxd.model.CreateInstancesByNameConsoleRequest;
@@ -26,12 +25,7 @@ import org.relxd.lxd.model.CreateInstancesByNameSnapshotsInformationRequest;
 import org.relxd.lxd.model.CreateInstancesRequest;
 import org.relxd.lxd.model.ErrorResponse;
 import java.io.File;
-import org.relxd.lxd.model.GetInstancesByNameBackupsByNameExportResponse;
-import org.relxd.lxd.model.GetInstancesByNameBackupsByNameResponse;
 import org.relxd.lxd.model.GetInstancesByNameMetadataResponse;
-import org.relxd.lxd.model.GetInstancesByNameResponse;
-import org.relxd.lxd.model.GetInstancesByNameStateResponse;
-import org.relxd.lxd.model.GetSnapshotInformationResponse;
 import org.relxd.lxd.model.PatchInstancesByNameRequest;
 import org.relxd.lxd.model.RawFile;
 import java.util.UUID;
@@ -66,7 +60,7 @@ public class InstancesApiTest {
     @Test
     public void deleteInstancesByNameTest() throws ApiException {
         String name = null;
-        BasicBackgroundOperationResponse response = api.deleteInstancesByName(name);
+        BackgroundOperationResponse response = api.deleteInstancesByName(name);
 
         // TODO: test validations
     }
@@ -83,7 +77,7 @@ public class InstancesApiTest {
     public void deleteInstancesByNameBackupsByNameTest() throws ApiException {
         String name = null;
         String backupsName = null;
-        BasicBackgroundOperationResponse response = api.deleteInstancesByNameBackupsByName(name, backupsName);
+        BackgroundOperationResponse response = api.deleteInstancesByNameBackupsByName(name, backupsName);
 
         // TODO: test validations
     }
@@ -116,7 +110,7 @@ public class InstancesApiTest {
     public void deleteInstancesByNameFilesTest() throws ApiException {
         String name = null;
         String path = null;
-        BasicStandardReturnValueResponse response = api.deleteInstancesByNameFiles(name, path);
+        BackgroundOperationResponse response = api.deleteInstancesByNameFiles(name, path);
 
         // TODO: test validations
     }
@@ -133,7 +127,7 @@ public class InstancesApiTest {
     public void deleteInstancesByNameLogsFileTest() throws ApiException {
         String name = null;
         String logFile = null;
-        BasicStandardReturnValueResponse response = api.deleteInstancesByNameLogsFile(name, logFile);
+        BackgroundOperationResponse response = api.deleteInstancesByNameLogsFile(name, logFile);
 
         // TODO: test validations
     }
@@ -150,7 +144,7 @@ public class InstancesApiTest {
     public void deleteInstancesByNameMetadataTemplatesTest() throws ApiException {
         String name = null;
         String path = null;
-        BasicStandardReturnValueResponse response = api.deleteInstancesByNameMetadataTemplates(name, path);
+        BackgroundOperationResponse response = api.deleteInstancesByNameMetadataTemplates(name, path);
 
         // TODO: test validations
     }
@@ -167,7 +161,7 @@ public class InstancesApiTest {
     public void deleteInstancesByNameSnapshotsInformationTest() throws ApiException {
         String name = null;
         String snapshotName = null;
-        BasicBackgroundOperationResponse response = api.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
+        BackgroundOperationResponse response = api.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
 
         // TODO: test validations
     }
@@ -184,7 +178,7 @@ public class InstancesApiTest {
     public void getInstancesTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getInstances(recursion, filter);
+        BackgroundOperationResponse response = api.getInstances(recursion, filter);
 
         // TODO: test validations
     }
@@ -202,7 +196,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameResponse response = api.getInstancesByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -220,7 +214,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getInstancesByNameBackups(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameBackups(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -239,7 +233,7 @@ public class InstancesApiTest {
         String backupsName = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameBackupsByNameResponse response = api.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
 
         // TODO: test validations
     }
@@ -258,7 +252,7 @@ public class InstancesApiTest {
         String backupsName = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameBackupsByNameExportResponse response = api.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
 
         // TODO: test validations
     }
@@ -276,7 +270,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameResponse response = api.getInstancesByNameConsole(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameConsole(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -317,7 +311,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getInstancesByNameLogs(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameLogs(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -336,7 +330,7 @@ public class InstancesApiTest {
         String logFile = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getInstancesByNameLogsFile(name, logFile, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameLogsFile(name, logFile, recursion, filter);
 
         // TODO: test validations
     }
@@ -354,7 +348,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameMetadataResponse response = api.getInstancesByNameMetadata(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameMetadata(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -373,7 +367,7 @@ public class InstancesApiTest {
         Integer recursion = null;
         String filter = null;
         String path = null;
-        List<String> response = api.getInstancesByNameMetadataTemplates(name, recursion, filter, path);
+        BackgroundOperationResponse response = api.getInstancesByNameMetadataTemplates(name, recursion, filter, path);
 
         // TODO: test validations
     }
@@ -391,7 +385,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getInstancesByNameSnapshots(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameSnapshots(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -410,7 +404,7 @@ public class InstancesApiTest {
         String snapshotName = null;
         Integer recursion = null;
         String filter = null;
-        GetSnapshotInformationResponse response = api.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
 
         // TODO: test validations
     }
@@ -428,7 +422,7 @@ public class InstancesApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetInstancesByNameStateResponse response = api.getInstancesByNameState(name, recursion, filter);
+        BackgroundOperationResponse response = api.getInstancesByNameState(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -445,7 +439,7 @@ public class InstancesApiTest {
     public void patchInstancesByNameTest() throws ApiException {
         String name = null;
         PatchInstancesByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchInstancesByName(name, body);
+        BackgroundOperationResponse response = api.patchInstancesByName(name, body);
 
         // TODO: test validations
     }
@@ -462,7 +456,7 @@ public class InstancesApiTest {
     public void postInstancesTest() throws ApiException {
         String target = null;
         CreateInstancesRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstances(target, body);
+        BackgroundOperationResponse response = api.postInstances(target, body);
 
         // TODO: test validations
     }
@@ -480,7 +474,7 @@ public class InstancesApiTest {
         String name = null;
         String target = null;
         CreateInstancesByNameRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByName(name, target, body);
+        BackgroundOperationResponse response = api.postInstancesByName(name, target, body);
 
         // TODO: test validations
     }
@@ -497,7 +491,7 @@ public class InstancesApiTest {
     public void postInstancesByNameBackupsTest() throws ApiException {
         String name = null;
         CreateInstancesByNameBackupsRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameBackups(name, body);
+        BackgroundOperationResponse response = api.postInstancesByNameBackups(name, body);
 
         // TODO: test validations
     }
@@ -515,7 +509,7 @@ public class InstancesApiTest {
         String name = null;
         String backupsName = null;
         CreateInstancesByNameBackupsByNameRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameBackupsByName(name, backupsName, body);
+        BackgroundOperationResponse response = api.postInstancesByNameBackupsByName(name, backupsName, body);
 
         // TODO: test validations
     }
@@ -532,7 +526,7 @@ public class InstancesApiTest {
     public void postInstancesByNameConsoleTest() throws ApiException {
         String name = null;
         CreateInstancesByNameConsoleRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameConsole(name, body);
+        BackgroundOperationResponse response = api.postInstancesByNameConsole(name, body);
 
         // TODO: test validations
     }
@@ -549,7 +543,7 @@ public class InstancesApiTest {
     public void postInstancesByNameExecTest() throws ApiException {
         String name = null;
         CreateInstancesByNameExecRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameExec(name, body);
+        BackgroundOperationResponse response = api.postInstancesByNameExec(name, body);
 
         // TODO: test validations
     }
@@ -572,7 +566,7 @@ public class InstancesApiTest {
         UUID xLXDWrite = null;
         String xLXDType = null;
         File body = null;
-        BasicStandardReturnValueResponse response = api.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+        BackgroundOperationResponse response = api.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
 
         // TODO: test validations
     }
@@ -590,7 +584,7 @@ public class InstancesApiTest {
         String name = null;
         String path = null;
         File body = null;
-        BasicStandardReturnValueResponse response = api.postInstancesByNameMetadataTemplates(name, path, body);
+        BackgroundOperationResponse response = api.postInstancesByNameMetadataTemplates(name, path, body);
 
         // TODO: test validations
     }
@@ -607,7 +601,7 @@ public class InstancesApiTest {
     public void postInstancesByNameSnapshotTest() throws ApiException {
         String name = null;
         CreateInstancesByNameSnapshotRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameSnapshot(name, body);
+        BackgroundOperationResponse response = api.postInstancesByNameSnapshot(name, body);
 
         // TODO: test validations
     }
@@ -625,7 +619,7 @@ public class InstancesApiTest {
         String name = null;
         String snapshotName = null;
         CreateInstancesByNameSnapshotsInformationRequest body = null;
-        BasicBackgroundOperationResponse response = api.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
+        BackgroundOperationResponse response = api.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
 
         // TODO: test validations
     }
@@ -642,7 +636,7 @@ public class InstancesApiTest {
     public void putInstancesByNameTest() throws ApiException {
         String name = null;
         UpdateInstancesByNameRequest body = null;
-        BasicBackgroundOperationResponse response = api.putInstancesByName(name, body);
+        BackgroundOperationResponse response = api.putInstancesByName(name, body);
 
         // TODO: test validations
     }
@@ -659,7 +653,7 @@ public class InstancesApiTest {
     public void putInstancesByNameMetadataTest() throws ApiException {
         String name = null;
         GetInstancesByNameMetadataResponse body = null;
-        BasicStandardReturnValueResponse response = api.putInstancesByNameMetadata(name, body);
+        BackgroundOperationResponse response = api.putInstancesByNameMetadata(name, body);
 
         // TODO: test validations
     }
@@ -677,7 +671,7 @@ public class InstancesApiTest {
         String name = null;
         String path = null;
         File body = null;
-        BasicStandardReturnValueResponse response = api.putInstancesByNameMetadataTemplates(name, path, body);
+        BackgroundOperationResponse response = api.putInstancesByNameMetadataTemplates(name, path, body);
 
         // TODO: test validations
     }
@@ -695,7 +689,7 @@ public class InstancesApiTest {
         String name = null;
         String snapshotName = null;
         UpdateInstancesByNameSnapshotsInformationRequest body = null;
-        BasicBackgroundOperationResponse response = api.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
+        BackgroundOperationResponse response = api.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
 
         // TODO: test validations
     }
@@ -712,7 +706,7 @@ public class InstancesApiTest {
     public void putInstancesByNameStateTest() throws ApiException {
         String name = null;
         UpdateInstancesByNameStateRequest body = null;
-        BasicBackgroundOperationResponse response = api.putInstancesByNameState(name, body);
+        BackgroundOperationResponse response = api.putInstancesByNameState(name, body);
 
         // TODO: test validations
     }

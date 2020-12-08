@@ -23,8 +23,6 @@ import okio.Okio;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.apache.oltu.oauth2.common.message.types.GrantType;
 
 import javax.net.ssl.*;
 import java.io.File;
@@ -53,13 +51,10 @@ import org.relxd.lxd.auth.Authentication;
 import org.relxd.lxd.auth.HttpBasicAuth;
 import org.relxd.lxd.auth.HttpBearerAuth;
 import org.relxd.lxd.auth.ApiKeyAuth;
-import org.relxd.lxd.auth.OAuth;
-import org.relxd.lxd.auth.RetryingOAuth;
-import org.relxd.lxd.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "https://lxd.com";
+    private String basePath = "http://localhost:2375";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -89,59 +84,6 @@ public class ApiClient {
         initHttpClient();
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("authentication", new OAuth());
-        // Prevent the authentications from being modified.
-        authentications = Collections.unmodifiableMap(authentications);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
-     */
-    public ApiClient(String clientId) {
-        this(clientId, null, null);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID and additional parameters
-     */
-    public ApiClient(String clientId, Map<String, String> parameters) {
-        this(clientId, null, parameters);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID, secret, and additional parameters
-     */
-    public ApiClient(String clientId, String clientSecret, Map<String, String> parameters) {
-        this(null, clientId, clientSecret, parameters);
-    }
-
-    /*
-     * Constructor for ApiClient to support access token retry on 401/403 configured with base path, client ID, secret, and additional parameters
-     */
-    public ApiClient(String basePath, String clientId, String clientSecret, Map<String, String> parameters) {
-        init();
-        if (basePath != null) {
-            this.basePath = basePath;
-        }
-
-        String tokenUrl = "";
-        if (!"".equals(tokenUrl) && !URI.create(tokenUrl).isAbsolute()) {
-            URI uri = URI.create(getBasePath());
-            tokenUrl = uri.getScheme() + ":" +
-                (uri.getAuthority() != null ? "//" + uri.getAuthority() : "") +
-                tokenUrl;
-            if (!URI.create(tokenUrl).isAbsolute()) {
-                throw new IllegalArgumentException("OAuth2 token URL must be an absolute URL");
-            }
-        }
-        RetryingOAuth retryingOAuth = new RetryingOAuth(tokenUrl, clientId, OAuthFlow.implicit, clientSecret, parameters);
-        authentications.put(
-                "authentication",
-                retryingOAuth
-        );
-        initHttpClient(Collections.<Interceptor>singletonList(retryingOAuth));
-        // Setup authentications (key: authentication name, value: authentication).
-
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -183,7 +125,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://lxd.com
+     * @param basePath Base path of the URL (e.g http://localhost:2375
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
@@ -408,12 +350,6 @@ public class ApiClient {
      * @param accessToken Access token
      */
     public void setAccessToken(String accessToken) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof OAuth) {
-                ((OAuth) auth).setAccessToken(accessToken);
-                return;
-            }
-        }
         throw new RuntimeException("No OAuth2 authentication configured!");
     }
 
@@ -571,20 +507,6 @@ public class ApiClient {
         return this;
     }
 
-    /**
-     * Helper method to configure the token endpoint of the first oauth found in the apiAuthorizations (there should be only one)
-     *
-     * @return Token request builder
-     */
-    public TokenRequestBuilder getTokenEndPoint() {
-        for (Authentication apiAuth : authentications.values()) {
-            if (apiAuth instanceof RetryingOAuth) {
-                RetryingOAuth retryingOAuth = (RetryingOAuth) apiAuth;
-                return retryingOAuth.getTokenRequestBuilder();
-            }
-        }
-        return null;
-    }
 
     /**
      * Format the given parameter object into string.

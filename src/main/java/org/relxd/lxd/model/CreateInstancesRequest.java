@@ -24,15 +24,15 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import org.relxd.lxd.model.CreateInstancesRequestConfig;
-import org.relxd.lxd.model.Devices1;
-import org.relxd.lxd.model.Source;
+import java.util.Map;
+import org.relxd.lxd.model.DevicesKvm;
 
 /**
  * CreateInstancesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class CreateInstancesRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -52,7 +52,7 @@ public class CreateInstancesRequest {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private CreateInstancesRequestConfig config;
+  private Map<String, Object> config = new HashMap<String, Object>();
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -60,7 +60,7 @@ public class CreateInstancesRequest {
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices1 devices;
+  private DevicesKvm devices;
 
   public static final String SERIALIZED_NAME_INSTANCE_TYPE = "instance_type";
   @SerializedName(SERIALIZED_NAME_INSTANCE_TYPE)
@@ -68,7 +68,7 @@ public class CreateInstancesRequest {
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  private Source source;
+  private Map<String, Object> source = new HashMap<String, Object>();
 
 
   public CreateInstancesRequest name(String name) {
@@ -164,24 +164,29 @@ public class CreateInstancesRequest {
   }
 
 
-  public CreateInstancesRequest config(CreateInstancesRequestConfig config) {
+  public CreateInstancesRequest config(Map<String, Object> config) {
     
     this.config = config;
     return this;
   }
 
+  public CreateInstancesRequest putConfigItem(String key, Object configItem) {
+    this.config.put(key, configItem);
+    return this;
+  }
+
    /**
-   * Get config
+   * This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.
    * @return config
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "{\"limits.cpu\":\"2\",\"limits.memory\":\"512MB\"}", required = true, value = "This is a map of config parameters to be used during instance creation. The keys for this map are the keys from instance.md file (https://github.com/lxc/lxd/blob/master/doc/instances.md#keyvalue-configuration) and values are the fields to set.")
 
-  public CreateInstancesRequestConfig getConfig() {
+  public Map<String, Object> getConfig() {
     return config;
   }
 
 
-  public void setConfig(CreateInstancesRequestConfig config) {
+  public void setConfig(Map<String, Object> config) {
     this.config = config;
   }
 
@@ -209,7 +214,7 @@ public class CreateInstancesRequest {
   }
 
 
-  public CreateInstancesRequest devices(Devices1 devices) {
+  public CreateInstancesRequest devices(DevicesKvm devices) {
     
     this.devices = devices;
     return this;
@@ -222,12 +227,12 @@ public class CreateInstancesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices1 getDevices() {
+  public DevicesKvm getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices1 devices) {
+  public void setDevices(DevicesKvm devices) {
     this.devices = devices;
   }
 
@@ -255,24 +260,29 @@ public class CreateInstancesRequest {
   }
 
 
-  public CreateInstancesRequest source(Source source) {
+  public CreateInstancesRequest source(Map<String, Object> source) {
     
     this.source = source;
     return this;
   }
 
+  public CreateInstancesRequest putSourceItem(String key, Object sourceItem) {
+    this.source.put(key, sourceItem);
+    return this;
+  }
+
    /**
-   * Get source
+   * Source to be used to create this container. Can be: \&quot;image\&quot;, \&quot;migration\&quot;, \&quot;copy\&quot; or \&quot;none\&quot;
    * @return source
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "{\"type\":\"image\",\"fingerprint\":\"6d825770a54383a01cdb78ae1c66260024629bb3b362f0ecd7b74dfcc8aa435f\"}", required = true, value = "Source to be used to create this container. Can be: \"image\", \"migration\", \"copy\" or \"none\"")
 
-  public Source getSource() {
+  public Map<String, Object> getSource() {
     return source;
   }
 
 
-  public void setSource(Source source) {
+  public void setSource(Map<String, Object> source) {
     this.source = source;
   }
 

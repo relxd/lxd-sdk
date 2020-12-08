@@ -1,6 +1,6 @@
 # InstancesApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -45,7 +45,7 @@ Method | HTTP request | Description
 
 <a name="deleteInstancesByName"></a>
 # **deleteInstancesByName**
-> BasicBackgroundOperationResponse deleteInstancesByName(name)
+> BackgroundOperationResponse deleteInstancesByName(name)
 
 
 
@@ -57,23 +57,18 @@ Remove the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByName(name);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByName(name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByName");
@@ -94,11 +89,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -114,7 +109,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameBackupsByName"></a>
 # **deleteInstancesByNameBackupsByName**
-> BasicBackgroundOperationResponse deleteInstancesByNameBackupsByName(name, backupsName)
+> BackgroundOperationResponse deleteInstancesByNameBackupsByName(name, backupsName)
 
 
 
@@ -126,24 +121,19 @@ Remove the backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String backupsName = "backupsName_example"; // String | Backups name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByNameBackupsByName(name, backupsName);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameBackupsByName(name, backupsName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameBackupsByName");
@@ -165,11 +155,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -197,18 +187,13 @@ Empty the instance&#39;s console log
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -237,7 +222,7 @@ null (empty response body)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -253,7 +238,7 @@ null (empty response body)
 
 <a name="deleteInstancesByNameFiles"></a>
 # **deleteInstancesByNameFiles**
-> BasicStandardReturnValueResponse deleteInstancesByNameFiles(name, path)
+> BackgroundOperationResponse deleteInstancesByNameFiles(name, path)
 
 
 
@@ -265,24 +250,19 @@ Delete a file in the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String path = /path/inside/the/instance; // String | directory listing from the instance
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameFiles(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameFiles");
@@ -304,11 +284,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -324,7 +304,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameLogsFile"></a>
 # **deleteInstancesByNameLogsFile**
-> BasicStandardReturnValueResponse deleteInstancesByNameLogsFile(name, logFile)
+> BackgroundOperationResponse deleteInstancesByNameLogsFile(name, logFile)
 
 
 
@@ -336,24 +316,19 @@ Delete a particular log file.
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String logFile = "logFile_example"; // String | Instance log file
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameLogsFile(name, logFile);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameLogsFile");
@@ -375,11 +350,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -395,7 +370,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameMetadataTemplates"></a>
 # **deleteInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse deleteInstancesByNameMetadataTemplates(name, path)
+> BackgroundOperationResponse deleteInstancesByNameMetadataTemplates(name, path)
 
 
 
@@ -407,24 +382,19 @@ Delete an instance template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String path = "path_example"; // String | Template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameMetadataTemplates(name, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameMetadataTemplates");
@@ -446,11 +416,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -466,7 +436,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteInstancesByNameSnapshotsInformation"></a>
 # **deleteInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(name, snapshotName)
+> BackgroundOperationResponse deleteInstancesByNameSnapshotsInformation(name, snapshotName)
 
 
 
@@ -478,24 +448,19 @@ Remove the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
+      BackgroundOperationResponse result = apiInstance.deleteInstancesByNameSnapshotsInformation(name, snapshotName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstancesByNameSnapshotsInformation");
@@ -517,11 +482,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -537,7 +502,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstances"></a>
 # **getInstances**
-> List&lt;String&gt; getInstances(recursion, filter)
+> BackgroundOperationResponse getInstances(recursion, filter)
 
 
 
@@ -549,24 +514,19 @@ Return a list of URLs for instances this server hosts
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstances(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstances(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstances");
@@ -588,11 +548,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -608,7 +568,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByName"></a>
 # **getInstancesByName**
-> GetInstancesByNameResponse getInstancesByName(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByName(name, recursion, filter)
 
 
 
@@ -620,25 +580,20 @@ Get Instance information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameResponse result = apiInstance.getInstancesByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByName");
@@ -661,11 +616,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameResponse**](GetInstancesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -681,7 +636,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameBackups"></a>
 # **getInstancesByNameBackups**
-> List&lt;String&gt; getInstancesByNameBackups(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameBackups(name, recursion, filter)
 
 
 
@@ -693,25 +648,20 @@ List of backups for the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstancesByNameBackups(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameBackups(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameBackups");
@@ -734,11 +684,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -754,7 +704,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameBackupsByName"></a>
 # **getInstancesByNameBackupsByName**
-> GetInstancesByNameBackupsByNameResponse getInstancesByNameBackupsByName(name, backupsName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameBackupsByName(name, backupsName, recursion, filter)
 
 
 
@@ -766,18 +716,13 @@ Backup information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -785,7 +730,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameBackupsByNameResponse result = apiInstance.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameBackupsByName(name, backupsName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameBackupsByName");
@@ -809,11 +754,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameBackupsByNameResponse**](GetInstancesByNameBackupsByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -829,7 +774,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameBackupsByNameExport"></a>
 # **getInstancesByNameBackupsByNameExport**
-> GetInstancesByNameBackupsByNameExportResponse getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter)
 
 
 
@@ -841,18 +786,13 @@ Fetch the backup tarball
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -860,7 +800,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameBackupsByNameExportResponse result = apiInstance.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameBackupsByNameExport(name, backupsName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameBackupsByNameExport");
@@ -884,11 +824,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameBackupsByNameExportResponse**](GetInstancesByNameBackupsByNameExportResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -904,7 +844,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameConsole"></a>
 # **getInstancesByNameConsole**
-> GetInstancesByNameResponse getInstancesByNameConsole(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameConsole(name, recursion, filter)
 
 
 
@@ -916,25 +856,20 @@ Returns the contents of the instance&#39;s console log
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameResponse result = apiInstance.getInstancesByNameConsole(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameConsole(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameConsole");
@@ -957,11 +892,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameResponse**](GetInstancesByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -989,18 +924,13 @@ Download a file or directory listing from the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1044,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1060,7 +990,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameLogs"></a>
 # **getInstancesByNameLogs**
-> List&lt;String&gt; getInstancesByNameLogs(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameLogs(name, recursion, filter)
 
 
 
@@ -1072,25 +1002,20 @@ Returns a list of the log files available for this instance. Note that this work
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstancesByNameLogs(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameLogs(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameLogs");
@@ -1113,11 +1038,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1133,7 +1058,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameLogsFile"></a>
 # **getInstancesByNameLogsFile**
-> List&lt;String&gt; getInstancesByNameLogsFile(name, logFile, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameLogsFile(name, logFile, recursion, filter)
 
 
 
@@ -1145,18 +1070,13 @@ Returns the contents of a particular log file.
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1164,7 +1084,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstancesByNameLogsFile(name, logFile, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameLogsFile(name, logFile, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameLogsFile");
@@ -1188,11 +1108,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1208,7 +1128,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameMetadata"></a>
 # **getInstancesByNameMetadata**
-> GetInstancesByNameMetadataResponse getInstancesByNameMetadata(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameMetadata(name, recursion, filter)
 
 
 
@@ -1220,25 +1140,20 @@ Instance metadata
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameMetadataResponse result = apiInstance.getInstancesByNameMetadata(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameMetadata(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameMetadata");
@@ -1261,11 +1176,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1281,7 +1196,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameMetadataTemplates"></a>
 # **getInstancesByNameMetadataTemplates**
-> List&lt;String&gt; getInstancesByNameMetadataTemplates(name, recursion, filter, path)
+> BackgroundOperationResponse getInstancesByNameMetadataTemplates(name, recursion, filter, path)
 
 
 
@@ -1293,18 +1208,13 @@ List instance templates
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1312,7 +1222,7 @@ public class Example {
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     String path = "path_example"; // String | Template
     try {
-      List<String> result = apiInstance.getInstancesByNameMetadataTemplates(name, recursion, filter, path);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameMetadataTemplates(name, recursion, filter, path);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameMetadataTemplates");
@@ -1336,11 +1246,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1356,7 +1266,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameSnapshots"></a>
 # **getInstancesByNameSnapshots**
-> List&lt;String&gt; getInstancesByNameSnapshots(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameSnapshots(name, recursion, filter)
 
 
 
@@ -1368,25 +1278,20 @@ List of snapshots
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getInstancesByNameSnapshots(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameSnapshots(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameSnapshots");
@@ -1409,11 +1314,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1429,7 +1334,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameSnapshotsInformation"></a>
 # **getInstancesByNameSnapshotsInformation**
-> GetSnapshotInformationResponse getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter)
 
 
 
@@ -1441,18 +1346,13 @@ Snapshot information
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -1460,7 +1360,7 @@ public class Example {
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetSnapshotInformationResponse result = apiInstance.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameSnapshotsInformation(name, snapshotName, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameSnapshotsInformation");
@@ -1484,11 +1384,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSnapshotInformationResponse**](GetSnapshotInformationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1504,7 +1404,7 @@ Name | Type | Description  | Notes
 
 <a name="getInstancesByNameState"></a>
 # **getInstancesByNameState**
-> GetInstancesByNameStateResponse getInstancesByNameState(name, recursion, filter)
+> BackgroundOperationResponse getInstancesByNameState(name, recursion, filter)
 
 
 
@@ -1516,25 +1416,20 @@ Current state
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetInstancesByNameStateResponse result = apiInstance.getInstancesByNameState(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getInstancesByNameState(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstancesByNameState");
@@ -1557,11 +1452,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInstancesByNameStateResponse**](GetInstancesByNameStateResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1577,7 +1472,7 @@ Name | Type | Description  | Notes
 
 <a name="patchInstancesByName"></a>
 # **patchInstancesByName**
-> BasicStandardReturnValueResponse patchInstancesByName(name, body)
+> BackgroundOperationResponse patchInstancesByName(name, body)
 
 
 
@@ -1589,24 +1484,19 @@ Update instance configuration
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     PatchInstancesByNameRequest body = new PatchInstancesByNameRequest(); // PatchInstancesByNameRequest | Update instance configuration
     try {
-      BasicStandardReturnValueResponse result = apiInstance.patchInstancesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.patchInstancesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#patchInstancesByName");
@@ -1628,11 +1518,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1648,7 +1538,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstances"></a>
 # **postInstances**
-> BasicBackgroundOperationResponse postInstances(target, body)
+> BackgroundOperationResponse postInstances(target, body)
 
 
 
@@ -1660,24 +1550,19 @@ Create a new instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String target = "target_example"; // String | ?target=<member>
     CreateInstancesRequest body = new CreateInstancesRequest(); // CreateInstancesRequest | Create a new instance
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstances(target, body);
+      BackgroundOperationResponse result = apiInstance.postInstances(target, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstances");
@@ -1699,11 +1584,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1719,7 +1604,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByName"></a>
 # **postInstancesByName**
-> BasicBackgroundOperationResponse postInstancesByName(name, target, body)
+> BackgroundOperationResponse postInstancesByName(name, target, body)
 
 
 
@@ -1731,25 +1616,20 @@ Used to rename/migrate the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String target = "target_example"; // String | ?target=<member>
     CreateInstancesByNameRequest body = new CreateInstancesByNameRequest(); // CreateInstancesByNameRequest | Used to rename/migrate the instance
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByName(name, target, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByName(name, target, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByName");
@@ -1772,11 +1652,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1793,7 +1673,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameBackups"></a>
 # **postInstancesByNameBackups**
-> BasicBackgroundOperationResponse postInstancesByNameBackups(name, body)
+> BackgroundOperationResponse postInstancesByNameBackups(name, body)
 
 
 
@@ -1805,24 +1685,19 @@ Create a new backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameBackupsRequest body = new CreateInstancesByNameBackupsRequest(); // CreateInstancesByNameBackupsRequest | Create a new backup
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameBackups(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameBackups(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameBackups");
@@ -1844,11 +1719,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1864,7 +1739,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameBackupsByName"></a>
 # **postInstancesByNameBackupsByName**
-> BasicBackgroundOperationResponse postInstancesByNameBackupsByName(name, backupsName, body)
+> BackgroundOperationResponse postInstancesByNameBackupsByName(name, backupsName, body)
 
 
 
@@ -1876,25 +1751,20 @@ Used to rename the backup
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String backupsName = "backupsName_example"; // String | Backups name
     CreateInstancesByNameBackupsByNameRequest body = new CreateInstancesByNameBackupsByNameRequest(); // CreateInstancesByNameBackupsByNameRequest | Used to rename the backup
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameBackupsByName(name, backupsName, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameBackupsByName(name, backupsName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameBackupsByName");
@@ -1917,11 +1787,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -1937,7 +1807,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameConsole"></a>
 # **postInstancesByNameConsole**
-> BasicBackgroundOperationResponse postInstancesByNameConsole(name, body)
+> BackgroundOperationResponse postInstancesByNameConsole(name, body)
 
 
 
@@ -1949,24 +1819,19 @@ Attach to an instance&#39;s console devices
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameConsoleRequest body = new CreateInstancesByNameConsoleRequest(); // CreateInstancesByNameConsoleRequest | Attach to an instance's console devices
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameConsole(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameConsole(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameConsole");
@@ -1988,11 +1853,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2008,7 +1873,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameExec"></a>
 # **postInstancesByNameExec**
-> BasicBackgroundOperationResponse postInstancesByNameExec(name, body)
+> BackgroundOperationResponse postInstancesByNameExec(name, body)
 
 
 
@@ -2020,24 +1885,19 @@ Run a remote command
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameExecRequest body = new CreateInstancesByNameExecRequest(); // CreateInstancesByNameExecRequest | Run a remote command
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameExec(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameExec(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameExec");
@@ -2059,11 +1919,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2079,7 +1939,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameFiles"></a>
 # **postInstancesByNameFiles**
-> BasicStandardReturnValueResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
+> BackgroundOperationResponse postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body)
 
 
 
@@ -2091,18 +1951,13 @@ Upload a file to the instance
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
@@ -2114,7 +1969,7 @@ public class Example {
     String xLXDType = "xLXDType_example"; // String | one of directory or file or symlink
     File body = new File("/path/to/file"); // File | Upload a file to the instance
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameFiles(name, path, xLXDUid, xLXDGid, xLXDMode, xLXDWrite, xLXDType, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameFiles");
@@ -2142,11 +1997,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2162,7 +2017,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameMetadataTemplates"></a>
 # **postInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse postInstancesByNameMetadataTemplates(name, path, body)
+> BackgroundOperationResponse postInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2174,25 +2029,20 @@ Add a container template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Add a container template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameMetadataTemplates");
@@ -2215,11 +2065,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2235,7 +2085,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameSnapshot"></a>
 # **postInstancesByNameSnapshot**
-> BasicBackgroundOperationResponse postInstancesByNameSnapshot(name, body)
+> BackgroundOperationResponse postInstancesByNameSnapshot(name, body)
 
 
 
@@ -2247,24 +2097,19 @@ Create a new snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     CreateInstancesByNameSnapshotRequest body = new CreateInstancesByNameSnapshotRequest(); // CreateInstancesByNameSnapshotRequest | Create a new snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshot(name, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshot(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameSnapshot");
@@ -2286,11 +2131,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2306,7 +2151,7 @@ Name | Type | Description  | Notes
 
 <a name="postInstancesByNameSnapshotsInformation"></a>
 # **postInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse postInstancesByNameSnapshotsInformation(name, snapshotName, body)
+> BackgroundOperationResponse postInstancesByNameSnapshotsInformation(name, snapshotName, body)
 
 
 
@@ -2318,25 +2163,20 @@ Used to rename/migrate the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     CreateInstancesByNameSnapshotsInformationRequest body = new CreateInstancesByNameSnapshotsInformationRequest(); // CreateInstancesByNameSnapshotsInformationRequest | Used to rename/migrate the snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
+      BackgroundOperationResponse result = apiInstance.postInstancesByNameSnapshotsInformation(name, snapshotName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#postInstancesByNameSnapshotsInformation");
@@ -2359,11 +2199,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2380,7 +2220,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByName"></a>
 # **putInstancesByName**
-> BasicBackgroundOperationResponse putInstancesByName(name, body)
+> BackgroundOperationResponse putInstancesByName(name, body)
 
 
 
@@ -2392,24 +2232,19 @@ Replaces instance configuration or restore snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     UpdateInstancesByNameRequest body = new UpdateInstancesByNameRequest(); // UpdateInstancesByNameRequest | 
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByName(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByName");
@@ -2431,11 +2266,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2451,7 +2286,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadata"></a>
 # **putInstancesByNameMetadata**
-> BasicStandardReturnValueResponse putInstancesByNameMetadata(name, body)
+> BackgroundOperationResponse putInstancesByNameMetadata(name, body)
 
 
 
@@ -2463,24 +2298,19 @@ Replaces instance metadata
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     GetInstancesByNameMetadataResponse body = new GetInstancesByNameMetadataResponse(); // GetInstancesByNameMetadataResponse | Replaces instance metadata
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putInstancesByNameMetadata(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameMetadata(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadata");
@@ -2502,11 +2332,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2522,7 +2352,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameMetadataTemplates"></a>
 # **putInstancesByNameMetadataTemplates**
-> BasicStandardReturnValueResponse putInstancesByNameMetadataTemplates(name, path, body)
+> BackgroundOperationResponse putInstancesByNameMetadataTemplates(name, path, body)
 
 
 
@@ -2534,25 +2364,20 @@ Replace content of a template
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String path = "path_example"; // String | Template
     File body = new File("/path/to/file"); // File | Replace content of a template
     try {
-      BasicStandardReturnValueResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameMetadataTemplates(name, path, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameMetadataTemplates");
@@ -2575,11 +2400,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2595,7 +2420,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameSnapshotsInformation"></a>
 # **putInstancesByNameSnapshotsInformation**
-> BasicBackgroundOperationResponse putInstancesByNameSnapshotsInformation(name, snapshotName, body)
+> BackgroundOperationResponse putInstancesByNameSnapshotsInformation(name, snapshotName, body)
 
 
 
@@ -2607,25 +2432,20 @@ Update the snapshot
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     String snapshotName = "snapshotName_example"; // String | Snapshot name
     UpdateInstancesByNameSnapshotsInformationRequest body = new UpdateInstancesByNameSnapshotsInformationRequest(); // UpdateInstancesByNameSnapshotsInformationRequest | Update the snapshot
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameSnapshotsInformation(name, snapshotName, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameSnapshotsInformation");
@@ -2648,11 +2468,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -2668,7 +2488,7 @@ Name | Type | Description  | Notes
 
 <a name="putInstancesByNameState"></a>
 # **putInstancesByNameState**
-> BasicBackgroundOperationResponse putInstancesByNameState(name, body)
+> BackgroundOperationResponse putInstancesByNameState(name, body)
 
 
 
@@ -2680,24 +2500,19 @@ Change the instance state
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.InstancesApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
     String name = "name_example"; // String | Instance name
     UpdateInstancesByNameStateRequest body = new UpdateInstancesByNameStateRequest(); // UpdateInstancesByNameStateRequest | Change the instance state
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putInstancesByNameState(name, body);
+      BackgroundOperationResponse result = apiInstance.putInstancesByNameState(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#putInstancesByNameState");
@@ -2719,11 +2534,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

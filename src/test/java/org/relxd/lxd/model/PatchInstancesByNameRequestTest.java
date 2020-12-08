@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config3;
+import org.relxd.lxd.model.CpuConfig;
 import org.relxd.lxd.model.Devices3;
 import org.junit.Assert;
 import org.junit.Ignore;

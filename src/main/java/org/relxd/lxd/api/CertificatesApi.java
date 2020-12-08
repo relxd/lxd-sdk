@@ -27,10 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateCertificatesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetFingerprintResponse;
 import org.relxd.lxd.model.UpdateFingerprintRequest;
 
 import java.lang.reflect.Type;
@@ -98,7 +97,7 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -120,7 +119,7 @@ public class CertificatesApi {
      * 
      * Remove a trusted certificate
      * @param fingerprint Unique fingerprint (required)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -130,8 +129,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteFingerprint(String fingerprint) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteFingerprintWithHttpInfo(fingerprint);
+    public BackgroundOperationResponse deleteFingerprint(String fingerprint) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteFingerprintWithHttpInfo(fingerprint);
         return localVarResp.getData();
     }
 
@@ -139,7 +138,7 @@ public class CertificatesApi {
      * 
      * Remove a trusted certificate
      * @param fingerprint Unique fingerprint (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -149,9 +148,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteFingerprintWithHttpInfo(String fingerprint) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteFingerprintWithHttpInfo(String fingerprint) throws ApiException {
         okhttp3.Call localVarCall = deleteFingerprintValidateBeforeCall(fingerprint, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -170,10 +169,10 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFingerprintAsync(String fingerprint, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteFingerprintAsync(String fingerprint, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFingerprintValidateBeforeCall(fingerprint, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -225,7 +224,7 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -243,7 +242,7 @@ public class CertificatesApi {
      * Return a list of trusted certificates
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -253,8 +252,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getCertificates(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getCertificatesWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getCertificates(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getCertificatesWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -263,7 +262,7 @@ public class CertificatesApi {
      * Return a list of trusted certificates
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -273,9 +272,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getCertificatesWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getCertificatesWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -295,15 +294,15 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificatesAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getCertificatesAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getFingerprint
+     * Build call for getCertificatesByFingerPrint
      * @param fingerprint Unique fingerprint (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -316,7 +315,7 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFingerprintCall(String fingerprint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCertificatesByFingerPrintCall(String fingerprint, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -342,20 +341,20 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFingerprintValidateBeforeCall(String fingerprint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCertificatesByFingerPrintValidateBeforeCall(String fingerprint, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'fingerprint' is set
         if (fingerprint == null) {
-            throw new ApiException("Missing the required parameter 'fingerprint' when calling getFingerprint(Async)");
+            throw new ApiException("Missing the required parameter 'fingerprint' when calling getCertificatesByFingerPrint(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getFingerprintCall(fingerprint, _callback);
+        okhttp3.Call localVarCall = getCertificatesByFingerPrintCall(fingerprint, _callback);
         return localVarCall;
 
     }
@@ -364,7 +363,7 @@ public class CertificatesApi {
      * 
      * Return a trusted certificate information
      * @param fingerprint Unique fingerprint (required)
-     * @return GetFingerprintResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -374,8 +373,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetFingerprintResponse getFingerprint(String fingerprint) throws ApiException {
-        ApiResponse<GetFingerprintResponse> localVarResp = getFingerprintWithHttpInfo(fingerprint);
+    public BackgroundOperationResponse getCertificatesByFingerPrint(String fingerprint) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getCertificatesByFingerPrintWithHttpInfo(fingerprint);
         return localVarResp.getData();
     }
 
@@ -383,7 +382,7 @@ public class CertificatesApi {
      * 
      * Return a trusted certificate information
      * @param fingerprint Unique fingerprint (required)
-     * @return ApiResponse&lt;GetFingerprintResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -393,9 +392,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetFingerprintResponse> getFingerprintWithHttpInfo(String fingerprint) throws ApiException {
-        okhttp3.Call localVarCall = getFingerprintValidateBeforeCall(fingerprint, null);
-        Type localVarReturnType = new TypeToken<GetFingerprintResponse>(){}.getType();
+    public ApiResponse<BackgroundOperationResponse> getCertificatesByFingerPrintWithHttpInfo(String fingerprint) throws ApiException {
+        okhttp3.Call localVarCall = getCertificatesByFingerPrintValidateBeforeCall(fingerprint, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -414,10 +413,10 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFingerprintAsync(String fingerprint, final ApiCallback<GetFingerprintResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificatesByFingerPrintAsync(String fingerprint, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getFingerprintValidateBeforeCall(fingerprint, _callback);
-        Type localVarReturnType = new TypeToken<GetFingerprintResponse>(){}.getType();
+        okhttp3.Call localVarCall = getCertificatesByFingerPrintValidateBeforeCall(fingerprint, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -462,7 +461,7 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -485,7 +484,7 @@ public class CertificatesApi {
      * Updates the certificate properties
      * @param fingerprint Unique fingerprint (required)
      * @param body Updates the certificate properties (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -495,8 +494,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchFingerprint(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchFingerprintWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse patchFingerprint(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchFingerprintWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -505,7 +504,7 @@ public class CertificatesApi {
      * Updates the certificate properties
      * @param fingerprint Unique fingerprint (required)
      * @param body Updates the certificate properties (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -515,9 +514,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchFingerprintWithHttpInfo(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchFingerprintWithHttpInfo(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchFingerprintValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -537,10 +536,10 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchFingerprintAsync(String fingerprint, UpdateFingerprintRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchFingerprintAsync(String fingerprint, UpdateFingerprintRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchFingerprintValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -583,7 +582,7 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -600,7 +599,7 @@ public class CertificatesApi {
      * 
      * Add a new trusted certificate
      * @param body Add a new trusted certificate (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -610,8 +609,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postCertificates(CreateCertificatesRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postCertificatesWithHttpInfo(body);
+    public BackgroundOperationResponse postCertificates(CreateCertificatesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postCertificatesWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -619,7 +618,7 @@ public class CertificatesApi {
      * 
      * Add a new trusted certificate
      * @param body Add a new trusted certificate (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -629,9 +628,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postCertificatesWithHttpInfo(CreateCertificatesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postCertificatesWithHttpInfo(CreateCertificatesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postCertificatesValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -650,10 +649,10 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postCertificatesAsync(CreateCertificatesRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postCertificatesAsync(CreateCertificatesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postCertificatesValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -698,7 +697,7 @@ public class CertificatesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -721,7 +720,7 @@ public class CertificatesApi {
      * Replaces the certificate properties
      * @param fingerprint Unique fingerprint (required)
      * @param body Replaces the certificate properties (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -731,8 +730,8 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putFingerprint(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putFingerprintWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse putFingerprint(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putFingerprintWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -741,7 +740,7 @@ public class CertificatesApi {
      * Replaces the certificate properties
      * @param fingerprint Unique fingerprint (required)
      * @param body Replaces the certificate properties (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -751,9 +750,9 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putFingerprintWithHttpInfo(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putFingerprintWithHttpInfo(String fingerprint, UpdateFingerprintRequest body) throws ApiException {
         okhttp3.Call localVarCall = putFingerprintValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -773,10 +772,10 @@ public class CertificatesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putFingerprintAsync(String fingerprint, UpdateFingerprintRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putFingerprintAsync(String fingerprint, UpdateFingerprintRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putFingerprintValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

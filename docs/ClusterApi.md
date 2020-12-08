@@ -1,6 +1,6 @@
 # ClusterApi
 
-All URIs are relative to *https://lxd.com*
+All URIs are relative to *http://localhost:2375*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="deleteClusterMembersByName"></a>
 # **deleteClusterMembersByName**
-> BasicBackgroundOperationResponse deleteClusterMembersByName(name, force)
+> BackgroundOperationResponse deleteClusterMembersByName(name, force)
 
 
 
@@ -26,24 +26,19 @@ Remove a member of the cluster
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     String name = "name_example"; // String | Members name
     BigDecimal force = new BigDecimal(); // BigDecimal | force
     try {
-      BasicBackgroundOperationResponse result = apiInstance.deleteClusterMembersByName(name, force);
+      BackgroundOperationResponse result = apiInstance.deleteClusterMembersByName(name, force);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#deleteClusterMembersByName");
@@ -65,11 +60,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -85,7 +80,7 @@ Name | Type | Description  | Notes
 
 <a name="getCluster"></a>
 # **getCluster**
-> GetClusterResponse getCluster(recursion, filter)
+> BackgroundOperationResponse getCluster(recursion, filter)
 
 
 
@@ -97,24 +92,19 @@ Information about a cluster (such as networks and storage pools)
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetClusterResponse result = apiInstance.getCluster(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getCluster(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#getCluster");
@@ -136,11 +126,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetClusterResponse**](GetClusterResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -156,7 +146,7 @@ Name | Type | Description  | Notes
 
 <a name="getClusterMembers"></a>
 # **getClusterMembers**
-> List&lt;String&gt; getClusterMembers(recursion, filter)
+> BackgroundOperationResponse getClusterMembers(recursion, filter)
 
 
 
@@ -168,24 +158,19 @@ List of LXD members in the cluster
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      List<String> result = apiInstance.getClusterMembers(recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getClusterMembers(recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#getClusterMembers");
@@ -207,11 +192,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;String&gt;**
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -227,7 +212,7 @@ Name | Type | Description  | Notes
 
 <a name="getClusterMembersByName"></a>
 # **getClusterMembersByName**
-> GetClusterMembersByNameResponse getClusterMembersByName(name, recursion, filter)
+> BackgroundOperationResponse getClusterMembersByName(name, recursion, filter)
 
 
 
@@ -239,25 +224,20 @@ Retrieve the member&#39;s information and status
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     String name = "name_example"; // String | Members name
     Integer recursion = 56; // Integer | To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict).
     String filter = "filter_example"; // String | There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported.
     try {
-      GetClusterMembersByNameResponse result = apiInstance.getClusterMembersByName(name, recursion, filter);
+      BackgroundOperationResponse result = apiInstance.getClusterMembersByName(name, recursion, filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#getClusterMembersByName");
@@ -280,11 +260,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetClusterMembersByNameResponse**](GetClusterMembersByNameResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -300,7 +280,7 @@ Name | Type | Description  | Notes
 
 <a name="postClusterMembersByName"></a>
 # **postClusterMembersByName**
-> BasicStandardReturnValueResponse postClusterMembersByName(name, body)
+> BackgroundOperationResponse postClusterMembersByName(name, body)
 
 
 
@@ -312,24 +292,19 @@ Rename a cluster member
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     String name = "name_example"; // String | Members name
     UpdateClusterMembersByNameRequest body = new UpdateClusterMembersByNameRequest(); // UpdateClusterMembersByNameRequest | Rename a cluster member
     try {
-      BasicStandardReturnValueResponse result = apiInstance.postClusterMembersByName(name, body);
+      BackgroundOperationResponse result = apiInstance.postClusterMembersByName(name, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#postClusterMembersByName");
@@ -351,11 +326,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicStandardReturnValueResponse**](BasicStandardReturnValueResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 
@@ -371,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="putCluster"></a>
 # **putCluster**
-> BasicBackgroundOperationResponse putCluster(body)
+> BackgroundOperationResponse putCluster(body)
 
 
 
@@ -383,23 +358,18 @@ Bootstrap or join a cluster, or disable clustering on this node
 import org.relxd.lxd.ApiClient;
 import org.relxd.lxd.ApiException;
 import org.relxd.lxd.Configuration;
-import org.relxd.lxd.auth.*;
 import org.relxd.lxd.models.*;
 import org.relxd.lxd.api.ClusterApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://lxd.com");
-    
-    // Configure OAuth2 access token for authorization: authentication
-    OAuth authentication = (OAuth) defaultClient.getAuthentication("authentication");
-    authentication.setAccessToken("YOUR ACCESS TOKEN");
+    defaultClient.setBasePath("http://localhost:2375");
 
     ClusterApi apiInstance = new ClusterApi(defaultClient);
     UpdateClusterRequest body = new UpdateClusterRequest(); // UpdateClusterRequest | Bootstrap or join a cluster, or disable clustering on this node
     try {
-      BasicBackgroundOperationResponse result = apiInstance.putCluster(body);
+      BackgroundOperationResponse result = apiInstance.putCluster(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ClusterApi#putCluster");
@@ -420,11 +390,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BasicBackgroundOperationResponse**](BasicBackgroundOperationResponse.md)
+[**BackgroundOperationResponse**](BackgroundOperationResponse.md)
 
 ### Authorization
 
-[authentication](../README.md#authentication)
+No authorization required
 
 ### HTTP request headers
 

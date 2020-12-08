@@ -33,7 +33,7 @@ import org.relxd.lxd.model.UpdateSource;
 /**
  * GetImagesFingerprintResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class GetImagesFingerprintResponse {
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)
@@ -341,7 +341,7 @@ public class GetImagesFingerprintResponse {
    * @return createdAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-01T21:07:41Z", value = "")
+  @ApiModelProperty(example = "2016-02-01T21:07:41.000Z", value = "")
 
   public String getCreatedAt() {
     return createdAt;
@@ -364,7 +364,7 @@ public class GetImagesFingerprintResponse {
    * @return expiresAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1970-01-01T00:00:00Z", value = "")
+  @ApiModelProperty(example = "1970-01-01T00:00:00.000Z", value = "")
 
   public String getExpiresAt() {
     return expiresAt;
@@ -387,7 +387,7 @@ public class GetImagesFingerprintResponse {
    * @return lastUsedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1970-01-01T00:00:00Z", value = "")
+  @ApiModelProperty(example = "1970-01-01T00:00:00.000Z", value = "")
 
   public String getLastUsedAt() {
     return lastUsedAt;
@@ -410,7 +410,7 @@ public class GetImagesFingerprintResponse {
    * @return uploadedAt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2016-02-16T00:44:47Z", value = "")
+  @ApiModelProperty(example = "2016-02-16T00:44:47.000Z", value = "")
 
   public String getUploadedAt() {
     return uploadedAt;

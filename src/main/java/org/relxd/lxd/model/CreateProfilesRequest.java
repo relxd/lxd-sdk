@@ -23,13 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.relxd.lxd.model.Config6;
-import org.relxd.lxd.model.Devices1;
+import org.relxd.lxd.model.DevicesKvm;
+import org.relxd.lxd.model.MemoryLimitsConfig;
 
 /**
  * CreateProfilesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class CreateProfilesRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -41,11 +41,11 @@ public class CreateProfilesRequest {
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config6 config;
+  private MemoryLimitsConfig config;
 
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  private Devices1 devices;
+  private DevicesKvm devices;
 
 
   public CreateProfilesRequest name(String name) {
@@ -94,7 +94,7 @@ public class CreateProfilesRequest {
   }
 
 
-  public CreateProfilesRequest config(Config6 config) {
+  public CreateProfilesRequest config(MemoryLimitsConfig config) {
     
     this.config = config;
     return this;
@@ -107,17 +107,17 @@ public class CreateProfilesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config6 getConfig() {
+  public MemoryLimitsConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config6 config) {
+  public void setConfig(MemoryLimitsConfig config) {
     this.config = config;
   }
 
 
-  public CreateProfilesRequest devices(Devices1 devices) {
+  public CreateProfilesRequest devices(DevicesKvm devices) {
     
     this.devices = devices;
     return this;
@@ -130,12 +130,12 @@ public class CreateProfilesRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Devices1 getDevices() {
+  public DevicesKvm getDevices() {
     return devices;
   }
 
 
-  public void setDevices(Devices1 devices) {
+  public void setDevices(DevicesKvm devices) {
     this.devices = devices;
   }
 

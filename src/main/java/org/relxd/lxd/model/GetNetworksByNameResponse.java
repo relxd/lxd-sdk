@@ -25,16 +25,16 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.relxd.lxd.model.Config;
+import org.relxd.lxd.model.NetworkIPConfig;
 
 /**
  * GetNetworksByNameResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class GetNetworksByNameResponse {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
-  private Config config;
+  private NetworkIPConfig config;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -53,7 +53,7 @@ public class GetNetworksByNameResponse {
   private List<String> usedBy = null;
 
 
-  public GetNetworksByNameResponse config(Config config) {
+  public GetNetworksByNameResponse config(NetworkIPConfig config) {
     
     this.config = config;
     return this;
@@ -66,12 +66,12 @@ public class GetNetworksByNameResponse {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Config getConfig() {
+  public NetworkIPConfig getConfig() {
     return config;
   }
 
 
-  public void setConfig(Config config) {
+  public void setConfig(NetworkIPConfig config) {
     this.config = config;
   }
 

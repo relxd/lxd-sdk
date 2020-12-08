@@ -14,14 +14,10 @@
 package org.relxd.lxd.api;
 
 import org.relxd.lxd.ApiException;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
-import java.math.BigDecimal;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateNetworksByNameRequest;
 import org.relxd.lxd.model.CreateNetworksRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetNetworksByNameResponse;
-import org.relxd.lxd.model.GetNetworksByNameStateResponse;
-import org.relxd.lxd.model.GetNetworksUUIDResponse;
 import org.relxd.lxd.model.PatchNetworksByNameRequest;
 import org.relxd.lxd.model.UpdateNetworksByNameRequest;
 import org.junit.Test;
@@ -52,23 +48,7 @@ public class NetworksApiTest {
     @Test
     public void deleteNetworksByNameTest() throws ApiException {
         String name = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksByName(name);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteNetworksUUIDTest() throws ApiException {
-        String uuid = null;
-        BasicStandardReturnValueResponse response = api.deleteNetworksUUID(uuid);
+        BackgroundOperationResponse response = api.deleteNetworksByName(name);
 
         // TODO: test validations
     }
@@ -85,7 +65,7 @@ public class NetworksApiTest {
     public void getNetworksTest() throws ApiException {
         Integer recursion = null;
         String filter = null;
-        List<String> response = api.getNetworks(recursion, filter);
+        BackgroundOperationResponse response = api.getNetworks(recursion, filter);
 
         // TODO: test validations
     }
@@ -103,7 +83,7 @@ public class NetworksApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksByNameResponse response = api.getNetworksByName(name, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksByName(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -121,63 +101,7 @@ public class NetworksApiTest {
         String name = null;
         Integer recursion = null;
         String filter = null;
-        GetNetworksByNameStateResponse response = api.getNetworksByNameState(name, recursion, filter);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Background operation
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDTest() throws ApiException {
-        String uuid = null;
-        Integer recursion = null;
-        String filter = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUID(uuid, recursion, filter);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Wait for an operation to finish
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDWaitTest() throws ApiException {
-        String uuid = null;
-        Integer recursion = null;
-        String filter = null;
-        BigDecimal timeout = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUIDWait(uuid, recursion, filter, timeout);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNetworksUUIDWebsocketTest() throws ApiException {
-        String uuid = null;
-        String secret = null;
-        Integer recursion = null;
-        String filter = null;
-        GetNetworksUUIDResponse response = api.getNetworksUUIDWebsocket(uuid, secret, recursion, filter);
+        BackgroundOperationResponse response = api.getNetworksByNameState(name, recursion, filter);
 
         // TODO: test validations
     }
@@ -194,7 +118,7 @@ public class NetworksApiTest {
     public void patchNetworksByNameTest() throws ApiException {
         String name = null;
         PatchNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.patchNetworksByName(name, body);
+        BackgroundOperationResponse response = api.patchNetworksByName(name, body);
 
         // TODO: test validations
     }
@@ -210,7 +134,7 @@ public class NetworksApiTest {
     @Test
     public void postNetworksTest() throws ApiException {
         CreateNetworksRequest body = null;
-        BasicStandardReturnValueResponse response = api.postNetworks(body);
+        BackgroundOperationResponse response = api.postNetworks(body);
 
         // TODO: test validations
     }
@@ -227,7 +151,7 @@ public class NetworksApiTest {
     public void postNetworksByNameTest() throws ApiException {
         String name = null;
         CreateNetworksByNameRequest body = null;
-        Object response = api.postNetworksByName(name, body);
+        BackgroundOperationResponse response = api.postNetworksByName(name, body);
 
         // TODO: test validations
     }
@@ -244,7 +168,7 @@ public class NetworksApiTest {
     public void putNetworksByNameTest() throws ApiException {
         String name = null;
         UpdateNetworksByNameRequest body = null;
-        BasicStandardReturnValueResponse response = api.putNetworksByName(name, body);
+        BackgroundOperationResponse response = api.putNetworksByName(name, body);
 
         // TODO: test validations
     }

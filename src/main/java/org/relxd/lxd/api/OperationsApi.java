@@ -27,8 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.relxd.lxd.model.BackgroundOperationResponse;
+import java.math.BigDecimal;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetOperationsResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -55,6 +56,125 @@ public class OperationsApi {
         this.localVarApiClient = apiClient;
     }
 
+    /**
+     * Build call for deleteOperationsUUID
+     * @param uuid UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A standard return value response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteOperationsUUIDCall(String uuid, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/1.0/operations/{uuid}"
+            .replaceAll("\\{" + "uuid" + "\\}", localVarApiClient.escapeString(uuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteOperationsUUIDValidateBeforeCall(String uuid, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'uuid' is set
+        if (uuid == null) {
+            throw new ApiException("Missing the required parameter 'uuid' when calling deleteOperationsUUID(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = deleteOperationsUUIDCall(uuid, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
+     * @param uuid UUID (required)
+     * @return BackgroundOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A standard return value response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public BackgroundOperationResponse deleteOperationsUUID(String uuid) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteOperationsUUIDWithHttpInfo(uuid);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
+     * @param uuid UUID (required)
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A standard return value response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BackgroundOperationResponse> deleteOperationsUUIDWithHttpInfo(String uuid) throws ApiException {
+        okhttp3.Call localVarCall = deleteOperationsUUIDValidateBeforeCall(uuid, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Cancel an operation. Calling this will change the state to \&quot;cancelling\&quot; rather than actually removing the entry.
+     * @param uuid UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 202 </td><td> A standard return value response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteOperationsUUIDAsync(String uuid, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteOperationsUUIDValidateBeforeCall(uuid, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for getOperations
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
@@ -103,7 +223,7 @@ public class OperationsApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -121,7 +241,7 @@ public class OperationsApi {
      * List of operations
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetOperationsResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -131,8 +251,8 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetOperationsResponse getOperations(Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetOperationsResponse> localVarResp = getOperationsWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getOperations(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getOperationsWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -141,7 +261,7 @@ public class OperationsApi {
      * List of operations
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetOperationsResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -151,9 +271,9 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetOperationsResponse> getOperationsWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getOperationsWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getOperationsValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetOperationsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -173,10 +293,436 @@ public class OperationsApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOperationsAsync(Integer recursion, String filter, final ApiCallback<GetOperationsResponse> _callback) throws ApiException {
+    public okhttp3.Call getOperationsAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOperationsValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetOperationsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getOperationsUUID
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDCall(String uuid, Integer recursion, String filter, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/1.0/operations/{uuid}"
+            .replaceAll("\\{" + "uuid" + "\\}", localVarApiClient.escapeString(uuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (recursion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recursion", recursion));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOperationsUUIDValidateBeforeCall(String uuid, Integer recursion, String filter, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'uuid' is set
+        if (uuid == null) {
+            throw new ApiException("Missing the required parameter 'uuid' when calling getOperationsUUID(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getOperationsUUIDCall(uuid, recursion, filter, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * Background operation
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @return BackgroundOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public BackgroundOperationResponse getOperationsUUID(String uuid, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getOperationsUUIDWithHttpInfo(uuid, recursion, filter);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * Background operation
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BackgroundOperationResponse> getOperationsUUIDWithHttpInfo(String uuid, Integer recursion, String filter) throws ApiException {
+        okhttp3.Call localVarCall = getOperationsUUIDValidateBeforeCall(uuid, recursion, filter, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Background operation
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDAsync(String uuid, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOperationsUUIDValidateBeforeCall(uuid, recursion, filter, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getOperationsUUIDWait
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param timeout timeout (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDWaitCall(String uuid, Integer recursion, String filter, BigDecimal timeout, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/1.0/operations/{uuid}/wait"
+            .replaceAll("\\{" + "uuid" + "\\}", localVarApiClient.escapeString(uuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (recursion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recursion", recursion));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        if (timeout != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("timeout", timeout));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOperationsUUIDWaitValidateBeforeCall(String uuid, Integer recursion, String filter, BigDecimal timeout, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'uuid' is set
+        if (uuid == null) {
+            throw new ApiException("Missing the required parameter 'uuid' when calling getOperationsUUIDWait(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getOperationsUUIDWaitCall(uuid, recursion, filter, timeout, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * Wait for an operation to finish
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param timeout timeout (optional)
+     * @return BackgroundOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public BackgroundOperationResponse getOperationsUUIDWait(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getOperationsUUIDWaitWithHttpInfo(uuid, recursion, filter, timeout);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * Wait for an operation to finish
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param timeout timeout (optional)
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BackgroundOperationResponse> getOperationsUUIDWaitWithHttpInfo(String uuid, Integer recursion, String filter, BigDecimal timeout) throws ApiException {
+        okhttp3.Call localVarCall = getOperationsUUIDWaitValidateBeforeCall(uuid, recursion, filter, timeout, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Wait for an operation to finish
+     * @param uuid UUID (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param timeout timeout (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDWaitAsync(String uuid, Integer recursion, String filter, BigDecimal timeout, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOperationsUUIDWaitValidateBeforeCall(uuid, recursion, filter, timeout, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getOperationsUUIDWebsocket
+     * @param uuid UUID (required)
+     * @param secret secret (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDWebsocketCall(String uuid, String secret, Integer recursion, String filter, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/1.0/operations/{uuid}/websocket"
+            .replaceAll("\\{" + "uuid" + "\\}", localVarApiClient.escapeString(uuid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (recursion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recursion", recursion));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        if (secret != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("secret", secret));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOperationsUUIDWebsocketValidateBeforeCall(String uuid, String secret, Integer recursion, String filter, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'uuid' is set
+        if (uuid == null) {
+            throw new ApiException("Missing the required parameter 'uuid' when calling getOperationsUUIDWebsocket(Async)");
+        }
+        
+        // verify the required parameter 'secret' is set
+        if (secret == null) {
+            throw new ApiException("Missing the required parameter 'secret' when calling getOperationsUUIDWebsocket(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getOperationsUUIDWebsocketCall(uuid, secret, recursion, filter, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
+     * @param uuid UUID (required)
+     * @param secret secret (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @return BackgroundOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public BackgroundOperationResponse getOperationsUUIDWebsocket(String uuid, String secret, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getOperationsUUIDWebsocketWithHttpInfo(uuid, secret, recursion, filter);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
+     * @param uuid UUID (required)
+     * @param secret secret (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BackgroundOperationResponse> getOperationsUUIDWebsocketWithHttpInfo(String uuid, String secret, Integer recursion, String filter) throws ApiException {
+        okhttp3.Call localVarCall = getOperationsUUIDWebsocketValidateBeforeCall(uuid, secret, recursion, filter, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * -&lt; This connection is upgraded into a websocket connection speaking the protocol defined by the operation type. For example, in the case of an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr to flow to and from the process inside the instance. In the case of migration, it will be the primary interface over which the migration information is communicated. The secret here is the one that was provided when the operation was created. Guests are allowed to connect provided they have the right secret.
+     * @param uuid UUID (required)
+     * @param secret secret (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Background operation </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOperationsUUIDWebsocketAsync(String uuid, String secret, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOperationsUUIDWebsocketValidateBeforeCall(uuid, secret, recursion, filter, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

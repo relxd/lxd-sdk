@@ -31,7 +31,7 @@ import org.relxd.lxd.model.MemberConfig2;
  * Input (request to join an existing cluster)
  */
 @ApiModel(description = "Input (request to join an existing cluster)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class UpdateClusterRequest {
   public static final String SERIALIZED_NAME_SERVER_NAME = "server_name";
   @SerializedName(SERIALIZED_NAME_SERVER_NAME)

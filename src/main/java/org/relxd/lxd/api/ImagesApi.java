@@ -27,16 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.relxd.lxd.model.BasicBackgroundOperationResponse;
-import org.relxd.lxd.model.BasicStandardReturnValueResponse;
+import org.relxd.lxd.model.BackgroundOperationResponse;
 import org.relxd.lxd.model.CreateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.CreateImagesAliasesRequest;
 import org.relxd.lxd.model.CreateImagesFingerprintExportRequest;
-import org.relxd.lxd.model.CreateImagesFingerprintSecretResponse;
 import org.relxd.lxd.model.CreateImagesRequest;
 import org.relxd.lxd.model.ErrorResponse;
-import org.relxd.lxd.model.GetImagesAliasesByNameResponse;
-import org.relxd.lxd.model.GetImagesFingerprintResponse;
 import org.relxd.lxd.model.PatchImagesFingerprintRequest;
 import org.relxd.lxd.model.UpdateImagesAliasesByNameRequest;
 import org.relxd.lxd.model.UpdateImagesFingerprintRequest;
@@ -106,7 +102,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -128,7 +124,7 @@ public class ImagesApi {
      * 
      * Remove an alias
      * @param name Name of the alias (required)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -138,8 +134,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse deleteImagesAliasesByName(String name) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = deleteImagesAliasesByNameWithHttpInfo(name);
+    public BackgroundOperationResponse deleteImagesAliasesByName(String name) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteImagesAliasesByNameWithHttpInfo(name);
         return localVarResp.getData();
     }
 
@@ -147,7 +143,7 @@ public class ImagesApi {
      * 
      * Remove an alias
      * @param name Name of the alias (required)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -157,9 +153,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> deleteImagesAliasesByNameWithHttpInfo(String name) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteImagesAliasesByNameWithHttpInfo(String name) throws ApiException {
         okhttp3.Call localVarCall = deleteImagesAliasesByNameValidateBeforeCall(name, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -178,10 +174,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteImagesAliasesByNameAsync(String name, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteImagesAliasesByNameAsync(String name, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteImagesAliasesByNameValidateBeforeCall(name, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -225,7 +221,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -247,7 +243,7 @@ public class ImagesApi {
      * 
      * Remove an image
      * @param fingerprint Unique fingerprint (required)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -257,8 +253,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse deleteImagesFingerprint(String fingerprint) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = deleteImagesFingerprintWithHttpInfo(fingerprint);
+    public BackgroundOperationResponse deleteImagesFingerprint(String fingerprint) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = deleteImagesFingerprintWithHttpInfo(fingerprint);
         return localVarResp.getData();
     }
 
@@ -266,7 +262,7 @@ public class ImagesApi {
      * 
      * Remove an image
      * @param fingerprint Unique fingerprint (required)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -276,9 +272,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> deleteImagesFingerprintWithHttpInfo(String fingerprint) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> deleteImagesFingerprintWithHttpInfo(String fingerprint) throws ApiException {
         okhttp3.Call localVarCall = deleteImagesFingerprintValidateBeforeCall(fingerprint, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -297,10 +293,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteImagesFingerprintAsync(String fingerprint, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteImagesFingerprintAsync(String fingerprint, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteImagesFingerprintValidateBeforeCall(fingerprint, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -352,7 +348,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -370,7 +366,7 @@ public class ImagesApi {
      * List of images (public or private)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -380,8 +376,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getImages(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getImagesWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getImages(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -390,7 +386,7 @@ public class ImagesApi {
      * List of images (public or private)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -400,9 +396,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getImagesWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getImagesWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getImagesValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -422,10 +418,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getImagesAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImagesValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -477,7 +473,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -495,7 +491,7 @@ public class ImagesApi {
      * List of aliases (public or private based on image visibility)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return List&lt;String&gt;
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -505,8 +501,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public List<String> getImagesAliases(Integer recursion, String filter) throws ApiException {
-        ApiResponse<List<String>> localVarResp = getImagesAliasesWithHttpInfo(recursion, filter);
+    public BackgroundOperationResponse getImagesAliases(Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesAliasesWithHttpInfo(recursion, filter);
         return localVarResp.getData();
     }
 
@@ -515,7 +511,7 @@ public class ImagesApi {
      * List of aliases (public or private based on image visibility)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -525,9 +521,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<String>> getImagesAliasesWithHttpInfo(Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getImagesAliasesWithHttpInfo(Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getImagesAliasesValidateBeforeCall(recursion, filter, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -547,10 +543,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesAliasesAsync(Integer recursion, String filter, final ApiCallback<List<String>> _callback) throws ApiException {
+    public okhttp3.Call getImagesAliasesAsync(Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImagesAliasesValidateBeforeCall(recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -604,7 +600,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -628,7 +624,7 @@ public class ImagesApi {
      * @param name Name of the alias (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return GetImagesAliasesByNameResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -638,8 +634,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetImagesAliasesByNameResponse getImagesAliasesByName(String name, Integer recursion, String filter) throws ApiException {
-        ApiResponse<GetImagesAliasesByNameResponse> localVarResp = getImagesAliasesByNameWithHttpInfo(name, recursion, filter);
+    public BackgroundOperationResponse getImagesAliasesByName(String name, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesAliasesByNameWithHttpInfo(name, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -649,7 +645,7 @@ public class ImagesApi {
      * @param name Name of the alias (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;GetImagesAliasesByNameResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -659,9 +655,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetImagesAliasesByNameResponse> getImagesAliasesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getImagesAliasesByNameWithHttpInfo(String name, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getImagesAliasesByNameValidateBeforeCall(name, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<GetImagesAliasesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -682,10 +678,153 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesAliasesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<GetImagesAliasesByNameResponse> _callback) throws ApiException {
+    public okhttp3.Call getImagesAliasesByNameAsync(String name, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImagesAliasesByNameValidateBeforeCall(name, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<GetImagesAliasesByNameResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getImagesByFingerprintExport
+     * @param fingerprint Unique fingerprint (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param secret secret (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getImagesByFingerprintExportCall(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/1.0/images/{fingerprint}/export"
+            .replaceAll("\\{" + "fingerprint" + "\\}", localVarApiClient.escapeString(fingerprint.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (recursion != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recursion", recursion));
+        }
+
+        if (filter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
+        }
+
+        if (secret != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("secret", secret));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getImagesByFingerprintExportValidateBeforeCall(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'fingerprint' is set
+        if (fingerprint == null) {
+            throw new ApiException("Missing the required parameter 'fingerprint' when calling getImagesByFingerprintExport(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getImagesByFingerprintExportCall(fingerprint, recursion, filter, secret, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 
+     * Download the image tarball
+     * @param fingerprint Unique fingerprint (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param secret secret (optional)
+     * @return BackgroundOperationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public BackgroundOperationResponse getImagesByFingerprintExport(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesByFingerprintExportWithHttpInfo(fingerprint, recursion, filter, secret);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * Download the image tarball
+     * @param fingerprint Unique fingerprint (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param secret secret (optional)
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BackgroundOperationResponse> getImagesByFingerprintExportWithHttpInfo(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
+        okhttp3.Call localVarCall = getImagesByFingerprintExportValidateBeforeCall(fingerprint, recursion, filter, secret, null);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Download the image tarball
+     * @param fingerprint Unique fingerprint (required)
+     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
+     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
+     * @param secret secret (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getImagesByFingerprintExportAsync(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getImagesByFingerprintExportValidateBeforeCall(fingerprint, recursion, filter, secret, _callback);
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -744,7 +883,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -769,7 +908,7 @@ public class ImagesApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param secret secret (optional)
-     * @return GetImagesFingerprintResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -779,8 +918,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public GetImagesFingerprintResponse getImagesFingerprint(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
-        ApiResponse<GetImagesFingerprintResponse> localVarResp = getImagesFingerprintWithHttpInfo(fingerprint, recursion, filter, secret);
+    public BackgroundOperationResponse getImagesFingerprint(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesFingerprintWithHttpInfo(fingerprint, recursion, filter, secret);
         return localVarResp.getData();
     }
 
@@ -791,7 +930,7 @@ public class ImagesApi {
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
      * @param secret secret (optional)
-     * @return ApiResponse&lt;GetImagesFingerprintResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -801,9 +940,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetImagesFingerprintResponse> getImagesFingerprintWithHttpInfo(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getImagesFingerprintWithHttpInfo(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
         okhttp3.Call localVarCall = getImagesFingerprintValidateBeforeCall(fingerprint, recursion, filter, secret, null);
-        Type localVarReturnType = new TypeToken<GetImagesFingerprintResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -825,153 +964,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesFingerprintAsync(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback<GetImagesFingerprintResponse> _callback) throws ApiException {
+    public okhttp3.Call getImagesFingerprintAsync(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImagesFingerprintValidateBeforeCall(fingerprint, recursion, filter, secret, _callback);
-        Type localVarReturnType = new TypeToken<GetImagesFingerprintResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for getImagesFingerprintExport
-     * @param fingerprint Unique fingerprint (required)
-     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
-     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @param secret secret (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getImagesFingerprintExportCall(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/1.0/images/{fingerprint}/export"
-            .replaceAll("\\{" + "fingerprint" + "\\}", localVarApiClient.escapeString(fingerprint.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (recursion != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("recursion", recursion));
-        }
-
-        if (filter != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter", filter));
-        }
-
-        if (secret != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("secret", secret));
-        }
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "authentication" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImagesFingerprintExportValidateBeforeCall(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'fingerprint' is set
-        if (fingerprint == null) {
-            throw new ApiException("Missing the required parameter 'fingerprint' when calling getImagesFingerprintExport(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = getImagesFingerprintExportCall(fingerprint, recursion, filter, secret, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * 
-     * Download the image tarball
-     * @param fingerprint Unique fingerprint (required)
-     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
-     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @param secret secret (optional)
-     * @return GetImagesFingerprintResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
-     </table>
-     */
-    public GetImagesFingerprintResponse getImagesFingerprintExport(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
-        ApiResponse<GetImagesFingerprintResponse> localVarResp = getImagesFingerprintExportWithHttpInfo(fingerprint, recursion, filter, secret);
-        return localVarResp.getData();
-    }
-
-    /**
-     * 
-     * Download the image tarball
-     * @param fingerprint Unique fingerprint (required)
-     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
-     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @param secret secret (optional)
-     * @return ApiResponse&lt;GetImagesFingerprintResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<GetImagesFingerprintResponse> getImagesFingerprintExportWithHttpInfo(String fingerprint, Integer recursion, String filter, String secret) throws ApiException {
-        okhttp3.Call localVarCall = getImagesFingerprintExportValidateBeforeCall(fingerprint, recursion, filter, secret, null);
-        Type localVarReturnType = new TypeToken<GetImagesFingerprintResponse>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     *  (asynchronously)
-     * Download the image tarball
-     * @param fingerprint Unique fingerprint (required)
-     * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
-     * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @param secret secret (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Download the image tarball </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> A standard error response </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call getImagesFingerprintExportAsync(String fingerprint, Integer recursion, String filter, String secret, final ApiCallback<GetImagesFingerprintResponse> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = getImagesFingerprintExportValidateBeforeCall(fingerprint, recursion, filter, secret, _callback);
-        Type localVarReturnType = new TypeToken<GetImagesFingerprintResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1025,7 +1021,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1049,7 +1045,7 @@ public class ImagesApi {
      * @param fingerprint Unique fingerprint (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1059,8 +1055,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse getImagesFingerprintRefresh(String fingerprint, Integer recursion, String filter) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = getImagesFingerprintRefreshWithHttpInfo(fingerprint, recursion, filter);
+    public BackgroundOperationResponse getImagesFingerprintRefresh(String fingerprint, Integer recursion, String filter) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = getImagesFingerprintRefreshWithHttpInfo(fingerprint, recursion, filter);
         return localVarResp.getData();
     }
 
@@ -1070,7 +1066,7 @@ public class ImagesApi {
      * @param fingerprint Unique fingerprint (required)
      * @param recursion To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). (optional)
      * @param filter There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1080,9 +1076,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> getImagesFingerprintRefreshWithHttpInfo(String fingerprint, Integer recursion, String filter) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> getImagesFingerprintRefreshWithHttpInfo(String fingerprint, Integer recursion, String filter) throws ApiException {
         okhttp3.Call localVarCall = getImagesFingerprintRefreshValidateBeforeCall(fingerprint, recursion, filter, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1103,10 +1099,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesFingerprintRefreshAsync(String fingerprint, Integer recursion, String filter, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call getImagesFingerprintRefreshAsync(String fingerprint, Integer recursion, String filter, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImagesFingerprintRefreshValidateBeforeCall(fingerprint, recursion, filter, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1151,7 +1147,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1174,7 +1170,7 @@ public class ImagesApi {
      * Updates the alias target or description
      * @param name Name of the alias (required)
      * @param body Updates the alias target or description (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1184,8 +1180,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchImagesAliasesByName(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchImagesAliasesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse patchImagesAliasesByName(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchImagesAliasesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1194,7 +1190,7 @@ public class ImagesApi {
      * Updates the alias target or description
      * @param name Name of the alias (required)
      * @param body Updates the alias target or description (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1204,9 +1200,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchImagesAliasesByNameWithHttpInfo(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchImagesAliasesByNameWithHttpInfo(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchImagesAliasesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1226,10 +1222,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchImagesAliasesByNameAsync(String name, UpdateImagesAliasesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchImagesAliasesByNameAsync(String name, UpdateImagesAliasesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchImagesAliasesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1274,7 +1270,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1297,7 +1293,7 @@ public class ImagesApi {
      * Updates the image properties, update information and visibility
      * @param fingerprint Unique fingerprint (required)
      * @param body Updates the image properties, update information and visibility (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1307,8 +1303,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse patchImagesFingerprint(String fingerprint, PatchImagesFingerprintRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = patchImagesFingerprintWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse patchImagesFingerprint(String fingerprint, PatchImagesFingerprintRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = patchImagesFingerprintWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -1317,7 +1313,7 @@ public class ImagesApi {
      * Updates the image properties, update information and visibility
      * @param fingerprint Unique fingerprint (required)
      * @param body Updates the image properties, update information and visibility (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1327,9 +1323,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> patchImagesFingerprintWithHttpInfo(String fingerprint, PatchImagesFingerprintRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> patchImagesFingerprintWithHttpInfo(String fingerprint, PatchImagesFingerprintRequest body) throws ApiException {
         okhttp3.Call localVarCall = patchImagesFingerprintValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1349,10 +1345,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call patchImagesFingerprintAsync(String fingerprint, PatchImagesFingerprintRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call patchImagesFingerprintAsync(String fingerprint, PatchImagesFingerprintRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = patchImagesFingerprintValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1415,7 +1411,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1436,7 +1432,7 @@ public class ImagesApi {
      * @param xLXDPublic defaults to false (optional)
      * @param xLXDProperties  (optional)
      * @param body Create and publish a new image (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1446,8 +1442,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postImages(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postImagesWithHttpInfo(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
+    public BackgroundOperationResponse postImages(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postImagesWithHttpInfo(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body);
         return localVarResp.getData();
     }
 
@@ -1459,7 +1455,7 @@ public class ImagesApi {
      * @param xLXDPublic defaults to false (optional)
      * @param xLXDProperties  (optional)
      * @param body Create and publish a new image (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1469,9 +1465,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postImagesWithHttpInfo(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postImagesWithHttpInfo(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postImagesValidateBeforeCall(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1494,10 +1490,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesAsync(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesAsync(String xLXDFingerprint, String xLXDFilename, Boolean xLXDPublic, String xLXDProperties, CreateImagesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postImagesValidateBeforeCall(xLXDFingerprint, xLXDFilename, xLXDPublic, xLXDProperties, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1540,7 +1536,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1557,7 +1553,7 @@ public class ImagesApi {
      * 
      * Create a new alias
      * @param body Create a new alias (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1567,8 +1563,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postImagesAliases(CreateImagesAliasesRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postImagesAliasesWithHttpInfo(body);
+    public BackgroundOperationResponse postImagesAliases(CreateImagesAliasesRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postImagesAliasesWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1576,7 +1572,7 @@ public class ImagesApi {
      * 
      * Create a new alias
      * @param body Create a new alias (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1586,9 +1582,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postImagesAliasesWithHttpInfo(CreateImagesAliasesRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postImagesAliasesWithHttpInfo(CreateImagesAliasesRequest body) throws ApiException {
         okhttp3.Call localVarCall = postImagesAliasesValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1607,10 +1603,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesAliasesAsync(CreateImagesAliasesRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesAliasesAsync(CreateImagesAliasesRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postImagesAliasesValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1656,7 +1652,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1679,7 +1675,7 @@ public class ImagesApi {
      * Rename an alias
      * @param name Name of the alias (required)
      * @param body Rename an alias (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1690,8 +1686,8 @@ public class ImagesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse postImagesAliasesByName(String name, CreateImagesAliasesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = postImagesAliasesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse postImagesAliasesByName(String name, CreateImagesAliasesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postImagesAliasesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -1700,7 +1696,7 @@ public class ImagesApi {
      * Rename an alias
      * @param name Name of the alias (required)
      * @param body Rename an alias (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1711,9 +1707,9 @@ public class ImagesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> postImagesAliasesByNameWithHttpInfo(String name, CreateImagesAliasesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postImagesAliasesByNameWithHttpInfo(String name, CreateImagesAliasesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = postImagesAliasesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1734,10 +1730,10 @@ public class ImagesApi {
         <tr><td> 409 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesAliasesByNameAsync(String name, CreateImagesAliasesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesAliasesByNameAsync(String name, CreateImagesAliasesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postImagesAliasesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1782,7 +1778,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1805,7 +1801,7 @@ public class ImagesApi {
      * Upload the image tarball
      * @param fingerprint Unique fingerprint (required)
      * @param body Upload the image tarball (optional)
-     * @return BasicBackgroundOperationResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1815,8 +1811,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicBackgroundOperationResponse postImagesFingerprintExport(String fingerprint, CreateImagesFingerprintExportRequest body) throws ApiException {
-        ApiResponse<BasicBackgroundOperationResponse> localVarResp = postImagesFingerprintExportWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse postImagesFingerprintExport(String fingerprint, CreateImagesFingerprintExportRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postImagesFingerprintExportWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -1825,7 +1821,7 @@ public class ImagesApi {
      * Upload the image tarball
      * @param fingerprint Unique fingerprint (required)
      * @param body Upload the image tarball (optional)
-     * @return ApiResponse&lt;BasicBackgroundOperationResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1835,9 +1831,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicBackgroundOperationResponse> postImagesFingerprintExportWithHttpInfo(String fingerprint, CreateImagesFingerprintExportRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postImagesFingerprintExportWithHttpInfo(String fingerprint, CreateImagesFingerprintExportRequest body) throws ApiException {
         okhttp3.Call localVarCall = postImagesFingerprintExportValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1857,10 +1853,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesFingerprintExportAsync(String fingerprint, CreateImagesFingerprintExportRequest body, final ApiCallback<BasicBackgroundOperationResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesFingerprintExportAsync(String fingerprint, CreateImagesFingerprintExportRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postImagesFingerprintExportValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicBackgroundOperationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1905,7 +1901,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -1928,7 +1924,7 @@ public class ImagesApi {
      * Generate a random token and tell LXD to expect it be used by a guest
      * @param fingerprint Unique fingerprint (required)
      * @param body Generate a random token and tell LXD to expect it be used by a guest (optional)
-     * @return CreateImagesFingerprintSecretResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1938,8 +1934,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public CreateImagesFingerprintSecretResponse postImagesFingerprintSecret(String fingerprint, Object body) throws ApiException {
-        ApiResponse<CreateImagesFingerprintSecretResponse> localVarResp = postImagesFingerprintSecretWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse postImagesFingerprintSecret(String fingerprint, Object body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = postImagesFingerprintSecretWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -1948,7 +1944,7 @@ public class ImagesApi {
      * Generate a random token and tell LXD to expect it be used by a guest
      * @param fingerprint Unique fingerprint (required)
      * @param body Generate a random token and tell LXD to expect it be used by a guest (optional)
-     * @return ApiResponse&lt;CreateImagesFingerprintSecretResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1958,9 +1954,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CreateImagesFingerprintSecretResponse> postImagesFingerprintSecretWithHttpInfo(String fingerprint, Object body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> postImagesFingerprintSecretWithHttpInfo(String fingerprint, Object body) throws ApiException {
         okhttp3.Call localVarCall = postImagesFingerprintSecretValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<CreateImagesFingerprintSecretResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1980,10 +1976,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesFingerprintSecretAsync(String fingerprint, Object body, final ApiCallback<CreateImagesFingerprintSecretResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesFingerprintSecretAsync(String fingerprint, Object body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postImagesFingerprintSecretValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<CreateImagesFingerprintSecretResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2028,7 +2024,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -2051,7 +2047,7 @@ public class ImagesApi {
      * Replaces the alias target or description
      * @param name Name of the alias (required)
      * @param body Replaces the alias target or description (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2061,8 +2057,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putImagesAliasesByName(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putImagesAliasesByNameWithHttpInfo(name, body);
+    public BackgroundOperationResponse putImagesAliasesByName(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putImagesAliasesByNameWithHttpInfo(name, body);
         return localVarResp.getData();
     }
 
@@ -2071,7 +2067,7 @@ public class ImagesApi {
      * Replaces the alias target or description
      * @param name Name of the alias (required)
      * @param body Replaces the alias target or description (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2081,9 +2077,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putImagesAliasesByNameWithHttpInfo(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putImagesAliasesByNameWithHttpInfo(String name, UpdateImagesAliasesByNameRequest body) throws ApiException {
         okhttp3.Call localVarCall = putImagesAliasesByNameValidateBeforeCall(name, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2103,10 +2099,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putImagesAliasesByNameAsync(String name, UpdateImagesAliasesByNameRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putImagesAliasesByNameAsync(String name, UpdateImagesAliasesByNameRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putImagesAliasesByNameValidateBeforeCall(name, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -2151,7 +2147,7 @@ public class ImagesApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] { "authentication" };
+        String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -2174,7 +2170,7 @@ public class ImagesApi {
      * Replaces the image properties, update information and visibility
      * @param fingerprint Unique fingerprint (required)
      * @param body Replaces the image properties, update information and visibility (optional)
-     * @return BasicStandardReturnValueResponse
+     * @return BackgroundOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2184,8 +2180,8 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public BasicStandardReturnValueResponse putImagesFingerprint(String fingerprint, UpdateImagesFingerprintRequest body) throws ApiException {
-        ApiResponse<BasicStandardReturnValueResponse> localVarResp = putImagesFingerprintWithHttpInfo(fingerprint, body);
+    public BackgroundOperationResponse putImagesFingerprint(String fingerprint, UpdateImagesFingerprintRequest body) throws ApiException {
+        ApiResponse<BackgroundOperationResponse> localVarResp = putImagesFingerprintWithHttpInfo(fingerprint, body);
         return localVarResp.getData();
     }
 
@@ -2194,7 +2190,7 @@ public class ImagesApi {
      * Replaces the image properties, update information and visibility
      * @param fingerprint Unique fingerprint (required)
      * @param body Replaces the image properties, update information and visibility (optional)
-     * @return ApiResponse&lt;BasicStandardReturnValueResponse&gt;
+     * @return ApiResponse&lt;BackgroundOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2204,9 +2200,9 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BasicStandardReturnValueResponse> putImagesFingerprintWithHttpInfo(String fingerprint, UpdateImagesFingerprintRequest body) throws ApiException {
+    public ApiResponse<BackgroundOperationResponse> putImagesFingerprintWithHttpInfo(String fingerprint, UpdateImagesFingerprintRequest body) throws ApiException {
         okhttp3.Call localVarCall = putImagesFingerprintValidateBeforeCall(fingerprint, body, null);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2226,10 +2222,10 @@ public class ImagesApi {
         <tr><td> 401 </td><td> A standard error response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putImagesFingerprintAsync(String fingerprint, UpdateImagesFingerprintRequest body, final ApiCallback<BasicStandardReturnValueResponse> _callback) throws ApiException {
+    public okhttp3.Call putImagesFingerprintAsync(String fingerprint, UpdateImagesFingerprintRequest body, final ApiCallback<BackgroundOperationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = putImagesFingerprintValidateBeforeCall(fingerprint, body, _callback);
-        Type localVarReturnType = new TypeToken<BasicStandardReturnValueResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BackgroundOperationResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -23,13 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.relxd.lxd.model.GetStoragePoolsByNameVolumesByTypeNameResponseMetadata;
 
 /**
  * GetStoragePoolsByNameVolumesByTypeNameResponseAllOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-09-30T13:16:18.308214+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class GetStoragePoolsByNameVolumesByTypeNameResponseAllOf {
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
@@ -37,7 +36,7 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseAllOf {
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "error_code";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  private BigDecimal errorCode;
+  private Integer errorCode;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
@@ -67,7 +66,7 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseAllOf {
   }
 
 
-  public GetStoragePoolsByNameVolumesByTypeNameResponseAllOf errorCode(BigDecimal errorCode) {
+  public GetStoragePoolsByNameVolumesByTypeNameResponseAllOf errorCode(Integer errorCode) {
     
     this.errorCode = errorCode;
     return this;
@@ -80,12 +79,12 @@ public class GetStoragePoolsByNameVolumesByTypeNameResponseAllOf {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "0", value = "")
 
-  public BigDecimal getErrorCode() {
+  public Integer getErrorCode() {
     return errorCode;
   }
 
 
-  public void setErrorCode(BigDecimal errorCode) {
+  public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
   }
 

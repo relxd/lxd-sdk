@@ -409,14 +409,39 @@ Authentication schemes defined for the API:
 - **Flow**: implicit
 - **Authorization URL**: https://example.com/oauth/authorize
 - **Scopes**: 
-  - guest: access.....
   - untrusted: access.....
   - trusted: access.....
 
+##Default Api Client
+
+The default Api Client for this sdk is RelxdApiClient which extends ApiClient. It is therefore recommended to create an instance of `RelxdApiClient` instead of using `ApiClient`.
+In RelxdApiClient there is an implementation of mutual TLS Authentication which enables us to communicate with lxd using https.
+
+## Running tests on locally installed lxd
+
+1. To use unix socket run the following command on your terminal(use the path to the unix.socket file on your system)
+    - ncat -vlk 2375 -c 'ncat -U /var/snap/lxd/common/lxd/unix.socket'
+    - in your application.properties file use base url as http://localhost:2375
+    - after this, you should be set to run the tests and you can run the getServerStateTest in the ServerConfigApiTest.java file and check the 'auth' field, at this point it should be trusted.
+    
+2. To use https do the following steps: 
+
+ (i) While connecting to lxd via socket run the putServerStateTest in the ServerConfigApiTest.java file, and it will set up the url https://192.168.43.157:8443 for use.
+
+ (i) Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
+   - openssl pkcs12 -export -in server.crt -inkey server.key -out key-store.p12 (NB: take note of the password that you use when creating the keystore, it should be the same password that you put in the application.properties file 'java.keystore.password' field)
+   
+ (ii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
+ 
+ (iii) In your application.properties file use an https base url. e.g https://192.168.43.157:8443
+ 
+ (iv) At this point you should be able to run the tests. 
+   - Run the getServerStateTest in the ServerConfigApiTest.java file and check the 'auth' field, at this point it should be trusted. 
+  
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
+It's recommended to create an instance of `RelxdApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 

@@ -13,31 +13,21 @@
 
 package org.relxd.lxd.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for Fds2
+ * Model tests for Fds
  */
 public class Fds2Test {
-    private final Fds2 model = new Fds2();
+    private final Fds1 model = new Fds1();
 
     /**
-     * Model tests for Fds2
+     * Model tests for Fds
      */
     @Test
     public void testFds2() {
-        // TODO: test Fds2
+        // TODO: test Fds
     }
 
     /**
