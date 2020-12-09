@@ -23,19 +23,26 @@
  * SOFTWARE.
  */
 
-package org.relxd.lxd.auth.javakeystore.x509certificate.service;
+package org.relxd.lxd.service;
 
-import org.relxd.lxd.auth.javakeystore.x509certificate.X509CertificateAndKeyPair;
+import java.io.IOException;
+import java.util.List;
 
-import java.security.cert.Certificate;
+public interface LinuxCmdService {
 
-public interface CertificateChainGenerationService {
+    /**
+     * Execute a linux command
+     */
+     String executeLinuxCmd(String cmd) throws IOException, InterruptedException;
 
-    X509CertificateAndKeyPair generateX509Certificate(String issuedTo, String rootCertificateAlias, String issuedCertificateAliase) throws Exception;
+    /**
+     * Execute a linux command returning the a list of Strings as a result
+     */
+    List<String> executeLinuxCmdWithResultLines(String cmd) throws IOException, InterruptedException;
 
-    void writeCertToFileBase64Encoded(Certificate certificate, String fileName) throws Exception;
+    /**
+     * Execute a linux command returning the result as a json object
+     */
+    <T> T executeLinuxCmdWithResultJsonObject(String cmd, Class<T> classType) throws IOException, InterruptedException;
 
 }
-
-
-
