@@ -9,14 +9,14 @@
     <url>https://github.com/relxd/lxd-sdk</url>
     <description>Relxd - LXD OpenApi Java Client</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:relxd/lxd-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:relxd/lxd-sdk.git</developerConnection>
+        <url>https://github.com/relxd/lxd-sdk</url>
     </scm>
 
     <licenses>
         <license>
-            <name>Unlicense</name>
+            <name>License</name>
             <url>https://www.relxd.org/terms-of-service/</url>
             <distribution>repo</distribution>
         </license>
@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
-            <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <name>Relxd Contributors</name>
+            <email>team@relxd.org</email>
+            <organization>relxd.org</organization>
+            <organizationUrl>http://relxd.org</organizationUrl>
         </developer>
     </developers>
 
@@ -330,23 +330,6 @@
             <artifactId>tyrus-container-grizzly</artifactId>
             <version>1.1</version>
         </dependency>
-
-
-
-
-
-        <!--<dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <!--<dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.22</version>
-            <optional>true</optional>
-        </dependency>-->
 
         <dependency>
             <groupId>org.slf4j</groupId>
