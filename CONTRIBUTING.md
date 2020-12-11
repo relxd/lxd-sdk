@@ -2,7 +2,7 @@ First off, thank you for considering contributing to Relxd. It's people like you
 
 The following are guidelines on how you can contribute to the Relxd project. These are not rules but are just guidelines upon which you can use your own discretion and feel free to propose any changes to this document in a pull request.
 
-Contributions we are looking for
+## Contributions we are looking for
 Relxd is an open source project and we love to receive contributions from our community — you! There are many ways to contribute, from writing tutorials or blog posts, improving the documentation, submitting bug reports and feature requests or writing code which can be incorporated into Relxd itself.
 
  Contributions we are not looking for
