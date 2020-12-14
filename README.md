@@ -87,7 +87,7 @@ public class Example {
     //First Set the fields baseUrl, javaKeyStoreFilePath,javaKeyStorePassword, authenticationType, unixSocketPath in your application.properties file. (See section `Running tests on locally installed lxd` for more information)
      
     //Create an instance of RelxdApiClient, which automaticatically sets it as the default ApiClient in the constructor.  
-    new RelxdApiClient();
+    Configuration.setDefaultApiClient(new RelxdApiClient());
     
     //Access and use your lxd Apis
     CertificatesApi apiInstance = new CertificatesApi();

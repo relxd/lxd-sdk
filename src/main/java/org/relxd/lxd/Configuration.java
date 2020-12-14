@@ -15,7 +15,7 @@ package org.relxd.lxd;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-11-24T09:07:38.931+02:00[Africa/Harare]")
 public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+    private static ApiClient defaultApiClient = new RelxdApiClient();
 
     /**
      * Get the default API client, which would be used when creating API
