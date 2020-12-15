@@ -1,3 +1,6 @@
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.relxd/lxd-java-client.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.relxd%22%20AND%20a:%22lxd-java-client%22)
+
 # Relxd - LXD OpenApi Java Client
 
 LXD
