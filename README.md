@@ -67,6 +67,9 @@ Then manually install the following JARs:
 * `target/lxd-java-client-1.0.0.jar`
 * `target/lib/*.jar`
 
+### OpenApi spec file
+[openApi spec file](openapi/lxd.yaml)
+
 ## Getting Started
 
 Please follow the [installation](#installation) instruction and execute the following Java code:
