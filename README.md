@@ -437,6 +437,7 @@ Authentication schemes defined for the API:
   (a) Generate a self-signed client certificate and export it into a keystore named key-store.p12 using the following commands
    - openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes
    - openssl pkcs12 -export -out key-store.p12 -inkey key.pem -in cert.pem
+  (b) While connected to lxd via socket post your cert.pem certificate to lxd using the postCertificatesTest(), for it to be accepted by lxd. 
    
    or alternatively: 
   Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
