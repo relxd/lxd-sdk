@@ -436,18 +436,18 @@ Authentication schemes defined for the API:
  (ii) 
   (a) Generate a self-signed client certificate and export it into a keystore named key-store.p12 using the following commands
    - openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes
-   - openssl pkcs12 -export -out key-store.p12 -inkey key.pem -in cert.pem
+   - openssl pkcs12 -export -out key-store.p12 -inkey key.pem -in cert.pem  
   (b) While connected to lxd via socket post your cert.pem certificate to lxd using the postCertificatesTest(), for it to be accepted by lxd. 
    
    or alternatively: 
   Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
    - openssl pkcs12 -export -in server.crt -inkey server.key -out key-store.p12 (NB: take note of the password that you use when creating the keystore, it should be the same password that you put in the application.properties file 'java.keystore.password' field)
    
- (ii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
+ (iii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
  
- (iii) In your application.properties file use an https base url. e.g https://192.168.43.157:8443
+ (iv) In your application.properties file use an https base url. e.g https://192.168.43.157:8443
  
- (iv) At this point you should be able to run the tests. 
+ (v) At this point you should be able to run the tests. 
    - Run the getServerStateTest in the ServerConfigApiTest.java file and check the 'auth' field, at this point it should be trusted. 
   
 
