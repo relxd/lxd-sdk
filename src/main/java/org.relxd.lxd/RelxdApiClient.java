@@ -40,7 +40,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -155,12 +158,18 @@ public class RelxdApiClient extends ApiClient {
 
     }
 
+    public static HostnameVerifier allowAllHostNames() {
+        return (hostname, sslSession) -> true;
+    }
+
     //Initialise an HttpClient
     void initHttpClient() {
         initHttpClient(Collections.<Interceptor>emptyList());
     }
 
     private void initHttpClient(List<Interceptor> interceptors) {
+
+        System.out.println("Java Home : " + System.getProperty("java.home"));
 
         //Build HttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
@@ -175,6 +184,8 @@ public class RelxdApiClient extends ApiClient {
                 SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
                 TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
                 trustManagerFactory.init(keyStore);
+
+                //final TrustSelfSignedStrategy trustSelfSignedStrategy = TrustSelfSignedStrategy.INSTANCE;
 
                 KeyManager[] keyManagers;
 
@@ -199,21 +210,18 @@ public class RelxdApiClient extends ApiClient {
                             + Arrays.toString(trustManagers));
                 }
 
-                X509TrustManager trustManager = (X509TrustManager) trustManagers[0];
+                X509TrustManager systemTrustManager = (X509TrustManager) trustManagers[0];
 
-                sslContext.init(keyManagers, trustManagerFactory.getTrustManagers(), new SecureRandom());
-                builder.sslSocketFactory(sslContext.getSocketFactory(), trustManager);
+                //Extend Trust to Self signed certificates
+                X509TrustManager[] wrapTrustManagers = TrustSelfSignedX509TrustManager.wrap(systemTrustManager);
 
+                sslContext.init(keyManagers, wrapTrustManagers, new SecureRandom());
+                builder.sslSocketFactory(sslContext.getSocketFactory(), wrapTrustManagers[0]);
 
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            builder.hostnameVerifier(new HostnameVerifier() {
-                @Override
-                public boolean verify(String hostname, SSLSession session) {
-                    return true;
-                }
-            });
+            builder.hostnameVerifier(allowAllHostNames());
 
         }
 
@@ -243,5 +251,9 @@ public class RelxdApiClient extends ApiClient {
                 return originalResponse;
             }
         };
+    }
+
+    private boolean isSelfSigned(X509Certificate[] chain) {
+        return chain.length == 1;
     }
 }
