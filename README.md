@@ -439,7 +439,7 @@ Authentication schemes defined for the API:
    - openssl pkcs12 -export -out key-store.p12 -inkey key.pem -in cert.pem  
   (b) While connected to lxd via socket post your cert.pem certificate to lxd using the postCertificatesTest(), for it to be accepted by lxd. 
    
-   or alternatively: 
+   or alternatively:  
   Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
    - openssl pkcs12 -export -in server.crt -inkey server.key -out key-store.p12 (NB: take note of the password that you use when creating the keystore, it should be the same password that you put in the application.properties file 'java.keystore.password' field)
    
