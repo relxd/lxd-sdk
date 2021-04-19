@@ -433,7 +433,13 @@ Authentication schemes defined for the API:
 
  (i) While connecting to lxd via socket run the putServerStateTest in the ServerConfigApiTest.java file, and it will set up the url https://192.168.43.157:8443 for use.
 
- (i) Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
+ (ii) 
+  (a) Generate a self-signed client certificate and export it into a keystore named key-store.p12 using the following commands
+   - openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes
+   - openssl pkcs12 -export -out key-store.p12 -inkey key.pem -in cert.pem
+   
+   or alternatively: 
+  Go to the folder where your lxd server .crt and .key files are located (e.g. /var/snap/lxd/common/lxd) and run the following command to create a keystore to use for your tests. 
    - openssl pkcs12 -export -in server.crt -inkey server.key -out key-store.p12 (NB: take note of the password that you use when creating the keystore, it should be the same password that you put in the application.properties file 'java.keystore.password' field)
    
  (ii) Move the created file named key-store.p12 to the certificates folder in the lxd-sdk project.
