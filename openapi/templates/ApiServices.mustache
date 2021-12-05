@@ -1,0 +1,20 @@
+package {{invokerPackage}};
+
+import {{invokerPackage}}.api.*;
+
+public final class ApiServices {
+
+    {{#apiInfo}}{{#apis}}private {{classname}} {{#lambda.camelcase}}{{classname}}{{/lambda.camelcase}};
+    {{/apis}}{{/apiInfo}}
+
+    public ApiServices() {
+    }
+
+    {{#apiInfo}}{{#apis}} public {{classname}} get{{classname}}(){
+        if(this.{{#lambda.camelcase}}{{classname}}{{/lambda.camelcase}} == null)
+            this.{{#lambda.camelcase}}{{classname}}{{/lambda.camelcase}} = new {{classname}}();
+        return this.{{#lambda.camelcase}}{{classname}}{{/lambda.camelcase}};
+    }
+
+    {{/apis}}{{/apiInfo}}
+}
