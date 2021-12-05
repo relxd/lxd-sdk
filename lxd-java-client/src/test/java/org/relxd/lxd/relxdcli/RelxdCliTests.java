@@ -57,6 +57,7 @@ import static junit.framework.TestCase.assertEquals;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class RelxdCliTests implements CompleteableFutureTestWrapper {
 
+    private RelxdApiClient relxdApiClient;
     private ImagesApi imagesApi;
     private InstancesApiTest instancesApiTest;
     private OperationsApi operationsApi;
@@ -67,11 +68,13 @@ public class RelxdCliTests implements CompleteableFutureTestWrapper {
 
     @BeforeAll
     public void init(){
-        new RelxdApiClient();
-        imagesApi = new ImagesApi();
         logger = LoggerFactory.getLogger(InstancesApiTest.class);
-        operationsApi = new OperationsApi();
-        instancesApi = new InstancesApi();
+
+        this.relxdApiClient = new RelxdApiClient();
+
+        imagesApi = relxdApiClient.services().getImagesApi();
+        operationsApi = relxdApiClient.services().getOperationsApi();
+        instancesApi = relxdApiClient.services().getInstancesApi();
     }
 
     @Test
