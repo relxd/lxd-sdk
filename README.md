@@ -99,7 +99,7 @@ public class Example {
     CertificatesApi apiInstance = new CertificatesApi();
     String fingerprint = "fingerprint_example"; // String | Unique fingerprint
     try {
-      BasicStandardReturnValueResponse result = apiInstance.deleteFingerprint(fingerprint);
+      BackgroundOperationResponse result = apiInstance.deleteFingerprint(fingerprint);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CertificatesApi#deleteFingerprint");
