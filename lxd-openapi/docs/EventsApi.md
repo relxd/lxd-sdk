@@ -2,10 +2,10 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getEvents**](EventsApi.md#getEvents) | **GET** /1.0/events | 
-[**getEventsWithHttpInfo**](EventsApi.md#getEventsWithHttpInfo) | **GET** /1.0/events | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getEvents**](EventsApi.md#getEvents) | **GET** /1.0/events |  |
+| [**getEventsWithHttpInfo**](EventsApi.md#getEventsWithHttpInfo) | **GET** /1.0/events |  |
 
 
 
@@ -21,11 +21,11 @@ Websocket upgrade
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.EventsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.EventsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -54,11 +54,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| Type | [enum: operation, logging, lifecycle]
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **type** | **String**| Type | [enum: operation, logging, lifecycle] |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -93,12 +93,12 @@ Websocket upgrade
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.EventsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.EventsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -136,11 +136,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| Type | [enum: operation, logging, lifecycle]
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **type** | **String**| Type | [enum: operation, logging, lifecycle] |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 

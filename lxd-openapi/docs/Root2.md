@@ -5,11 +5,11 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**path** | **String** |  |  [optional]
-**pool** | **String** |  |  [optional]
-**size** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**path** | **String** |  |  [optional] |
+|**pool** | **String** |  |  [optional] |
+|**size** | **String** |  |  [optional] |
 
 
 

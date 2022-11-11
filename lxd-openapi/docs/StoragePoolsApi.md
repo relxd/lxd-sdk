@@ -2,50 +2,50 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteStoragePoolsByName**](StoragePoolsApi.md#deleteStoragePoolsByName) | **DELETE** /1.0/storage-pools/{pool} | 
-[**deleteStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool} | 
-[**deleteStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeName) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**getStoragePools**](StoragePoolsApi.md#getStoragePools) | **GET** /1.0/storage-pools | 
-[**getStoragePoolsWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsWithHttpInfo) | **GET** /1.0/storage-pools | 
-[**getStoragePoolsByName**](StoragePoolsApi.md#getStoragePoolsByName) | **GET** /1.0/storage-pools/{pool} | 
-[**getStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool} | 
-[**getStoragePoolsByNameResources**](StoragePoolsApi.md#getStoragePoolsByNameResources) | **GET** /1.0/storage-pools/{pool}/resources | 
-[**getStoragePoolsByNameResourcesWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameResourcesWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/resources | 
-[**getStoragePoolsByNameVolumes**](StoragePoolsApi.md#getStoragePoolsByNameVolumes) | **GET** /1.0/storage-pools/{pool}/volumes | 
-[**getStoragePoolsByNameVolumesWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes | 
-[**getStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeName) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**getStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**getStoragePoolsByNameVolumesByTypeNameSnapshots**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshots) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots | 
-[**getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots | 
-[**getStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**patchStoragePoolsByName**](StoragePoolsApi.md#patchStoragePoolsByName) | **PATCH** /1.0/storage-pools/{pool} | 
-[**patchStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#patchStoragePoolsByNameWithHttpInfo) | **PATCH** /1.0/storage-pools/{pool} | 
-[**patchStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#patchStoragePoolsByNameVolumesByTypeName) | **PATCH** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **PATCH** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**postStoragePools**](StoragePoolsApi.md#postStoragePools) | **POST** /1.0/storage-pools | 
-[**postStoragePoolsWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsWithHttpInfo) | **POST** /1.0/storage-pools | 
-[**postStoragePoolsByNameVolumes**](StoragePoolsApi.md#postStoragePoolsByNameVolumes) | **POST** /1.0/storage-pools/{pool}/volumes | 
-[**postStoragePoolsByNameVolumesWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes | 
-[**postStoragePoolsByNameVolumesByType**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByType) | **POST** /1.0/storage-pools/{pool}/volumes/{type} | 
-[**postStoragePoolsByNameVolumesByTypeWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type} | 
-[**postStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeName) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**postStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**postStoragePoolsByNameVolumesByTypeNameSnapshots**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshots) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots | 
-[**postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots | 
-[**postStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**putStoragePoolsByName**](StoragePoolsApi.md#putStoragePoolsByName) | **PUT** /1.0/storage-pools/{pool} | 
-[**putStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool} | 
-[**putStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeName) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**putStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name} | 
-[**putStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
-[**putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteStoragePoolsByName**](StoragePoolsApi.md#deleteStoragePoolsByName) | **DELETE** /1.0/storage-pools/{pool} |  |
+| [**deleteStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool} |  |
+| [**deleteStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeName) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#deleteStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **DELETE** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**getStoragePools**](StoragePoolsApi.md#getStoragePools) | **GET** /1.0/storage-pools |  |
+| [**getStoragePoolsWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsWithHttpInfo) | **GET** /1.0/storage-pools |  |
+| [**getStoragePoolsByName**](StoragePoolsApi.md#getStoragePoolsByName) | **GET** /1.0/storage-pools/{pool} |  |
+| [**getStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool} |  |
+| [**getStoragePoolsByNameResources**](StoragePoolsApi.md#getStoragePoolsByNameResources) | **GET** /1.0/storage-pools/{pool}/resources |  |
+| [**getStoragePoolsByNameResourcesWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameResourcesWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/resources |  |
+| [**getStoragePoolsByNameVolumes**](StoragePoolsApi.md#getStoragePoolsByNameVolumes) | **GET** /1.0/storage-pools/{pool}/volumes |  |
+| [**getStoragePoolsByNameVolumesWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes |  |
+| [**getStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeName) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**getStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**getStoragePoolsByNameVolumesByTypeNameSnapshots**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshots) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots |  |
+| [**getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots |  |
+| [**getStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#getStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **GET** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**patchStoragePoolsByName**](StoragePoolsApi.md#patchStoragePoolsByName) | **PATCH** /1.0/storage-pools/{pool} |  |
+| [**patchStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#patchStoragePoolsByNameWithHttpInfo) | **PATCH** /1.0/storage-pools/{pool} |  |
+| [**patchStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#patchStoragePoolsByNameVolumesByTypeName) | **PATCH** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#patchStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **PATCH** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**postStoragePools**](StoragePoolsApi.md#postStoragePools) | **POST** /1.0/storage-pools |  |
+| [**postStoragePoolsWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsWithHttpInfo) | **POST** /1.0/storage-pools |  |
+| [**postStoragePoolsByNameVolumes**](StoragePoolsApi.md#postStoragePoolsByNameVolumes) | **POST** /1.0/storage-pools/{pool}/volumes |  |
+| [**postStoragePoolsByNameVolumesWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes |  |
+| [**postStoragePoolsByNameVolumesByType**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByType) | **POST** /1.0/storage-pools/{pool}/volumes/{type} |  |
+| [**postStoragePoolsByNameVolumesByTypeWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type} |  |
+| [**postStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeName) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**postStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**postStoragePoolsByNameVolumesByTypeNameSnapshots**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshots) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots |  |
+| [**postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots |  |
+| [**postStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#postStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **POST** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**putStoragePoolsByName**](StoragePoolsApi.md#putStoragePoolsByName) | **PUT** /1.0/storage-pools/{pool} |  |
+| [**putStoragePoolsByNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool} |  |
+| [**putStoragePoolsByNameVolumesByTypeName**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeName) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**putStoragePoolsByNameVolumesByTypeNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name} |  |
+| [**putStoragePoolsByNameVolumesByTypeNameSnapshotsName**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameSnapshotsName) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
+| [**putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo**](StoragePoolsApi.md#putStoragePoolsByNameVolumesByTypeNameSnapshotsNameWithHttpInfo) | **PUT** /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name |  |
 
 
 
@@ -61,11 +61,11 @@ Remove a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -92,9 +92,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
 
 ### Return type
 
@@ -130,12 +130,12 @@ Remove a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -171,9 +171,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
 
 ### Return type
 
@@ -210,11 +210,11 @@ Delete a storage volume of a given type on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -243,11 +243,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
 
 ### Return type
 
@@ -282,12 +282,12 @@ Delete a storage volume of a given type on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -325,11 +325,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
 
 ### Return type
 
@@ -365,11 +365,11 @@ Remove the volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -398,11 +398,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
 
 ### Return type
 
@@ -437,12 +437,12 @@ Remove the volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -480,11 +480,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
 
 ### Return type
 
@@ -520,11 +520,11 @@ List of storage pools
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -552,10 +552,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -590,12 +590,12 @@ List of storage pools
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -632,10 +632,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -671,11 +671,11 @@ Information about a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -704,11 +704,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -743,12 +743,12 @@ Information about a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -786,11 +786,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -826,11 +826,11 @@ Information about the resources available to the storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -859,11 +859,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Profiles name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Profiles name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -898,12 +898,12 @@ Information about the resources available to the storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -941,11 +941,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Profiles name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Profiles name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -981,11 +981,11 @@ List of storage volumes
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1014,11 +1014,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1053,12 +1053,12 @@ List of storage volumes
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1096,11 +1096,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1136,11 +1136,11 @@ Information about a storage volume of a given type on a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1171,13 +1171,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1212,12 +1212,12 @@ Information about a storage volume of a given type on a storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1257,13 +1257,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1299,11 +1299,11 @@ List of volume snapshots
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1334,13 +1334,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1375,12 +1375,12 @@ List of volume snapshots
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1420,13 +1420,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1462,11 +1462,11 @@ Snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1497,13 +1497,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1538,12 +1538,12 @@ Snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1583,13 +1583,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1625,11 +1625,11 @@ Update the storage pool information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1657,10 +1657,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**PatchStoragePoolsByNameRequest**](PatchStoragePoolsByNameRequest.md)| Update the storage pool information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**PatchStoragePoolsByNameRequest**](PatchStoragePoolsByNameRequest.md)| Update the storage pool information | [optional] |
 
 ### Return type
 
@@ -1695,12 +1695,12 @@ Update the storage pool information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1737,10 +1737,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**PatchStoragePoolsByNameRequest**](PatchStoragePoolsByNameRequest.md)| Update the storage pool information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**PatchStoragePoolsByNameRequest**](PatchStoragePoolsByNameRequest.md)| Update the storage pool information | [optional] |
 
 ### Return type
 
@@ -1776,11 +1776,11 @@ Update the storage volume information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1810,12 +1810,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest2**](UpdateStoragePoolsByNameVolumesByTypeNameRequest2.md)| Update the storage volume information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest2**](UpdateStoragePoolsByNameVolumesByTypeNameRequest2.md)| Update the storage volume information | [optional] |
 
 ### Return type
 
@@ -1850,12 +1850,12 @@ Update the storage volume information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1894,12 +1894,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest2**](UpdateStoragePoolsByNameVolumesByTypeNameRequest2.md)| Update the storage volume information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest2**](UpdateStoragePoolsByNameVolumesByTypeNameRequest2.md)| Update the storage volume information | [optional] |
 
 ### Return type
 
@@ -1935,11 +1935,11 @@ Define a new storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1966,9 +1966,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateStoragePoolsRequest**](CreateStoragePoolsRequest.md)| Define a new storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateStoragePoolsRequest**](CreateStoragePoolsRequest.md)| Define a new storage pool | [optional] |
 
 ### Return type
 
@@ -2003,12 +2003,12 @@ Define a new storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2044,9 +2044,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateStoragePoolsRequest**](CreateStoragePoolsRequest.md)| Define a new storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateStoragePoolsRequest**](CreateStoragePoolsRequest.md)| Define a new storage pool | [optional] |
 
 ### Return type
 
@@ -2082,11 +2082,11 @@ Create a new storage volume on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2114,10 +2114,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**CreateStoragePoolsByNameVolumesRequest**](CreateStoragePoolsByNameVolumesRequest.md)| Create a new storage volume on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**CreateStoragePoolsByNameVolumesRequest**](CreateStoragePoolsByNameVolumesRequest.md)| Create a new storage volume on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2152,12 +2152,12 @@ Create a new storage volume on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2194,10 +2194,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**CreateStoragePoolsByNameVolumesRequest**](CreateStoragePoolsByNameVolumesRequest.md)| Create a new storage volume on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**CreateStoragePoolsByNameVolumesRequest**](CreateStoragePoolsByNameVolumesRequest.md)| Create a new storage volume on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2233,11 +2233,11 @@ Create a new storage volume of a particular type on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2266,11 +2266,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeRequest**](CreateStoragePoolsByNameVolumesByTypeRequest.md)| Create a new storage volume of a particular type on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeRequest**](CreateStoragePoolsByNameVolumesByTypeRequest.md)| Create a new storage volume of a particular type on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2305,12 +2305,12 @@ Create a new storage volume of a particular type on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2348,11 +2348,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeRequest**](CreateStoragePoolsByNameVolumesByTypeRequest.md)| Create a new storage volume of a particular type on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeRequest**](CreateStoragePoolsByNameVolumesByTypeRequest.md)| Create a new storage volume of a particular type on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2388,11 +2388,11 @@ Rename a storage volume on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2422,12 +2422,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameRequest.md)| Rename a storage volume on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameRequest.md)| Rename a storage volume on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2462,12 +2462,12 @@ Rename a storage volume on a given storage pool
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2506,12 +2506,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameRequest.md)| Rename a storage volume on a given storage pool | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameRequest.md)| Rename a storage volume on a given storage pool | [optional] |
 
 ### Return type
 
@@ -2547,11 +2547,11 @@ Create a new volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2581,12 +2581,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest.md)| Create a new volume snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest.md)| Create a new volume snapshot | [optional] |
 
 ### Return type
 
@@ -2621,12 +2621,12 @@ Create a new volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2665,12 +2665,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest.md)| Create a new volume snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsRequest.md)| Create a new volume snapshot | [optional] |
 
 ### Return type
 
@@ -2706,11 +2706,11 @@ Used to rename the volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2740,12 +2740,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Used to rename the volume snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Used to rename the volume snapshot | [optional] |
 
 ### Return type
 
@@ -2780,12 +2780,12 @@ Used to rename the volume snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2824,12 +2824,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Used to rename the volume snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](CreateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Used to rename the volume snapshot | [optional] |
 
 ### Return type
 
@@ -2865,11 +2865,11 @@ Replace the storage pool information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2897,10 +2897,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**UpdateStoragePoolsByNameRequest**](UpdateStoragePoolsByNameRequest.md)| Replace the storage pool information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**UpdateStoragePoolsByNameRequest**](UpdateStoragePoolsByNameRequest.md)| Replace the storage pool information | [optional] |
 
 ### Return type
 
@@ -2935,12 +2935,12 @@ Replace the storage pool information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2977,10 +2977,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **body** | [**UpdateStoragePoolsByNameRequest**](UpdateStoragePoolsByNameRequest.md)| Replace the storage pool information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **body** | [**UpdateStoragePoolsByNameRequest**](UpdateStoragePoolsByNameRequest.md)| Replace the storage pool information | [optional] |
 
 ### Return type
 
@@ -3016,11 +3016,11 @@ Replace the storage volume information or restore from snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3050,12 +3050,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameRequest.md)| Replace the storage volume information or restore from snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameRequest.md)| Replace the storage volume information or restore from snapshot | [optional] |
 
 ### Return type
 
@@ -3090,12 +3090,12 @@ Replace the storage volume information or restore from snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3134,12 +3134,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameRequest.md)| Replace the storage volume information or restore from snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameRequest.md)| Replace the storage volume information or restore from snapshot | [optional] |
 
 ### Return type
 
@@ -3175,11 +3175,11 @@ Volume snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3209,12 +3209,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Volume snapshot information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Volume snapshot information | [optional] |
 
 ### Return type
 
@@ -3249,12 +3249,12 @@ Volume snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.StoragePoolsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.StoragePoolsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3293,12 +3293,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pool** | **String**| Storage pool name |
- **type** | **String**| Type of the volume |
- **name** | **String**| name |
- **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Volume snapshot information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **pool** | **String**| Storage pool name | |
+| **type** | **String**| Type of the volume | |
+| **name** | **String**| name | |
+| **body** | [**UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest**](UpdateStoragePoolsByNameVolumesByTypeNameSnapshotsNameRequest.md)| Volume snapshot information | [optional] |
 
 ### Return type
 

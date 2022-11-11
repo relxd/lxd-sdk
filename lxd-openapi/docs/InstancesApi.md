@@ -2,82 +2,82 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteInstancesByName**](InstancesApi.md#deleteInstancesByName) | **DELETE** /1.0/instances/{name} | 
-[**deleteInstancesByNameWithHttpInfo**](InstancesApi.md#deleteInstancesByNameWithHttpInfo) | **DELETE** /1.0/instances/{name} | 
-[**deleteInstancesByNameBackupsByName**](InstancesApi.md#deleteInstancesByNameBackupsByName) | **DELETE** /1.0/instances/{name}/backups/{backupsName} | 
-[**deleteInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#deleteInstancesByNameBackupsByNameWithHttpInfo) | **DELETE** /1.0/instances/{name}/backups/{backupsName} | 
-[**deleteInstancesByNameConsole**](InstancesApi.md#deleteInstancesByNameConsole) | **DELETE** /1.0/instances/{name}/console | 
-[**deleteInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#deleteInstancesByNameConsoleWithHttpInfo) | **DELETE** /1.0/instances/{name}/console | 
-[**deleteInstancesByNameFiles**](InstancesApi.md#deleteInstancesByNameFiles) | **DELETE** /1.0/instances/{name}/files | 
-[**deleteInstancesByNameFilesWithHttpInfo**](InstancesApi.md#deleteInstancesByNameFilesWithHttpInfo) | **DELETE** /1.0/instances/{name}/files | 
-[**deleteInstancesByNameLogsFile**](InstancesApi.md#deleteInstancesByNameLogsFile) | **DELETE** /1.0/instances/{name}/logs/{logFile} | 
-[**deleteInstancesByNameLogsFileWithHttpInfo**](InstancesApi.md#deleteInstancesByNameLogsFileWithHttpInfo) | **DELETE** /1.0/instances/{name}/logs/{logFile} | 
-[**deleteInstancesByNameMetadataTemplates**](InstancesApi.md#deleteInstancesByNameMetadataTemplates) | **DELETE** /1.0/instances/{name}/metadata/templates | 
-[**deleteInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#deleteInstancesByNameMetadataTemplatesWithHttpInfo) | **DELETE** /1.0/instances/{name}/metadata/templates | 
-[**deleteInstancesByNameSnapshotsInformation**](InstancesApi.md#deleteInstancesByNameSnapshotsInformation) | **DELETE** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**deleteInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#deleteInstancesByNameSnapshotsInformationWithHttpInfo) | **DELETE** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**getInstances**](InstancesApi.md#getInstances) | **GET** /1.0/instances | 
-[**getInstancesWithHttpInfo**](InstancesApi.md#getInstancesWithHttpInfo) | **GET** /1.0/instances | 
-[**getInstancesByName**](InstancesApi.md#getInstancesByName) | **GET** /1.0/instances/{name} | 
-[**getInstancesByNameWithHttpInfo**](InstancesApi.md#getInstancesByNameWithHttpInfo) | **GET** /1.0/instances/{name} | 
-[**getInstancesByNameBackups**](InstancesApi.md#getInstancesByNameBackups) | **GET** /1.0/instances/{name}/backups | 
-[**getInstancesByNameBackupsWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsWithHttpInfo) | **GET** /1.0/instances/{name}/backups | 
-[**getInstancesByNameBackupsByName**](InstancesApi.md#getInstancesByNameBackupsByName) | **GET** /1.0/instances/{name}/backups/{backupsName} | 
-[**getInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsByNameWithHttpInfo) | **GET** /1.0/instances/{name}/backups/{backupsName} | 
-[**getInstancesByNameBackupsByNameExport**](InstancesApi.md#getInstancesByNameBackupsByNameExport) | **GET** /1.0/instances/{name}/backups/{backupsName}/export | 
-[**getInstancesByNameBackupsByNameExportWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsByNameExportWithHttpInfo) | **GET** /1.0/instances/{name}/backups/{backupsName}/export | 
-[**getInstancesByNameConsole**](InstancesApi.md#getInstancesByNameConsole) | **GET** /1.0/instances/{name}/console | 
-[**getInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#getInstancesByNameConsoleWithHttpInfo) | **GET** /1.0/instances/{name}/console | 
-[**getInstancesByNameFiles**](InstancesApi.md#getInstancesByNameFiles) | **GET** /1.0/instances/{name}/files | 
-[**getInstancesByNameFilesWithHttpInfo**](InstancesApi.md#getInstancesByNameFilesWithHttpInfo) | **GET** /1.0/instances/{name}/files | 
-[**getInstancesByNameLogs**](InstancesApi.md#getInstancesByNameLogs) | **GET** /1.0/instances/{name}/logs | 
-[**getInstancesByNameLogsWithHttpInfo**](InstancesApi.md#getInstancesByNameLogsWithHttpInfo) | **GET** /1.0/instances/{name}/logs | 
-[**getInstancesByNameLogsFile**](InstancesApi.md#getInstancesByNameLogsFile) | **GET** /1.0/instances/{name}/logs/{logFile} | 
-[**getInstancesByNameLogsFileWithHttpInfo**](InstancesApi.md#getInstancesByNameLogsFileWithHttpInfo) | **GET** /1.0/instances/{name}/logs/{logFile} | 
-[**getInstancesByNameMetadata**](InstancesApi.md#getInstancesByNameMetadata) | **GET** /1.0/instances/{name}/metadata | 
-[**getInstancesByNameMetadataWithHttpInfo**](InstancesApi.md#getInstancesByNameMetadataWithHttpInfo) | **GET** /1.0/instances/{name}/metadata | 
-[**getInstancesByNameMetadataTemplates**](InstancesApi.md#getInstancesByNameMetadataTemplates) | **GET** /1.0/instances/{name}/metadata/templates | 
-[**getInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#getInstancesByNameMetadataTemplatesWithHttpInfo) | **GET** /1.0/instances/{name}/metadata/templates | 
-[**getInstancesByNameSnapshots**](InstancesApi.md#getInstancesByNameSnapshots) | **GET** /1.0/instances/{name}/snapshots | 
-[**getInstancesByNameSnapshotsWithHttpInfo**](InstancesApi.md#getInstancesByNameSnapshotsWithHttpInfo) | **GET** /1.0/instances/{name}/snapshots | 
-[**getInstancesByNameSnapshotsInformation**](InstancesApi.md#getInstancesByNameSnapshotsInformation) | **GET** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**getInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#getInstancesByNameSnapshotsInformationWithHttpInfo) | **GET** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**getInstancesByNameState**](InstancesApi.md#getInstancesByNameState) | **GET** /1.0/instances/{name}/state | 
-[**getInstancesByNameStateWithHttpInfo**](InstancesApi.md#getInstancesByNameStateWithHttpInfo) | **GET** /1.0/instances/{name}/state | 
-[**patchInstancesByName**](InstancesApi.md#patchInstancesByName) | **PATCH** /1.0/instances/{name} | 
-[**patchInstancesByNameWithHttpInfo**](InstancesApi.md#patchInstancesByNameWithHttpInfo) | **PATCH** /1.0/instances/{name} | 
-[**postInstances**](InstancesApi.md#postInstances) | **POST** /1.0/instances | 
-[**postInstancesWithHttpInfo**](InstancesApi.md#postInstancesWithHttpInfo) | **POST** /1.0/instances | 
-[**postInstancesByName**](InstancesApi.md#postInstancesByName) | **POST** /1.0/instances/{name} | 
-[**postInstancesByNameWithHttpInfo**](InstancesApi.md#postInstancesByNameWithHttpInfo) | **POST** /1.0/instances/{name} | 
-[**postInstancesByNameBackups**](InstancesApi.md#postInstancesByNameBackups) | **POST** /1.0/instances/{name}/backups | 
-[**postInstancesByNameBackupsWithHttpInfo**](InstancesApi.md#postInstancesByNameBackupsWithHttpInfo) | **POST** /1.0/instances/{name}/backups | 
-[**postInstancesByNameBackupsByName**](InstancesApi.md#postInstancesByNameBackupsByName) | **POST** /1.0/instances/{name}/backups/{backupsName} | 
-[**postInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#postInstancesByNameBackupsByNameWithHttpInfo) | **POST** /1.0/instances/{name}/backups/{backupsName} | 
-[**postInstancesByNameConsole**](InstancesApi.md#postInstancesByNameConsole) | **POST** /1.0/instances/{name}/console | 
-[**postInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#postInstancesByNameConsoleWithHttpInfo) | **POST** /1.0/instances/{name}/console | 
-[**postInstancesByNameExec**](InstancesApi.md#postInstancesByNameExec) | **POST** /1.0/instances/{name}/exec | 
-[**postInstancesByNameExecWithHttpInfo**](InstancesApi.md#postInstancesByNameExecWithHttpInfo) | **POST** /1.0/instances/{name}/exec | 
-[**postInstancesByNameFiles**](InstancesApi.md#postInstancesByNameFiles) | **POST** /1.0/instances/{name}/files | 
-[**postInstancesByNameFilesWithHttpInfo**](InstancesApi.md#postInstancesByNameFilesWithHttpInfo) | **POST** /1.0/instances/{name}/files | 
-[**postInstancesByNameMetadataTemplates**](InstancesApi.md#postInstancesByNameMetadataTemplates) | **POST** /1.0/instances/{name}/metadata/templates | 
-[**postInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#postInstancesByNameMetadataTemplatesWithHttpInfo) | **POST** /1.0/instances/{name}/metadata/templates | 
-[**postInstancesByNameSnapshot**](InstancesApi.md#postInstancesByNameSnapshot) | **POST** /1.0/instances/{name}/snapshots | 
-[**postInstancesByNameSnapshotWithHttpInfo**](InstancesApi.md#postInstancesByNameSnapshotWithHttpInfo) | **POST** /1.0/instances/{name}/snapshots | 
-[**postInstancesByNameSnapshotsInformation**](InstancesApi.md#postInstancesByNameSnapshotsInformation) | **POST** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**postInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#postInstancesByNameSnapshotsInformationWithHttpInfo) | **POST** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**putInstancesByName**](InstancesApi.md#putInstancesByName) | **PUT** /1.0/instances/{name} | 
-[**putInstancesByNameWithHttpInfo**](InstancesApi.md#putInstancesByNameWithHttpInfo) | **PUT** /1.0/instances/{name} | 
-[**putInstancesByNameMetadata**](InstancesApi.md#putInstancesByNameMetadata) | **PUT** /1.0/instances/{name}/metadata | 
-[**putInstancesByNameMetadataWithHttpInfo**](InstancesApi.md#putInstancesByNameMetadataWithHttpInfo) | **PUT** /1.0/instances/{name}/metadata | 
-[**putInstancesByNameMetadataTemplates**](InstancesApi.md#putInstancesByNameMetadataTemplates) | **PUT** /1.0/instances/{name}/metadata/templates | 
-[**putInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#putInstancesByNameMetadataTemplatesWithHttpInfo) | **PUT** /1.0/instances/{name}/metadata/templates | 
-[**putInstancesByNameSnapshotsInformation**](InstancesApi.md#putInstancesByNameSnapshotsInformation) | **PUT** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**putInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#putInstancesByNameSnapshotsInformationWithHttpInfo) | **PUT** /1.0/instances/{name}/snapshots/{snapshotName} | 
-[**putInstancesByNameState**](InstancesApi.md#putInstancesByNameState) | **PUT** /1.0/instances/{name}/state | 
-[**putInstancesByNameStateWithHttpInfo**](InstancesApi.md#putInstancesByNameStateWithHttpInfo) | **PUT** /1.0/instances/{name}/state | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteInstancesByName**](InstancesApi.md#deleteInstancesByName) | **DELETE** /1.0/instances/{name} |  |
+| [**deleteInstancesByNameWithHttpInfo**](InstancesApi.md#deleteInstancesByNameWithHttpInfo) | **DELETE** /1.0/instances/{name} |  |
+| [**deleteInstancesByNameBackupsByName**](InstancesApi.md#deleteInstancesByNameBackupsByName) | **DELETE** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**deleteInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#deleteInstancesByNameBackupsByNameWithHttpInfo) | **DELETE** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**deleteInstancesByNameConsole**](InstancesApi.md#deleteInstancesByNameConsole) | **DELETE** /1.0/instances/{name}/console |  |
+| [**deleteInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#deleteInstancesByNameConsoleWithHttpInfo) | **DELETE** /1.0/instances/{name}/console |  |
+| [**deleteInstancesByNameFiles**](InstancesApi.md#deleteInstancesByNameFiles) | **DELETE** /1.0/instances/{name}/files |  |
+| [**deleteInstancesByNameFilesWithHttpInfo**](InstancesApi.md#deleteInstancesByNameFilesWithHttpInfo) | **DELETE** /1.0/instances/{name}/files |  |
+| [**deleteInstancesByNameLogsFile**](InstancesApi.md#deleteInstancesByNameLogsFile) | **DELETE** /1.0/instances/{name}/logs/{logFile} |  |
+| [**deleteInstancesByNameLogsFileWithHttpInfo**](InstancesApi.md#deleteInstancesByNameLogsFileWithHttpInfo) | **DELETE** /1.0/instances/{name}/logs/{logFile} |  |
+| [**deleteInstancesByNameMetadataTemplates**](InstancesApi.md#deleteInstancesByNameMetadataTemplates) | **DELETE** /1.0/instances/{name}/metadata/templates |  |
+| [**deleteInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#deleteInstancesByNameMetadataTemplatesWithHttpInfo) | **DELETE** /1.0/instances/{name}/metadata/templates |  |
+| [**deleteInstancesByNameSnapshotsInformation**](InstancesApi.md#deleteInstancesByNameSnapshotsInformation) | **DELETE** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**deleteInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#deleteInstancesByNameSnapshotsInformationWithHttpInfo) | **DELETE** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**getInstances**](InstancesApi.md#getInstances) | **GET** /1.0/instances |  |
+| [**getInstancesWithHttpInfo**](InstancesApi.md#getInstancesWithHttpInfo) | **GET** /1.0/instances |  |
+| [**getInstancesByName**](InstancesApi.md#getInstancesByName) | **GET** /1.0/instances/{name} |  |
+| [**getInstancesByNameWithHttpInfo**](InstancesApi.md#getInstancesByNameWithHttpInfo) | **GET** /1.0/instances/{name} |  |
+| [**getInstancesByNameBackups**](InstancesApi.md#getInstancesByNameBackups) | **GET** /1.0/instances/{name}/backups |  |
+| [**getInstancesByNameBackupsWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsWithHttpInfo) | **GET** /1.0/instances/{name}/backups |  |
+| [**getInstancesByNameBackupsByName**](InstancesApi.md#getInstancesByNameBackupsByName) | **GET** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**getInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsByNameWithHttpInfo) | **GET** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**getInstancesByNameBackupsByNameExport**](InstancesApi.md#getInstancesByNameBackupsByNameExport) | **GET** /1.0/instances/{name}/backups/{backupsName}/export |  |
+| [**getInstancesByNameBackupsByNameExportWithHttpInfo**](InstancesApi.md#getInstancesByNameBackupsByNameExportWithHttpInfo) | **GET** /1.0/instances/{name}/backups/{backupsName}/export |  |
+| [**getInstancesByNameConsole**](InstancesApi.md#getInstancesByNameConsole) | **GET** /1.0/instances/{name}/console |  |
+| [**getInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#getInstancesByNameConsoleWithHttpInfo) | **GET** /1.0/instances/{name}/console |  |
+| [**getInstancesByNameFiles**](InstancesApi.md#getInstancesByNameFiles) | **GET** /1.0/instances/{name}/files |  |
+| [**getInstancesByNameFilesWithHttpInfo**](InstancesApi.md#getInstancesByNameFilesWithHttpInfo) | **GET** /1.0/instances/{name}/files |  |
+| [**getInstancesByNameLogs**](InstancesApi.md#getInstancesByNameLogs) | **GET** /1.0/instances/{name}/logs |  |
+| [**getInstancesByNameLogsWithHttpInfo**](InstancesApi.md#getInstancesByNameLogsWithHttpInfo) | **GET** /1.0/instances/{name}/logs |  |
+| [**getInstancesByNameLogsFile**](InstancesApi.md#getInstancesByNameLogsFile) | **GET** /1.0/instances/{name}/logs/{logFile} |  |
+| [**getInstancesByNameLogsFileWithHttpInfo**](InstancesApi.md#getInstancesByNameLogsFileWithHttpInfo) | **GET** /1.0/instances/{name}/logs/{logFile} |  |
+| [**getInstancesByNameMetadata**](InstancesApi.md#getInstancesByNameMetadata) | **GET** /1.0/instances/{name}/metadata |  |
+| [**getInstancesByNameMetadataWithHttpInfo**](InstancesApi.md#getInstancesByNameMetadataWithHttpInfo) | **GET** /1.0/instances/{name}/metadata |  |
+| [**getInstancesByNameMetadataTemplates**](InstancesApi.md#getInstancesByNameMetadataTemplates) | **GET** /1.0/instances/{name}/metadata/templates |  |
+| [**getInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#getInstancesByNameMetadataTemplatesWithHttpInfo) | **GET** /1.0/instances/{name}/metadata/templates |  |
+| [**getInstancesByNameSnapshots**](InstancesApi.md#getInstancesByNameSnapshots) | **GET** /1.0/instances/{name}/snapshots |  |
+| [**getInstancesByNameSnapshotsWithHttpInfo**](InstancesApi.md#getInstancesByNameSnapshotsWithHttpInfo) | **GET** /1.0/instances/{name}/snapshots |  |
+| [**getInstancesByNameSnapshotsInformation**](InstancesApi.md#getInstancesByNameSnapshotsInformation) | **GET** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**getInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#getInstancesByNameSnapshotsInformationWithHttpInfo) | **GET** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**getInstancesByNameState**](InstancesApi.md#getInstancesByNameState) | **GET** /1.0/instances/{name}/state |  |
+| [**getInstancesByNameStateWithHttpInfo**](InstancesApi.md#getInstancesByNameStateWithHttpInfo) | **GET** /1.0/instances/{name}/state |  |
+| [**patchInstancesByName**](InstancesApi.md#patchInstancesByName) | **PATCH** /1.0/instances/{name} |  |
+| [**patchInstancesByNameWithHttpInfo**](InstancesApi.md#patchInstancesByNameWithHttpInfo) | **PATCH** /1.0/instances/{name} |  |
+| [**postInstances**](InstancesApi.md#postInstances) | **POST** /1.0/instances |  |
+| [**postInstancesWithHttpInfo**](InstancesApi.md#postInstancesWithHttpInfo) | **POST** /1.0/instances |  |
+| [**postInstancesByName**](InstancesApi.md#postInstancesByName) | **POST** /1.0/instances/{name} |  |
+| [**postInstancesByNameWithHttpInfo**](InstancesApi.md#postInstancesByNameWithHttpInfo) | **POST** /1.0/instances/{name} |  |
+| [**postInstancesByNameBackups**](InstancesApi.md#postInstancesByNameBackups) | **POST** /1.0/instances/{name}/backups |  |
+| [**postInstancesByNameBackupsWithHttpInfo**](InstancesApi.md#postInstancesByNameBackupsWithHttpInfo) | **POST** /1.0/instances/{name}/backups |  |
+| [**postInstancesByNameBackupsByName**](InstancesApi.md#postInstancesByNameBackupsByName) | **POST** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**postInstancesByNameBackupsByNameWithHttpInfo**](InstancesApi.md#postInstancesByNameBackupsByNameWithHttpInfo) | **POST** /1.0/instances/{name}/backups/{backupsName} |  |
+| [**postInstancesByNameConsole**](InstancesApi.md#postInstancesByNameConsole) | **POST** /1.0/instances/{name}/console |  |
+| [**postInstancesByNameConsoleWithHttpInfo**](InstancesApi.md#postInstancesByNameConsoleWithHttpInfo) | **POST** /1.0/instances/{name}/console |  |
+| [**postInstancesByNameExec**](InstancesApi.md#postInstancesByNameExec) | **POST** /1.0/instances/{name}/exec |  |
+| [**postInstancesByNameExecWithHttpInfo**](InstancesApi.md#postInstancesByNameExecWithHttpInfo) | **POST** /1.0/instances/{name}/exec |  |
+| [**postInstancesByNameFiles**](InstancesApi.md#postInstancesByNameFiles) | **POST** /1.0/instances/{name}/files |  |
+| [**postInstancesByNameFilesWithHttpInfo**](InstancesApi.md#postInstancesByNameFilesWithHttpInfo) | **POST** /1.0/instances/{name}/files |  |
+| [**postInstancesByNameMetadataTemplates**](InstancesApi.md#postInstancesByNameMetadataTemplates) | **POST** /1.0/instances/{name}/metadata/templates |  |
+| [**postInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#postInstancesByNameMetadataTemplatesWithHttpInfo) | **POST** /1.0/instances/{name}/metadata/templates |  |
+| [**postInstancesByNameSnapshot**](InstancesApi.md#postInstancesByNameSnapshot) | **POST** /1.0/instances/{name}/snapshots |  |
+| [**postInstancesByNameSnapshotWithHttpInfo**](InstancesApi.md#postInstancesByNameSnapshotWithHttpInfo) | **POST** /1.0/instances/{name}/snapshots |  |
+| [**postInstancesByNameSnapshotsInformation**](InstancesApi.md#postInstancesByNameSnapshotsInformation) | **POST** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**postInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#postInstancesByNameSnapshotsInformationWithHttpInfo) | **POST** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**putInstancesByName**](InstancesApi.md#putInstancesByName) | **PUT** /1.0/instances/{name} |  |
+| [**putInstancesByNameWithHttpInfo**](InstancesApi.md#putInstancesByNameWithHttpInfo) | **PUT** /1.0/instances/{name} |  |
+| [**putInstancesByNameMetadata**](InstancesApi.md#putInstancesByNameMetadata) | **PUT** /1.0/instances/{name}/metadata |  |
+| [**putInstancesByNameMetadataWithHttpInfo**](InstancesApi.md#putInstancesByNameMetadataWithHttpInfo) | **PUT** /1.0/instances/{name}/metadata |  |
+| [**putInstancesByNameMetadataTemplates**](InstancesApi.md#putInstancesByNameMetadataTemplates) | **PUT** /1.0/instances/{name}/metadata/templates |  |
+| [**putInstancesByNameMetadataTemplatesWithHttpInfo**](InstancesApi.md#putInstancesByNameMetadataTemplatesWithHttpInfo) | **PUT** /1.0/instances/{name}/metadata/templates |  |
+| [**putInstancesByNameSnapshotsInformation**](InstancesApi.md#putInstancesByNameSnapshotsInformation) | **PUT** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**putInstancesByNameSnapshotsInformationWithHttpInfo**](InstancesApi.md#putInstancesByNameSnapshotsInformationWithHttpInfo) | **PUT** /1.0/instances/{name}/snapshots/{snapshotName} |  |
+| [**putInstancesByNameState**](InstancesApi.md#putInstancesByNameState) | **PUT** /1.0/instances/{name}/state |  |
+| [**putInstancesByNameStateWithHttpInfo**](InstancesApi.md#putInstancesByNameStateWithHttpInfo) | **PUT** /1.0/instances/{name}/state |  |
 
 
 
@@ -93,11 +93,11 @@ Remove the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -124,9 +124,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
 
 ### Return type
 
@@ -161,12 +161,12 @@ Remove the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -202,9 +202,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
 
 ### Return type
 
@@ -240,11 +240,11 @@ Remove the backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -272,10 +272,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
 
 ### Return type
 
@@ -310,12 +310,12 @@ Remove the backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -352,10 +352,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
 
 ### Return type
 
@@ -391,11 +391,11 @@ Empty the instance&#39;s console log
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -421,9 +421,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
 
 ### Return type
 
@@ -458,12 +458,12 @@ Empty the instance&#39;s console log
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -498,9 +498,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
 
 ### Return type
 
@@ -536,11 +536,11 @@ Delete a file in the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -568,10 +568,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| directory listing from the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| directory listing from the instance | [optional] |
 
 ### Return type
 
@@ -606,12 +606,12 @@ Delete a file in the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -648,10 +648,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| directory listing from the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| directory listing from the instance | [optional] |
 
 ### Return type
 
@@ -687,11 +687,11 @@ Delete a particular log file.
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -719,10 +719,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **logFile** | **String**| Instance log file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **logFile** | **String**| Instance log file | |
 
 ### Return type
 
@@ -757,12 +757,12 @@ Delete a particular log file.
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -799,10 +799,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **logFile** | **String**| Instance log file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **logFile** | **String**| Instance log file | |
 
 ### Return type
 
@@ -838,11 +838,11 @@ Delete an instance template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -870,10 +870,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
 
 ### Return type
 
@@ -908,12 +908,12 @@ Delete an instance template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -950,10 +950,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
 
 ### Return type
 
@@ -989,11 +989,11 @@ Remove the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1021,10 +1021,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
 
 ### Return type
 
@@ -1059,12 +1059,12 @@ Remove the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1101,10 +1101,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
 
 ### Return type
 
@@ -1140,11 +1140,11 @@ Return a list of URLs for instances this server hosts
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1172,10 +1172,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1210,12 +1210,12 @@ Return a list of URLs for instances this server hosts
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1252,10 +1252,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1291,11 +1291,11 @@ Get Instance information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1324,11 +1324,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1363,12 +1363,12 @@ Get Instance information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1406,11 +1406,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1446,11 +1446,11 @@ List of backups for the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1479,11 +1479,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1518,12 +1518,12 @@ List of backups for the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1561,11 +1561,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1601,11 +1601,11 @@ Backup information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1635,12 +1635,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1675,12 +1675,12 @@ Backup information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1719,12 +1719,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1760,11 +1760,11 @@ Fetch the backup tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1794,12 +1794,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1834,12 +1834,12 @@ Fetch the backup tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1878,12 +1878,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1919,11 +1919,11 @@ Returns the contents of the instance&#39;s console log
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1952,11 +1952,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1991,12 +1991,12 @@ Returns the contents of the instance&#39;s console log
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2034,11 +2034,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2074,11 +2074,11 @@ Download a file or directory listing from the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2112,16 +2112,16 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **path** | **String**| directory listing from the instance | [optional]
- **xLXDUid** | **Integer**|  | [optional]
- **xLXDGid** | **Integer**|  | [optional]
- **xLXDMode** | **Integer**|  | [optional]
- **xLXDType** | **UUID**| one of directory or file | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **path** | **String**| directory listing from the instance | [optional] |
+| **xLXDUid** | **Integer**|  | [optional] |
+| **xLXDGid** | **Integer**|  | [optional] |
+| **xLXDMode** | **Integer**|  | [optional] |
+| **xLXDType** | **UUID**| one of directory or file | [optional] |
 
 ### Return type
 
@@ -2156,12 +2156,12 @@ Download a file or directory listing from the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2204,16 +2204,16 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **path** | **String**| directory listing from the instance | [optional]
- **xLXDUid** | **Integer**|  | [optional]
- **xLXDGid** | **Integer**|  | [optional]
- **xLXDMode** | **Integer**|  | [optional]
- **xLXDType** | **UUID**| one of directory or file | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **path** | **String**| directory listing from the instance | [optional] |
+| **xLXDUid** | **Integer**|  | [optional] |
+| **xLXDGid** | **Integer**|  | [optional] |
+| **xLXDMode** | **Integer**|  | [optional] |
+| **xLXDType** | **UUID**| one of directory or file | [optional] |
 
 ### Return type
 
@@ -2249,11 +2249,11 @@ Returns a list of the log files available for this instance. Note that this work
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2282,11 +2282,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2321,12 +2321,12 @@ Returns a list of the log files available for this instance. Note that this work
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2364,11 +2364,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2404,11 +2404,11 @@ Returns the contents of a particular log file.
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2438,12 +2438,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **logFile** | **String**| Instance log file |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **logFile** | **String**| Instance log file | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2478,12 +2478,12 @@ Returns the contents of a particular log file.
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2522,12 +2522,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **logFile** | **String**| Instance log file |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **logFile** | **String**| Instance log file | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2563,11 +2563,11 @@ Instance metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2596,11 +2596,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2635,12 +2635,12 @@ Instance metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2678,11 +2678,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2718,11 +2718,11 @@ List instance templates
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2752,12 +2752,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **path** | **String**| Template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **path** | **String**| Template | [optional] |
 
 ### Return type
 
@@ -2792,12 +2792,12 @@ List instance templates
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2836,12 +2836,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **path** | **String**| Template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **path** | **String**| Template | [optional] |
 
 ### Return type
 
@@ -2877,11 +2877,11 @@ List of snapshots
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2910,11 +2910,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -2949,12 +2949,12 @@ List of snapshots
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2992,11 +2992,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -3032,11 +3032,11 @@ Snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3066,12 +3066,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -3106,12 +3106,12 @@ Snapshot information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3150,12 +3150,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -3191,11 +3191,11 @@ Current state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3224,11 +3224,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -3263,12 +3263,12 @@ Current state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3306,11 +3306,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -3346,11 +3346,11 @@ Update instance configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3378,10 +3378,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**PatchInstancesByNameRequest**](PatchInstancesByNameRequest.md)| Update instance configuration | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**PatchInstancesByNameRequest**](PatchInstancesByNameRequest.md)| Update instance configuration | [optional] |
 
 ### Return type
 
@@ -3416,12 +3416,12 @@ Update instance configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3458,10 +3458,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**PatchInstancesByNameRequest**](PatchInstancesByNameRequest.md)| Update instance configuration | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**PatchInstancesByNameRequest**](PatchInstancesByNameRequest.md)| Update instance configuration | [optional] |
 
 ### Return type
 
@@ -3497,11 +3497,11 @@ Create a new instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3529,10 +3529,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional]
- **body** | [**CreateInstancesRequest**](CreateInstancesRequest.md)| Create a new instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional] |
+| **body** | [**CreateInstancesRequest**](CreateInstancesRequest.md)| Create a new instance | [optional] |
 
 ### Return type
 
@@ -3567,12 +3567,12 @@ Create a new instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3609,10 +3609,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional]
- **body** | [**CreateInstancesRequest**](CreateInstancesRequest.md)| Create a new instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional] |
+| **body** | [**CreateInstancesRequest**](CreateInstancesRequest.md)| Create a new instance | [optional] |
 
 ### Return type
 
@@ -3648,11 +3648,11 @@ Used to rename/migrate the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3681,11 +3681,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional]
- **body** | [**CreateInstancesByNameRequest**](CreateInstancesByNameRequest.md)| Used to rename/migrate the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional] |
+| **body** | [**CreateInstancesByNameRequest**](CreateInstancesByNameRequest.md)| Used to rename/migrate the instance | [optional] |
 
 ### Return type
 
@@ -3721,12 +3721,12 @@ Used to rename/migrate the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3764,11 +3764,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional]
- **body** | [**CreateInstancesByNameRequest**](CreateInstancesByNameRequest.md)| Used to rename/migrate the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **target** | **String**| ?target&#x3D;&lt;member&gt; | [optional] |
+| **body** | [**CreateInstancesByNameRequest**](CreateInstancesByNameRequest.md)| Used to rename/migrate the instance | [optional] |
 
 ### Return type
 
@@ -3805,11 +3805,11 @@ Create a new backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3837,10 +3837,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameBackupsRequest**](CreateInstancesByNameBackupsRequest.md)| Create a new backup | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameBackupsRequest**](CreateInstancesByNameBackupsRequest.md)| Create a new backup | [optional] |
 
 ### Return type
 
@@ -3875,12 +3875,12 @@ Create a new backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3917,10 +3917,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameBackupsRequest**](CreateInstancesByNameBackupsRequest.md)| Create a new backup | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameBackupsRequest**](CreateInstancesByNameBackupsRequest.md)| Create a new backup | [optional] |
 
 ### Return type
 
@@ -3956,11 +3956,11 @@ Used to rename the backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -3989,11 +3989,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **body** | [**CreateInstancesByNameBackupsByNameRequest**](CreateInstancesByNameBackupsByNameRequest.md)| Used to rename the backup | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **body** | [**CreateInstancesByNameBackupsByNameRequest**](CreateInstancesByNameBackupsByNameRequest.md)| Used to rename the backup | [optional] |
 
 ### Return type
 
@@ -4028,12 +4028,12 @@ Used to rename the backup
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4071,11 +4071,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **backupsName** | **String**| Backups name |
- **body** | [**CreateInstancesByNameBackupsByNameRequest**](CreateInstancesByNameBackupsByNameRequest.md)| Used to rename the backup | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **backupsName** | **String**| Backups name | |
+| **body** | [**CreateInstancesByNameBackupsByNameRequest**](CreateInstancesByNameBackupsByNameRequest.md)| Used to rename the backup | [optional] |
 
 ### Return type
 
@@ -4111,11 +4111,11 @@ Attach to an instance&#39;s console devices
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4143,10 +4143,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameConsoleRequest**](CreateInstancesByNameConsoleRequest.md)| Attach to an instance&#39;s console devices | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameConsoleRequest**](CreateInstancesByNameConsoleRequest.md)| Attach to an instance&#39;s console devices | [optional] |
 
 ### Return type
 
@@ -4181,12 +4181,12 @@ Attach to an instance&#39;s console devices
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4223,10 +4223,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameConsoleRequest**](CreateInstancesByNameConsoleRequest.md)| Attach to an instance&#39;s console devices | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameConsoleRequest**](CreateInstancesByNameConsoleRequest.md)| Attach to an instance&#39;s console devices | [optional] |
 
 ### Return type
 
@@ -4262,11 +4262,11 @@ Run a remote command
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4294,10 +4294,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameExecRequest**](CreateInstancesByNameExecRequest.md)| Run a remote command | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameExecRequest**](CreateInstancesByNameExecRequest.md)| Run a remote command | [optional] |
 
 ### Return type
 
@@ -4332,12 +4332,12 @@ Run a remote command
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4374,10 +4374,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameExecRequest**](CreateInstancesByNameExecRequest.md)| Run a remote command | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameExecRequest**](CreateInstancesByNameExecRequest.md)| Run a remote command | [optional] |
 
 ### Return type
 
@@ -4413,11 +4413,11 @@ Upload a file to the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4451,16 +4451,16 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| directory listing from the instance | [optional]
- **xLXDUid** | **Integer**|  | [optional]
- **xLXDGid** | **Integer**|  | [optional]
- **xLXDMode** | **Integer**|  | [optional]
- **xLXDWrite** | **UUID**| overwrite (or append) | [optional]
- **xLXDType** | **String**| one of directory or file or symlink | [optional]
- **body** | **File**| Upload a file to the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| directory listing from the instance | [optional] |
+| **xLXDUid** | **Integer**|  | [optional] |
+| **xLXDGid** | **Integer**|  | [optional] |
+| **xLXDMode** | **Integer**|  | [optional] |
+| **xLXDWrite** | **UUID**| overwrite (or append) | [optional] |
+| **xLXDType** | **String**| one of directory or file or symlink | [optional] |
+| **body** | **File**| Upload a file to the instance | [optional] |
 
 ### Return type
 
@@ -4473,7 +4473,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: image/_*
+- **Content-Type**: image/*
 - **Accept**: application/json
 
 ### HTTP response details
@@ -4495,12 +4495,12 @@ Upload a file to the instance
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4543,16 +4543,16 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| directory listing from the instance | [optional]
- **xLXDUid** | **Integer**|  | [optional]
- **xLXDGid** | **Integer**|  | [optional]
- **xLXDMode** | **Integer**|  | [optional]
- **xLXDWrite** | **UUID**| overwrite (or append) | [optional]
- **xLXDType** | **String**| one of directory or file or symlink | [optional]
- **body** | **File**| Upload a file to the instance | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| directory listing from the instance | [optional] |
+| **xLXDUid** | **Integer**|  | [optional] |
+| **xLXDGid** | **Integer**|  | [optional] |
+| **xLXDMode** | **Integer**|  | [optional] |
+| **xLXDWrite** | **UUID**| overwrite (or append) | [optional] |
+| **xLXDType** | **String**| one of directory or file or symlink | [optional] |
+| **body** | **File**| Upload a file to the instance | [optional] |
 
 ### Return type
 
@@ -4565,7 +4565,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: image/_*
+- **Content-Type**: image/*
 - **Accept**: application/json
 
 ### HTTP response details
@@ -4588,11 +4588,11 @@ Add a container template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4621,11 +4621,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
- **body** | **File**| Add a container template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
+| **body** | **File**| Add a container template | [optional] |
 
 ### Return type
 
@@ -4660,12 +4660,12 @@ Add a container template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4703,11 +4703,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
- **body** | **File**| Add a container template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
+| **body** | **File**| Add a container template | [optional] |
 
 ### Return type
 
@@ -4743,11 +4743,11 @@ Create a new snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4775,10 +4775,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameSnapshotRequest**](CreateInstancesByNameSnapshotRequest.md)| Create a new snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameSnapshotRequest**](CreateInstancesByNameSnapshotRequest.md)| Create a new snapshot | [optional] |
 
 ### Return type
 
@@ -4813,12 +4813,12 @@ Create a new snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4855,10 +4855,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**CreateInstancesByNameSnapshotRequest**](CreateInstancesByNameSnapshotRequest.md)| Create a new snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**CreateInstancesByNameSnapshotRequest**](CreateInstancesByNameSnapshotRequest.md)| Create a new snapshot | [optional] |
 
 ### Return type
 
@@ -4894,11 +4894,11 @@ Used to rename/migrate the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -4927,11 +4927,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **body** | [**CreateInstancesByNameSnapshotsInformationRequest**](CreateInstancesByNameSnapshotsInformationRequest.md)| Used to rename/migrate the snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **body** | [**CreateInstancesByNameSnapshotsInformationRequest**](CreateInstancesByNameSnapshotsInformationRequest.md)| Used to rename/migrate the snapshot | [optional] |
 
 ### Return type
 
@@ -4967,12 +4967,12 @@ Used to rename/migrate the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5010,11 +5010,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **body** | [**CreateInstancesByNameSnapshotsInformationRequest**](CreateInstancesByNameSnapshotsInformationRequest.md)| Used to rename/migrate the snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **body** | [**CreateInstancesByNameSnapshotsInformationRequest**](CreateInstancesByNameSnapshotsInformationRequest.md)| Used to rename/migrate the snapshot | [optional] |
 
 ### Return type
 
@@ -5051,11 +5051,11 @@ Replaces instance configuration or restore snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5083,10 +5083,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**UpdateInstancesByNameRequest**](UpdateInstancesByNameRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**UpdateInstancesByNameRequest**](UpdateInstancesByNameRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -5121,12 +5121,12 @@ Replaces instance configuration or restore snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5163,10 +5163,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**UpdateInstancesByNameRequest**](UpdateInstancesByNameRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**UpdateInstancesByNameRequest**](UpdateInstancesByNameRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -5202,11 +5202,11 @@ Replaces instance metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5234,10 +5234,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)| Replaces instance metadata | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)| Replaces instance metadata | [optional] |
 
 ### Return type
 
@@ -5272,12 +5272,12 @@ Replaces instance metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5314,10 +5314,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)| Replaces instance metadata | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**GetInstancesByNameMetadataResponse**](GetInstancesByNameMetadataResponse.md)| Replaces instance metadata | [optional] |
 
 ### Return type
 
@@ -5353,11 +5353,11 @@ Replace content of a template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5386,11 +5386,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
- **body** | **File**| Replace content of a template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
+| **body** | **File**| Replace content of a template | [optional] |
 
 ### Return type
 
@@ -5425,12 +5425,12 @@ Replace content of a template
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5468,11 +5468,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **path** | **String**| Template |
- **body** | **File**| Replace content of a template | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **path** | **String**| Template | |
+| **body** | **File**| Replace content of a template | [optional] |
 
 ### Return type
 
@@ -5508,11 +5508,11 @@ Update the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5541,11 +5541,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **body** | [**UpdateInstancesByNameSnapshotsInformationRequest**](UpdateInstancesByNameSnapshotsInformationRequest.md)| Update the snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **body** | [**UpdateInstancesByNameSnapshotsInformationRequest**](UpdateInstancesByNameSnapshotsInformationRequest.md)| Update the snapshot | [optional] |
 
 ### Return type
 
@@ -5580,12 +5580,12 @@ Update the snapshot
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5623,11 +5623,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **snapshotName** | **String**| Snapshot name |
- **body** | [**UpdateInstancesByNameSnapshotsInformationRequest**](UpdateInstancesByNameSnapshotsInformationRequest.md)| Update the snapshot | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **snapshotName** | **String**| Snapshot name | |
+| **body** | [**UpdateInstancesByNameSnapshotsInformationRequest**](UpdateInstancesByNameSnapshotsInformationRequest.md)| Update the snapshot | [optional] |
 
 ### Return type
 
@@ -5663,11 +5663,11 @@ Change the instance state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5695,10 +5695,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**UpdateInstancesByNameStateRequest**](UpdateInstancesByNameStateRequest.md)| Change the instance state | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**UpdateInstancesByNameStateRequest**](UpdateInstancesByNameStateRequest.md)| Change the instance state | [optional] |
 
 ### Return type
 
@@ -5733,12 +5733,12 @@ Change the instance state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.InstancesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.InstancesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -5775,10 +5775,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Instance name |
- **body** | [**UpdateInstancesByNameStateRequest**](UpdateInstancesByNameStateRequest.md)| Change the instance state | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Instance name | |
+| **body** | [**UpdateInstancesByNameStateRequest**](UpdateInstancesByNameStateRequest.md)| Change the instance state | [optional] |
 
 ### Return type
 

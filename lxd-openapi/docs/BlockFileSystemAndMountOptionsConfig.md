@@ -5,11 +5,11 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**blockFilesystem** | **String** |  |  [optional]
-**blockMountOptions** | **String** |  |  [optional]
-**size** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**blockFilesystem** | **String** |  |  [optional] |
+|**blockMountOptions** | **String** |  |  [optional] |
+|**size** | **String** |  |  [optional] |
 
 
 

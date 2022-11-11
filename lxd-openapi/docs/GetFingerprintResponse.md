@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**metadata** | [**GetFingerprintResponseMetadata**](GetFingerprintResponseMetadata.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**metadata** | [**GetFingerprintResponseMetadata**](GetFingerprintResponseMetadata.md) |  |  [optional] |
 
 
 

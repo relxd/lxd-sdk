@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**usage** | **BigDecimal** |  |  [optional]
-**usagePeak** | **BigDecimal** |  |  [optional]
-**swapUsage** | **BigDecimal** |  |  [optional]
-**swapUsagePeak** | **BigDecimal** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**usage** | **BigDecimal** |  |  [optional] |
+|**usagePeak** | **BigDecimal** |  |  [optional] |
+|**swapUsage** | **BigDecimal** |  |  [optional] |
+|**swapUsagePeak** | **BigDecimal** |  |  [optional] |
 
 
 

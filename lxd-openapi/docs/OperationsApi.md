@@ -2,18 +2,18 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteOperationsUUID**](OperationsApi.md#deleteOperationsUUID) | **DELETE** /1.0/operations/{uuid} | 
-[**deleteOperationsUUIDWithHttpInfo**](OperationsApi.md#deleteOperationsUUIDWithHttpInfo) | **DELETE** /1.0/operations/{uuid} | 
-[**getOperations**](OperationsApi.md#getOperations) | **GET** /1.0/operations | 
-[**getOperationsWithHttpInfo**](OperationsApi.md#getOperationsWithHttpInfo) | **GET** /1.0/operations | 
-[**getOperationsUUID**](OperationsApi.md#getOperationsUUID) | **GET** /1.0/operations/{uuid} | 
-[**getOperationsUUIDWithHttpInfo**](OperationsApi.md#getOperationsUUIDWithHttpInfo) | **GET** /1.0/operations/{uuid} | 
-[**getOperationsUUIDWait**](OperationsApi.md#getOperationsUUIDWait) | **GET** /1.0/operations/{uuid}/wait | 
-[**getOperationsUUIDWaitWithHttpInfo**](OperationsApi.md#getOperationsUUIDWaitWithHttpInfo) | **GET** /1.0/operations/{uuid}/wait | 
-[**getOperationsUUIDWebsocket**](OperationsApi.md#getOperationsUUIDWebsocket) | **GET** /1.0/operations/{uuid}/websocket | 
-[**getOperationsUUIDWebsocketWithHttpInfo**](OperationsApi.md#getOperationsUUIDWebsocketWithHttpInfo) | **GET** /1.0/operations/{uuid}/websocket | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteOperationsUUID**](OperationsApi.md#deleteOperationsUUID) | **DELETE** /1.0/operations/{uuid} |  |
+| [**deleteOperationsUUIDWithHttpInfo**](OperationsApi.md#deleteOperationsUUIDWithHttpInfo) | **DELETE** /1.0/operations/{uuid} |  |
+| [**getOperations**](OperationsApi.md#getOperations) | **GET** /1.0/operations |  |
+| [**getOperationsWithHttpInfo**](OperationsApi.md#getOperationsWithHttpInfo) | **GET** /1.0/operations |  |
+| [**getOperationsUUID**](OperationsApi.md#getOperationsUUID) | **GET** /1.0/operations/{uuid} |  |
+| [**getOperationsUUIDWithHttpInfo**](OperationsApi.md#getOperationsUUIDWithHttpInfo) | **GET** /1.0/operations/{uuid} |  |
+| [**getOperationsUUIDWait**](OperationsApi.md#getOperationsUUIDWait) | **GET** /1.0/operations/{uuid}/wait |  |
+| [**getOperationsUUIDWaitWithHttpInfo**](OperationsApi.md#getOperationsUUIDWaitWithHttpInfo) | **GET** /1.0/operations/{uuid}/wait |  |
+| [**getOperationsUUIDWebsocket**](OperationsApi.md#getOperationsUUIDWebsocket) | **GET** /1.0/operations/{uuid}/websocket |  |
+| [**getOperationsUUIDWebsocketWithHttpInfo**](OperationsApi.md#getOperationsUUIDWebsocketWithHttpInfo) | **GET** /1.0/operations/{uuid}/websocket |  |
 
 
 
@@ -29,11 +29,11 @@ Cancel an operation. Calling this will change the state to \&quot;cancelling\&qu
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -60,9 +60,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
 
 ### Return type
 
@@ -97,12 +97,12 @@ Cancel an operation. Calling this will change the state to \&quot;cancelling\&qu
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -138,9 +138,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
 
 ### Return type
 
@@ -176,11 +176,11 @@ List of operations
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -208,10 +208,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -246,12 +246,12 @@ List of operations
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -288,10 +288,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -327,11 +327,11 @@ Background operation
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -360,11 +360,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -399,12 +399,12 @@ Background operation
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -442,11 +442,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -482,11 +482,11 @@ Wait for an operation to finish
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -516,12 +516,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **timeout** | **BigDecimal**| timeout | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **timeout** | **BigDecimal**| timeout | [optional] |
 
 ### Return type
 
@@ -556,12 +556,12 @@ Wait for an operation to finish
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -600,12 +600,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **timeout** | **BigDecimal**| timeout | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **timeout** | **BigDecimal**| timeout | [optional] |
 
 ### Return type
 
@@ -641,11 +641,11 @@ No authorization required
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -675,12 +675,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **secret** | **String**| secret |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **secret** | **String**| secret | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -715,12 +715,12 @@ No authorization required
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.OperationsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.OperationsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -759,12 +759,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**| UUID |
- **secret** | **String**| secret |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **uuid** | **String**| UUID | |
+| **secret** | **String**| secret | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 

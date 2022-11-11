@@ -2,22 +2,22 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteProfilesByName**](ProfilesApi.md#deleteProfilesByName) | **DELETE** /1.0/profiles/{name} | 
-[**deleteProfilesByNameWithHttpInfo**](ProfilesApi.md#deleteProfilesByNameWithHttpInfo) | **DELETE** /1.0/profiles/{name} | 
-[**getProfiles**](ProfilesApi.md#getProfiles) | **GET** /1.0/profiles | 
-[**getProfilesWithHttpInfo**](ProfilesApi.md#getProfilesWithHttpInfo) | **GET** /1.0/profiles | 
-[**getProfilesByName**](ProfilesApi.md#getProfilesByName) | **GET** /1.0/profiles/{name} | 
-[**getProfilesByNameWithHttpInfo**](ProfilesApi.md#getProfilesByNameWithHttpInfo) | **GET** /1.0/profiles/{name} | 
-[**patchProfilesByName**](ProfilesApi.md#patchProfilesByName) | **PATCH** /1.0/profiles/{name} | 
-[**patchProfilesByNameWithHttpInfo**](ProfilesApi.md#patchProfilesByNameWithHttpInfo) | **PATCH** /1.0/profiles/{name} | 
-[**postProfiles**](ProfilesApi.md#postProfiles) | **POST** /1.0/profiles | 
-[**postProfilesWithHttpInfo**](ProfilesApi.md#postProfilesWithHttpInfo) | **POST** /1.0/profiles | 
-[**postProfilesByName**](ProfilesApi.md#postProfilesByName) | **POST** /1.0/profiles/{name} | 
-[**postProfilesByNameWithHttpInfo**](ProfilesApi.md#postProfilesByNameWithHttpInfo) | **POST** /1.0/profiles/{name} | 
-[**putProfilesByName**](ProfilesApi.md#putProfilesByName) | **PUT** /1.0/profiles/{name} | 
-[**putProfilesByNameWithHttpInfo**](ProfilesApi.md#putProfilesByNameWithHttpInfo) | **PUT** /1.0/profiles/{name} | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteProfilesByName**](ProfilesApi.md#deleteProfilesByName) | **DELETE** /1.0/profiles/{name} |  |
+| [**deleteProfilesByNameWithHttpInfo**](ProfilesApi.md#deleteProfilesByNameWithHttpInfo) | **DELETE** /1.0/profiles/{name} |  |
+| [**getProfiles**](ProfilesApi.md#getProfiles) | **GET** /1.0/profiles |  |
+| [**getProfilesWithHttpInfo**](ProfilesApi.md#getProfilesWithHttpInfo) | **GET** /1.0/profiles |  |
+| [**getProfilesByName**](ProfilesApi.md#getProfilesByName) | **GET** /1.0/profiles/{name} |  |
+| [**getProfilesByNameWithHttpInfo**](ProfilesApi.md#getProfilesByNameWithHttpInfo) | **GET** /1.0/profiles/{name} |  |
+| [**patchProfilesByName**](ProfilesApi.md#patchProfilesByName) | **PATCH** /1.0/profiles/{name} |  |
+| [**patchProfilesByNameWithHttpInfo**](ProfilesApi.md#patchProfilesByNameWithHttpInfo) | **PATCH** /1.0/profiles/{name} |  |
+| [**postProfiles**](ProfilesApi.md#postProfiles) | **POST** /1.0/profiles |  |
+| [**postProfilesWithHttpInfo**](ProfilesApi.md#postProfilesWithHttpInfo) | **POST** /1.0/profiles |  |
+| [**postProfilesByName**](ProfilesApi.md#postProfilesByName) | **POST** /1.0/profiles/{name} |  |
+| [**postProfilesByNameWithHttpInfo**](ProfilesApi.md#postProfilesByNameWithHttpInfo) | **POST** /1.0/profiles/{name} |  |
+| [**putProfilesByName**](ProfilesApi.md#putProfilesByName) | **PUT** /1.0/profiles/{name} |  |
+| [**putProfilesByNameWithHttpInfo**](ProfilesApi.md#putProfilesByNameWithHttpInfo) | **PUT** /1.0/profiles/{name} |  |
 
 
 
@@ -33,11 +33,11 @@ Remove a profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -64,9 +64,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
 
 ### Return type
 
@@ -101,12 +101,12 @@ Remove a profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -142,9 +142,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
 
 ### Return type
 
@@ -180,11 +180,11 @@ List of configuration profiles
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -212,10 +212,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -250,12 +250,12 @@ List of configuration profiles
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -292,10 +292,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -331,11 +331,11 @@ Profile configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -364,11 +364,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -403,12 +403,12 @@ Profile configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -446,11 +446,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -486,11 +486,11 @@ Update the profile information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -518,10 +518,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Update the profile information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Update the profile information | [optional] |
 
 ### Return type
 
@@ -556,12 +556,12 @@ Update the profile information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -598,10 +598,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Update the profile information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Update the profile information | [optional] |
 
 ### Return type
 
@@ -637,11 +637,11 @@ Define a new profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -668,9 +668,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateProfilesRequest**](CreateProfilesRequest.md)| Define a new profile | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateProfilesRequest**](CreateProfilesRequest.md)| Define a new profile | [optional] |
 
 ### Return type
 
@@ -705,12 +705,12 @@ Define a new profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -746,9 +746,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateProfilesRequest**](CreateProfilesRequest.md)| Define a new profile | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateProfilesRequest**](CreateProfilesRequest.md)| Define a new profile | [optional] |
 
 ### Return type
 
@@ -784,11 +784,11 @@ Rename a profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -816,10 +816,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**CreateProfilesByNameRequest**](CreateProfilesByNameRequest.md)| Rename a profile | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**CreateProfilesByNameRequest**](CreateProfilesByNameRequest.md)| Rename a profile | [optional] |
 
 ### Return type
 
@@ -855,12 +855,12 @@ Rename a profile
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -897,10 +897,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**CreateProfilesByNameRequest**](CreateProfilesByNameRequest.md)| Rename a profile | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**CreateProfilesByNameRequest**](CreateProfilesByNameRequest.md)| Rename a profile | [optional] |
 
 ### Return type
 
@@ -937,11 +937,11 @@ Replace the profile information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -969,10 +969,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Replace the profile information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Replace the profile information | [optional] |
 
 ### Return type
 
@@ -1007,12 +1007,12 @@ Replace the profile information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProfilesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProfilesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1049,10 +1049,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Profiles name |
- **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Replace the profile information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Profiles name | |
+| **body** | [**UpdateProfilesByNameRequest**](UpdateProfilesByNameRequest.md)| Replace the profile information | [optional] |
 
 ### Return type
 

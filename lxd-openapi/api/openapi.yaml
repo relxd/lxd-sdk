@@ -48,10 +48,10 @@ paths:
       description: List of supported APIs
       operationId: getApiList
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -59,12 +59,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -109,10 +109,10 @@ paths:
       description: Server configuration and environment information
       operationId: getServerState
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -120,12 +120,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -173,7 +173,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateServerStateRequest'
-        description: Updates only the listed keys, rest remains intact
+        description: "Updates only the listed keys, rest remains intact"
       responses:
         "200":
           content:
@@ -207,6 +207,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replaces the server configuration or other properties
       operationId: putServerState
@@ -249,15 +250,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/certificates:
     get:
       description: Return a list of trusted certificates
       operationId: getCertificates
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -265,12 +267,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -352,6 +354,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/certificates/{fingerprint}:
     delete:
       description: Remove a trusted certificate
@@ -489,6 +492,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replaces the certificate properties
       operationId: putFingerprint
@@ -540,15 +544,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances:
     get:
       description: Return a list of URLs for instances this server hosts
       operationId: getInstances
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -556,12 +561,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -648,6 +653,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}:
     delete:
       description: Remove the instance
@@ -705,10 +711,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -716,12 +722,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -809,6 +815,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Used to rename/migrate the instance
       operationId: postInstancesByName
@@ -873,6 +880,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replaces instance configuration or restore snapshot
       operationId: putInstancesByName
@@ -923,6 +931,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/console:
     delete:
       description: Empty the instance's console log
@@ -973,10 +982,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -984,12 +993,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -1073,6 +1082,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/exec:
     post:
       description: Run a remote command
@@ -1121,6 +1131,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/files:
     delete:
       description: Delete a file in the instance
@@ -1187,10 +1198,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -1198,12 +1209,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -1390,6 +1401,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: image/*
       x-accepts: application/json
+      x-content-type: image/*
   /1.0/instances/{name}/snapshots:
     get:
       description: List of snapshots
@@ -1403,10 +1415,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -1414,12 +1426,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -1510,6 +1522,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/snapshots/{snapshotName}:
     delete:
       description: Remove the snapshot
@@ -1583,10 +1596,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -1594,12 +1607,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -1702,6 +1715,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Update the snapshot
       operationId: putInstancesByNameSnapshotsInformation
@@ -1761,6 +1775,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/state:
     get:
       description: Current state
@@ -1774,10 +1789,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -1785,12 +1800,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -1878,6 +1893,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/logs:
     get:
       description: Returns a list of the log files available for this instance. Note
@@ -1893,10 +1909,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -1904,12 +1920,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2022,10 +2038,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2033,12 +2049,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2091,10 +2107,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2102,12 +2118,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2195,6 +2211,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/metadata/templates:
     delete:
       description: Delete an instance template
@@ -2260,10 +2277,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2271,12 +2288,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2384,6 +2401,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: file
       x-accepts: application/json
+      x-content-type: file
     put:
       description: Replace content of a template
       operationId: putInstancesByNameMetadataTemplates
@@ -2444,6 +2462,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: file
       x-accepts: application/json
+      x-content-type: file
   /1.0/instances/{name}/backups:
     get:
       description: List of backups for the instance
@@ -2457,10 +2476,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2468,12 +2487,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2564,6 +2583,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/backups/{backupsName}:
     delete:
       description: Remove the backup
@@ -2637,10 +2657,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2648,12 +2668,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2749,6 +2769,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/instances/{name}/backups/{backupsName}/export:
     get:
       description: Fetch the backup tarball
@@ -2770,10 +2791,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2781,12 +2802,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2828,10 +2849,10 @@ paths:
       description: Websocket upgrade
       operationId: getEvents
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2839,12 +2860,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2898,10 +2919,10 @@ paths:
       description: List of images (public or private)
       operationId: getImages
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -2909,12 +2930,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -2958,7 +2979,7 @@ paths:
       description: Create and publish a new image
       operationId: postImages
       parameters:
-      - description: if set, uploaded file must match
+      - description: "if set, uploaded file must match"
         example: SHA-256
         explode: true
         in: query
@@ -3028,6 +3049,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/images/{fingerprint}:
     delete:
       description: Remove an image
@@ -3085,10 +3107,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3096,12 +3118,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3148,7 +3170,7 @@ paths:
       x-codegen-request-body-name: body
       x-accepts: application/json
     patch:
-      description: Updates the image properties, update information and visibility
+      description: "Updates the image properties, update information and visibility"
       operationId: patchImagesFingerprint
       parameters:
       - description: Unique fingerprint
@@ -3164,7 +3186,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PatchImagesFingerprintRequest'
-        description: Updates the image properties, update information and visibility
+        description: "Updates the image properties, update information and visibility"
       responses:
         "200":
           content:
@@ -3198,8 +3220,9 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
-      description: Replaces the image properties, update information and visibility
+      description: "Replaces the image properties, update information and visibility"
       operationId: putImagesFingerprint
       parameters:
       - description: Unique fingerprint
@@ -3215,7 +3238,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateImagesFingerprintRequest'
-        description: Replaces the image properties, update information and visibility
+        description: "Replaces the image properties, update information and visibility"
       responses:
         "200":
           content:
@@ -3249,6 +3272,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/images/{fingerprint}/export:
     get:
       description: Download the image tarball
@@ -3262,10 +3286,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3273,12 +3297,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3375,6 +3399,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/images/{fingerprint}/refresh:
     get:
       description: Refresh an image from its origin
@@ -3388,10 +3413,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3399,12 +3424,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3498,15 +3523,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/images/aliases:
     get:
       description: List of aliases (public or private based on image visibility)
       operationId: getImagesAliases
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3514,12 +3540,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3601,6 +3627,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/images/aliases/{name}:
     delete:
       description: Remove an alias
@@ -3658,10 +3685,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3669,12 +3696,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3762,6 +3789,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Rename an alias
       operationId: postImagesAliasesByName
@@ -3822,6 +3850,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replaces the alias target or description
       operationId: putImagesAliasesByName
@@ -3873,15 +3902,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/networks:
     get:
       description: List of networks
       operationId: getNetworks
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -3889,12 +3919,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -3976,6 +4006,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/networks/{name}:
     delete:
       description: Remove a network
@@ -4033,10 +4064,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4044,12 +4075,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4137,6 +4168,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Rename a network
       operationId: postNetworksByName
@@ -4197,6 +4229,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replace the network information
       operationId: putNetworksByName
@@ -4248,6 +4281,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/networks/{name}/state:
     get:
       description: Network state
@@ -4261,10 +4295,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4272,12 +4306,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4319,10 +4353,10 @@ paths:
       description: List of operations
       operationId: getOperations
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4330,12 +4364,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4430,10 +4464,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4441,12 +4475,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4496,10 +4530,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4507,12 +4541,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4560,13 +4594,14 @@ paths:
       x-accepts: application/json
   /1.0/operations/{uuid}/websocket:
     get:
-      description: -< This connection is upgraded into a websocket connection speaking
-        the protocol defined by the operation type. For example, in the case of an
-        exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr
-        to flow to and from the process inside the instance. In the case of migration,
-        it will be the primary interface over which the migration information is communicated.
-        The secret here is the one that was provided when the operation was created.
-        Guests are allowed to connect provided they have the right secret.
+      description: "-< This connection is upgraded into a websocket connection speaking\
+        \ the protocol defined by the operation type. For example, in the case of\
+        \ an exec operation, the websocket is the bidirectional pipe for stdin/stdout/stderr\
+        \ to flow to and from the process inside the instance. In the case of migration,\
+        \ it will be the primary interface over which the migration information is\
+        \ communicated. The secret here is the one that was provided when the operation\
+        \ was created. Guests are allowed to connect provided they have the right\
+        \ secret."
       operationId: getOperationsUUIDWebsocket
       parameters:
       - description: UUID
@@ -4577,10 +4612,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4588,12 +4623,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4644,10 +4679,10 @@ paths:
       description: List of configuration profiles
       operationId: getProfiles
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4655,12 +4690,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4742,6 +4777,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/profiles/{name}:
     delete:
       description: Remove a profile
@@ -4799,10 +4835,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -4810,12 +4846,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -4903,6 +4939,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Rename a profile
       operationId: postProfilesByName
@@ -4963,6 +5000,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replace the profile information
       operationId: putProfilesByName
@@ -5014,15 +5052,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/projects:
     get:
       description: List of projects
       operationId: getProjects
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5030,12 +5069,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5117,6 +5156,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/projects/{name}:
     delete:
       description: Remove a project
@@ -5183,10 +5223,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5194,12 +5234,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5287,6 +5327,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Rename a project
       operationId: postProjectsByName
@@ -5356,6 +5397,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replace the project information
       operationId: putProjectsByName
@@ -5407,15 +5449,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools:
     get:
       description: List of storage pools
       operationId: getStoragePools
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5423,12 +5466,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5510,6 +5553,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}:
     delete:
       description: Remove a storage pool
@@ -5576,10 +5620,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5587,12 +5631,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5680,6 +5724,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replace the storage pool information
       operationId: putStoragePoolsByName
@@ -5731,6 +5776,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}/resources:
     get:
       description: Information about the resources available to the storage pool
@@ -5744,10 +5790,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5755,12 +5801,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5810,10 +5856,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -5821,12 +5867,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -5913,6 +5959,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}/volumes/{type}:
     post:
       description: Create a new storage volume of a particular type on a given storage
@@ -5970,6 +6017,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}/volumes/{type}/{name}:
     delete:
       description: Delete a storage volume of a given type on a given storage pool
@@ -6060,10 +6108,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6071,12 +6119,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -6181,6 +6229,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     post:
       description: Rename a storage volume on a given storage pool
       operationId: postStoragePoolsByNameVolumesByTypeName
@@ -6246,6 +6295,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Replace the storage volume information or restore from snapshot
       operationId: putStoragePoolsByNameVolumesByTypeName
@@ -6309,6 +6359,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots:
     get:
       description: List of volume snapshots
@@ -6338,10 +6389,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6349,12 +6400,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -6461,6 +6512,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/storage-pools/{pool}/volumes/{type}/{name}/snapshots/name:
     delete:
       description: Remove the volume snapshot
@@ -6550,10 +6602,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6561,12 +6613,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -6670,6 +6722,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
     put:
       description: Volume snapshot information
       operationId: putStoragePoolsByNameVolumesByTypeNameSnapshotsName
@@ -6734,15 +6787,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/resources:
     get:
       description: Information about the resources available to the LXD server
       operationId: getResources
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6750,12 +6804,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -6797,10 +6851,10 @@ paths:
       description: Information about a cluster (such as networks and storage pools)
       operationId: getCluster
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6808,12 +6862,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -6851,7 +6905,7 @@ paths:
       x-codegen-request-body-name: body
       x-accepts: application/json
     put:
-      description: Bootstrap or join a cluster, or disable clustering on this node
+      description: "Bootstrap or join a cluster, or disable clustering on this node"
       operationId: putCluster
       requestBody:
         $ref: '#/components/requestBodies/UpdateClusterRequest'
@@ -6888,15 +6942,16 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
   /1.0/cluster/members:
     get:
       description: List of LXD members in the cluster
       operationId: getClusterMembers
       parameters:
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -6904,12 +6959,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -7014,10 +7069,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: To optimize queries of large lists, recursion is implemented
-          for collections. The default value is 0 which means that collection member
-          URLs are returned. Setting it to 1 will have those URLs be replaced by the
-          object they point to (typically a dict).
+      - description: "To optimize queries of large lists, recursion is implemented\
+          \ for collections. The default value is 0 which means that collection member\
+          \ URLs are returned. Setting it to 1 will have those URLs be replaced by\
+          \ the object they point to (typically a dict)."
         explode: true
         in: query
         name: recursion
@@ -7025,12 +7080,12 @@ paths:
         schema:
           type: integer
         style: form
-      - description: 'There is no default value for filter which means that all results
-          found will be returned. The language follows the OData conventions for structuring
-          REST API filtering logic. Logical operators are also supported for filtering:
-          not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-          with left associativity. Values with spaces can be surrounded with quotes.
-          Nesting filtering is also supported.'
+      - description: "There is no default value for filter which means that all results\
+          \ found will be returned. The language follows the OData conventions for\
+          \ structuring REST API filtering logic. Logical operators are also supported\
+          \ for filtering: not(not), equals(eq), not equals(ne), and(and), or(or).\
+          \ Filters are evaluated with left associativity. Values with spaces can\
+          \ be surrounded with quotes. Nesting filtering is also supported."
         explode: true
         in: query
         name: filter
@@ -7118,6 +7173,7 @@ paths:
       x-codegen-request-body-name: body
       x-contentType: application/json
       x-accepts: application/json
+      x-content-type: application/json
 components:
   examples:
     GetApiListResponse:
@@ -7133,11 +7189,11 @@ components:
         auth: trusted
         config:
           core.trust_password: true
-          core.https_address: '[::]:8443'
+          core.https_address: "[::]:8443"
         environment:
           addresses:
           - 1.2.3.4:8443
-          - '[1234::1234]:8443'
+          - "[1234::1234]:8443"
           architectures:
           - x86_64
           - i686
@@ -7229,8 +7285,8 @@ components:
             release: "18.04"
             architecture: x86_64
     CreateInstancesRequest4:
-      description: Instance without a pre-populated rootfs, useful when attaching
-        to an existing one
+      description: "Instance without a pre-populated rootfs, useful when attaching\
+        \ to an existing one"
       value:
         name: my-new-instance
         architecture: x86_64
@@ -7292,7 +7348,7 @@ components:
           certificate: PEM certificate
           alias: ubuntu/devel
     CreateInstancesRequest7:
-      description: Using a remote instance, sent over the migration websocket
+      description: "Using a remote instance, sent over the migration websocket"
       value:
         name: my-new-instance
         architecture: x86_64
@@ -7336,8 +7392,8 @@ components:
           instance_only: true
           source: my-old-instance
     CreateInstancesRequest9:
-      description: Using a remote instance, in push mode sent over the migration websocket
-        via client proxying
+      description: "Using a remote instance, in push mode sent over the migration\
+        \ websocket via client proxying"
       value:
         name: my-new-instance
         architecture: x86_64
@@ -7408,8 +7464,8 @@ components:
           "2": /1.0/instances/example/logs/exec_b0f737b4-2c8a-4edf-a7c1-4cc7e4e9e155.stderr
         return: 0
     CreateInstancesByNameExecResponse4:
-      description: When the exec command finishes, its exit status is available from
-        the operation's metadata
+      description: "When the exec command finishes, its exit status is available from\
+        \ the operation's metadata"
       value:
         return: 0
     GetSnapshotListResponse:
@@ -7455,7 +7511,7 @@ components:
       - /1.0/images/a49d26ce5808075f5175bf31f5cb90561f5023dcd408da8ac5e834096d46b2d8
       - /1.0/images/c9b6e738fae75286d52f497415463a8ecc61bbcb046536f220d797b0e500a41f
     CreateImagesRequest1:
-      description: In the source image case, the following dict must be used
+      description: "In the source image case, the following dict must be used"
       value:
         filename: filename
         public: true
@@ -7475,7 +7531,7 @@ components:
           fingerprint: SHA256
           alias: ubuntu/devel
     CreateImagesRequest2:
-      description: In the source instance case, the following dict must be used
+      description: "In the source instance case, the following dict must be used"
       value:
         compression_algorithm: xz
         filename: filename
@@ -7489,7 +7545,7 @@ components:
           type: instance
           name: abc
     CreateImagesRequest3:
-      description: In the remote image URL case, the following dict must be used
+      description: "In the remote image URL case, the following dict must be used"
       value:
         filename: filename
         public: true
@@ -7703,10 +7759,10 @@ components:
         metadata: {}
   parameters:
     Recursion:
-      description: To optimize queries of large lists, recursion is implemented for
-        collections. The default value is 0 which means that collection member URLs
-        are returned. Setting it to 1 will have those URLs be replaced by the object
-        they point to (typically a dict).
+      description: "To optimize queries of large lists, recursion is implemented for\
+        \ collections. The default value is 0 which means that collection member URLs\
+        \ are returned. Setting it to 1 will have those URLs be replaced by the object\
+        \ they point to (typically a dict)."
       explode: true
       in: query
       name: recursion
@@ -7715,12 +7771,12 @@ components:
         type: integer
       style: form
     Filter:
-      description: 'There is no default value for filter which means that all results
-        found will be returned. The language follows the OData conventions for structuring
-        REST API filtering logic. Logical operators are also supported for filtering:
-        not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated
-        with left associativity. Values with spaces can be surrounded with quotes.
-        Nesting filtering is also supported.'
+      description: "There is no default value for filter which means that all results\
+        \ found will be returned. The language follows the OData conventions for structuring\
+        \ REST API filtering logic. Logical operators are also supported for filtering:\
+        \ not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated\
+        \ with left associativity. Values with spaces can be surrounded with quotes.\
+        \ Nesting filtering is also supported."
       explode: true
       in: query
       name: filter
@@ -7873,7 +7929,7 @@ components:
               $ref: '#/components/examples/UpdateClusterRequest3'
           schema:
             $ref: '#/components/schemas/UpdateClusterRequest'
-      description: Bootstrap or join a cluster, or disable clustering on this node
+      description: "Bootstrap or join a cluster, or disable clustering on this node"
   responses:
     BasicStandardReturnValueResponse:
       content:
@@ -8303,7 +8359,7 @@ components:
   schemas:
     StandardReturnValueResponse:
       example:
-        metadata: '{}'
+        metadata: "{}"
         status_code: 200
         type: sync
         status: Success
@@ -8338,7 +8394,7 @@ components:
       type: object
     BackgroundOperationResponse:
       example:
-        metadata: '{}'
+        metadata: "{}"
         status_code: 100
         type: async
         operation: /1.0/instances/<id>
@@ -8393,7 +8449,7 @@ components:
       type: object
     BasicBackgroundOperationResponse:
       example:
-        metadata: '{}'
+        metadata: "{}"
         status_code: 100
         type: async
         operation: /1.0/instances/<id>
@@ -8434,7 +8490,7 @@ components:
             server_pid: 10224
             storage_version: "3.19"
             server: lxc
-            addresses: '[1.2.3.4:8443,[1234::1234]:8443]'
+            addresses: "[1.2.3.4:8443,[1234::1234]:8443]"
             kernel: Linux
             certificate: PEM certificate
             storage: btrfs
@@ -8447,11 +8503,11 @@ components:
           - api_extensions
           - api_extensions
           public: false
-          auth: '["guest","untrusted","trusted"]'
+          auth: "[\"guest\",\"untrusted\",\"trusted\"]"
           api_status: stable
           api_version: "1.0"
           config:
-            core.https_address: '[::]:8443'
+            core.https_address: "[::]:8443"
             core.trust_password: true
       properties:
         metadata:
@@ -8465,14 +8521,14 @@ components:
       type: object
     ServerConfig:
       example:
-        core.https_address: '[::]:8443'
+        core.https_address: "[::]:8443"
         core.trust_password: my-password
       properties:
         core.trust_password:
           example: my-password
           type: string
         core.https_address:
-          example: '[::]:8443'
+          example: "[::]:8443"
           type: string
       type: object
     Environment:
@@ -8483,7 +8539,7 @@ components:
         server_pid: 10224
         storage_version: "3.19"
         server: lxc
-        addresses: '[1.2.3.4:8443,[1234::1234]:8443]'
+        addresses: "[1.2.3.4:8443,[1234::1234]:8443]"
         kernel: Linux
         certificate: PEM certificate
         storage: btrfs
@@ -8494,7 +8550,7 @@ components:
         driver_version: 1.0.6
       properties:
         addresses:
-          example: '[1.2.3.4:8443,[1234::1234]:8443]'
+          example: "[1.2.3.4:8443,[1234::1234]:8443]"
           items:
             type: string
           type: array
@@ -8549,17 +8605,17 @@ components:
         type: client
       properties:
         type:
-          description: Certificate type (keyring), currently only client
+          description: "Certificate type (keyring), currently only client"
           example: client
           type: string
         certificate:
-          description: If provided, a valid x509 certificate. If not, the client certificate
-            of the connection will be used
+          description: "If provided, a valid x509 certificate. If not, the client\
+            \ certificate of the connection will be used"
           example: PEM certificate
           type: string
         name:
-          description: An optional name for the certificate. If nothing is provided,
-            the host in the TLS header for the request is used.
+          description: "An optional name for the certificate. If nothing is provided,\
+            \ the host in the TLS header for the request is used."
           example: foo
           type: string
         password:
@@ -8584,12 +8640,12 @@ components:
         type: client
       properties:
         type:
-          description: Certificate type (keyring), currently only client
+          description: "Certificate type (keyring), currently only client"
           example: client
           type: string
         name:
-          description: An optional name for the certificate. If nothing is provided,
-            the host in the TLS header for the request is used.
+          description: "An optional name for the certificate. If nothing is provided,\
+            \ the host in the TLS header for the request is used."
           example: foo
           type: string
       type: object
@@ -8618,7 +8674,7 @@ components:
         live: true
       properties:
         type:
-          description: Can be "image", "migration", "copy" or "none".
+          description: "Can be \"image\", \"migration\", \"copy\" or \"none\"."
           example: image
           type: string
         alias:
@@ -8640,11 +8696,11 @@ components:
           example: https://10.0.2.3:8443
           type: string
         protocol:
-          description: Protocol (one of lxd or simplestreams, defaults to lxd)
+          description: "Protocol (one of lxd or simplestreams, defaults to lxd)"
           example: lxd
           type: string
         certificate:
-          description: Optional PEM certificate. If not mentioned, system CA is used.
+          description: "Optional PEM certificate. If not mentioned, system CA is used."
           example: PEM certificate
           type: string
         secret:
@@ -8656,7 +8712,7 @@ components:
           example: https://10.0.2.3:8443/1.0/operations/<UUID>
           type: string
         base-image:
-          description: Optional, the base image the instance was created from
+          description: "Optional, the base image the instance was created from"
           example: <fingerprint>
           type: string
         instance_only:
@@ -8793,8 +8849,8 @@ components:
             type: string
           type: array
         stateful:
-          description: If true, indicates that the instance has some stored state
-            that can be restored on startup
+          description: "If true, indicates that the instance has some stored state\
+            \ that can be restored on startup"
           example: false
           type: boolean
         status:
@@ -9098,7 +9154,9 @@ components:
         created_at: 2016-03-08T23:55:08.000Z
         ephemeral: false
         expanded_config:
-          volatile.last_state.idmap: '[{"Isuid":true,"Isgid":false,"Hostid":100000,"Nsid":0,"Maprange":65536},{"Isuid":false,"Isgid":true,"Hostid":100000,"Nsid":0,"Maprange":65536}]'
+          volatile.last_state.idmap: "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\"\
+            :100000,\"Nsid\":0,\"Maprange\":65536},{\"Isuid\":false,\"Isgid\":true,\"\
+            Hostid\":100000,\"Nsid\":0,\"Maprange\":65536}]"
           security.nesting: "true"
           volatile.eth0.hwaddr: 00:16:3e:ec:65:a8
           volatile.base_image: a49d26ce5808075f5175bf31f5cb90561f5023dcd408da8ac5e834096d46b2d8
@@ -9112,7 +9170,9 @@ components:
             name: eth0
             type: nic
         config:
-          volatile.last_state.idmap: '[{"Isuid":true,"Isgid":false,"Hostid":100000,"Nsid":0,"Maprange":65536},{"Isuid":false,"Isgid":true,"Hostid":100000,"Nsid":0,"Maprange":65536}]'
+          volatile.last_state.idmap: "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\"\
+            :100000,\"Nsid\":0,\"Maprange\":65536},{\"Isuid\":false,\"Isgid\":true,\"\
+            Hostid\":100000,\"Nsid\":0,\"Maprange\":65536}]"
           security.nesting: "true"
           volatile.eth0.hwaddr: 00:16:3e:ec:65:a8
           volatile.base_image: a49d26ce5808075f5175bf31f5cb90561f5023dcd408da8ac5e834096d46b2d8
@@ -9153,7 +9213,9 @@ components:
       type: object
     SecurityNestingConfig:
       example:
-        volatile.last_state.idmap: '[{"Isuid":true,"Isgid":false,"Hostid":100000,"Nsid":0,"Maprange":65536},{"Isuid":false,"Isgid":true,"Hostid":100000,"Nsid":0,"Maprange":65536}]'
+        volatile.last_state.idmap: "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":100000,\"\
+          Nsid\":0,\"Maprange\":65536},{\"Isuid\":false,\"Isgid\":true,\"Hostid\"\
+          :100000,\"Nsid\":0,\"Maprange\":65536}]"
         security.nesting: "true"
         volatile.eth0.hwaddr: 00:16:3e:ec:65:a8
         volatile.base_image: a49d26ce5808075f5175bf31f5cb90561f5023dcd408da8ac5e834096d46b2d8
@@ -9168,7 +9230,9 @@ components:
           example: 00:16:3e:ec:65:a8
           type: string
         volatile.last_state.idmap:
-          example: '[{"Isuid":true,"Isgid":false,"Hostid":100000,"Nsid":0,"Maprange":65536},{"Isuid":false,"Isgid":true,"Hostid":100000,"Nsid":0,"Maprange":65536}]'
+          example: "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":100000,\"Nsid\":0,\"\
+            Maprange\":65536},{\"Isuid\":false,\"Isgid\":true,\"Hostid\":100000,\"\
+            Nsid\":0,\"Maprange\":65536}]"
           type: string
       type: object
     CreateInstancesByNameSnapshotsInformationRequest:
@@ -9338,7 +9402,7 @@ components:
         stateful: true
       properties:
         action:
-          description: State change action (stop, start, restart, freeze or unfreeze)
+          description: "State change action (stop, start, restart, freeze or unfreeze)"
           example: stop
           type: string
         timeout:
@@ -9351,8 +9415,8 @@ components:
           example: true
           type: boolean
         stateful:
-          description: Whether to store or restore runtime state before stopping or
-            startiong (only valid for stop and start, defaults to false)
+          description: "Whether to store or restore runtime state before stopping\
+            \ or startiong (only valid for stop and start, defaults to false)"
           example: true
           type: boolean
       type: object
@@ -9366,7 +9430,7 @@ components:
             - when
             - when
             create_only: false
-            properties: '{}'
+            properties: "{}"
         creation_date: 1477146654
         properties:
           os: BusyBox
@@ -9417,7 +9481,7 @@ components:
           - when
           - when
           create_only: false
-          properties: '{}'
+          properties: "{}"
       properties:
         /template:
           $ref: '#/components/schemas/Template'
@@ -9429,7 +9493,7 @@ components:
         - when
         - when
         create_only: false
-        properties: '{}'
+        properties: "{}"
       properties:
         when:
           items:
@@ -9460,11 +9524,11 @@ components:
           example: 3600
           type: number
         instance_only:
-          description: If True, snapshots aren't included
+          description: "If True, snapshots aren't included"
           example: true
           type: boolean
         optimized_storage:
-          description: If True, btrfs send or zfs send is used for instance and snapshots
+          description: "If True, btrfs send or zfs send is used for instance and snapshots"
           example: true
           type: boolean
       type: object
@@ -9671,15 +9735,15 @@ components:
           example: https://10.0.2.3:8443
           type: string
         protocol:
-          description: Protocol (one of lxd or simplestreams, defaults to lxd)
+          description: "Protocol (one of lxd or simplestreams, defaults to lxd)"
           example: lxd
           type: string
         secret:
-          description: Secret (pull mode only, private images only)
+          description: "Secret (pull mode only, private images only)"
           example: my-secret-string
           type: string
         certificate:
-          description: Optional PEM certificate. If not mentioned, system CA is used.
+          description: "Optional PEM certificate. If not mentioned, system CA is used."
           example: PEM certificate
           type: string
         fingerprint:
@@ -10938,7 +11002,7 @@ components:
           server_pid: 10224
           storage_version: "3.19"
           server: lxc
-          addresses: '[1.2.3.4:8443,[1234::1234]:8443]'
+          addresses: "[1.2.3.4:8443,[1234::1234]:8443]"
           kernel: Linux
           certificate: PEM certificate
           storage: btrfs
@@ -10951,11 +11015,11 @@ components:
         - api_extensions
         - api_extensions
         public: false
-        auth: '["guest","untrusted","trusted"]'
+        auth: "[\"guest\",\"untrusted\",\"trusted\"]"
         api_status: stable
         api_version: "1.0"
         config:
-          core.https_address: '[::]:8443'
+          core.https_address: "[::]:8443"
           core.trust_password: true
       properties:
         api_extensions:
@@ -10964,7 +11028,8 @@ components:
             type: string
           type: array
         api_status:
-          description: API implementation status (one of, development, stable or deprecated)
+          description: "API implementation status (one of, development, stable or\
+            \ deprecated)"
           example: stable
           type: string
         api_version:
@@ -10973,7 +11038,7 @@ components:
           type: string
         auth:
           description: Authentication state.
-          example: '["guest","untrusted","trusted"]'
+          example: "[\"guest\",\"untrusted\",\"trusted\"]"
           type: string
         config:
           $ref: '#/components/schemas/ServerConfig'
@@ -10992,17 +11057,17 @@ components:
         type: client
       properties:
         type:
-          description: Certificate type (keyring), currently only client
+          description: "Certificate type (keyring), currently only client"
           example: client
           type: string
         certificate:
-          description: If provided, a valid x509 certificate. If not, the client certificate
-            of the connection will be used
+          description: "If provided, a valid x509 certificate. If not, the client\
+            \ certificate of the connection will be used"
           example: PEM certificate
           type: string
         name:
-          description: An optional name for the certificate. If nothing is provided,
-            the host in the TLS header for the request is used.
+          description: "An optional name for the certificate. If nothing is provided,\
+            \ the host in the TLS header for the request is used."
           example: foo
           type: string
         fingerprint:
@@ -11190,7 +11255,7 @@ components:
         architecture: x86_64
       properties:
         name:
-          description: 64 chars max, ASCII, no slash, no colon and no comma
+          description: "64 chars max, ASCII, no slash, no colon and no comma"
           example: my-new-instance
           type: string
         architecture:
@@ -11218,8 +11283,8 @@ components:
             limits.memory: 512MB
           type: object
         type:
-          description: Optional. Can be "virtual-machine", "container" - by default
-            it set to "container"
+          description: "Optional. Can be \"virtual-machine\", \"container\" - by default\
+            \ it set to \"container\""
           example: container
           type: string
         devices:

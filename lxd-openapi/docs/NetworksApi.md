@@ -2,24 +2,24 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteNetworksByName**](NetworksApi.md#deleteNetworksByName) | **DELETE** /1.0/networks/{name} | 
-[**deleteNetworksByNameWithHttpInfo**](NetworksApi.md#deleteNetworksByNameWithHttpInfo) | **DELETE** /1.0/networks/{name} | 
-[**getNetworks**](NetworksApi.md#getNetworks) | **GET** /1.0/networks | 
-[**getNetworksWithHttpInfo**](NetworksApi.md#getNetworksWithHttpInfo) | **GET** /1.0/networks | 
-[**getNetworksByName**](NetworksApi.md#getNetworksByName) | **GET** /1.0/networks/{name} | 
-[**getNetworksByNameWithHttpInfo**](NetworksApi.md#getNetworksByNameWithHttpInfo) | **GET** /1.0/networks/{name} | 
-[**getNetworksByNameState**](NetworksApi.md#getNetworksByNameState) | **GET** /1.0/networks/{name}/state | 
-[**getNetworksByNameStateWithHttpInfo**](NetworksApi.md#getNetworksByNameStateWithHttpInfo) | **GET** /1.0/networks/{name}/state | 
-[**patchNetworksByName**](NetworksApi.md#patchNetworksByName) | **PATCH** /1.0/networks/{name} | 
-[**patchNetworksByNameWithHttpInfo**](NetworksApi.md#patchNetworksByNameWithHttpInfo) | **PATCH** /1.0/networks/{name} | 
-[**postNetworks**](NetworksApi.md#postNetworks) | **POST** /1.0/networks | 
-[**postNetworksWithHttpInfo**](NetworksApi.md#postNetworksWithHttpInfo) | **POST** /1.0/networks | 
-[**postNetworksByName**](NetworksApi.md#postNetworksByName) | **POST** /1.0/networks/{name} | 
-[**postNetworksByNameWithHttpInfo**](NetworksApi.md#postNetworksByNameWithHttpInfo) | **POST** /1.0/networks/{name} | 
-[**putNetworksByName**](NetworksApi.md#putNetworksByName) | **PUT** /1.0/networks/{name} | 
-[**putNetworksByNameWithHttpInfo**](NetworksApi.md#putNetworksByNameWithHttpInfo) | **PUT** /1.0/networks/{name} | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteNetworksByName**](NetworksApi.md#deleteNetworksByName) | **DELETE** /1.0/networks/{name} |  |
+| [**deleteNetworksByNameWithHttpInfo**](NetworksApi.md#deleteNetworksByNameWithHttpInfo) | **DELETE** /1.0/networks/{name} |  |
+| [**getNetworks**](NetworksApi.md#getNetworks) | **GET** /1.0/networks |  |
+| [**getNetworksWithHttpInfo**](NetworksApi.md#getNetworksWithHttpInfo) | **GET** /1.0/networks |  |
+| [**getNetworksByName**](NetworksApi.md#getNetworksByName) | **GET** /1.0/networks/{name} |  |
+| [**getNetworksByNameWithHttpInfo**](NetworksApi.md#getNetworksByNameWithHttpInfo) | **GET** /1.0/networks/{name} |  |
+| [**getNetworksByNameState**](NetworksApi.md#getNetworksByNameState) | **GET** /1.0/networks/{name}/state |  |
+| [**getNetworksByNameStateWithHttpInfo**](NetworksApi.md#getNetworksByNameStateWithHttpInfo) | **GET** /1.0/networks/{name}/state |  |
+| [**patchNetworksByName**](NetworksApi.md#patchNetworksByName) | **PATCH** /1.0/networks/{name} |  |
+| [**patchNetworksByNameWithHttpInfo**](NetworksApi.md#patchNetworksByNameWithHttpInfo) | **PATCH** /1.0/networks/{name} |  |
+| [**postNetworks**](NetworksApi.md#postNetworks) | **POST** /1.0/networks |  |
+| [**postNetworksWithHttpInfo**](NetworksApi.md#postNetworksWithHttpInfo) | **POST** /1.0/networks |  |
+| [**postNetworksByName**](NetworksApi.md#postNetworksByName) | **POST** /1.0/networks/{name} |  |
+| [**postNetworksByNameWithHttpInfo**](NetworksApi.md#postNetworksByNameWithHttpInfo) | **POST** /1.0/networks/{name} |  |
+| [**putNetworksByName**](NetworksApi.md#putNetworksByName) | **PUT** /1.0/networks/{name} |  |
+| [**putNetworksByNameWithHttpInfo**](NetworksApi.md#putNetworksByNameWithHttpInfo) | **PUT** /1.0/networks/{name} |  |
 
 
 
@@ -35,11 +35,11 @@ Remove a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -66,9 +66,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
 
 ### Return type
 
@@ -103,12 +103,12 @@ Remove a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -144,9 +144,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
 
 ### Return type
 
@@ -182,11 +182,11 @@ List of networks
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -214,10 +214,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -252,12 +252,12 @@ List of networks
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -294,10 +294,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -333,11 +333,11 @@ Information about a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -366,11 +366,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -405,12 +405,12 @@ Information about a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -448,11 +448,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -488,11 +488,11 @@ Network state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -521,11 +521,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -560,12 +560,12 @@ Network state
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -603,11 +603,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -643,11 +643,11 @@ Update the network information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -675,10 +675,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**PatchNetworksByNameRequest**](PatchNetworksByNameRequest.md)| Update the network information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**PatchNetworksByNameRequest**](PatchNetworksByNameRequest.md)| Update the network information | [optional] |
 
 ### Return type
 
@@ -713,12 +713,12 @@ Update the network information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -755,10 +755,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**PatchNetworksByNameRequest**](PatchNetworksByNameRequest.md)| Update the network information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**PatchNetworksByNameRequest**](PatchNetworksByNameRequest.md)| Update the network information | [optional] |
 
 ### Return type
 
@@ -794,11 +794,11 @@ Define a new network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -825,9 +825,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateNetworksRequest**](CreateNetworksRequest.md)| Define a new network | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateNetworksRequest**](CreateNetworksRequest.md)| Define a new network | [optional] |
 
 ### Return type
 
@@ -862,12 +862,12 @@ Define a new network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -903,9 +903,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateNetworksRequest**](CreateNetworksRequest.md)| Define a new network | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateNetworksRequest**](CreateNetworksRequest.md)| Define a new network | [optional] |
 
 ### Return type
 
@@ -941,11 +941,11 @@ Rename a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -973,10 +973,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**CreateNetworksByNameRequest**](CreateNetworksByNameRequest.md)| Rename a network | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**CreateNetworksByNameRequest**](CreateNetworksByNameRequest.md)| Rename a network | [optional] |
 
 ### Return type
 
@@ -1012,12 +1012,12 @@ Rename a network
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1054,10 +1054,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**CreateNetworksByNameRequest**](CreateNetworksByNameRequest.md)| Rename a network | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**CreateNetworksByNameRequest**](CreateNetworksByNameRequest.md)| Rename a network | [optional] |
 
 ### Return type
 
@@ -1094,11 +1094,11 @@ Replace the network information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1126,10 +1126,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**UpdateNetworksByNameRequest**](UpdateNetworksByNameRequest.md)| Replace the network information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**UpdateNetworksByNameRequest**](UpdateNetworksByNameRequest.md)| Replace the network information | [optional] |
 
 ### Return type
 
@@ -1164,12 +1164,12 @@ Replace the network information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.NetworksApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.NetworksApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1206,10 +1206,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the network |
- **body** | [**UpdateNetworksByNameRequest**](UpdateNetworksByNameRequest.md)| Replace the network information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the network | |
+| **body** | [**UpdateNetworksByNameRequest**](UpdateNetworksByNameRequest.md)| Replace the network information | [optional] |
 
 ### Return type
 

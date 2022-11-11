@@ -2,20 +2,20 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteFingerprint**](CertificatesApi.md#deleteFingerprint) | **DELETE** /1.0/certificates/{fingerprint} | 
-[**deleteFingerprintWithHttpInfo**](CertificatesApi.md#deleteFingerprintWithHttpInfo) | **DELETE** /1.0/certificates/{fingerprint} | 
-[**getCertificates**](CertificatesApi.md#getCertificates) | **GET** /1.0/certificates | 
-[**getCertificatesWithHttpInfo**](CertificatesApi.md#getCertificatesWithHttpInfo) | **GET** /1.0/certificates | 
-[**getCertificatesByFingerPrint**](CertificatesApi.md#getCertificatesByFingerPrint) | **GET** /1.0/certificates/{fingerprint} | 
-[**getCertificatesByFingerPrintWithHttpInfo**](CertificatesApi.md#getCertificatesByFingerPrintWithHttpInfo) | **GET** /1.0/certificates/{fingerprint} | 
-[**patchFingerprint**](CertificatesApi.md#patchFingerprint) | **PATCH** /1.0/certificates/{fingerprint} | 
-[**patchFingerprintWithHttpInfo**](CertificatesApi.md#patchFingerprintWithHttpInfo) | **PATCH** /1.0/certificates/{fingerprint} | 
-[**postCertificates**](CertificatesApi.md#postCertificates) | **POST** /1.0/certificates | 
-[**postCertificatesWithHttpInfo**](CertificatesApi.md#postCertificatesWithHttpInfo) | **POST** /1.0/certificates | 
-[**putFingerprint**](CertificatesApi.md#putFingerprint) | **PUT** /1.0/certificates/{fingerprint} | 
-[**putFingerprintWithHttpInfo**](CertificatesApi.md#putFingerprintWithHttpInfo) | **PUT** /1.0/certificates/{fingerprint} | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteFingerprint**](CertificatesApi.md#deleteFingerprint) | **DELETE** /1.0/certificates/{fingerprint} |  |
+| [**deleteFingerprintWithHttpInfo**](CertificatesApi.md#deleteFingerprintWithHttpInfo) | **DELETE** /1.0/certificates/{fingerprint} |  |
+| [**getCertificates**](CertificatesApi.md#getCertificates) | **GET** /1.0/certificates |  |
+| [**getCertificatesWithHttpInfo**](CertificatesApi.md#getCertificatesWithHttpInfo) | **GET** /1.0/certificates |  |
+| [**getCertificatesByFingerPrint**](CertificatesApi.md#getCertificatesByFingerPrint) | **GET** /1.0/certificates/{fingerprint} |  |
+| [**getCertificatesByFingerPrintWithHttpInfo**](CertificatesApi.md#getCertificatesByFingerPrintWithHttpInfo) | **GET** /1.0/certificates/{fingerprint} |  |
+| [**patchFingerprint**](CertificatesApi.md#patchFingerprint) | **PATCH** /1.0/certificates/{fingerprint} |  |
+| [**patchFingerprintWithHttpInfo**](CertificatesApi.md#patchFingerprintWithHttpInfo) | **PATCH** /1.0/certificates/{fingerprint} |  |
+| [**postCertificates**](CertificatesApi.md#postCertificates) | **POST** /1.0/certificates |  |
+| [**postCertificatesWithHttpInfo**](CertificatesApi.md#postCertificatesWithHttpInfo) | **POST** /1.0/certificates |  |
+| [**putFingerprint**](CertificatesApi.md#putFingerprint) | **PUT** /1.0/certificates/{fingerprint} |  |
+| [**putFingerprintWithHttpInfo**](CertificatesApi.md#putFingerprintWithHttpInfo) | **PUT** /1.0/certificates/{fingerprint} |  |
 
 
 
@@ -31,11 +31,11 @@ Remove a trusted certificate
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -62,9 +62,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -99,12 +99,12 @@ Remove a trusted certificate
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -140,9 +140,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -178,11 +178,11 @@ Return a list of trusted certificates
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -210,10 +210,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -248,12 +248,12 @@ Return a list of trusted certificates
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -290,10 +290,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -329,11 +329,11 @@ Return a trusted certificate information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -360,9 +360,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -397,12 +397,12 @@ Return a trusted certificate information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -438,9 +438,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -476,11 +476,11 @@ Updates the certificate properties
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -508,10 +508,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Updates the certificate properties | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Updates the certificate properties | [optional] |
 
 ### Return type
 
@@ -546,12 +546,12 @@ Updates the certificate properties
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -588,10 +588,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Updates the certificate properties | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Updates the certificate properties | [optional] |
 
 ### Return type
 
@@ -627,11 +627,11 @@ Add a new trusted certificate
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -658,9 +658,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateCertificatesRequest**](CreateCertificatesRequest.md)| Add a new trusted certificate | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateCertificatesRequest**](CreateCertificatesRequest.md)| Add a new trusted certificate | [optional] |
 
 ### Return type
 
@@ -695,12 +695,12 @@ Add a new trusted certificate
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -736,9 +736,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateCertificatesRequest**](CreateCertificatesRequest.md)| Add a new trusted certificate | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateCertificatesRequest**](CreateCertificatesRequest.md)| Add a new trusted certificate | [optional] |
 
 ### Return type
 
@@ -774,11 +774,11 @@ Replaces the certificate properties
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -806,10 +806,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Replaces the certificate properties | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Replaces the certificate properties | [optional] |
 
 ### Return type
 
@@ -844,12 +844,12 @@ Replaces the certificate properties
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -886,10 +886,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Replaces the certificate properties | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateFingerprintRequest**](UpdateFingerprintRequest.md)| Replaces the certificate properties | [optional] |
 
 ### Return type
 

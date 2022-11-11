@@ -1,8 +1,10 @@
-# lxd-openapi
+# openapi-java-client
 
 LXD
 
 - API version: 1.0.0
+
+- Build date: 2022-11-11T09:45:41.258334Z[Europe/London]
 
 The services listed below are referred as .....
 
@@ -40,7 +42,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>org.openapitools</groupId>
-  <artifactId>lxd-openapi</artifactId>
+  <artifactId>openapi-java-client</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
 </dependency>
@@ -51,7 +53,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:lxd-openapi:1.0.0"
+compile "org.openapitools:openapi-java-client:1.0.0"
 ```
 
 ### Others
@@ -64,7 +66,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/lxd-openapi-1.0.0.jar`
+- `target/openapi-java-client-1.0.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -73,9 +75,9 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.relxd.lxd.client.*;
-import org.relxd.lxd.client.model.*;
-import org.relxd.lxd.client.api.CertificatesApi;
+import org.openapitools.client.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.CertificatesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class CertificatesApiExample {

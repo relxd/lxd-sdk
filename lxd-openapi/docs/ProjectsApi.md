@@ -2,22 +2,22 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteProjectsByName**](ProjectsApi.md#deleteProjectsByName) | **DELETE** /1.0/projects/{name} | 
-[**deleteProjectsByNameWithHttpInfo**](ProjectsApi.md#deleteProjectsByNameWithHttpInfo) | **DELETE** /1.0/projects/{name} | 
-[**getProjects**](ProjectsApi.md#getProjects) | **GET** /1.0/projects | 
-[**getProjectsWithHttpInfo**](ProjectsApi.md#getProjectsWithHttpInfo) | **GET** /1.0/projects | 
-[**getProjectsByName**](ProjectsApi.md#getProjectsByName) | **GET** /1.0/projects/{name} | 
-[**getProjectsByNameWithHttpInfo**](ProjectsApi.md#getProjectsByNameWithHttpInfo) | **GET** /1.0/projects/{name} | 
-[**patchProjectsByName**](ProjectsApi.md#patchProjectsByName) | **PATCH** /1.0/projects/{name} | 
-[**patchProjectsByNameWithHttpInfo**](ProjectsApi.md#patchProjectsByNameWithHttpInfo) | **PATCH** /1.0/projects/{name} | 
-[**postProjects**](ProjectsApi.md#postProjects) | **POST** /1.0/projects | 
-[**postProjectsWithHttpInfo**](ProjectsApi.md#postProjectsWithHttpInfo) | **POST** /1.0/projects | 
-[**postProjectsByName**](ProjectsApi.md#postProjectsByName) | **POST** /1.0/projects/{name} | 
-[**postProjectsByNameWithHttpInfo**](ProjectsApi.md#postProjectsByNameWithHttpInfo) | **POST** /1.0/projects/{name} | 
-[**putProjectsByName**](ProjectsApi.md#putProjectsByName) | **PUT** /1.0/projects/{name} | 
-[**putProjectsByNameWithHttpInfo**](ProjectsApi.md#putProjectsByNameWithHttpInfo) | **PUT** /1.0/projects/{name} | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteProjectsByName**](ProjectsApi.md#deleteProjectsByName) | **DELETE** /1.0/projects/{name} |  |
+| [**deleteProjectsByNameWithHttpInfo**](ProjectsApi.md#deleteProjectsByNameWithHttpInfo) | **DELETE** /1.0/projects/{name} |  |
+| [**getProjects**](ProjectsApi.md#getProjects) | **GET** /1.0/projects |  |
+| [**getProjectsWithHttpInfo**](ProjectsApi.md#getProjectsWithHttpInfo) | **GET** /1.0/projects |  |
+| [**getProjectsByName**](ProjectsApi.md#getProjectsByName) | **GET** /1.0/projects/{name} |  |
+| [**getProjectsByNameWithHttpInfo**](ProjectsApi.md#getProjectsByNameWithHttpInfo) | **GET** /1.0/projects/{name} |  |
+| [**patchProjectsByName**](ProjectsApi.md#patchProjectsByName) | **PATCH** /1.0/projects/{name} |  |
+| [**patchProjectsByNameWithHttpInfo**](ProjectsApi.md#patchProjectsByNameWithHttpInfo) | **PATCH** /1.0/projects/{name} |  |
+| [**postProjects**](ProjectsApi.md#postProjects) | **POST** /1.0/projects |  |
+| [**postProjectsWithHttpInfo**](ProjectsApi.md#postProjectsWithHttpInfo) | **POST** /1.0/projects |  |
+| [**postProjectsByName**](ProjectsApi.md#postProjectsByName) | **POST** /1.0/projects/{name} |  |
+| [**postProjectsByNameWithHttpInfo**](ProjectsApi.md#postProjectsByNameWithHttpInfo) | **POST** /1.0/projects/{name} |  |
+| [**putProjectsByName**](ProjectsApi.md#putProjectsByName) | **PUT** /1.0/projects/{name} |  |
+| [**putProjectsByNameWithHttpInfo**](ProjectsApi.md#putProjectsByNameWithHttpInfo) | **PUT** /1.0/projects/{name} |  |
 
 
 
@@ -33,11 +33,11 @@ Remove a project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -64,9 +64,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
 
 ### Return type
 
@@ -102,12 +102,12 @@ Remove a project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -143,9 +143,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
 
 ### Return type
 
@@ -182,11 +182,11 @@ List of projects
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -214,10 +214,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -252,12 +252,12 @@ List of projects
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -294,10 +294,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -333,11 +333,11 @@ Project configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -366,11 +366,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -405,12 +405,12 @@ Project configuration
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -448,11 +448,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -488,11 +488,11 @@ Update the project information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -520,10 +520,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Update the project information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Update the project information | [optional] |
 
 ### Return type
 
@@ -558,12 +558,12 @@ Update the project information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -600,10 +600,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Update the project information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Update the project information | [optional] |
 
 ### Return type
 
@@ -639,11 +639,11 @@ Define a new project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -670,9 +670,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateProjectsRequest**](CreateProjectsRequest.md)| Define a new project | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateProjectsRequest**](CreateProjectsRequest.md)| Define a new project | [optional] |
 
 ### Return type
 
@@ -707,12 +707,12 @@ Define a new project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -748,9 +748,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateProjectsRequest**](CreateProjectsRequest.md)| Define a new project | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateProjectsRequest**](CreateProjectsRequest.md)| Define a new project | [optional] |
 
 ### Return type
 
@@ -786,11 +786,11 @@ Rename a project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -818,10 +818,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**CreateProjectsByNameRequest**](CreateProjectsByNameRequest.md)| Rename a project | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**CreateProjectsByNameRequest**](CreateProjectsByNameRequest.md)| Rename a project | [optional] |
 
 ### Return type
 
@@ -858,12 +858,12 @@ Rename a project
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -900,10 +900,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**CreateProjectsByNameRequest**](CreateProjectsByNameRequest.md)| Rename a project | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**CreateProjectsByNameRequest**](CreateProjectsByNameRequest.md)| Rename a project | [optional] |
 
 ### Return type
 
@@ -941,11 +941,11 @@ Replace the project information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -973,10 +973,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Replace the project information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Replace the project information | [optional] |
 
 ### Return type
 
@@ -1011,12 +1011,12 @@ Replace the project information
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ProjectsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ProjectsApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1053,10 +1053,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Projects name |
- **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Replace the project information | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Projects name | |
+| **body** | [**UpdateProjectsByNameRequest**](UpdateProjectsByNameRequest.md)| Replace the project information | [optional] |
 
 ### Return type
 

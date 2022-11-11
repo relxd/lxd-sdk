@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sockets** | [**List&lt;Sockets&gt;**](Sockets.md) |  |  [optional]
-**total** | **BigDecimal** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**sockets** | [**List&lt;Sockets&gt;**](Sockets.md) |  |  [optional] |
+|**total** | **BigDecimal** |  |  [optional] |
 
 
 

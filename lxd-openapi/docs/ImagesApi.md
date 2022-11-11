@@ -2,42 +2,42 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteImagesAliasesByName**](ImagesApi.md#deleteImagesAliasesByName) | **DELETE** /1.0/images/aliases/{name} | 
-[**deleteImagesAliasesByNameWithHttpInfo**](ImagesApi.md#deleteImagesAliasesByNameWithHttpInfo) | **DELETE** /1.0/images/aliases/{name} | 
-[**deleteImagesFingerprint**](ImagesApi.md#deleteImagesFingerprint) | **DELETE** /1.0/images/{fingerprint} | 
-[**deleteImagesFingerprintWithHttpInfo**](ImagesApi.md#deleteImagesFingerprintWithHttpInfo) | **DELETE** /1.0/images/{fingerprint} | 
-[**getImages**](ImagesApi.md#getImages) | **GET** /1.0/images | 
-[**getImagesWithHttpInfo**](ImagesApi.md#getImagesWithHttpInfo) | **GET** /1.0/images | 
-[**getImagesAliases**](ImagesApi.md#getImagesAliases) | **GET** /1.0/images/aliases | 
-[**getImagesAliasesWithHttpInfo**](ImagesApi.md#getImagesAliasesWithHttpInfo) | **GET** /1.0/images/aliases | 
-[**getImagesAliasesByName**](ImagesApi.md#getImagesAliasesByName) | **GET** /1.0/images/aliases/{name} | 
-[**getImagesAliasesByNameWithHttpInfo**](ImagesApi.md#getImagesAliasesByNameWithHttpInfo) | **GET** /1.0/images/aliases/{name} | 
-[**getImagesByFingerprintExport**](ImagesApi.md#getImagesByFingerprintExport) | **GET** /1.0/images/{fingerprint}/export | 
-[**getImagesByFingerprintExportWithHttpInfo**](ImagesApi.md#getImagesByFingerprintExportWithHttpInfo) | **GET** /1.0/images/{fingerprint}/export | 
-[**getImagesFingerprint**](ImagesApi.md#getImagesFingerprint) | **GET** /1.0/images/{fingerprint} | 
-[**getImagesFingerprintWithHttpInfo**](ImagesApi.md#getImagesFingerprintWithHttpInfo) | **GET** /1.0/images/{fingerprint} | 
-[**getImagesFingerprintRefresh**](ImagesApi.md#getImagesFingerprintRefresh) | **GET** /1.0/images/{fingerprint}/refresh | 
-[**getImagesFingerprintRefreshWithHttpInfo**](ImagesApi.md#getImagesFingerprintRefreshWithHttpInfo) | **GET** /1.0/images/{fingerprint}/refresh | 
-[**patchImagesAliasesByName**](ImagesApi.md#patchImagesAliasesByName) | **PATCH** /1.0/images/aliases/{name} | 
-[**patchImagesAliasesByNameWithHttpInfo**](ImagesApi.md#patchImagesAliasesByNameWithHttpInfo) | **PATCH** /1.0/images/aliases/{name} | 
-[**patchImagesFingerprint**](ImagesApi.md#patchImagesFingerprint) | **PATCH** /1.0/images/{fingerprint} | 
-[**patchImagesFingerprintWithHttpInfo**](ImagesApi.md#patchImagesFingerprintWithHttpInfo) | **PATCH** /1.0/images/{fingerprint} | 
-[**postImages**](ImagesApi.md#postImages) | **POST** /1.0/images | 
-[**postImagesWithHttpInfo**](ImagesApi.md#postImagesWithHttpInfo) | **POST** /1.0/images | 
-[**postImagesAliases**](ImagesApi.md#postImagesAliases) | **POST** /1.0/images/aliases | 
-[**postImagesAliasesWithHttpInfo**](ImagesApi.md#postImagesAliasesWithHttpInfo) | **POST** /1.0/images/aliases | 
-[**postImagesAliasesByName**](ImagesApi.md#postImagesAliasesByName) | **POST** /1.0/images/aliases/{name} | 
-[**postImagesAliasesByNameWithHttpInfo**](ImagesApi.md#postImagesAliasesByNameWithHttpInfo) | **POST** /1.0/images/aliases/{name} | 
-[**postImagesFingerprintExport**](ImagesApi.md#postImagesFingerprintExport) | **POST** /1.0/images/{fingerprint}/export | 
-[**postImagesFingerprintExportWithHttpInfo**](ImagesApi.md#postImagesFingerprintExportWithHttpInfo) | **POST** /1.0/images/{fingerprint}/export | 
-[**postImagesFingerprintSecret**](ImagesApi.md#postImagesFingerprintSecret) | **POST** /1.0/images/{fingerprint}/secret | 
-[**postImagesFingerprintSecretWithHttpInfo**](ImagesApi.md#postImagesFingerprintSecretWithHttpInfo) | **POST** /1.0/images/{fingerprint}/secret | 
-[**putImagesAliasesByName**](ImagesApi.md#putImagesAliasesByName) | **PUT** /1.0/images/aliases/{name} | 
-[**putImagesAliasesByNameWithHttpInfo**](ImagesApi.md#putImagesAliasesByNameWithHttpInfo) | **PUT** /1.0/images/aliases/{name} | 
-[**putImagesFingerprint**](ImagesApi.md#putImagesFingerprint) | **PUT** /1.0/images/{fingerprint} | 
-[**putImagesFingerprintWithHttpInfo**](ImagesApi.md#putImagesFingerprintWithHttpInfo) | **PUT** /1.0/images/{fingerprint} | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteImagesAliasesByName**](ImagesApi.md#deleteImagesAliasesByName) | **DELETE** /1.0/images/aliases/{name} |  |
+| [**deleteImagesAliasesByNameWithHttpInfo**](ImagesApi.md#deleteImagesAliasesByNameWithHttpInfo) | **DELETE** /1.0/images/aliases/{name} |  |
+| [**deleteImagesFingerprint**](ImagesApi.md#deleteImagesFingerprint) | **DELETE** /1.0/images/{fingerprint} |  |
+| [**deleteImagesFingerprintWithHttpInfo**](ImagesApi.md#deleteImagesFingerprintWithHttpInfo) | **DELETE** /1.0/images/{fingerprint} |  |
+| [**getImages**](ImagesApi.md#getImages) | **GET** /1.0/images |  |
+| [**getImagesWithHttpInfo**](ImagesApi.md#getImagesWithHttpInfo) | **GET** /1.0/images |  |
+| [**getImagesAliases**](ImagesApi.md#getImagesAliases) | **GET** /1.0/images/aliases |  |
+| [**getImagesAliasesWithHttpInfo**](ImagesApi.md#getImagesAliasesWithHttpInfo) | **GET** /1.0/images/aliases |  |
+| [**getImagesAliasesByName**](ImagesApi.md#getImagesAliasesByName) | **GET** /1.0/images/aliases/{name} |  |
+| [**getImagesAliasesByNameWithHttpInfo**](ImagesApi.md#getImagesAliasesByNameWithHttpInfo) | **GET** /1.0/images/aliases/{name} |  |
+| [**getImagesByFingerprintExport**](ImagesApi.md#getImagesByFingerprintExport) | **GET** /1.0/images/{fingerprint}/export |  |
+| [**getImagesByFingerprintExportWithHttpInfo**](ImagesApi.md#getImagesByFingerprintExportWithHttpInfo) | **GET** /1.0/images/{fingerprint}/export |  |
+| [**getImagesFingerprint**](ImagesApi.md#getImagesFingerprint) | **GET** /1.0/images/{fingerprint} |  |
+| [**getImagesFingerprintWithHttpInfo**](ImagesApi.md#getImagesFingerprintWithHttpInfo) | **GET** /1.0/images/{fingerprint} |  |
+| [**getImagesFingerprintRefresh**](ImagesApi.md#getImagesFingerprintRefresh) | **GET** /1.0/images/{fingerprint}/refresh |  |
+| [**getImagesFingerprintRefreshWithHttpInfo**](ImagesApi.md#getImagesFingerprintRefreshWithHttpInfo) | **GET** /1.0/images/{fingerprint}/refresh |  |
+| [**patchImagesAliasesByName**](ImagesApi.md#patchImagesAliasesByName) | **PATCH** /1.0/images/aliases/{name} |  |
+| [**patchImagesAliasesByNameWithHttpInfo**](ImagesApi.md#patchImagesAliasesByNameWithHttpInfo) | **PATCH** /1.0/images/aliases/{name} |  |
+| [**patchImagesFingerprint**](ImagesApi.md#patchImagesFingerprint) | **PATCH** /1.0/images/{fingerprint} |  |
+| [**patchImagesFingerprintWithHttpInfo**](ImagesApi.md#patchImagesFingerprintWithHttpInfo) | **PATCH** /1.0/images/{fingerprint} |  |
+| [**postImages**](ImagesApi.md#postImages) | **POST** /1.0/images |  |
+| [**postImagesWithHttpInfo**](ImagesApi.md#postImagesWithHttpInfo) | **POST** /1.0/images |  |
+| [**postImagesAliases**](ImagesApi.md#postImagesAliases) | **POST** /1.0/images/aliases |  |
+| [**postImagesAliasesWithHttpInfo**](ImagesApi.md#postImagesAliasesWithHttpInfo) | **POST** /1.0/images/aliases |  |
+| [**postImagesAliasesByName**](ImagesApi.md#postImagesAliasesByName) | **POST** /1.0/images/aliases/{name} |  |
+| [**postImagesAliasesByNameWithHttpInfo**](ImagesApi.md#postImagesAliasesByNameWithHttpInfo) | **POST** /1.0/images/aliases/{name} |  |
+| [**postImagesFingerprintExport**](ImagesApi.md#postImagesFingerprintExport) | **POST** /1.0/images/{fingerprint}/export |  |
+| [**postImagesFingerprintExportWithHttpInfo**](ImagesApi.md#postImagesFingerprintExportWithHttpInfo) | **POST** /1.0/images/{fingerprint}/export |  |
+| [**postImagesFingerprintSecret**](ImagesApi.md#postImagesFingerprintSecret) | **POST** /1.0/images/{fingerprint}/secret |  |
+| [**postImagesFingerprintSecretWithHttpInfo**](ImagesApi.md#postImagesFingerprintSecretWithHttpInfo) | **POST** /1.0/images/{fingerprint}/secret |  |
+| [**putImagesAliasesByName**](ImagesApi.md#putImagesAliasesByName) | **PUT** /1.0/images/aliases/{name} |  |
+| [**putImagesAliasesByNameWithHttpInfo**](ImagesApi.md#putImagesAliasesByNameWithHttpInfo) | **PUT** /1.0/images/aliases/{name} |  |
+| [**putImagesFingerprint**](ImagesApi.md#putImagesFingerprint) | **PUT** /1.0/images/{fingerprint} |  |
+| [**putImagesFingerprintWithHttpInfo**](ImagesApi.md#putImagesFingerprintWithHttpInfo) | **PUT** /1.0/images/{fingerprint} |  |
 
 
 
@@ -53,11 +53,11 @@ Remove an alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -84,9 +84,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
 
 ### Return type
 
@@ -121,12 +121,12 @@ Remove an alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -162,9 +162,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
 
 ### Return type
 
@@ -200,11 +200,11 @@ Remove an image
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -231,9 +231,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -268,12 +268,12 @@ Remove an image
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -309,9 +309,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
 
 ### Return type
 
@@ -347,11 +347,11 @@ List of images (public or private)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -379,10 +379,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -417,12 +417,12 @@ List of images (public or private)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -459,10 +459,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -498,11 +498,11 @@ List of aliases (public or private based on image visibility)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -530,10 +530,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -568,12 +568,12 @@ List of aliases (public or private based on image visibility)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -610,10 +610,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -649,11 +649,11 @@ Alias description and target
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -682,11 +682,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -721,12 +721,12 @@ Alias description and target
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -764,11 +764,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -804,11 +804,11 @@ Download the image tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -838,12 +838,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **secret** | **String**| secret | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **secret** | **String**| secret | [optional] |
 
 ### Return type
 
@@ -878,12 +878,12 @@ Download the image tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -922,12 +922,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **secret** | **String**| secret | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **secret** | **String**| secret | [optional] |
 
 ### Return type
 
@@ -963,11 +963,11 @@ Image description and metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -997,12 +997,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **secret** | **String**| secret | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **secret** | **String**| secret | [optional] |
 
 ### Return type
 
@@ -1037,12 +1037,12 @@ Image description and metadata
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1081,12 +1081,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
- **secret** | **String**| secret | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
+| **secret** | **String**| secret | [optional] |
 
 ### Return type
 
@@ -1122,11 +1122,11 @@ Refresh an image from its origin
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1155,11 +1155,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1194,12 +1194,12 @@ Refresh an image from its origin
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1237,11 +1237,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -1277,11 +1277,11 @@ Updates the alias target or description
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1309,10 +1309,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Updates the alias target or description | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Updates the alias target or description | [optional] |
 
 ### Return type
 
@@ -1347,12 +1347,12 @@ Updates the alias target or description
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1389,10 +1389,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Updates the alias target or description | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Updates the alias target or description | [optional] |
 
 ### Return type
 
@@ -1428,11 +1428,11 @@ Updates the image properties, update information and visibility
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1460,10 +1460,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**PatchImagesFingerprintRequest**](PatchImagesFingerprintRequest.md)| Updates the image properties, update information and visibility | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**PatchImagesFingerprintRequest**](PatchImagesFingerprintRequest.md)| Updates the image properties, update information and visibility | [optional] |
 
 ### Return type
 
@@ -1498,12 +1498,12 @@ Updates the image properties, update information and visibility
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1540,10 +1540,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**PatchImagesFingerprintRequest**](PatchImagesFingerprintRequest.md)| Updates the image properties, update information and visibility | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**PatchImagesFingerprintRequest**](PatchImagesFingerprintRequest.md)| Updates the image properties, update information and visibility | [optional] |
 
 ### Return type
 
@@ -1579,11 +1579,11 @@ Create and publish a new image
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1614,13 +1614,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xLXDFingerprint** | **String**| if set, uploaded file must match | [optional]
- **xLXDFilename** | **String**| used for export | [optional]
- **xLXDPublic** | **Boolean**| defaults to false | [optional]
- **xLXDProperties** | **String**|  | [optional]
- **body** | [**CreateImagesRequest**](CreateImagesRequest.md)| Create and publish a new image | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **xLXDFingerprint** | **String**| if set, uploaded file must match | [optional] |
+| **xLXDFilename** | **String**| used for export | [optional] |
+| **xLXDPublic** | **Boolean**| defaults to false | [optional] |
+| **xLXDProperties** | **String**|  | [optional] |
+| **body** | [**CreateImagesRequest**](CreateImagesRequest.md)| Create and publish a new image | [optional] |
 
 ### Return type
 
@@ -1655,12 +1655,12 @@ Create and publish a new image
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1700,13 +1700,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xLXDFingerprint** | **String**| if set, uploaded file must match | [optional]
- **xLXDFilename** | **String**| used for export | [optional]
- **xLXDPublic** | **Boolean**| defaults to false | [optional]
- **xLXDProperties** | **String**|  | [optional]
- **body** | [**CreateImagesRequest**](CreateImagesRequest.md)| Create and publish a new image | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **xLXDFingerprint** | **String**| if set, uploaded file must match | [optional] |
+| **xLXDFilename** | **String**| used for export | [optional] |
+| **xLXDPublic** | **Boolean**| defaults to false | [optional] |
+| **xLXDProperties** | **String**|  | [optional] |
+| **body** | [**CreateImagesRequest**](CreateImagesRequest.md)| Create and publish a new image | [optional] |
 
 ### Return type
 
@@ -1742,11 +1742,11 @@ Create a new alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1773,9 +1773,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateImagesAliasesRequest**](CreateImagesAliasesRequest.md)| Create a new alias | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateImagesAliasesRequest**](CreateImagesAliasesRequest.md)| Create a new alias | [optional] |
 
 ### Return type
 
@@ -1810,12 +1810,12 @@ Create a new alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1851,9 +1851,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateImagesAliasesRequest**](CreateImagesAliasesRequest.md)| Create a new alias | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateImagesAliasesRequest**](CreateImagesAliasesRequest.md)| Create a new alias | [optional] |
 
 ### Return type
 
@@ -1889,11 +1889,11 @@ Rename an alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -1921,10 +1921,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**CreateImagesAliasesByNameRequest**](CreateImagesAliasesByNameRequest.md)| Rename an alias | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**CreateImagesAliasesByNameRequest**](CreateImagesAliasesByNameRequest.md)| Rename an alias | [optional] |
 
 ### Return type
 
@@ -1960,12 +1960,12 @@ Rename an alias
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2002,10 +2002,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**CreateImagesAliasesByNameRequest**](CreateImagesAliasesByNameRequest.md)| Rename an alias | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**CreateImagesAliasesByNameRequest**](CreateImagesAliasesByNameRequest.md)| Rename an alias | [optional] |
 
 ### Return type
 
@@ -2042,11 +2042,11 @@ Upload the image tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2074,10 +2074,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**CreateImagesFingerprintExportRequest**](CreateImagesFingerprintExportRequest.md)| Upload the image tarball | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**CreateImagesFingerprintExportRequest**](CreateImagesFingerprintExportRequest.md)| Upload the image tarball | [optional] |
 
 ### Return type
 
@@ -2112,12 +2112,12 @@ Upload the image tarball
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2154,10 +2154,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**CreateImagesFingerprintExportRequest**](CreateImagesFingerprintExportRequest.md)| Upload the image tarball | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**CreateImagesFingerprintExportRequest**](CreateImagesFingerprintExportRequest.md)| Upload the image tarball | [optional] |
 
 ### Return type
 
@@ -2193,11 +2193,11 @@ Generate a random token and tell LXD to expect it be used by a guest
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2225,10 +2225,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | **Object**| Generate a random token and tell LXD to expect it be used by a guest | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | **Object**| Generate a random token and tell LXD to expect it be used by a guest | [optional] |
 
 ### Return type
 
@@ -2263,12 +2263,12 @@ Generate a random token and tell LXD to expect it be used by a guest
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2305,10 +2305,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | **Object**| Generate a random token and tell LXD to expect it be used by a guest | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | **Object**| Generate a random token and tell LXD to expect it be used by a guest | [optional] |
 
 ### Return type
 
@@ -2344,11 +2344,11 @@ Replaces the alias target or description
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2376,10 +2376,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Replaces the alias target or description | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Replaces the alias target or description | [optional] |
 
 ### Return type
 
@@ -2414,12 +2414,12 @@ Replaces the alias target or description
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2456,10 +2456,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the alias |
- **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Replaces the alias target or description | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the alias | |
+| **body** | [**UpdateImagesAliasesByNameRequest**](UpdateImagesAliasesByNameRequest.md)| Replaces the alias target or description | [optional] |
 
 ### Return type
 
@@ -2495,11 +2495,11 @@ Replaces the image properties, update information and visibility
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2527,10 +2527,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateImagesFingerprintRequest**](UpdateImagesFingerprintRequest.md)| Replaces the image properties, update information and visibility | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateImagesFingerprintRequest**](UpdateImagesFingerprintRequest.md)| Replaces the image properties, update information and visibility | [optional] |
 
 ### Return type
 
@@ -2565,12 +2565,12 @@ Replaces the image properties, update information and visibility
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ImagesApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ImagesApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -2607,10 +2607,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fingerprint** | **String**| Unique fingerprint |
- **body** | [**UpdateImagesFingerprintRequest**](UpdateImagesFingerprintRequest.md)| Replaces the image properties, update information and visibility | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fingerprint** | **String**| Unique fingerprint | |
+| **body** | [**UpdateImagesFingerprintRequest**](UpdateImagesFingerprintRequest.md)| Replaces the image properties, update information and visibility | [optional] |
 
 ### Return type
 

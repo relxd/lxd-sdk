@@ -9,9 +9,9 @@
 ## Example
 ```java
 // Import classes:
-import org.relxd.lxd.client.model.CreateInstancesByNameConsoleRequest;
-import org.relxd.lxd.client.model.CreateInstancesByNameConsoleRequestOneOf;
-import org.relxd.lxd.client.model.WindowSizeChangeRequest;
+import org.openapitools.client.model.CreateInstancesByNameConsoleRequest;
+import org.openapitools.client.model.CreateInstancesByNameConsoleRequestOneOf;
+import org.openapitools.client.model.WindowSizeChangeRequest;
 
 public class Example {
     public static void main(String[] args) {

@@ -9,9 +9,9 @@
 ## Example
 ```java
 // Import classes:
-import org.relxd.lxd.client.model.RawFile;
-import org.relxd.lxd.client.model.Object;
-import org.relxd.lxd.client.model.StandardReturnValueResponse;
+import org.openapitools.client.model.RawFile;
+import org.openapitools.client.model.Object;
+import org.openapitools.client.model.StandardReturnValueResponse;
 
 public class Example {
     public static void main(String[] args) {

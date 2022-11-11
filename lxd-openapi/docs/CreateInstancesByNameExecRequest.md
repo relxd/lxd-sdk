@@ -10,10 +10,10 @@
 ## Example
 ```java
 // Import classes:
-import org.relxd.lxd.client.model.CreateInstancesByNameExecRequest;
-import org.relxd.lxd.client.model.CreateInstancesByNameExecRequestOneOf;
-import org.relxd.lxd.client.model.Sigusr1SignalRequest;
-import org.relxd.lxd.client.model.WindowSizeChangeRequest;
+import org.openapitools.client.model.CreateInstancesByNameExecRequest;
+import org.openapitools.client.model.CreateInstancesByNameExecRequestOneOf;
+import org.openapitools.client.model.Sigusr1SignalRequest;
+import org.openapitools.client.model.WindowSizeChangeRequest;
 
 public class Example {
     public static void main(String[] args) {

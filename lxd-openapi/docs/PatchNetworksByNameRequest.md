@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**config** | [**DNSModeConfig**](DNSModeConfig.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**config** | [**DNSModeConfig**](DNSModeConfig.md) |  |  [optional] |
 
 
 

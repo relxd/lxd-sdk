@@ -2,20 +2,20 @@
 
 All URIs are relative to *http://localhost:2375*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**deleteClusterMembersByName**](ClusterApi.md#deleteClusterMembersByName) | **DELETE** /1.0/cluster/members/{name} | 
-[**deleteClusterMembersByNameWithHttpInfo**](ClusterApi.md#deleteClusterMembersByNameWithHttpInfo) | **DELETE** /1.0/cluster/members/{name} | 
-[**getCluster**](ClusterApi.md#getCluster) | **GET** /1.0/cluster | 
-[**getClusterWithHttpInfo**](ClusterApi.md#getClusterWithHttpInfo) | **GET** /1.0/cluster | 
-[**getClusterMembers**](ClusterApi.md#getClusterMembers) | **GET** /1.0/cluster/members | 
-[**getClusterMembersWithHttpInfo**](ClusterApi.md#getClusterMembersWithHttpInfo) | **GET** /1.0/cluster/members | 
-[**getClusterMembersByName**](ClusterApi.md#getClusterMembersByName) | **GET** /1.0/cluster/members/{name} | 
-[**getClusterMembersByNameWithHttpInfo**](ClusterApi.md#getClusterMembersByNameWithHttpInfo) | **GET** /1.0/cluster/members/{name} | 
-[**postClusterMembersByName**](ClusterApi.md#postClusterMembersByName) | **POST** /1.0/cluster/members/{name} | 
-[**postClusterMembersByNameWithHttpInfo**](ClusterApi.md#postClusterMembersByNameWithHttpInfo) | **POST** /1.0/cluster/members/{name} | 
-[**putCluster**](ClusterApi.md#putCluster) | **PUT** /1.0/cluster | 
-[**putClusterWithHttpInfo**](ClusterApi.md#putClusterWithHttpInfo) | **PUT** /1.0/cluster | 
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**deleteClusterMembersByName**](ClusterApi.md#deleteClusterMembersByName) | **DELETE** /1.0/cluster/members/{name} |  |
+| [**deleteClusterMembersByNameWithHttpInfo**](ClusterApi.md#deleteClusterMembersByNameWithHttpInfo) | **DELETE** /1.0/cluster/members/{name} |  |
+| [**getCluster**](ClusterApi.md#getCluster) | **GET** /1.0/cluster |  |
+| [**getClusterWithHttpInfo**](ClusterApi.md#getClusterWithHttpInfo) | **GET** /1.0/cluster |  |
+| [**getClusterMembers**](ClusterApi.md#getClusterMembers) | **GET** /1.0/cluster/members |  |
+| [**getClusterMembersWithHttpInfo**](ClusterApi.md#getClusterMembersWithHttpInfo) | **GET** /1.0/cluster/members |  |
+| [**getClusterMembersByName**](ClusterApi.md#getClusterMembersByName) | **GET** /1.0/cluster/members/{name} |  |
+| [**getClusterMembersByNameWithHttpInfo**](ClusterApi.md#getClusterMembersByNameWithHttpInfo) | **GET** /1.0/cluster/members/{name} |  |
+| [**postClusterMembersByName**](ClusterApi.md#postClusterMembersByName) | **POST** /1.0/cluster/members/{name} |  |
+| [**postClusterMembersByNameWithHttpInfo**](ClusterApi.md#postClusterMembersByNameWithHttpInfo) | **POST** /1.0/cluster/members/{name} |  |
+| [**putCluster**](ClusterApi.md#putCluster) | **PUT** /1.0/cluster |  |
+| [**putClusterWithHttpInfo**](ClusterApi.md#putClusterWithHttpInfo) | **PUT** /1.0/cluster |  |
 
 
 
@@ -31,11 +31,11 @@ Remove a member of the cluster
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -63,10 +63,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **force** | **BigDecimal**| force | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **force** | **BigDecimal**| force | [optional] |
 
 ### Return type
 
@@ -101,12 +101,12 @@ Remove a member of the cluster
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -143,10 +143,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **force** | **BigDecimal**| force | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **force** | **BigDecimal**| force | [optional] |
 
 ### Return type
 
@@ -182,11 +182,11 @@ Information about a cluster (such as networks and storage pools)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -214,10 +214,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -252,12 +252,12 @@ Information about a cluster (such as networks and storage pools)
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -294,10 +294,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -333,11 +333,11 @@ List of LXD members in the cluster
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -365,10 +365,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -403,12 +403,12 @@ List of LXD members in the cluster
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -445,10 +445,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -484,11 +484,11 @@ Retrieve the member&#39;s information and status
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -517,11 +517,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -556,12 +556,12 @@ Retrieve the member&#39;s information and status
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -599,11 +599,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional]
- **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **recursion** | **Integer**| To optimize queries of large lists, recursion is implemented for collections. The default value is 0 which means that collection member URLs are returned. Setting it to 1 will have those URLs be replaced by the object they point to (typically a dict). | [optional] |
+| **filter** | **String**| There is no default value for filter which means that all results found will be returned. The language follows the OData conventions for structuring REST API filtering logic. Logical operators are also supported for filtering: not(not), equals(eq), not equals(ne), and(and), or(or). Filters are evaluated with left associativity. Values with spaces can be surrounded with quotes. Nesting filtering is also supported. | [optional] |
 
 ### Return type
 
@@ -639,11 +639,11 @@ Rename a cluster member
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -671,10 +671,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **body** | [**UpdateClusterMembersByNameRequest**](UpdateClusterMembersByNameRequest.md)| Rename a cluster member | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **body** | [**UpdateClusterMembersByNameRequest**](UpdateClusterMembersByNameRequest.md)| Rename a cluster member | [optional] |
 
 ### Return type
 
@@ -709,12 +709,12 @@ Rename a cluster member
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -751,10 +751,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Members name |
- **body** | [**UpdateClusterMembersByNameRequest**](UpdateClusterMembersByNameRequest.md)| Rename a cluster member | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Members name | |
+| **body** | [**UpdateClusterMembersByNameRequest**](UpdateClusterMembersByNameRequest.md)| Rename a cluster member | [optional] |
 
 ### Return type
 
@@ -790,11 +790,11 @@ Bootstrap or join a cluster, or disable clustering on this node
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -821,9 +821,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UpdateClusterRequest**](UpdateClusterRequest.md)| Bootstrap or join a cluster, or disable clustering on this node | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UpdateClusterRequest**](UpdateClusterRequest.md)| Bootstrap or join a cluster, or disable clustering on this node | [optional] |
 
 ### Return type
 
@@ -858,12 +858,12 @@ Bootstrap or join a cluster, or disable clustering on this node
 
 ```java
 // Import classes:
-import org.relxd.lxd.client.ApiClient;
-import org.relxd.lxd.client.ApiException;
-import org.relxd.lxd.client.ApiResponse;
-import org.relxd.lxd.client.Configuration;
-import org.relxd.lxd.client.models.*;
-import org.relxd.lxd.client.api.ClusterApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.ClusterApi;
 import java.util.concurrent.CompletableFuture;
 
 public class Example {
@@ -899,9 +899,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UpdateClusterRequest**](UpdateClusterRequest.md)| Bootstrap or join a cluster, or disable clustering on this node | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UpdateClusterRequest**](UpdateClusterRequest.md)| Bootstrap or join a cluster, or disable clustering on this node | [optional] |
 
 ### Return type
 

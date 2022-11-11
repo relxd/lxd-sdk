@@ -5,12 +5,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**architecture** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**os** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**architecture** | **String** |  |  [optional] |
+|**description** | **String** |  |  [optional] |
+|**name** | **String** |  |  [optional] |
+|**os** | **String** |  |  [optional] |
 
 
 

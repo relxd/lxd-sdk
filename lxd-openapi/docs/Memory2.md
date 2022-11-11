@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**used** | **BigDecimal** |  |  [optional]
-**total** | **BigDecimal** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**used** | **BigDecimal** |  |  [optional] |
+|**total** | **BigDecimal** |  |  [optional] |
 
 
 

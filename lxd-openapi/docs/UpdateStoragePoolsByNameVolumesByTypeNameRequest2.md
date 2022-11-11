@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**config** | [**FileSystemMountOptionsAndThinPoolConfig**](FileSystemMountOptionsAndThinPoolConfig.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**config** | [**FileSystemMountOptionsAndThinPoolConfig**](FileSystemMountOptionsAndThinPoolConfig.md) |  |  [optional] |
 
 
 

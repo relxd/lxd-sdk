@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**config** | [**DiskAndLvmConfig**](DiskAndLvmConfig.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**config** | [**DiskAndLvmConfig**](DiskAndLvmConfig.md) |  |  [optional] |
 
 
 

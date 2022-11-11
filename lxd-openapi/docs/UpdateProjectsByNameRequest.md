@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**config** | [**FeaturesConfig**](FeaturesConfig.md) |  |  [optional]
-**description** | **String** |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**config** | [**FeaturesConfig**](FeaturesConfig.md) |  |  [optional] |
+|**description** | **String** |  |  [optional] |
 
 
 
