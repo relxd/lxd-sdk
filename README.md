@@ -1,8 +1,11 @@
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.relxd/lxd-java-client.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.relxd%22%20AND%20a:%22lxd-java-client%22)
+
 # Relxd - LXD OpenApi Java Client
 
 LXD
-- API version: 1.0.0
-  - Build date: 2020-09-30T13:16:18.308214+01:00[Europe/London]
+- API version: 1.0.1
+  - Build date: 2021-04-19T13:16:18.308214+01:00[Europe/London]
 
 The services listed below are referred as .....
 
@@ -41,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.relxd</groupId>
   <artifactId>lxd-java-client</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +54,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.relxd:lxd-java-client:1.0.0"
+compile "org.relxd:lxd-java-client:1.0.1"
 ```
 
 ### Others
@@ -64,7 +67,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/lxd-java-client-1.0.0.jar`
+* `target/lxd-java-client-1.0.1.jar`
 * `target/lib/*.jar`
 
 ### OpenApi spec file
