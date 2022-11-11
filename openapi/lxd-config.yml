@@ -1,0 +1,12 @@
+artifactId: lxd-openapi
+basePackage: org.relxd.lxd.client
+configPackage: org.relxd.lxd.client.config
+apiPackage: org.relxd.lxd.client.api
+modelPackage: org.relxd.lxd.client.model
+dateLibrary: java8
+hideGenerationTimestamp: true
+files:
+  ApiServices.mustache:
+    folder: src/main/java/org/relxd/lxd/client
+    templateType: SupportingFiles
+    destinationFilename: ApiServices.java

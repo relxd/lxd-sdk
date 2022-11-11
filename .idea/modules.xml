@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lxd-sdk.iml" filepath="$PROJECT_DIR$/.idea/lxd-sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lxd-java-client/lxd-java-client.iml" filepath="$PROJECT_DIR$/lxd-java-client/lxd-java-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lxd-openapi/lxd-openapi.iml" filepath="$PROJECT_DIR$/lxd-openapi/lxd-openapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/relxd-lxd-java.iml" filepath="$PROJECT_DIR$/relxd-lxd-java.iml" />
     </modules>
   </component>
 </project>
